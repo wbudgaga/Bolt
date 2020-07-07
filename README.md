@@ -14,3 +14,4 @@ knowledge base.
 - Decentralized orchestration of Map and Reduce tasks.
 DHTs are highly decentralized, orchestration frameworks designed over DHTs must be decentralized as well. Furthermore, centralized components introduce hotspots and points of irrecoverable failures.
 - Ensuring fast completion times. The choice of the underlying DHT-based storage subsystem that is completely decentralized should not introduce orchestration overheads that preclude timely completion of jobs.
+- Minimizing garbage collection overhead by reusing of objects instead of creating new ones for new data.
