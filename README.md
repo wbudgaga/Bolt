@@ -25,5 +25,11 @@ The architecture of Bolt allows concurrent executions of MapReduce tasks on a la
 The **client** can be seen as an interface that enables the users to store input data for their jobs and submitting MapReduce jobs for parallel execution on the system’s nodes. 
 - To stage dataset into the system, the client organizes the files composing the whole dataset into groups with approximately the same sizes and then uses DHT to stage them to nodes. 
 - Also, the client receives MapReduce jobs from the users, creates map and reduce tasks for each received job, and submits them to the distributed system for parallel execution. 
+- The client uses the chunks' names to identify their locations for submitting the map tasks to the hosted nodes to gain data locality and balanced workload.
+- Bolt relies on a novel mechanism to generate the proper keys to reduce tasks in a deterministic way. This mechanism allows clients to assign the reduce tasks to a distributed system with a high probability of balancing distribution. 
+
 
 The **resource manager** runs on each node in the distributed system to store data on local media and execute tasks of different jobs on locally available resources in an efficient way. 
+- Given a data chunk key, the resource manager can transparently feed chunk's records to the assigned map task for processing.
+- Each resource manager receives MapReduce tasks and executes them in a thread pool to maximize the parallelism degree and resource utilization on the hosted machine.
+- The resource managers employ the novel mechanism that determine where the reduce tasks are running to send the intermediate outputs to them and allow the communications between map and reduce tasks of the same job.
