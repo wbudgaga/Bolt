@@ -33,3 +33,10 @@ The **resource manager** runs on each node in the distributed system to store da
 - Given a data chunk key, the resource manager can transparently feed chunk's records to the assigned map task for processing.
 - Each resource manager receives MapReduce tasks and executes them in a thread pool to maximize the parallelism degree and resource utilization on the hosted machine.
 - The resource managers employ the novel mechanism that determine where the reduce tasks are running to send the intermediate outputs to them and allow the communications between map and reduce tasks of the same job.
+
+## Algolirthm fro generating the reducers keys
+
+<p align="center">
+<img width="500" alt="Reducer Keys" src="https://user-images.githubusercontent.com/40745827/87099935-49afb400-c208-11ea-92b2-daf11ac45d98.png">
+</p>
+
