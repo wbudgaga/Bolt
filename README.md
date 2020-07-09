@@ -13,3 +13,17 @@ To ensure data locality during processing maps, tasks are launched on nodes that
 DHTs are highly decentralized, orchestration frameworks designed over DHTs must be decentralized as well. Furthermore, centralized components introduce hotspots and points of irrecoverable failures.
 - Ensuring fast completion times. The choice of the underlying DHT-based storage subsystem that is completely decentralized should not introduce orchestration overheads that preclude timely completion of jobs.
 - Minimizing garbage collection overhead  is achieved by reusing of objects instead of creating new ones for new data.
+
+
+## SYSTEM ARCHITECTURE
+The architecture of Bolt allows concurrent executions of MapReduce tasks on a large structured P2P distributed system. Bolt is a framework composed of two main components, *client* and *resource manager*, for data stagging and orchestrating of MapReduce tasks (see Figure below). 
+
+<p align="center">
+<img width="500" alt="Framework Arechitecture" src="https://user-images.githubusercontent.com/40745827/87094924-03088c80-c1fd-11ea-85b5-84c59bd631b6.png">
+</p>
+
+The **client** can be seen as an interface that enables the users to store input data for their jobs and submitting MapReduce jobs for parallel execution on the system’s nodes. 
+- To stage dataset into the system, the client organizes the files composing the whole dataset into groups with approximately the same sizes and then uses DHT to stage them to nodes. 
+- Also, the client receives MapReduce jobs from the users, creates map and reduce tasks for each received job, and submits them to the distributed system for parallel execution. 
+
+The **resource manager** runs on each node in the distributed system to store data on local media and execute tasks of different jobs on locally available resources in an efficient way. 
