@@ -59,8 +59,18 @@ The **resource manager** runs on each node in the distributed system to store da
 The resource manager has 3 components:
 - **Task Scheduler** queues and launches the received tasks in the same execution order of jobs on each node to minimize the job’s completion time. The scheduler aimes the execute tasks so that jobs will completed based on their submissio order.
 - **Executor** manages a thread pool to facil- itate parallel tasks execution by utilizing the available cores and execution pipelines. Each executor can execute a fixed number of tasks concurrently without distinguishing between task’s types, map or reduce. The user can configure the thread pool size as proportion of the available cores on each machine.
-- **Job Tasks Manager (JTM)** is created for each job that has one or more tasks running on the node. The JTM manages the execution of tasks that belong to the same job and are assigned to the same node. The resource manager is responsible for the JTMs creation and the communications between local and remote JTMs that belong to the same job.
+- **Job Tasks Manager (JTM)** is created for each job that has one or more tasks running on the node. The JTM manages the execution of tasks that belong to the same job and are assigned to the same node. The resource manager is responsible for the JTMs creation and the communications between local and remote JTMs that belong to the same job. The JTM provides a transparent way to execute and track all the tasks of the same job. It provides all services needed for task’s execution such as supporting generic data types, delivering the input data to map tasks, pushing intermediate outputs to the reduce tasks, and locally storing the final outputs.
+JTM is able to locate all running reducers for map tasks it manages and send the intermediate results to them. 
+
 <p align="center">
 <img width="500" alt="Resource Manager" src="https://user-images.githubusercontent.com/40745827/87204740-d0c16280-c2c2-11ea-82df-d8a5a3932ea2.png">
 </p>
 
+## Execution Path of MapReduce Tasks
+The resource manager creates a JTM for each job the manager receives one or more of its tasks. The communications between local and remote JTMs that belong to the same job are done via the resource manager.
+<p align="center">
+<img width="500" alt="Execution Path" src="https://user-images.githubusercontent.com/40745827/87205749-5fcf7a00-c2c5-11ea-9367-efc2580e393c.png">
+</p>
+
+
+## Evaluation
