@@ -1,11 +1,16 @@
 # Bolt: A Framework for Orchestration of MapReduce Tasks Using Distributed Hash Tables
-Developed a framework, *Bolt*, for executing MapReduce jobs
-in a structured peer-to-peer system (P2P) based on distributed
-hash tables (DHTs).  This required us to address issues relating to data dispersion, placements, execution of map and reduce tasks, interactions and data exchanges between the Map and Reduce phases while ensuring that decisions are made in a decentralized and deterministic fashion. 
-The framework relies on distributed hash tables (DHTs) to disperse data and orchestrate map and reduce tasks over the collection of machines.
+Developed a framework, *Bolt*, for executing MapReduce jobs in a structured peer-to-peer system (P2P) based on distributed hash tables (DHTs). This required us to address issues relating to data dispersion and placement, scheduling and execution of map and reduce tasks, and interactions and data exchanges between the Map and Reduce phases while ensuring that decisions are made in a decentralized and deterministic fashion. The framework relies on distributed hash tables (DHTs) to disperse data and orchestrate map and reduce tasks over the collection of machines.
 
-The reducer, mapper, and combiner processing functionality needs to be specified during job submission. Like the MapReduce framework, the number of mappers is determined based on the number of chunks associated with the file. However, the developer must specify the number of reducers. 
-To ensure data locality during processing maps, tasks are launched on nodes that hold the data blocks. However, in our case, there are not any control messages being sent to the Master (or Namenode) to retrieve the location of the files. Once the metadata for a file is retrieved, our framework launches map tasks on DHT nodes responsible for the cryptographic hash of the filename, chunk number tuple. 
+The reducer, mapper, and combiner processing functionality needs to be specified during job submission. Like the MapReduce framework, the number of mappers is equivalent to the number of chunks associated with the dataset. However, the developer must specify the number of reducers. 
+To ensure data locality for the map tasks, The framework uses dataset name to identifies the locations of its chunks in a deterministic way and launches the map tasks on nodes that host these data chunks. There is no need to contact the Master of NameNode to retrieve the locations of the files as the case of Hadoop. The framework launches map tasks on DHT nodes that are responsible for the cryptographic hashes of chunks names (chunk name is in form datasetName_serial number).
+
+Additionally, Bolt aims to balance the workload of the reduce tasks by relying on novel mechanism to generate keys for reduce tasks in a deterministic way. The mechanism allows clients to assign the reduce tasks to distributed system with high probability of balancing distribution.
+## The Algolirthm that generates the keys for reducers 
+
+<p align="center">
+<img width="500" alt="Reducer Keys" src="https://user-images.githubusercontent.com/40745827/87099935-49afb400-c208-11ea-92b2-daf11ac45d98.png">
+</p>
+
 
 ## Features
 - Ensuring the effective distribution of datasets. Since the files being processed are large, it is important to ensure that the distribution of a file facilitates concurrent processing. The distribution scheme must also ensures that the storage loads are effectively dispersed, even in cases where the underlying files are vastly different sizes.
@@ -34,9 +39,4 @@ The **resource manager** runs on each node in the distributed system to store da
 - Each resource manager receives MapReduce tasks and executes them in a thread pool to maximize the parallelism degree and resource utilization on the hosted machine.
 - The resource managers employ the novel mechanism that determine where the reduce tasks are running to send the intermediate outputs to them and allow the communications between map and reduce tasks of the same job.
 
-## The Algolirthm that generates the keys for reducers 
-
-<p align="center">
-<img width="500" alt="Reducer Keys" src="https://user-images.githubusercontent.com/40745827/87099935-49afb400-c208-11ea-92b2-daf11ac45d98.png">
-</p>
 
