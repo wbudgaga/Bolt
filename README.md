@@ -89,7 +89,7 @@ Bolt show speedup that is always greater than 1 and keeps rising as the number o
 </p>
 
 
-### Balancing of reduce tasks
+#### Balancing of Reduce Tasks
 In Bolt the reduce tasks are autonomously assigned to nodes without monitoring the available resources in the cluster. The distribution of reduce tasks tends to be balanced since the keys generation of the reducers relies on a random number. To assess this assumption, we took the concurrent jobs execution that includes 16 jobs configured with 12 reducers and plotted the distributions of all the 192 reducers in following Figure:
 
 <p align="center">
@@ -97,3 +97,17 @@ In Bolt the reduce tasks are autonomously assigned to nodes without monitoring t
 </p>
 
 The distribution of 192 reducers of 16 jobs does not cause hot spots. The first 47 nodes shown in the figure receive more reduce tasks than the remaining 30 nodes because they are responsible for longer keys ranges. We have assigned 2 keys to the nodes with higher capabilities to execute more tasks than the rest.
+
+### K-Means Clustering
+Hadoop and Bolt were used to execute K-Means clustering algorithm 100 iterations. For this benchmark we have used movie ratings dataset that includes movies data and users ratings for each movie. The K-Means algorithm aims to cluster simimlar movies based on the users rantings.
+
+As we can see in following figure, with less overhead Bolt executed the 100 iterations 5.06X faster than Hadoop. Hadoop executed all iterations in 39.02 hours with total overhead of 8.48 minutes, while Bolt spent only 7.72 hours including 1.14 minutes overhead for executing them. The overhead is the total time spent for cleanup and job setup. In average, the overhead of each iteration was 5 and 0.6 seconds in Hadoop and Bolt, respectively.
+<p align="center">
+<img width="500" alt="Reduce Tasks Balancing" src="https://user-images.githubusercontent.com/40745827/87208667-95c42c80-c2cc-11ea-940c-f578591548f4.png">
+</p>
+
+We have also recorded the actual execution time of each individual iteration without considering the overhead (See the Figure below). Hadoop could execute 95% of the iterations in less than 27 minutes, while Bolt spent less than 7 minutes to execute 97% of the iterations. The runtime average for the iterations executed by Hadoop and Bolt are 23.33 and 4.62, respectively.
+
+<p align="center">
+<img width="500" alt="Reduce Tasks Balancing" src="https://user-images.githubusercontent.com/40745827/87208787-fd7a7780-c2cc-11ea-850d-40df1c9a24b7.png">
+</p>
