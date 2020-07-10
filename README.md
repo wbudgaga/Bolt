@@ -23,11 +23,16 @@ Below is an example that illustrates the generation of the hashed keys to reduce
 </p>
 
 ## Features
-- Ensuring the effective distribution of datasets. Since the files being processed are large, it is important to ensure that the distribution of a file facilitates concurrent processing. The distribution scheme must also ensures that the storage loads are effectively dispersed, even in cases where the underlying files are vastly different sizes.
-- Decentralized orchestration of Map and Reduce tasks.
-DHTs are highly decentralized, orchestration frameworks designed over DHTs must be decentralized as well. Furthermore, centralized components introduce hotspots and points of irrecoverable failures.
-- Ensuring fast completion times. The choice of the underlying DHT-based storage subsystem that is completely decentralized should not introduce orchestration overheads that preclude timely completion of jobs.
-- Minimizing garbage collection overhead  is achieved by reusing of objects instead of creating new ones for new data.
+- Balancing the data and workload distribution among the available machines. 
+- Ensuring data locality of the map tasks.
+- Allowing the execution of MapReduce jobs in a structured P2P distributed system. 
+- Distributing and locating data in a dynamic distributed environment. 
+- Decentralized scheduling of MapReduce tasks. 
+- Gaining a balanced workload without global knowledge about the system. 
+- Providing scalability that allows the framework to execute more tasks as extra nodes are added to the system. 
+- Considering a heterogeneous environment by assigning multiple identifiers to powerful nodes on the keyspace ring. In a such case, the powerful nodes will be 
+  responsible for more workload than the others.
+- Minimizing garbage collection overhead is achieved by reusing the same objects instead of creating new ones for new data.
 
 
 ## SYSTEM ARCHITECTURE
