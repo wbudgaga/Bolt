@@ -89,3 +89,11 @@ Bolt show speedup that is always greater than 1 and keeps rising as the number o
 </p>
 
 
+### Balancing of reduce tasks
+In Bolt the reduce tasks are autonomously assigned to nodes without monitoring the available resources in the cluster. The distribution of reduce tasks tends to be balanced since the keys generation of the reducers relies on a random number. To assess this assumption, we took the concurrent jobs execution that includes 16 jobs configured with 12 reducers and plotted the distributions of all the 192 reducers in following Figure:
+
+<p align="center">
+<img width="500" alt="Reduce Tasks Balancing" src="https://user-images.githubusercontent.com/40745827/87208076-d6bb4180-c2ca-11ea-87e0-89dcca9a0045.png">
+</p>
+
+The distribution of 192 reducers of 16 jobs does not cause hot spots. The first 47 nodes shown in the figure receive more reduce tasks than the remaining 30 nodes because they are responsible for longer keys ranges. We have assigned 2 keys to the nodes with higher capabilities to execute more tasks than the rest.
