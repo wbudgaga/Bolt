@@ -79,5 +79,13 @@ For thee evaluation, we used a dataset of size 300 GB and a 77-node cluster with
 ### Word Count Job
 Hadoop and Bolt gave been used to execute word count job with different number of reducers a number of times simultaneously. In the Figure below, **j** indices to number of concurrent running jobs and **r** indices to the number of reducers each job has.
 <p align="center">
-<img width="500" alt="WordCount Job" src="https://user-images.githubusercontent.com/40745827/87206722-ae7e1380-c2c7-11ea-9c44-34429b5d5fa9.png">
+<img width="500" alt="WordCount Job run time" src="https://user-images.githubusercontent.com/40745827/87206722-ae7e1380-c2c7-11ea-9c44-34429b5d5fa9.png">
 </p>
+
+Bolt show speedup that is always greater than 1 and keeps rising as the number of jobs or reducers increases.
+
+<p align="center">
+<img width="500" alt="WordCount Job speedup" src="https://user-images.githubusercontent.com/40745827/87207570-64962d00-c2c9-11ea-91e7-a19ec3400dd3.png">
+</p>
+
+
