@@ -74,3 +74,10 @@ The resource manager creates a JTM for each job the manager receives one or more
 
 
 ## Evaluation
+For thee evaluation, we used a dataset of size 300 GB and a 77-node cluster with 47 HP DL160 servers (Xeon E5620 CPU, 12 GB of RAM) and 30 HP DL320 servers (Xeon E3-1220 V2 CPU, 8 GB of RAM).
+
+### Word Count Job
+Hadoop and Bolt gave been used to execute word count job with different number of reducers a number of times simultaneously. In the Figure below, **j** indices to number of concurrent running jobs and **r** indices to the number of reducers each job has.
+<p align="center">
+<img width="500" alt="WordCount Job" src="https://user-images.githubusercontent.com/40745827/87206722-ae7e1380-c2c7-11ea-9c44-34429b5d5fa9.png">
+</p>
