@@ -1,8 +1,4 @@
-/*
-  (c) 2004, Nuno Santos, nfsantos@sapo.pt
-  relased under terms of the GNU public license 
-  http://www.gnu.org/licenses/licenses.html#TOCGPL
-*/
+
 package mr.communication.io;
 
 import java.io.IOException;
@@ -12,17 +8,17 @@ import java.util.*;
 final public class SelectorThread implements Runnable {
   private Selector selector;
   private Thread selectorThread;
-  private boolean closeRequested = false;
+  private boolean closeRequested 	= false;
   private final List pendingInvocations = new ArrayList(32);
   
   public SelectorThread() throws IOException {
 	  selector 			= Selector.open();
-	  selectorThread 	= new Thread(this);
+	  selectorThread 		= new Thread(this);
 	  selectorThread.start();
   }
   
   public void requestClose() {
-	  closeRequested = true;
+	  closeRequested 		= true;
 	  selector.wakeup();
   }
   
@@ -53,7 +49,7 @@ final public class SelectorThread implements Runnable {
     if (Thread.currentThread() != selectorThread) {
       throw new IOException("Method can only be called from selector thread");
     }
-    SelectionKey sk = channel.keyFor(selector);
+    SelectionKey sk 			= channel.keyFor(selector);
     changeKeyInterest(sk, sk.interestOps() & ~interest);
   }
   
@@ -79,12 +75,12 @@ final public class SelectorThread implements Runnable {
     }
   }
   public void registerChannelLater(final SelectableChannel channel, final int selectionKeys, final SelectorHandler handlerInfo, final CallbackErrorHandler errorHandler) {
-	  invokeLater(new Runnable() {
-		  public void run() {
-			  try {
-				  registerChannelNow(channel, selectionKeys, handlerInfo);
-			  } catch (IOException e) {
-				  errorHandler.handleError(e);
+	invokeLater(new Runnable() {
+		public void run() {
+			try {
+				registerChannelNow(channel, selectionKeys, handlerInfo);
+			} catch (IOException e) {
+				errorHandler.handleError(e);
         }
       }
     });
@@ -98,17 +94,17 @@ final public class SelectorThread implements Runnable {
     
     try {
     	if (channel.isRegistered()) {
-    		SelectionKey sk = channel.keyFor(selector);
-    		assert sk != null : "Channel is already registered with other selector";        
+    		SelectionKey sk 	= channel.keyFor(selector);
+    		assert sk 		!= null : "Channel is already registered with other selector";        
     		sk.interestOps(selectionKeys);
-    		Object previousAttach = sk.attach(selHandler);
-    		assert previousAttach != null;
+    		Object previousAttach 	= sk.attach(selHandler);
+    		assert previousAttach 	!= null;
     	} else {  
     		channel.configureBlocking(false);
     		channel.register(selector, selectionKeys, selHandler);      
     	}  
     } catch (Exception e) {
-    	IOException ioe = new IOException("Error registering channel.");
+    	IOException ioe 		= new IOException("Error registering channel.");
     	ioe.initCause(e);
     	throw ioe;      
     }
@@ -126,7 +122,7 @@ final public class SelectorThread implements Runnable {
     	task.run();      
     } else {
       // Used to deliver the notification that the task is executed    
-      final Object latch = new Object();
+      final Object latch 		= new Object();
       synchronized (latch) {
         // Uses the invokeLater method with a newly created task 
         this.invokeLater(new Runnable() {
@@ -146,7 +142,7 @@ final public class SelectorThread implements Runnable {
   private void doInvocations() {
     synchronized (pendingInvocations) {
       for (int i = 0; i < pendingInvocations.size(); i++) {
-        Runnable task = (Runnable) pendingInvocations.get(i);
+        Runnable task 			= (Runnable) pendingInvocations.get(i);
         task.run();
       }
       pendingInvocations.clear();
@@ -168,7 +164,7 @@ final public class SelectorThread implements Runnable {
       
       int selectedKeys = 0;
       try {
-        selectedKeys = selector.select();
+        selectedKeys 		= selector.select();
       } catch (IOException ioe) {
         // Select should never throw an exception under normal 
         // operation. If this happens, print the error and try to 
@@ -241,8 +237,8 @@ final public class SelectorThread implements Runnable {
     
   private void closeSelectorAndChannels() {
     Set keys = selector.keys();
-    for (Iterator iter = keys.iterator(); iter.hasNext();) {
-      SelectionKey key = (SelectionKey)iter.next();
+    for (Iterator iter 		= keys.iterator(); iter.hasNext();) {
+      SelectionKey key 		= (SelectionKey)iter.next();
       try {
         key.channel().close();
       } catch (IOException e) {
