@@ -1,8 +1,4 @@
-/*
-  (c) 2004, Nuno Santos, nfsantos@sapo.pt
-  relased under terms of the GNU public license 
-  http://www.gnu.org/licenses/licenses.html#TOCGPL
-*/
+
 package mr.communication.handlers;
 
 
@@ -20,8 +16,6 @@ import mr.communication.io.SelectorThread;
  * to receive connect events. Therefore, instances of this class
  * don't have an associated thread. When a connection is established,
  * it notifies a listener using a callback.
- * 
- * @author Nuno Santos
  */
 final public class Acceptor implements AcceptSelectorHandler {
   // Used to receive incoming connections
@@ -34,16 +28,15 @@ final public class Acceptor implements AcceptSelectorHandler {
   private final AcceptorListener listener;
 
   /**
-	 * Creates a new instance. No server socket is created. Use 
-   * openServerSocket() to start listening.
-	 * 
-   * @param listenPort The port to open.
-	 * @param listener The object that will receive notifications 
-   *  of incoming connections.
-	 * @param ioThread The selector thread.
-	 * 
-	 * @throws IOException
-	 */
+    Creates a new instance. No server socket is created. Use openServerSocket() to start listening.
+
+   @param listenPort: The port to listen to.
+   @param listener: The object that will receive notifications of incoming connections.
+   @param ioThread The selector thread.
+
+   @throws IOException
+**/
+	
   public Acceptor(int listenPort, SelectorThread ioThread, AcceptorListener listener){ 
 	  this.ioThread 	= ioThread;
 	  this.listenPort 	= listenPort;
@@ -55,11 +48,10 @@ final public class Acceptor implements AcceptSelectorHandler {
    * not block waiting for connections. Instead, it registers itself 
    * with the selector to receive connect events.
    * 
-   * @throws IOException
    */
   public void openServerSocket() throws IOException {
     ssc = ServerSocketChannel.open();
-    InetSocketAddress isa = new InetSocketAddress(listenPort);
+    InetSocketAddress isa 	= new InetSocketAddress(listenPort);
     ssc.socket().bind(isa, 100);
     
     // This method might be called from any thread. We must use 
@@ -83,11 +75,11 @@ final public class Acceptor implements AcceptSelectorHandler {
    * from anywhere else.
    */
   public void handleAccept() {
-    SocketChannel sc = null;
+    SocketChannel sc 		= null;
     try {
       sc = ssc.accept();
       //sc.finishConnect();
-      Socket s = sc.socket();
+      Socket s 			= sc.socket();
       
       // Reactivate interest to receive the next connection. We
       // can use one of the XXXNow methods since this method is being
