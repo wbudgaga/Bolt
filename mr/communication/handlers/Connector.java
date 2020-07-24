@@ -36,9 +36,9 @@ final public class Connector implements ConnectorSelectorHandler {
    * @throws IOException
    */
   public Connector(SelectorThread selector, InetSocketAddress remoteAddress, ConnectorListener listener){     
-    this.selectorThread = selector;
-    this.remoteAddress = remoteAddress;
-    this.listener = listener;
+    this.selectorThread     = selector;
+    this.remoteAddress      = remoteAddress;
+    this.listener           = listener;
   }
   
   /**
