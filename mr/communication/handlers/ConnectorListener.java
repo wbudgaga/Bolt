@@ -5,8 +5,6 @@ import java.nio.channels.SocketChannel;
 
 /**
  * Callback interface for receiving events from a Connector. 
- * 
- * @author Nuno Santos
  */
 public interface ConnectorListener {
   /**
