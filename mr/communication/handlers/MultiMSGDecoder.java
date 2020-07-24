@@ -18,11 +18,11 @@ import mr.dht.peer2peernetwork.wireformates.RegisterRequest;
 import mr.dht.peer2peernetwork.wireformates.Successor;
 
 final public class MultiMSGDecoder implements ProtocolDecoder {
-	private byte[] 				buffer 			= new byte[Setting.RECEIVEBUFF_SIZE ];
+	private byte[] 			buffer 			= new byte[Setting.RECEIVEBUFF_SIZE ];
 	private volatile byte[]		msgBodyLen		= new byte[4];
-	private volatile int 		msgBodyLenPos	= 0;
+	private volatile int 		msgBodyLenPos		= 0;
 	private volatile int 		pos 			= 0;
-	private volatile int 		stillNeededBytes= 0;
+	private volatile int 		stillNeededBytes	= 0;
 	private final MessageFactory messageFactory;
   
   public MultiMSGDecoder() throws ClassNotFoundException{
