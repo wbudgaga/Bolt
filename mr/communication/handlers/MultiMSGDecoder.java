@@ -26,11 +26,11 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
 	private final MessageFactory messageFactory;
   
   public MultiMSGDecoder() throws ClassNotFoundException{
-	  try {
-		  this.messageFactory   			= MessageFactory.getInstance();
-	  } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-		  throw new ClassNotFoundException("ProtocolDecoder: Couldn't  have an ionstance of MessageFactory");
-	  }
+	try {
+		this.messageFactory   			= MessageFactory.getInstance();
+	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+		throw new ClassNotFoundException("ProtocolDecoder: Couldn't  have an ionstance of MessageFactory");
+	}
   }
 
   public Message decodeMSG(ByteBuffer socketBuffer) throws IOException {
