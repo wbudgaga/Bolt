@@ -27,7 +27,7 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
   
   public MultiMSGDecoder() throws ClassNotFoundException{
 	  try {
-		  this.messageFactory   = MessageFactory.getInstance();
+		  this.messageFactory   			= MessageFactory.getInstance();
 	  } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 		  throw new ClassNotFoundException("ProtocolDecoder: Couldn't  have an ionstance of MessageFactory");
 	  }
