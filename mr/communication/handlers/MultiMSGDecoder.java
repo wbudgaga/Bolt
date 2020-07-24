@@ -58,15 +58,16 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
   }
 
   private int getMSGLength(ByteBuffer socketBuffer){
-	  while(socketBuffer.hasRemaining() && msgBodyLenPos <4){
-		msgBodyLen[msgBodyLenPos++] = socketBuffer.get();
+	  while(socketBuffer.hasRemaining() && msgBodyLenPos < 4){
+		msgBodyLen[msgBodyLenPos++] 			= socketBuffer.get();
 	  }
 	  if(msgBodyLenPos == 4){
-		  msgBodyLenPos = 0;
+		  msgBodyLenPos 				= 0;
 		  return ByteStream.byteArrayToInt(msgBodyLen);
 	  }
 	  return 0;
   }
+
   public ArrayList<Message>  decode(ByteBuffer socketBuffer) throws IOException {
 	  ArrayList<Message> msgs = new ArrayList<Message>();	
 	  int stillAvailableBytes=-1 ;
