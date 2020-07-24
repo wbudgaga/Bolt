@@ -12,8 +12,6 @@ import mr.communication.io.SelectorThread;
 
 /**
  * Manages a non-blocking connection attempt to a remote host. 
- * 
- * @author Nuno Santos
  */
 final public class Connector implements ConnectorSelectorHandler {
   // The socket being connected.
@@ -43,11 +41,10 @@ final public class Connector implements ConnectorSelectorHandler {
   
   /**
    * Starts a non-blocking connection attempt.
-   *   
    * @throws IOException
    */
   public void connect() throws IOException {
-    sc = SocketChannel.open();  
+    sc                      = SocketChannel.open();  
     // Very important. Set to non-blocking. Otherwise a call
     // to connect will block until the connection attempt fails 
     // or succeeds.
