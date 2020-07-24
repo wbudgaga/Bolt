@@ -1,6 +1,4 @@
-
 package mr.communication.handlers;
-
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -13,7 +11,7 @@ import mr.communication.io.SelectorThread;
 
 /**
  * Listens for incoming connections from clients, using a selector
- * to receive connect events. Therefore, instances of this class
+ * to receive a connection events. Therefore, instances of this class
  * don't have an associated thread. When a connection is established,
  * it notifies a listener using a callback.
  */
@@ -29,10 +27,9 @@ final public class Acceptor implements AcceptSelectorHandler {
 
   /**
     Creates a new instance. No server socket is created. Use openServerSocket() to start listening.
-
    @param listenPort: The port to listen to.
    @param listener: The object that will receive notifications of incoming connections.
-   @param ioThread The selector thread.
+   @param ioThread: The selector thread.
 
    @throws IOException
 **/
@@ -50,7 +47,7 @@ final public class Acceptor implements AcceptSelectorHandler {
    * 
    */
   public void openServerSocket() throws IOException {
-    ssc = ServerSocketChannel.open();
+    ssc 			= ServerSocketChannel.open();
     InetSocketAddress isa 	= new InetSocketAddress(listenPort);
     ssc.socket().bind(isa, 100);
     
@@ -58,10 +55,10 @@ final public class Acceptor implements AcceptSelectorHandler {
     // the xxxLater methods so that the actual register operation
     // is done by the selector's thread. No other thread should access
     // the selector directly.
-    ioThread.registerChannelLater(ssc, SelectionKey.OP_ACCEPT, this,new CallbackErrorHandler() {
-      public void handleError(Exception ex) {    
-        listener.socketError(Acceptor.this, ex);
-      }
+    ioThread.registerChannelLater(ssc, SelectionKey.OP_ACCEPT, this, new CallbackErrorHandler() {
+      	public void handleError(Exception ex) {    
+        	listener.socketError(Acceptor.this, ex);
+      	}
     });
   }
   
