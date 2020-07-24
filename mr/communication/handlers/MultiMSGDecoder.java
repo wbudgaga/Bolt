@@ -69,38 +69,38 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
   }
 
   public ArrayList<Message>  decode(ByteBuffer socketBuffer) throws IOException {
-	  ArrayList<Message> msgs = new ArrayList<Message>();	
-	  int stillAvailableBytes=-1 ;
-	  try{
-	  while (socketBuffer.hasRemaining()){
-		  if (stillNeededBytes == 0){
-			  stillNeededBytes = getMSGLength(socketBuffer);
-			  if (stillNeededBytes == 0)
+	ArrayList<Message> msgs 				= new ArrayList<Message>();	
+	int stillAvailableBytes					= -1 ;
+	try{
+		while (socketBuffer.hasRemaining()){
+			if (stillNeededBytes == 0){
+				stillNeededBytes 		= getMSGLength(socketBuffer);
+				if (stillNeededBytes == 0)
 				  return msgs;
-		  }
-		  stillAvailableBytes = socketBuffer.remaining();
-		  if (stillAvailableBytes >= stillNeededBytes){
-			  socketBuffer.get(buffer, pos, stillNeededBytes);
-			  byte[] newBuffer = new byte[pos + stillNeededBytes];
-			  stillNeededBytes = pos = 0;
-			  System.arraycopy(buffer, 0, newBuffer, 0, newBuffer.length);
-			  
-			  try {
-				  msgs.add(messageFactory.createMessage(newBuffer));
-			  } catch (InstantiationException | IllegalAccessException e) {
-				  throw new IOException("Couldn't create message for the recieved bytes!");
-			  }
-		  }else{
-			  socketBuffer.get(buffer, pos, stillAvailableBytes);
-			  pos += stillAvailableBytes;
-			  stillNeededBytes = stillNeededBytes - stillAvailableBytes;
-		  }
-	  }
-	  return msgs;
-	  }catch(Exception  e){
-		  throw new IOException(Setting.DATA_DIR+": Problem encountered in decoding process where:\n pos= "+pos+" stillNeededBytes:"+stillNeededBytes+"  stillAvailableBytes:"+stillAvailableBytes+"  exception:"+e+" "+e.getMessage());
-	  }
+		  	}
+			stillAvailableBytes 			= socketBuffer.remaining();
+			if (stillAvailableBytes >= stillNeededBytes){
+				socketBuffer.get(buffer, pos, stillNeededBytes);
+				byte[] newBuffer 		= new byte[pos + stillNeededBytes];
+			  	stillNeededBytes 		= pos = 0;
+			  	System.arraycopy(buffer, 0, newBuffer, 0, newBuffer.length);
+			  	try {
+					msgs.add(messageFactory.createMessage(newBuffer));
+			  	} catch (InstantiationException | IllegalAccessException e) {
+				  	throw new IOException("Couldn't create message for the recieved bytes!");
+			  	}
+		  	}else{
+			  	socketBuffer.get(buffer, pos, stillAvailableBytes);
+			  	pos 				+= stillAvailableBytes;
+			  	stillNeededBytes 		= stillNeededBytes - stillAvailableBytes;
+		  	}
+	  	}
+	  	return msgs;
+	}catch(Exception  e){
+		throw new IOException(Setting.DATA_DIR+": Problem encountered in decoding process where:\n pos= "+pos+" stillNeededBytes:"+stillNeededBytes+"  stillAvailableBytes:"+stillAvailableBytes+"  exception:"+e+" "+e.getMessage());
+	}
   }
+	
   @Override
   public boolean stillNeedData() {
   	return stillNeededBytes>0;
