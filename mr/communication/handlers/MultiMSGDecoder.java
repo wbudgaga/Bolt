@@ -62,7 +62,7 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
 		msgBodyLen[msgBodyLenPos++] 			= socketBuffer.get();
 	}
 	if(msgBodyLenPos == 4){
-		msgBodyLenPos 				= 0;
+		msgBodyLenPos 					= 0;
 		return ByteStream.byteArrayToInt(msgBodyLen);
 	}
 	return 0;
