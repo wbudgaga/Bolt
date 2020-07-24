@@ -27,19 +27,19 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
   
   public MultiMSGDecoder() throws ClassNotFoundException{
 	try {
-		this.messageFactory   			= MessageFactory.getInstance();
+		this.messageFactory   				= MessageFactory.getInstance();
 	} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 		throw new ClassNotFoundException("ProtocolDecoder: Couldn't  have an ionstance of MessageFactory");
 	}
   }
 
   public Message decodeMSG(ByteBuffer socketBuffer) throws IOException {
-	  int l 						= stillNeededBytes;
-	  if (stillNeededBytes == 0)
+	int l 							= stillNeededBytes;
+	if (stillNeededBytes == 0)
 		stillNeededBytes 				= socketBuffer.getInt();
 	  
-	  int stillAvailableBytes 				= socketBuffer.remaining();
-	  if (stillAvailableBytes >= stillNeededBytes){
+	int stillAvailableBytes 				= socketBuffer.remaining();
+	if (stillAvailableBytes >= stillNeededBytes){
 		socketBuffer.get(buffer, pos, stillNeededBytes);
 		byte[] newBuffer 				= new byte[pos + stillNeededBytes];
 		stillNeededBytes 				= pos = 0;
@@ -49,7 +49,7 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new IOException("Couldn't create message for the recieved bytes!");
 		}
-	  }else{
+	}else{
 		socketBuffer.get(buffer, pos, stillAvailableBytes);
 		pos 						+= stillAvailableBytes;
 		stillNeededBytes 				= stillNeededBytes - stillAvailableBytes;
