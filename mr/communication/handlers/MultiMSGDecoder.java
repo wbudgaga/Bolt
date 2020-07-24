@@ -103,55 +103,56 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
 	
   @Override
   public boolean stillNeedData() {
-  	return stillNeededBytes>0;
+	return stillNeededBytes > 0;
   }
   
   public static PeerData getTestPeer(String ext){
-	  PeerData peer = new PeerData();
-	  peer.setHost("host1"+ext);
-	  peer.setNickName("Walid Budgaga"+ext);
-	  peer.setPeerID(19041972);
-	  peer.setPortNum(5005);
-	  return peer;
+	PeerData peer 					= new PeerData();
+	peer.setHost("host1" + ext);
+	peer.setNickName("Walid Budgaga" + ext);
+	peer.setPeerID(19041972);
+	peer.setPortNum(5005);
+	return peer;
   }
+	
   //Just for testing
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-	  MultiMSGDecoder d = new MultiMSGDecoder();
-	  Predecessor predMSG = new Predecessor();
-	  predMSG.setPeer(getTestPeer(""));
-	  byte[] predMSGBody =  predMSG.packMessage();
-	  byte[] predMSGBodyAll = ByteStream.join(ByteStream.intToByteArray(predMSGBody.length), predMSGBody);
+	MultiMSGDecoder d 				= new MultiMSGDecoder();
+	Predecessor predMSG 				= new Predecessor();
+	predMSG.setPeer( getTestPeer("") );
+	byte[] predMSGBody 				=  predMSG.packMessage();
+	byte[] predMSGBodyAll 				= ByteStream.join(ByteStream.intToByteArray(predMSGBody.length), predMSGBody);
 	  
-	  RegisterRequest registerRequestMSG = new RegisterRequest();
-	  registerRequestMSG.setPeer(getTestPeer("abcMAlak"));
-	  byte[] registerRequestMSGBody =  registerRequestMSG.packMessage();
-	  byte[] registerRequestMSGBodyAll = ByteStream.join(ByteStream.intToByteArray(registerRequestMSGBody.length), registerRequestMSGBody);
+	RegisterRequest registerRequestMSG 		= new RegisterRequest();
+	registerRequestMSG.setPeer(getTestPeer("abcMAlak"));
+	byte[] registerRequestMSGBody 			=  registerRequestMSG.packMessage();
+	byte[] registerRequestMSGBodyAll 		= ByteStream.join(ByteStream.intToByteArray(registerRequestMSGBody.length), registerRequestMSGBody);
 	  
-	  Successor succMSG = new Successor();
-	  succMSG.setPeer(getTestPeer("succMSG"));
-	  byte[] succMSGBody =  succMSG.packMessage();
-	  byte[] succMSGBodyAll = ByteStream.join(ByteStream.intToByteArray(succMSGBody.length), succMSGBody);
+	Successor succMSG 				= new Successor();
+	succMSG.setPeer(getTestPeer("succMSG"));
+	byte[] succMSGBody 				=  succMSG.packMessage();
+	byte[] succMSGBodyAll 				= ByteStream.join(ByteStream.intToByteArray(succMSGBody.length), succMSGBody);
 
-	  byte[] all = ByteStream.join(predMSGBodyAll,registerRequestMSGBodyAll);
+	byte[] all 					= ByteStream.join(predMSGBodyAll,registerRequestMSGBodyAll);
 	  
-	  byte[] allAll = new byte[all.length+10];
-	  System.arraycopy(all, 0, allAll, 0, all.length);
-	  System.arraycopy(succMSGBodyAll, 0, allAll, all.length, 10);
+	byte[] allAll 					= new byte[all.length+10];
+	System.arraycopy(all, 0, allAll, 0, all.length);
+	System.arraycopy(succMSGBodyAll, 0, allAll, all.length, 10);
 	  
-	  ByteBuffer packetBuffer = ByteBuffer.wrap(allAll);
+	ByteBuffer packetBuffer 			= ByteBuffer.wrap(allAll);
 	  
-	  ArrayList<Message>  m = d.decode(packetBuffer);
+	ArrayList<Message>  m 				= d.decode(packetBuffer);
 	  
-	  for (Message msg:m){
-		  System.out.println(msg.getMessageID());
-	  }
+	for (Message msg:m){
+		System.out.println(msg.getMessageID());
+	}
 	  
-	  byte[] remaining = new byte[succMSGBodyAll.length-10];
-	  packetBuffer = ByteBuffer.wrap(remaining);
-	  m = d.decode(packetBuffer);
-	  
-	  for (Message msg:m){
-		  System.out.println(msg.getMessageID());
-	  }
-  	}
+	byte[] remaining 				= new byte[succMSGBodyAll.length-10];
+	packetBuffer 					= ByteBuffer.wrap(remaining);
+	m 						= d.decode(packetBuffer);  
+	for (Message msg:m){
+		System.out.println(msg.getMessageID());
+	}
+
   }
+}
