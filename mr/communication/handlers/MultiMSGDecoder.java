@@ -34,26 +34,25 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
   }
 
   public Message decodeMSG(ByteBuffer socketBuffer) throws IOException {
-	  int l = stillNeededBytes;
+	  int l 						= stillNeededBytes;
 	  if (stillNeededBytes == 0)
-		  stillNeededBytes = socketBuffer.getInt();
+		stillNeededBytes 				= socketBuffer.getInt();
 	  
-	  int stillAvailableBytes = socketBuffer.remaining();
-	  //System.out.println(stillAvailableBytes+" :stillAvailableBytes####################################stillNeededBytes: "+stillNeededBytes+ " ===> "+l);
+	  int stillAvailableBytes 				= socketBuffer.remaining();
 	  if (stillAvailableBytes >= stillNeededBytes){
-		  socketBuffer.get(buffer, pos, stillNeededBytes);
-		  byte[] newBuffer = new byte[pos + stillNeededBytes];
-		  stillNeededBytes = pos = 0;
-    	  System.arraycopy(buffer, 0, newBuffer, 0, newBuffer.length);
-		  try {
+		socketBuffer.get(buffer, pos, stillNeededBytes);
+		byte[] newBuffer 				= new byte[pos + stillNeededBytes];
+		stillNeededBytes 				= pos = 0;
+    	  	System.arraycopy(buffer, 0, newBuffer, 0, newBuffer.length);
+		try {
 			return messageFactory.createMessage(newBuffer);
 		} catch (InstantiationException | IllegalAccessException e) {
 			throw new IOException("Couldn't create message for the recieved bytes!");
 		}
 	  }else{
 		  socketBuffer.get(buffer, pos, stillAvailableBytes);
-		  pos += stillAvailableBytes;
-		  stillNeededBytes = stillNeededBytes - stillAvailableBytes;
+		  pos 						+= stillAvailableBytes;
+		  stillNeededBytes 				= stillNeededBytes - stillAvailableBytes;
 	  }
 	  return null;
   }
