@@ -50,16 +50,16 @@ final public class MultiMSGDecoder implements ProtocolDecoder {
 			throw new IOException("Couldn't create message for the recieved bytes!");
 		}
 	  }else{
-		  socketBuffer.get(buffer, pos, stillAvailableBytes);
-		  pos 						+= stillAvailableBytes;
-		  stillNeededBytes 				= stillNeededBytes - stillAvailableBytes;
+		socketBuffer.get(buffer, pos, stillAvailableBytes);
+		pos 						+= stillAvailableBytes;
+		stillNeededBytes 				= stillNeededBytes - stillAvailableBytes;
 	  }
 	  return null;
   }
 
   private int getMSGLength(ByteBuffer socketBuffer){
 	  while(socketBuffer.hasRemaining() && msgBodyLenPos <4){
-		  msgBodyLen[msgBodyLenPos++] = socketBuffer.get();
+		msgBodyLen[msgBodyLenPos++] = socketBuffer.get();
 	  }
 	  if(msgBodyLenPos == 4){
 		  msgBodyLenPos = 0;
