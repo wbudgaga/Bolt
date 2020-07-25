@@ -132,7 +132,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    */
   private synchronized void processInBuffer() throws IOException {    
 	  //Here should handle the situation where only a portion of the message has been received  
-    ArrayList<Message> msgs = new ArrayList<Message>();
+    ArrayList<Message> msgs 			= new ArrayList<Message>();
     
     if (inBuffer.hasRemaining()){
     	msgs = protocolDecoder.decode(inBuffer);
