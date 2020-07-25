@@ -135,7 +135,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
     ArrayList<Message> msgs 			= new ArrayList<Message>();
     
     if (inBuffer.hasRemaining()){
-    	msgs = protocolDecoder.decode(inBuffer);
+    	msgs 					= protocolDecoder.decode(inBuffer);
 
     	if (!msgs.isEmpty()) {      
     	   	for (Message msg:msgs){
