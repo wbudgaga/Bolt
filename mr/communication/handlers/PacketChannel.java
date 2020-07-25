@@ -107,7 +107,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
   public synchronized void handleRead() {
 	  try {      
 		  inBuffer.clear();
-		  int readBytes = sc.read(inBuffer);     
+		  int readBytes 		= sc.read(inBuffer);     
 		  if (readBytes == -1) {
                		close();
                		listener.socketDisconnected(this);
