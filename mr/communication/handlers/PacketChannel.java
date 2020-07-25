@@ -73,8 +73,8 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
 	  this.sc 				= socketChannel;
 	  this.sc.socket().setReceiveBufferSize(Setting.RECEIVEBUFF_SIZE);
 	  this.sc.socket().setSendBufferSize(Setting.SENDBUFF_SIZE);
-	  this.listener 		= listener;
-	  inBuffer = ByteBuffer.allocateDirect(sc.socket().getReceiveBufferSize());
+	  this.listener 			= listener;
+	  inBuffer 				= ByteBuffer.allocateDirect(sc.socket().getReceiveBufferSize());
 	  inBuffer.position(inBuffer.capacity());
 	   //   inBuffer.flip();
 	  // Registers with read interest.
