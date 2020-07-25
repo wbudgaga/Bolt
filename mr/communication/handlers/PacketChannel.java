@@ -53,7 +53,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    */
   private final LocalMessageHandler listener;
 	
-  private final Object 	LOCK 	 	= new Object();
+  private final Object 	LOCK 	 		= new Object();
 
   
   /**
