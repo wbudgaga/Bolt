@@ -131,12 +131,11 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    * data is available.
    */
   private synchronized void processInBuffer() throws IOException {    
-	  //Here should handle the situation where only a portion of the message has been received  
+    //Here should handle the situation where only a portion of the message has been received  
     ArrayList<Message> msgs 			= new ArrayList<Message>();
     
     if (inBuffer.hasRemaining()){
     	msgs 					= protocolDecoder.decode(inBuffer);
-
     	if (!msgs.isEmpty()) {      
     	   	for (Message msg:msgs){
         		listener.packetArrived(this, msg);//======================>>listener.handle(msg);
@@ -155,7 +154,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
   }
   
   private void reactivateReading() throws IOException {
-	  selector.addChannelInterestNow(sc, SelectionKey.OP_READ);
+    selector.addChannelInterestNow(sc, SelectionKey.OP_READ);
   }
   
   /**
