@@ -85,7 +85,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
   }
   public boolean setRemotePeer(RemotePeer rPeer){
 	  if (remotePeer == null ){
-		  remotePeer = rPeer;
+		  remotePeer 			= rPeer;
 		return true;
 	  }
 	  return false;
