@@ -68,8 +68,8 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    * @throws IOException
    */
   public PacketChannel(SocketChannel socketChannel, SelectorThread selector, ProtocolDecoder protocolDecoder, LocalMessageHandler listener) throws IOException {
-	  this.selector 		= selector;
-	  this.protocolDecoder 	= protocolDecoder;
+	  this.selector 			= selector;
+	  this.protocolDecoder 			= protocolDecoder;
 	  this.sc 				= socketChannel;
 	  this.sc.socket().setReceiveBufferSize(Setting.RECEIVEBUFF_SIZE);
 	  this.sc.socket().setSendBufferSize(Setting.SENDBUFF_SIZE);
