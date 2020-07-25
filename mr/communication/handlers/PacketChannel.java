@@ -39,8 +39,8 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    * This class can only send one packet at a time, there are no
    * queueing mechanisms.
    */
-  private ByteBuffer outBuffer = null;
-  private volatile RemotePeer remotePeer = null;
+  private ByteBuffer outBuffer 			= null;
+  private volatile RemotePeer remotePeer 	= null;
   /**
    * Used to convert raw bytes into packets. 
    * (Strategy design pattern)
@@ -52,8 +52,8 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    * It is notified whenever an error occurs or a packet is read. 
    */
   private final LocalMessageHandler listener;
-	////////////////////////////////////////
-	private final Object 		LOCK 	 	= new Object();
+	
+  private final Object 	LOCK 	 	= new Object();
 
   
   /**
