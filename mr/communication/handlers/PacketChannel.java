@@ -172,7 +172,7 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
     // keeps a reference to the packet. In production code this should copy
     // the contents of the buffer.
 	  synchronized (LOCK) {
-		    outBuffer = packet;
+		    outBuffer 			= packet;
 		    handleWrite();		
 	}
   }
@@ -191,18 +191,17 @@ final public class PacketChannel implements ReadWriteSelectorHandler {
    * only from sendPacket() and from the SelectorThread class.
    */
   public  void handleWrite() {    
-	  try {
-		  while(outBuffer.hasRemaining()){
-			  sc.write(outBuffer);
-		  }
-		  outBuffer.clear(); //outBuffer;
-	      listener.packetSent(this, null);
+    try {
+    	while(outBuffer.hasRemaining()){
+    		sc.write(outBuffer);
+    	}
+    	outBuffer.clear(); //outBuffer;
+    	listener.packetSent(this, null);
 	      
-	  } catch (IOException ioe) {
-	      close();
-	      listener.socketException(this, ioe);
-	  }
-	  
+    	} catch (IOException ioe) {
+    	close();
+    	listener.socketException(this, ioe);
+    }	  
   }
   
   public SocketChannel getSocketChannel() {
