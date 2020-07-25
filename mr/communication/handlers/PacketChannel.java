@@ -26,8 +26,6 @@ import mr.resourcemanagement.execution.mrtasks.management.JobTasksManager;
  * Methods on this class should be called only by the selector's thread 
  * (including the constructor). If necessary, use Selector.invokeLater() 
  * to dispatch a invocation to the selector's thread.
- * 
- * @author Nuno Santos
  */
 final public class PacketChannel implements ReadWriteSelectorHandler {
   /** The associated selector. */
