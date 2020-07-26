@@ -51,8 +51,8 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
   
   //Just for testing
   public static void main(String[] args) throws ClassNotFoundException, IOException {
-	  SimpleProtocolDecoder d = new SimpleProtocolDecoder();
-	  Predecessor r = new Predecessor();
+	  SimpleProtocolDecoder d 			= new SimpleProtocolDecoder();
+	  Predecessor r 				= new Predecessor();
 	  PeerData peer = new PeerData();
 	  peer.setHost("host1");
 	  peer.setNickName("Walid Budgaga");
