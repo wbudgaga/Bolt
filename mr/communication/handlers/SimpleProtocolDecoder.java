@@ -60,8 +60,8 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
 	  peer.setPortNum(5005);
 	  r.setPeer(peer);
 	  byte[] msgBody 				=  r.packMessage();
-	  byte[] all = ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);
-	  byte[]all1 = new byte[28];
+	  byte[] all 					= ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);
+	  byte[]all1 					= new byte[28];
 	  byte[]all2 = new byte[30];
 	  System.arraycopy(all, 0, all1, 0, all1.length);
 	  System.arraycopy(all, 28, all2, 0, all2.length);
