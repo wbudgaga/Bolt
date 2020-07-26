@@ -8,7 +8,6 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 /**
  * Callback interface for receiving events from a Connector. 
  * 
- * @author Nuno Santos
  */
 public interface PacketChannelListener {
   /**
