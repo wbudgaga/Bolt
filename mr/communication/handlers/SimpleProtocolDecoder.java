@@ -27,9 +27,9 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
   }
   public Message decode(ByteBuffer socketBuffer) throws IOException {    
 	  if (stillNeededBytes == 0)
-		  stillNeededBytes = socketBuffer.getInt();
+		  stillNeededBytes 			= socketBuffer.getInt();
 	  
-	  int stillAvailableBytes = socketBuffer.remaining();
+	  int stillAvailableBytes 			= socketBuffer.remaining();
 	  
 	  if (stillAvailableBytes >= stillNeededBytes){
 		  socketBuffer = socketBuffer.get(buffer, pos, stillNeededBytes);
