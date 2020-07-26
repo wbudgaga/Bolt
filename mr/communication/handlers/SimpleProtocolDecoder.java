@@ -42,9 +42,9 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
 			throw new IOException("Couldn't create message for the recieved bytes!");
 		}
 	  }else{
-		  socketBuffer = socketBuffer.get(buffer, pos, stillAvailableBytes);
-		  pos += stillAvailableBytes;
-		  stillNeededBytes = stillNeededBytes - stillAvailableBytes;
+		  socketBuffer 				= socketBuffer.get(buffer, pos, stillAvailableBytes);
+		  pos 					+= stillAvailableBytes;
+		  stillNeededBytes 			= stillNeededBytes - stillAvailableBytes;
 	  }
 	  return null;
   }
