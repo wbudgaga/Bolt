@@ -67,7 +67,7 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
 	  System.arraycopy(all, 28, all2, 0, all2.length);
 	  ByteBuffer packetBuffer = ByteBuffer.wrap(all1); 
 	   
-	  Predecessor r1 = (Predecessor) d.decode(packetBuffer);
+	  Predecessor r1 				= (Predecessor) d.decode(packetBuffer);
 	  ByteBuffer packetBuffer1 = ByteBuffer.wrap(all2); 
 	  
 	  Predecessor r2 = (Predecessor) d.decode(packetBuffer1);
