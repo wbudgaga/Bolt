@@ -32,7 +32,7 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
 	  int stillAvailableBytes 			= socketBuffer.remaining();
 	  
 	  if (stillAvailableBytes >= stillNeededBytes){
-		  socketBuffer = socketBuffer.get(buffer, pos, stillNeededBytes);
+		  socketBuffer 				= socketBuffer.get(buffer, pos, stillNeededBytes);
 		  byte[] newBuffer = new byte[pos + stillNeededBytes];
 		  stillNeededBytes = pos = 0;
     	  System.arraycopy(buffer, 0, newBuffer, 0, newBuffer.length);
