@@ -13,8 +13,8 @@ import mr.dht.peer2peernetwork.wireformates.Predecessor;
 
 final public class SimpleProtocolDecoder implements ProtocolDecoder {
 	private final static int 	BUFFER_SIZE 	= 10*1024;
-	private byte[] 			buffer 			= new byte[BUFFER_SIZE];
-	private int 			pos 			= 0;
+	private byte[] 			buffer 		= new byte[BUFFER_SIZE];
+	private int 			pos 		= 0;
 	private int 			stillNeededBytes= 0;
 	private final MessageFactory messageFactory;
   
