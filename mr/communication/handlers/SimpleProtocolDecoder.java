@@ -53,13 +53,13 @@ final public class SimpleProtocolDecoder implements ProtocolDecoder {
   public static void main(String[] args) throws ClassNotFoundException, IOException {
 	  SimpleProtocolDecoder d 			= new SimpleProtocolDecoder();
 	  Predecessor r 				= new Predecessor();
-	  PeerData peer = new PeerData();
+	  PeerData peer 				= new PeerData();
 	  peer.setHost("host1");
 	  peer.setNickName("Walid Budgaga");
 	  peer.setPeerID(19041972);
 	  peer.setPortNum(5005);
 	  r.setPeer(peer);
-	  byte[] msgBody =  r.packMessage();
+	  byte[] msgBody 				=  r.packMessage();
 	  byte[] all = ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);
 	  byte[]all1 = new byte[28];
 	  byte[]all2 = new byte[30];
