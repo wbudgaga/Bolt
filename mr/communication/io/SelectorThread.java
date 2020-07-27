@@ -104,10 +104,10 @@ final public class SelectorThread implements Runnable {
   }  
   
   public void invokeLater(Runnable run) {
-    synchronized (pendingInvocations) {
-      pendingInvocations.add(run);
-    }
-    selector.wakeup();
+    	synchronized (pendingInvocations) {
+      		pendingInvocations.add(run);
+    	}
+    	selector.wakeup();
   }
   
   public void invokeAndWait(final Runnable task) throws InterruptedException{
