@@ -9,8 +9,6 @@ package mr.communication.io;
  * possible to use exceptions for error handling. Instead,
  * the caller must provide a callback to be used in case
  * of error. 
- * 
- * @author Nuno Santos 
  */
 public interface CallbackErrorHandler {
   /**
