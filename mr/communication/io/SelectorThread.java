@@ -47,15 +47,15 @@ final public class SelectorThread implements Runnable {
   }
   
   public void removeChannelInterestLater(final SelectableChannel channel, final int interest, final CallbackErrorHandler errorHandler)  {
-    invokeLater(new Runnable() {
-      public void run() {
-        try {
-          removeChannelInterestNow(channel, interest);
-        } catch (IOException e) {
-          errorHandler.handleError(e);
-        }
-      }
-    });
+    	invokeLater(new Runnable() {
+      		public void run() {
+        		try {
+          			removeChannelInterestNow(channel, interest);
+        		} catch (IOException e) {
+          			errorHandler.handleError(e);
+        		}
+      		}
+    	});
   }
 
   private void changeKeyInterest(SelectionKey sk, int newInterest) throws IOException {
