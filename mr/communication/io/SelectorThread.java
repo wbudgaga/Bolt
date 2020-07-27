@@ -59,13 +59,13 @@ final public class SelectorThread implements Runnable {
   }
 
   private void changeKeyInterest(SelectionKey sk, int newInterest) throws IOException {
-    try {
-      sk.interestOps(newInterest);
-    } catch (CancelledKeyException cke) {
-      IOException ioe = new IOException("Failed to change channel interest.");
-      ioe.initCause(cke);
-      throw ioe;
-    }
+    	try {
+      		sk.interestOps(newInterest);
+    	} catch (CancelledKeyException cke) {
+      		IOException ioe = new IOException("Failed to change channel interest.");
+      		ioe.initCause(cke);
+      		throw ioe;
+    	}
   }
   public void registerChannelLater(final SelectableChannel channel, final int selectionKeys, final SelectorHandler handlerInfo, final CallbackErrorHandler errorHandler) {
 	invokeLater(new Runnable() {
@@ -74,9 +74,9 @@ final public class SelectorThread implements Runnable {
 				registerChannelNow(channel, selectionKeys, handlerInfo);
 			} catch (IOException e) {
 				errorHandler.handleError(e);
-        }
-      }
-    });
+        		}
+      		}
+    	});
   }  
   public void registerChannelNow(SelectableChannel channel, int selectionKeys, SelectorHandler selHandler) throws IOException {
 	if (Thread.currentThread() != selectorThread) 
