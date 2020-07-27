@@ -23,13 +23,7 @@ final public class SelectorThread implements Runnable {
   }
   
   public void addChannelInterestNow(SelectableChannel channel, int interest) throws IOException {
-/*	  if (Thread.currentThread() != selectorThread) {
-		  System.out.println("Because this method is allowed only to be called from selector thread, the invocation is transfered to corresponding late one"+Thread.currentThread());
-		  addChannelInterestLater(channel, interest, null);
-		  return;
-	     // throw new IOException("Method can only be called from selector thread");
-	  }
-*/	  SelectionKey sk = channel.keyFor(selector);
+	  SelectionKey sk = channel.keyFor(selector);
 	  changeKeyInterest(sk, sk.interestOps() | interest);
   }
 
