@@ -82,25 +82,25 @@ final public class SelectorThread implements Runnable {
 	if (Thread.currentThread() != selectorThread) 
 		  throw new IOException("Method can only be called from selector thread");
     
-    if (!channel.isOpen()) 
-    	throw new IOException("Channel is not open.");
+    	if (!channel.isOpen()) 
+    		throw new IOException("Channel is not open.");
     
-    try {
-    	if (channel.isRegistered()) {
-    		SelectionKey sk 	= channel.keyFor(selector);
-    		assert sk 		!= null : "Channel is already registered with other selector";        
-    		sk.interestOps(selectionKeys);
-    		Object previousAttach 	= sk.attach(selHandler);
-    		assert previousAttach 	!= null;
-    	} else {  
-    		channel.configureBlocking(false);
-    		channel.register(selector, selectionKeys, selHandler);      
-    	}  
-    } catch (Exception e) {
-    	IOException ioe 		= new IOException("Error registering channel.");
-    	ioe.initCause(e);
-    	throw ioe;      
-    }
+    	try {
+    		if (channel.isRegistered()) {
+    			SelectionKey sk 	= channel.keyFor(selector);
+    			assert sk 		!= null : "Channel is already registered with other selector";        
+    			sk.interestOps(selectionKeys);
+    			Object previousAttach 	= sk.attach(selHandler);
+    			assert previousAttach 	!= null;
+    		} else {  
+    			channel.configureBlocking(false);
+    			channel.register(selector, selectionKeys, selHandler);      
+    		}  
+    	} catch (Exception e) {
+    		IOException ioe 		= new IOException("Error registering channel.");
+    		ioe.initCause(e);
+    		throw ioe;      
+    	}
   }  
   
   public void invokeLater(Runnable run) {
