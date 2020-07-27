@@ -42,8 +42,8 @@ final public class SelectorThread implements Runnable {
     	if (Thread.currentThread() != selectorThread) {
       		throw new IOException("Method can only be called from selector thread");
     	}
-    SelectionKey sk 			= channel.keyFor(selector);
-    changeKeyInterest(sk, sk.interestOps() & ~interest);
+    	SelectionKey sk 		= channel.keyFor(selector);
+    	changeKeyInterest(sk, sk.interestOps() & ~interest);
   }
   
   public void removeChannelInterestLater(final SelectableChannel channel, final int interest, final CallbackErrorHandler errorHandler)  {
