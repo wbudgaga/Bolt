@@ -1,4 +1,3 @@
-
 package mr.communication.io;
 
 import java.io.IOException;
@@ -40,9 +39,9 @@ final public class SelectorThread implements Runnable {
   }
   
   public void removeChannelInterestNow(SelectableChannel channel, int interest) throws IOException {
-    if (Thread.currentThread() != selectorThread) {
-      throw new IOException("Method can only be called from selector thread");
-    }
+    	if (Thread.currentThread() != selectorThread) {
+      		throw new IOException("Method can only be called from selector thread");
+    	}
     SelectionKey sk 			= channel.keyFor(selector);
     changeKeyInterest(sk, sk.interestOps() & ~interest);
   }
