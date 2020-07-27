@@ -7,7 +7,6 @@ package mr.communication.io;
  * 
  * Classes wishing to be notified when a ServerSocket receives incoming 
  * connections should implement this interface.
- * 
  */
 public interface AcceptSelectorHandler extends SelectorHandler {
   /**
