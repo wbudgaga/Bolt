@@ -8,7 +8,6 @@ package mr.communication.io;
  * Classes wishing to be notified when a socket is ready to be written
  * or read should implement this interface in order to receive 
  * notifications.
- * 
  */ 
 public interface ReadWriteSelectorHandler extends SelectorHandler {  
   
