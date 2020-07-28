@@ -51,7 +51,6 @@ public class RunJobs  extends Client{
 		for (int i = start; i<end;++i){
 			JobDescriptor job;
 			try {
-				
 				job 	= JobDescriptor.loadfromFile(jobFile, i, "out");
 				System.out.println("Submit   job "+i);
 				submitJob(job);
@@ -67,7 +66,7 @@ public class RunJobs  extends Client{
 	//=============================================================		
 	@Override
 	public void submitJob(JobDescriptor job) {
-		System.out.println("Job: " +job.getJobName()+"\njobID: "+job.getJobID()+"\n number of reducres:"+job.getNumOfReducers());	
+		System.out.println("Job: " + job.getJobName() + "\njobID: " + job.getJobID() + "\n number of reducres:" + job.getNumOfReducers());	
 		//TODO here should find a way find where the data is to start maptask locally
 
 //		submitMapTasks(n - 10 , 1, job);//one map 1
