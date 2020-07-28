@@ -69,9 +69,7 @@ public class RunJobs  extends Client{
 		System.out.println("Job: " + job.getJobName() + "\njobID: " + job.getJobID() + "\n number of reducres:" + job.getNumOfReducers());	
 		//TODO here should find a way find where the data is to start maptask locally
 
-//		submitMapTasks(n - 10 , 1, job);//one map 1
 		int numOfMaps = 77;		
-		// Submitting the <<reduce>> tasks 
 		try {
 			int taskID 				= 0;
 			int numOfReducers 		= job.getNumOfReducers();
