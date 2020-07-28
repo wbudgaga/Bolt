@@ -39,26 +39,26 @@ public class RunJobs  extends Client{
 
 	public RunJobs(String name, int port, String  jobFile, int     numOfJobs) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 		super(name, port);
-		this.jobFile 		= jobFile;
-		this.numOfJobs 		= numOfJobs; 
+		this.jobFile 				= jobFile;
+		this.numOfJobs 				= numOfJobs; 
 	}
 			
 
 	public void submitJobs(String jobFile, int numOfJobs)  {
-		int start 		= 1;
-		int end 		= numOfJobs+1;
-		allJobSubmitted 	= false;
+		int start 				= 1;
+		int end 				= numOfJobs+1;
+		allJobSubmitted 			= false;
 		for (int i = start; i<end;++i){
 			JobDescriptor job;
 			try {
-				job 	= JobDescriptor.loadfromFile(jobFile, i, "out");
+				job 			= JobDescriptor.loadfromFile(jobFile, i, "out");
 				System.out.println("Submit   job "+i);
 				submitJob(job);
 			} catch (NumberFormatException | IOException e) {
 				e.printStackTrace();
 			}
 		}
-		allJobSubmitted 	= true;
+		allJobSubmitted 			= true;
 	}
 	
 	
@@ -69,14 +69,14 @@ public class RunJobs  extends Client{
 		System.out.println("Job: " + job.getJobName() + "\njobID: " + job.getJobID() + "\n number of reducres:" + job.getNumOfReducers());	
 		//TODO here should find a way find where the data is to start maptask locally
 
-		int numOfMaps = 77;		
+		int numOfMaps				= 77;		
 		try {
-			int taskID 				= 0;
+			int taskID 			= 0;
 			int numOfReducers 		= job.getNumOfReducers();
-			long[] reducersKeys 	= DataRouter.getRountingKeys(new ModPartitioner<>(), numOfReducers, job.getJobID());
+			long[] reducersKeys 		= DataRouter.getRountingKeys(new ModPartitioner<>(), numOfReducers, job.getJobID());
 			for(long key:reducersKeys){
 				System.out.println("Submitting reduce"+(taskID+1) +"  rkey="+key);
-				submitReduceTasks(key, taskID++, numOfMaps, job);//=============#OFMaps 22
+				submitReduceTasks(key, taskID++, numOfMaps, job);
 			}
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
