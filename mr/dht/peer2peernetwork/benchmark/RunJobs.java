@@ -45,8 +45,8 @@ public class RunJobs  extends Client{
 			
 
 	public void submitJobs(String jobFile, int numOfJobs)  {
-		int start = 1;
-		int end = numOfJobs+1;
+		int start 		= 1;
+		int end 		= numOfJobs+1;
 		allJobSubmitted = false;
 		for (int i = start; i<end;++i){
 			JobDescriptor job;
