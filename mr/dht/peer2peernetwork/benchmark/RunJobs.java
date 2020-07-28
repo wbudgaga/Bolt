@@ -81,15 +81,16 @@ public class RunJobs  extends Client{
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}	
+		
 		//submitting the <<map>> tasks
 		for(int i=0; i< numOfMaps; ++i){
-			long mapKey = mapIDs[i]-100;
-			System.out.println("Submitting map"+i +"  rkey="+mapKey);
+			long mapKey 			= mapIDs[i]-100;
+			System.out.println("Submitting map" +	i +	"  rkey="+mapKey);
 			submitMapTasks(mapKey, i, job);
 		}
 	}
 	public void handleRandomPeer(RemotePeer rp) throws InvalidFingerTableEntry, IOException{
-		remotePeer = rp;
+		remotePeer 				= rp;
 		//System.out.println("random peer( ("+rp.getID()+") )has been received###########"+jobFile);
 		submitJobs(jobFile, numOfJobs);
 		System.out.println("jobs submitted ...");
@@ -109,8 +110,8 @@ public class RunJobs  extends Client{
 		try{
 			int 	port 			= Integer.parseInt(args[0]);
 			int     numOfJobs		= Integer.parseInt(args[1]);
-			int     numOfReducers	= Integer.parseInt(args[2]);
-			String  jobFile     = "/s/chopin/b/grad/budgaga/noaa/mrWorkdir/benchmark/jobs/jobDesc"+numOfReducers+".txt";
+			int     numOfReducers		= Integer.parseInt(args[2]);
+			String  jobFile     		= "/s/chopin/b/grad/budgaga/noaa/mrWorkdir/benchmark/jobs/jobDesc"+numOfReducers+".txt";
 			RunJobs job= new RunJobs("client",port, jobFile, numOfJobs);
 			job.startup(port);
 			job.findRandomPeer();
