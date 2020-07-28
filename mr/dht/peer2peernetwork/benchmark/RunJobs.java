@@ -39,8 +39,8 @@ public class RunJobs  extends Client{
 
 	public RunJobs(String name, int port, String  jobFile, int     numOfJobs) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 		super(name, port);
-		this.jobFile = jobFile;
-		this.numOfJobs = numOfJobs; 
+		this.jobFile 		= jobFile;
+		this.numOfJobs 		= numOfJobs; 
 	}
 			
 
