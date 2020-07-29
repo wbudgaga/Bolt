@@ -155,7 +155,7 @@ final public class SelectorThread implements Runnable {
         return;
       }
       
-      int selectedKeys = 0;
+      int selectedKeys 			= 0;
       try {
         selectedKeys 			= selector.select();
       } catch (IOException ioe) {
