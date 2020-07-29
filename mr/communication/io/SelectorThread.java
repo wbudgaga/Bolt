@@ -183,7 +183,7 @@ final public class SelectorThread implements Runnable {
           // This prevents the same event from being raised multiple 
           // times.
           sk.interestOps(sk.interestOps() & ~readyOps);
-          SelectorHandler handler =  (SelectorHandler) sk.attachment();          
+          SelectorHandler handler 		=  (SelectorHandler) sk.attachment();          
           
           // Some of the operations set in the selection key
           // might no longer be valid when the handler is executed. 
