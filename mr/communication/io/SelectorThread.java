@@ -201,7 +201,7 @@ final public class SelectorThread implements Runnable {
             ((ConnectorSelectorHandler)handler).handleConnect();            
             
           } else {
-            ReadWriteSelectorHandler rwHandler = (ReadWriteSelectorHandler)handler; 
+            ReadWriteSelectorHandler rwHandler 	= (ReadWriteSelectorHandler)handler; 
             // Readable or writable              
             if (sk.isReadable()) {                
               // It is possible to read
