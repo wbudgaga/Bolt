@@ -62,7 +62,7 @@ final public class SelectorThread implements Runnable {
     	try {
       		sk.interestOps(newInterest);
     	} catch (CancelledKeyException cke) {
-      		IOException ioe = new IOException("Failed to change channel interest.");
+      		IOException ioe 	= new IOException("Failed to change channel interest.");
       		ioe.initCause(cke);
       		throw ioe;
     	}
