@@ -22,7 +22,7 @@ final public class SelectorThread implements Runnable {
   }
   
   public void addChannelInterestNow(SelectableChannel channel, int interest) throws IOException {
-	  SelectionKey sk = channel.keyFor(selector);
+	  SelectionKey sk 		= channel.keyFor(selector);
 	  changeKeyInterest(sk, sk.interestOps() | interest);
   }
 
