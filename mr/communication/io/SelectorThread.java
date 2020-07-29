@@ -174,7 +174,7 @@ final public class SelectorThread implements Runnable {
       // Walk through the collection of ready keys and dispatch
       // any active event.
       while (it.hasNext()) {
-        SelectionKey sk = (SelectionKey)it.next();
+        SelectionKey sk 			= (SelectionKey)it.next();
         it.remove();
         try {
           // Obtain the interest of the key
