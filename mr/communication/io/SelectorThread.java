@@ -135,7 +135,7 @@ final public class SelectorThread implements Runnable {
   private void doInvocations() {
     synchronized (pendingInvocations) {
       for (int i = 0; i < pendingInvocations.size(); i++) {
-        Runnable task 			= (Runnable) pendingInvocations.get(i);
+        Runnable task 				= (Runnable) pendingInvocations.get(i);
         task.run();
       }
       pendingInvocations.clear();
