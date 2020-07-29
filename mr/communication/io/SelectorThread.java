@@ -155,9 +155,9 @@ final public class SelectorThread implements Runnable {
         return;
       }
       
-      int selectedKeys 			= 0;
+      int selectedKeys 				= 0;
       try {
-        selectedKeys 			= selector.select();
+        selectedKeys 				= selector.select();
       } catch (IOException ioe) {
         // Select should never throw an exception under normal 
         // operation. If this happens, print the error and try to 
@@ -170,7 +170,7 @@ final public class SelectorThread implements Runnable {
     	  continue;
       
       // Someone is ready for IO, get the ready keys
-      Iterator it = selector.selectedKeys().iterator();
+      Iterator it 				= selector.selectedKeys().iterator();
       // Walk through the collection of ready keys and dispatch
       // any active event.
       while (it.hasNext()) {
