@@ -115,7 +115,7 @@ final public class SelectorThread implements Runnable {
     	task.run();      
     } else {
       // Used to deliver the notification that the task is executed    
-      final Object latch 		= new Object();
+      final Object latch 			= new Object();
       synchronized (latch) {
         // Uses the invokeLater method with a newly created task 
         this.invokeLater(new Runnable() {
