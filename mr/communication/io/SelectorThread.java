@@ -157,7 +157,7 @@ final public class SelectorThread implements Runnable {
       
       int selectedKeys = 0;
       try {
-        selectedKeys 		= selector.select();
+        selectedKeys 			= selector.select();
       } catch (IOException ioe) {
         // Select should never throw an exception under normal 
         // operation. If this happens, print the error and try to 
