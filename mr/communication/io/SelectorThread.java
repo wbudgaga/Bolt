@@ -230,7 +230,7 @@ final public class SelectorThread implements Runnable {
     
   private void closeSelectorAndChannels() {
     Set keys 				= selector.keys();
-    for (Iterator iter 		= keys.iterator(); iter.hasNext();) {
+    for (Iterator iter 			= keys.iterator(); iter.hasNext();) {
       SelectionKey key 		= (SelectionKey)iter.next();
       try {
         key.channel().close();
