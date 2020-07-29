@@ -7,22 +7,22 @@ import java.util.*;
 final public class SelectorThread implements Runnable {
   private Selector selector;
   private Thread selectorThread;
-  private boolean closeRequested 	= false;
-  private final List pendingInvocations = new ArrayList(32);
+  private boolean closeRequested 		= false;
+  private final List pendingInvocations 	= new ArrayList(32);
   
   public SelectorThread() throws IOException {
-	  selector 			= Selector.open();
-	  selectorThread 		= new Thread(this);
+	  selector 				= Selector.open();
+	  selectorThread 			= new Thread(this);
 	  selectorThread.start();
   }
   
   public void requestClose() {
-	  closeRequested 		= true;
+	  closeRequested 			= true;
 	  selector.wakeup();
   }
   
   public void addChannelInterestNow(SelectableChannel channel, int interest) throws IOException {
-	  SelectionKey sk 		= channel.keyFor(selector);
+	  SelectionKey sk 			= channel.keyFor(selector);
 	  changeKeyInterest(sk, sk.interestOps() | interest);
   }
 
@@ -42,7 +42,7 @@ final public class SelectorThread implements Runnable {
     	if (Thread.currentThread() != selectorThread) {
       		throw new IOException("Method can only be called from selector thread");
     	}
-    	SelectionKey sk 		= channel.keyFor(selector);
+    	SelectionKey sk 			= channel.keyFor(selector);
     	changeKeyInterest(sk, sk.interestOps() & ~interest);
   }
   
@@ -62,7 +62,7 @@ final public class SelectorThread implements Runnable {
     	try {
       		sk.interestOps(newInterest);
     	} catch (CancelledKeyException cke) {
-      		IOException ioe 	= new IOException("Failed to change channel interest.");
+      		IOException ioe 		= new IOException("Failed to change channel interest.");
       		ioe.initCause(cke);
       		throw ioe;
     	}
@@ -229,7 +229,7 @@ final public class SelectorThread implements Runnable {
   }
     
   private void closeSelectorAndChannels() {
-    Set keys = selector.keys();
+    Set keys 				= selector.keys();
     for (Iterator iter 		= keys.iterator(); iter.hasNext();) {
       SelectionKey key 		= (SelectionKey)iter.next();
       try {
