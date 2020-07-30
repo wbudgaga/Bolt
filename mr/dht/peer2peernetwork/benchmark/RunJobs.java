@@ -61,8 +61,6 @@ public class RunJobs  extends Client{
 		allJobSubmitted 			= true;
 	}
 	
-	
-//#############################################################################################
 	//=============================================================		
 	@Override
 	public void submitJob(JobDescriptor job) {
