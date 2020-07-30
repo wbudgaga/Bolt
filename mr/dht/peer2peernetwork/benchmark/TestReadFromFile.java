@@ -61,9 +61,8 @@ public class TestReadFromFile {
   	   	long start 			= System.currentTimeMillis();
 		int offset =0;
 		int remaining;// = data.length;
-		while ((f.read( bytes, 0, bytes.length )) != -1 ){
-		}
-		long end = System.currentTimeMillis();
+		while ((f.read( bytes, 0, bytes.length )) != -1 ){ }
+		long end 			= System.currentTimeMillis();
 		f.close();
 		System.out.println("  time: "+ (end - start)+ " ms");
 		return (int) (end - start);
