@@ -70,8 +70,8 @@ public class TestReadFromFile {
 
 	public int readUsingNIO(String fn, int bufSize) throws IOException{
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
-		ByteBuffer bb = ByteBuffer.allocateDirect( bufSize );
-		long start = System.currentTimeMillis();
+		ByteBuffer bb 			= ByteBuffer.allocateDirect( bufSize );
+		long start 			= System.currentTimeMillis();
 		while (fChannel.read(bb) != -1 ){
 			bb.clear();
 		}
