@@ -157,10 +157,9 @@ public class TestReadFromFile {
 	}
 
 	public void testOutputStream3(String fn1, String fn2, int itr) throws IOException, InterruptedException{
-		
 		for (int j=0; j<buffSizes.length; ++j){
-			int sum0 =0;
-			int sum1 =0;
+			int sum0 		= 0;
+			int sum1 		= 0;
 			byte[] bytes = new byte[buffSizes[j]];
 			for (int i=0; i<itr; ++i){
 				Thread.sleep(100);
