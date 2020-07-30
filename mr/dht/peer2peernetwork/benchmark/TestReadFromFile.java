@@ -49,13 +49,13 @@ public class TestReadFromFile {
 	public int readUsingFileInputStreamArray(String fn, byte[] bytes) throws IOException{
 		FileInputStream f 		= new FileInputStream(fn);
 		long start 			= System.currentTimeMillis();
-		while ((f.read( bytes, 0, bytes.length )) != -1 ){
-		}
-	    long end = System.currentTimeMillis();
+		while ((f.read( bytes, 0, bytes.length )) != -1 ){ }
+	    	long end 			= System.currentTimeMillis();
 	    f.close();
 	    System.out.println("  time: "+ (end - start)  + " ms");
 	    return (int) (end - start);
 	}
+	
 	public int readUsingBufferedIntputStream(String fn,  byte[] bytes) throws IOException{
 		BufferedInputStream f = new BufferedInputStream(new FileInputStream(fn), bytes.length);
   	   long start = System.currentTimeMillis();
