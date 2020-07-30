@@ -113,13 +113,13 @@ public class TestReadFromFile {
 			int sum0 		= 0;
 			int sum1 		= 0;
 			byte[] bytes 		= new byte[buffSizes[j]];
-			for (int i=0; i<itr; ++i){
+			for (int i=0; i < itr; ++i){
 				Thread.sleep(100);
-				sum0 += readUsingFileInputStreamArray(fn1, bytes);
-				sum1 += readUsingFileInputStreamArray(fn2, bytes);
+				sum0 		+= readUsingFileInputStreamArray(fn1, bytes);
+				sum1 		+= readUsingFileInputStreamArray(fn2, bytes);
 			}
-			System.out.println("fake: readUsingFileInputStreamArray, "+labels[j]+": "+(sum0/(float)itr));
-			System.out.println("readUsingFileInputStreamArray, "+labels[j]+": "+(sum1/(float)itr));
+			System.out.println("fake: readUsingFileInputStreamArray, " + labels[j] + ": " + (sum0/(float)itr));
+			System.out.println("readUsingFileInputStreamArray, " + labels[j] + ": " + (sum1/(float)itr));
 			System.out.println("=======================================================");
 		}
 	}
