@@ -134,8 +134,8 @@ public class TestReadFromFile {
 				sum0 		+= readUsingBufferedIntputStream(fn1, bytes);
 				sum1 		+= readUsingBufferedIntputStream(fn2, bytes);
 			}
-			System.out.println("fake: readUsingBufferedIntputStream, "+labels[j]+": "+(sum0/(float)itr));
-			System.out.println("readUsingBufferedIntputStream, "+labels[j]+": "+(sum1/(float)itr));
+			System.out.println("fake: readUsingBufferedIntputStream, " + labels[j] + ": " + (sum0/(float)itr));
+			System.out.println("readUsingBufferedIntputStream, " + labels[j] + ": " + (sum1/(float)itr));
 			System.out.println("=======================================================");
 		}
 	}
