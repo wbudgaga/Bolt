@@ -47,8 +47,8 @@ public class TestReadFromFile {
 	}
 
 	public int readUsingFileInputStreamArray(String fn, byte[] bytes) throws IOException{
-		FileInputStream f = new FileInputStream(fn);
-		long start = System.currentTimeMillis();
+		FileInputStream f 		= new FileInputStream(fn);
+		long start 			= System.currentTimeMillis();
 		while ((f.read( bytes, 0, bytes.length )) != -1 ){
 		}
 	    long end = System.currentTimeMillis();
