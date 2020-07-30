@@ -75,11 +75,12 @@ public class TestReadFromFile {
 		while (fChannel.read(bb) != -1 ){
 			bb.clear();
 		}
-		long end = System.currentTimeMillis();
+		long end 			= System.currentTimeMillis();
 		fChannel.close();
-		System.out.println("  time: "+ (end - start)+ " ms");
+		System.out.println("  time: " + (end - start) + " ms");
 		return (int) (end - start);
 	}
+	
 	public int storeUsingNIOMapped(String fn, byte[] bytes) throws IOException{
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
 		int numOfRegions			= (int) (fChannel.size( ) / Integer.MAX_VALUE);
