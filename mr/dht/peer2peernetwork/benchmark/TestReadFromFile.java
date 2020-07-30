@@ -72,7 +72,7 @@ public class TestReadFromFile {
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
 		ByteBuffer bb 			= ByteBuffer.allocateDirect( bufSize );
 		long start 			= System.currentTimeMillis();
-		while (fChannel.read(bb) != -1 ){
+		while (fChannel.read(bb) != -1){
 			bb.clear();
 		}
 		long end 			= System.currentTimeMillis();
@@ -84,10 +84,10 @@ public class TestReadFromFile {
 	public int storeUsingNIOMapped(String fn, byte[] bytes) throws IOException{
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
 		int numOfRegions		= (int) (fChannel.size( ) / Integer.MAX_VALUE);
-		long start = System.currentTimeMillis();
+		long start 			= System.currentTimeMillis();
 		int i;
 		for (i=0; i<numOfRegions; ++i){
-			MappedByteBuffer mb = fChannel.map( FileChannel.MapMode.READ_ONLY, Integer.MAX_VALUE * (long)i , Integer.MAX_VALUE);
+			MappedByteBuffer mb 	= fChannel.map( FileChannel.MapMode.READ_ONLY, Integer.MAX_VALUE * (long)i , Integer.MAX_VALUE);
 		
 			while (mb.hasRemaining()){
 				int len = mb.remaining()>bytes.length?bytes.length:mb.remaining();
