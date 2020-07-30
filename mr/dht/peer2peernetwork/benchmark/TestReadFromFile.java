@@ -57,8 +57,8 @@ public class TestReadFromFile {
 	}
 	
 	public int readUsingBufferedIntputStream(String fn,  byte[] bytes) throws IOException{
-		BufferedInputStream f = new BufferedInputStream(new FileInputStream(fn), bytes.length);
-  	   long start = System.currentTimeMillis();
+		BufferedInputStream f 		= new BufferedInputStream(new FileInputStream(fn), bytes.length);
+  	   	long start 			= System.currentTimeMillis();
 		int offset =0;
 		int remaining;// = data.length;
 		while ((f.read( bytes, 0, bytes.length )) != -1 ){
