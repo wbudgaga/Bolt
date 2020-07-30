@@ -34,8 +34,8 @@ public class TestReadFromFile {
 
 	
 	public void createRandomData(String fn, int size) throws IOException{
-		byte[] data = new byte[size];
-		Random randomGenerater = new Random();
+		byte[] data 			= new byte[size];
+		Random randomGenerater 		= new Random();
 		randomGenerater.nextBytes(data);
 		FileChannel fChannel 		= new FileOutputStream(fn).getChannel();
 		for (int i=0; i<50;++i){
