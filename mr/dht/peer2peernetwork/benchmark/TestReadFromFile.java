@@ -51,9 +51,9 @@ public class TestReadFromFile {
 		long start 			= System.currentTimeMillis();
 		while ((f.read( bytes, 0, bytes.length )) != -1 ){ }
 	    	long end 			= System.currentTimeMillis();
-	    f.close();
-	    System.out.println("  time: "+ (end - start)  + " ms");
-	    return (int) (end - start);
+	    	f.close();
+	    	System.out.println("  time: "+ (end - start)  + " ms");
+	    	return (int) (end - start);
 	}
 	
 	public int readUsingBufferedIntputStream(String fn,  byte[] bytes) throws IOException{
