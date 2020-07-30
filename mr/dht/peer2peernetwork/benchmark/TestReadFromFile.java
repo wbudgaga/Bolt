@@ -95,15 +95,14 @@ public class TestReadFromFile {
 		}
 		
 		MappedByteBuffer mb 		= fChannel.map( FileChannel.MapMode.READ_ONLY, Integer.MAX_VALUE * (long)i ,fChannel.size( ) - Integer.MAX_VALUE * (long)i);
-		
 		while (mb.hasRemaining()){
 			int len 		= mb.remaining()>bytes.length?bytes.length:mb.remaining();
 			mb.get(bytes, 0, len);			
 		}
 
-		long end = System.currentTimeMillis();
+		long end 			= System.currentTimeMillis();
 		fChannel.close();
-		System.out.println("  time: "+ (end - start)+ " ms");
+		System.out.println("  time: " + (end - start) + " ms");
 		return (int) (end - start);
 	}
 
