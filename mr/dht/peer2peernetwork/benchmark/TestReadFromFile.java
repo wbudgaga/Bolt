@@ -30,7 +30,7 @@ public class TestReadFromFile {
 //	private static final int RECSIZE 		= RECORD.getBytes().length;
 	
 	public int[] buffSizes			= {8*Setting.KILO, 16*Setting.KILO, 32*Setting.KILO, 64*Setting.KILO, 128*Setting.KILO, 265*Setting.KILO, 512*Setting.KILO,Setting.MEGA, 8*Setting.MEGA, 16*Setting.MEGA, 32*Setting.MEGA,64*Setting.MEGA, 128*Setting.MEGA, 265*Setting.MEGA};
-	public String[] labels={"8K"," 16K"," 32K"," 64K"," 128K"," 265K"," 512K","1M","8M","16M","32M","64M","128M","265M"};
+	public String[] labels			= {"8K"," 16K"," 32K"," 64K"," 128K"," 265K"," 512K","1M","8M","16M","32M","64M","128M","265M"};
 
 	
 	public void createRandomData(String fn, int size) throws IOException{
