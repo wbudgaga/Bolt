@@ -145,13 +145,13 @@ public class TestReadFromFile {
 			int sum0 		= 0;
 			int sum1 		= 0;
 			byte[] bytes 		= new byte[buffSizes[j]];
-			for (int i=0; i<itr; ++i){
+			for (int i=0; i < itr; ++i){
 				Thread.sleep(100);
-				sum0 += readUsingNIO(fn1, buffSizes[j]);
-				sum1 += readUsingNIO(fn2, buffSizes[j]);
+				sum0 		+= readUsingNIO(fn1, buffSizes[j]);
+				sum1 		+= readUsingNIO(fn2, buffSizes[j]);
 			}
-			System.out.println("fake: readUsingNIO, "+labels[j]+": "+(sum0/(float)itr));
-			System.out.println("readUsingNIO, "+labels[j]+": "+(sum1/(float)itr));
+			System.out.println("fake: readUsingNIO, " + labels[j] + ": " + (sum0/(float)itr));
+			System.out.println("readUsingNIO, " + labels[j] + ": " + (sum1/(float)itr));
 			System.out.println("=======================================================");
 		}
 	}
