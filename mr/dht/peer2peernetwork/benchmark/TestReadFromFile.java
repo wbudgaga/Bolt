@@ -175,8 +175,8 @@ public class TestReadFromFile {
 	public static void main(String[] args) throws IOException, InterruptedException{//input: full file name, #iterations
 		String fn1			= args[0];//faKE FILE
 		String fn2			= args[1];//ORIGINAL FILE
-		int itr = Integer.parseInt(args[2]);
-		TestReadFromFile twtf = new TestReadFromFile();
+		int itr 			= Integer.parseInt(args[2]);
+		TestReadFromFile twtf 		= new TestReadFromFile();
 		//twtf.createRandomData(fn1, 512*Setting.MEGA);
 		UtilClass.fileAsOutputDst("/tmp/readOpEvaluation.txt");
 		twtf.testOutputStream0(fn1, fn2, itr);
