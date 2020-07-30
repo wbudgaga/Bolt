@@ -38,8 +38,8 @@ public class TestReadFromFile {
 		Random randomGenerater 		= new Random();
 		randomGenerater.nextBytes(data);
 		FileChannel fChannel 		= new FileOutputStream(fn).getChannel();
-		for (int i=0; i<50;++i){
-			ByteBuffer bb = ByteBuffer.wrap(data);
+		for (int i=0; i<50; ++i){
+			ByteBuffer bb 		= ByteBuffer.wrap(data);
 			while (bb.hasRemaining())
 				fChannel.write(bb);
 		}
