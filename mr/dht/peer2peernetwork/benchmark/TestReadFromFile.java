@@ -52,7 +52,7 @@ public class TestReadFromFile {
 		while ((f.read( bytes, 0, bytes.length )) != -1 ){ }
 	    	long end 			= System.currentTimeMillis();
 	    	f.close();
-	    	System.out.println("  time: "+ (end - start)  + " ms");
+	    	System.out.println("  time: " + (end - start)  + " ms");
 	    	return (int) (end - start);
 	}
 	
@@ -64,7 +64,7 @@ public class TestReadFromFile {
 		while ((f.read( bytes, 0, bytes.length )) != -1 ){ }
 		long end 			= System.currentTimeMillis();
 		f.close();
-		System.out.println("  time: "+ (end - start)+ " ms");
+		System.out.println("  time: "+ (end - start) + " ms");
 		return (int) (end - start);
 	}
 
