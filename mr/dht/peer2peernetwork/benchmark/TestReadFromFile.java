@@ -124,17 +124,15 @@ public class TestReadFromFile {
 		}
 	}
 
-
 	public void testOutputStream1(String fn1, String fn2, int itr) throws IOException, InterruptedException{
-		
 		for (int j=0; j<buffSizes.length; ++j){
 			int sum0 		= 0;
 			int sum1 		= 0;
 			byte[] bytes = new byte[buffSizes[j]];
-			for (int i=0; i<itr; ++i){
+			for (int i = 0; i < itr; ++i){
 				Thread.sleep(100);
-				sum0 += readUsingBufferedIntputStream(fn1, bytes);
-				sum1 += readUsingBufferedIntputStream(fn2, bytes);
+				sum0 		+= readUsingBufferedIntputStream(fn1, bytes);
+				sum1 		+= readUsingBufferedIntputStream(fn2, bytes);
 			}
 			System.out.println("fake: readUsingBufferedIntputStream, "+labels[j]+": "+(sum0/(float)itr));
 			System.out.println("readUsingBufferedIntputStream, "+labels[j]+": "+(sum1/(float)itr));
