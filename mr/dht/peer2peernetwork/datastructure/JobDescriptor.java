@@ -160,9 +160,9 @@ public class JobDescriptor {
 			return null;
 		}
 		JobDescriptor[] job 	= new JobDescriptor[n];
-		for (int i=1; i<=n;++i){
-			job[i-1] = new JobDescriptor();
-			String jobName = "job"+i;
+		for (int i=1; i <= n; ++i){
+			job[i-1] 	= new JobDescriptor();
+			String jobName 	= "job"+i;
 			job[i-1].setJobID(f.hash(jobName));
 			job[i-1].setJobName(jobName);
 			job[i-1].setNumOfReducers(1);
