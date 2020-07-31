@@ -38,13 +38,13 @@ public class JobDescriptor {
 		return jobName;
 	}
 	public void setJobName(String jobName) {
-		this.jobName = jobName;
+		this.jobName 		= jobName;
 	}
 	public int getMapInKeyType() {
 		return mapInKeyType;
 	}
 	public void setMapInKeyType(int mapInKeyType) {
-		this.mapInKeyType = mapInKeyType;
+		this.mapInKeyType 	= mapInKeyType;
 	}
 	public int getMapInValueType() {
 		return mapInValueType;
