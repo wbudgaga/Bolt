@@ -135,8 +135,8 @@ public class JobDescriptor {
 		return job;
 	}	
 */	public static JobDescriptor loadfromFile(String filename) throws NumberFormatException, IOException{
-		FileReader fr = new FileReader(filename);
-		BufferedReader buf = new BufferedReader(fr);
+		FileReader fr 		= new FileReader(filename);
+		BufferedReader buf 	= new BufferedReader(fr);
 		
 		JobDescriptor job = new JobDescriptor();
 		String jobName = buf.readLine().split(":")[1];
