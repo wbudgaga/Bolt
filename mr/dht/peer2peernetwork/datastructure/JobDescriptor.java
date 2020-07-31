@@ -62,13 +62,13 @@ public class JobDescriptor {
 		return mapOutValueType;
 	}
 	public void setMapOutValueType(int mapOutValueType) {
-		this.mapOutValueType = mapOutValueType;
+		this.mapOutValueType 	= mapOutValueType;
 	}
 	public int getReduceOutKeyType() {
 		return reduceOutKeyType;
 	}
 	public void setReduceOutKeyType(int reduceOutKeyType) {
-		this.reduceOutKeyType = reduceOutKeyType;
+		this.reduceOutKeyType 	= reduceOutKeyType;
 	}
 	public int getReduceOutValueType() {
 		return reduceOutValueType;
