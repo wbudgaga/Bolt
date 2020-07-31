@@ -28,13 +28,11 @@ public class JobDescriptor {
 	private String 	jobReduceClassName;
 	private int 	numOfReducers;
 	
-	
-	
 	public long getJobID() {
 		return jobID;
 	}
 	public void setJobID(long jobID) {
-		this.jobID = jobID;
+		this.jobID 		= jobID;
 	}
 	public String getJobName() {
 		return jobName;
