@@ -138,8 +138,8 @@ public class JobDescriptor {
 		FileReader fr 		= new FileReader(filename);
 		BufferedReader buf 	= new BufferedReader(fr);
 		
-		JobDescriptor job = new JobDescriptor();
-		String jobName = buf.readLine().split(":")[1];
+		JobDescriptor job 	= new JobDescriptor();
+		String jobName 		= buf.readLine().split(":")[1];
 		job.setJobName(jobName);
 		job.setJobID(UtilClass.hashMKey(jobName));
 		job.setNumOfReducers(Integer.parseInt(buf.readLine().split(":")[1]));
