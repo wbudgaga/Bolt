@@ -153,13 +153,13 @@ public class JobDescriptor {
 	public static JobDescriptor[] createJobs(int n) throws NumberFormatException, IOException{
 		HashFunction f;
 		try {
-			f = new HashFunction();
+			f 		= new HashFunction();
 		} catch (NoSuchAlgorithmException e) {
 			System.out.println("Problem by hashing the job title");
 			e.printStackTrace();
 			return null;
 		}
-		JobDescriptor[] job = new JobDescriptor[n];
+		JobDescriptor[] job 	= new JobDescriptor[n];
 		for (int i=1; i<=n;++i){
 			job[i-1] = new JobDescriptor();
 			String jobName = "job"+i;
