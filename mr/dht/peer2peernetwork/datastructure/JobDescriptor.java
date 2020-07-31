@@ -80,14 +80,14 @@ public class JobDescriptor {
 		return jobInputData;
 	}
 	public void setJobInputData(String jobInputData) {
-		this.jobInputData = jobInputData;
+		this.jobInputData 	= jobInputData;
 	}
 	
 	public String getJobOutputName() {
 		return outputName;
 	}
 	public void setJobOutputName(String jobOutputName) {
-		this.outputName = jobOutputName;
+		this.outputName 	= jobOutputName;
 	}
 
 	public int getNumOfReducers() {
