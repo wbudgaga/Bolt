@@ -50,13 +50,13 @@ public class JobDescriptor {
 		return mapInValueType;
 	}
 	public void setMapInValueType(int mapInValueType) {
-		this.mapInValueType = mapInValueType;
+		this.mapInValueType 	= mapInValueType;
 	}
 	public int getMapOutKeyType() {
 		return mapOutKeyType;
 	}
 	public void setMapOutKeyType(int mapOutKeyType) {
-		this.mapOutKeyType = mapOutKeyType;
+		this.mapOutKeyType 	= mapOutKeyType;
 	}
 	public int getMapOutValueType() {
 		return mapOutValueType;
