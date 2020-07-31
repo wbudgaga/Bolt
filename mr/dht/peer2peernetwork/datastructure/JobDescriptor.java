@@ -176,9 +176,9 @@ public class JobDescriptor {
 
 	
 	public static void main(String[] s) throws NumberFormatException, IOException{
-		JobDescriptor j = JobDescriptor.loadfromFile("c:\\tmp\\data\\jobDesc.txt");
+		JobDescriptor j 	= JobDescriptor.loadfromFile("c:\\tmp\\data\\jobDesc.txt");
 		System.out.println(j.getJobName());
-		JobDescriptor job =j;
-		System.out.println("Job: " +job.getJobName()+"\njobID: "+job.getJobID()+"\n number of reducres:"+job.getNumOfReducers()+" ===== "+job.getJobOutputName());	
+		JobDescriptor job 	= j;
+		System.out.println("Job: " + job.getJobName() + "\njobID: " + job.getJobID() + "\n number of reducres:" + job.getNumOfReducers() + " ===== " + job.getJobOutputName());	
 	}
 }
