@@ -94,19 +94,19 @@ public class JobDescriptor {
 		return numOfReducers; 
 	}
 	public void setNumOfReducers(int numOfReducers) {
-		this.numOfReducers = numOfReducers;
+		this.numOfReducers 	= numOfReducers;
 	}
 	public String getJobReduceClassName() {
 		return jobReduceClassName;
 	}
 	public void setJobReduceClassName(String jobReduceClassName) {
-		this.jobReduceClassName = jobReduceClassName;
+		this.jobReduceClassName	= jobReduceClassName;
 	}
 	public String getJobMapClassName() {
 		return jobMapClassName;
 	}
 	public void setJobMapClassName(String jobMapClassName) {
-		this.jobMapClassName = jobMapClassName;
+		this.jobMapClassName 	= jobMapClassName;
 	}
 	
 /*	public static JobDescriptor loadfromFile(String filename) throws NumberFormatException, IOException{
