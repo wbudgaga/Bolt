@@ -39,7 +39,7 @@ public class ClassLoader {
 		Enumeration e 			= jarFile.entries();
 
 		URL[] urls 			= { new URL("jar:file:" + path+"!/") };
-		URLClassLoader cl = URLClassLoader.newInstance(urls);
+		URLClassLoader cl 		= URLClassLoader.newInstance(urls);
 
 		    while (e.hasMoreElements()) {
 		        JarEntry je 		= (JarEntry) e.nextElement();
