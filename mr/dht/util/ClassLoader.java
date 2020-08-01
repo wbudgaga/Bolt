@@ -42,7 +42,7 @@ public class ClassLoader {
 		URLClassLoader cl = URLClassLoader.newInstance(urls);
 
 		    while (e.hasMoreElements()) {
-		        JarEntry je = (JarEntry) e.nextElement();
+		        JarEntry je 		= (JarEntry) e.nextElement();
 		        if(je.isDirectory() || !je.getName().endsWith(".class")){
 		            continue;
 		        }
