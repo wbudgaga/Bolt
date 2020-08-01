@@ -28,6 +28,7 @@ public class ClassLoader {
 
 		return ( Class<MRTask<K1,V1,K2,V2>>) getClassLoader(path).loadClass(cName);
 	}
+	
 	public static <K, V> Class<Partitioner<K,V>> loadPartitioner(String path, String cName) throws MalformedURLException, ClassNotFoundException{
 		if (path == null || path.isEmpty())
 			return  (Class<Partitioner<K, V>>) Class.forName(cName);
