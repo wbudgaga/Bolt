@@ -17,8 +17,8 @@ import mr.resourcemanagement.execution.mrtasks.MRTask;
 
 public class ClassLoader {
 	public static URLClassLoader getClassLoader(String path) throws MalformedURLException{
-		File f 		= new File(path);
-		URL[] cp 	= {f.toURI().toURL()};
+		File f 				= new File(path);
+		URL[] cp 			= {f.toURI().toURL()};
 		return  new URLClassLoader(cp);
 	}
 	
