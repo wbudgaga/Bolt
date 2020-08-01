@@ -34,11 +34,9 @@ public class ClassLoader {
 		return (Class<Partitioner<K, V>>) getClassLoader(path).loadClass(cName);
 	}
 	
-
-	
 	public static void loadingJarClass(String path) throws IOException, ClassNotFoundException{
-		JarFile jarFile = new JarFile(path);
-		Enumeration e = jarFile.entries();
+		JarFile jarFile 		= new JarFile(path);
+		Enumeration e 			= jarFile.entries();
 
 		URL[] urls = { new URL("jar:file:" + path+"!/") };
 		URLClassLoader cl = URLClassLoader.newInstance(urls);
