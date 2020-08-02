@@ -26,8 +26,9 @@ public class FingerTable {
 	}
 	
 	protected void resetPredecessor(){
-		predecessorID   = NONE;
+		predecessorID   			= NONE;
 	}
+	
 	private void resetTable(){
 		resetPredecessor();
 		Arrays.fill(table,peerID); 
@@ -35,7 +36,7 @@ public class FingerTable {
 	
 	//return the finger table entry at position idx
 	public long getSuccValueAtPos(int idx){
-		long val = (long) (peerID + Math.pow(2.0, idx));
+		long val 				= (long) (peerID + Math.pow(2.0, idx));
 		return val % maxNumOfTheRingNodes;
 	}
 	
