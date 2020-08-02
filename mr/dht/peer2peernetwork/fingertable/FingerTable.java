@@ -156,9 +156,9 @@ public class FingerTable {
 	}
 	
 	public void print(){
-		System.out.println("Predecessor:"+getPredecessorID());
-		System.out.println("The Peer   :"+peerID);
-		System.out.println("Successor  :"+getSuccessor());
+		System.out.println("Predecessor:" + getPredecessorID());
+		System.out.println("The Peer   :" + peerID);
+		System.out.println("Successor  :" + getSuccessor());
 		for (int i =0; i < table.length; ++i)
 			System.out.println("FT[" + i + "]=" + table[i]);
 	}
