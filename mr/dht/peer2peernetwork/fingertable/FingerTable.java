@@ -57,7 +57,7 @@ public class FingerTable {
 			throw new InvalidFingerTableEntry("Invalid finger table position to add with!");
 		
 		for (int i = pos;i<table.length; ++i){
-			value =setContentAtPos(i , value);
+			value 				= setContentAtPos(i , value);
 		}		
 		return value;
 	}
