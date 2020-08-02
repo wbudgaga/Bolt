@@ -178,6 +178,7 @@ public class FingerTable {
 	public long getPredecessorID() {
 		return predecessorID;
 	}
+	
 	public long lookup(long id){
 		long succID 				= getContentAtPos(SUCCESSORIdx);
 		if (id == succID || canBeSuccessor(getPeerID(),id,succID))
@@ -187,7 +188,7 @@ public class FingerTable {
 	}
 
 	public static void main(String s[]) throws InvalidFingerTableEntry{
-		FingerTable ft = new FingerTable(null,5, 4);
+		FingerTable ft 				= new FingerTable(null,5, 4);
 		ft.addEntry(8);
 		ft.print();
 /*		ft.addEntry(9);
@@ -202,6 +203,5 @@ public class FingerTable {
 		else
 			 r = ft.succ(id);
 		System.out.println("lookup for 10 ==>"+r);
-*/	}
-	
+*/	}	
 }
