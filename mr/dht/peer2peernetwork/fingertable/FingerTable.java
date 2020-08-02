@@ -160,15 +160,17 @@ public class FingerTable {
 		System.out.println("The Peer   :"+peerID);
 		System.out.println("Successor  :"+getSuccessor());
 		for (int i =0; i < table.length; ++i)
-			System.out.println("FT["+i+"]="+table[i]);
+			System.out.println("FT[" + i + "]=" + table[i]);
 	}
+	
 	public long getPeerID() {
 		return peerID;
 	}
 
 	public void setPeerID(long peerID) {
-		this.peerID = peerID;
+		this.peerID 				= peerID;
 	}
+	
 	public long getSuccessor() {
 		return getContentAtPos(SUCCESSORIdx);
 	}
@@ -177,13 +179,12 @@ public class FingerTable {
 		return predecessorID;
 	}
 	public long lookup(long id){
-		long succID = getContentAtPos(SUCCESSORIdx);
+		long succID 				= getContentAtPos(SUCCESSORIdx);
 		if (id == succID || canBeSuccessor(getPeerID(),id,succID))
 			return succID;
 		else
 			return findClosestPrecedingNode(id);
 	}
-
 
 	public static void main(String s[]) throws InvalidFingerTableEntry{
 		FingerTable ft = new FingerTable(null,5, 4);
