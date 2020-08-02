@@ -7,7 +7,6 @@ import mr.dht.peer2peernetwork.exceptions.InvalidFingerTableEntry;
 import mr.dht.peer2peernetwork.nodes.RemotePeer;
 import mr.dht.peer2peernetwork.nodes.Setting;
 
-
 public class FingerTable {
 	public 	static 	final 	int SUCCESSORIdx = 0;
 	public 	static 	final 	int NONE		= -1;
@@ -19,10 +18,10 @@ public class FingerTable {
 	private long 	table[];
 	
 	public FingerTable(FTManager ftM, long peerID, int size){
-		this.ftM	 	= ftM;
-		this.peerID	 	= peerID;
-		table 			= new long[size];
-		maxNumOfTheRingNodes	= (long) Math.pow(2.0, size);
+		this.ftM	 			= ftM;
+		this.peerID	 			= peerID;
+		table 					= new long[size];
+		maxNumOfTheRingNodes			= (long) Math.pow(2.0, size);
 		resetTable();
 	}
 	
