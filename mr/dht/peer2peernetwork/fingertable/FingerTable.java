@@ -121,7 +121,7 @@ public class FingerTable {
 	}
 
 	public long fixFingerEntry(int entryID, long previousHealthyID){
-		long entryPeerID = getContentAtPos(entryID);
+		long entryPeerID 			= getContentAtPos(entryID);
 		if(!ftM.isHealthyPeer(entryPeerID)){
 			setContentAtPos(entryID, previousHealthyID);
 			return previousHealthyID;
@@ -130,13 +130,13 @@ public class FingerTable {
 	}
 	
 	public synchronized void fixFingerEntries(){
-		long curID = getPredecessorID();
+		long curID 				= getPredecessorID();
 		if (!ftM.isHealthyPeer(curID)){
 			resetPredecessor();
-			curID = getPeerID();
+			curID 				= getPeerID();
 		}
 		for(int i =table.length - 1; i >= 0 ; --i){
-			curID= fixFingerEntry(i,curID);
+			curID				= fixFingerEntry(i,curID);
 		}
 
 		if (curID == getPeerID())
