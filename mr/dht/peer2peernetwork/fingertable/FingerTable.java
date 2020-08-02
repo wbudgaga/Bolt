@@ -8,7 +8,7 @@ import mr.dht.peer2peernetwork.nodes.RemotePeer;
 import mr.dht.peer2peernetwork.nodes.Setting;
 
 public class FingerTable {
-	public 	static 	final 	int SUCCESSORIdx = 0;
+	public 	static 	final 	int SUCCESSORIdx 	= 0;
 	public 	static 	final 	int NONE		= -1;
 	private FTManager 	ftM;
 	private long 		peerID;
@@ -101,13 +101,13 @@ public class FingerTable {
 	// add new peer and return the finger entry index where it added
 	protected synchronized int addEntry(long newPeerID) throws InvalidFingerTableEntry{
 		if (newPeerID >= maxNumOfTheRingNodes) 
-			throw new InvalidFingerTableEntry("The given nodeID("+newPeerID+") > maximum ID("+(maxNumOfTheRingNodes-1)+")");
-		int insertedIdx = NONE;
-		for (int i =table.length - 1; i > -1; --i){
-			long nextSucc = getSuccValueAtPos(i);
+			throw new InvalidFingerTableEntry("The given nodeID(" + newPeerID + ") > maximum ID(" + (maxNumOfTheRingNodes-1) + ")");
+		int insertedIdx 			= NONE;
+		for (int i = table.length - 1; i > -1; --i){
+			long nextSucc 			= getSuccValueAtPos(i);
 			if(nextSucc == newPeerID || canBeSuccessor(nextSucc, newPeerID,getContentAtPos(i))){
 				setContentAtPos(i, newPeerID);/*This exception will be never raised because i < table.length*/
-				insertedIdx = i;
+				insertedIdx 		= i;
 			}
 		}
 		return insertedIdx; 
