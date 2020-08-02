@@ -45,8 +45,8 @@ public class FingerTable {
 	}
 	// set value at position pos and returns the old one 
 	protected long setContentAtPos(int pos, long value) {
-		long oldValue = table[pos]; 
-		table[pos] = value;
+		long oldValue 				= table[pos]; 
+		table[pos] 				= value;
 		return oldValue;
 	}
 	
