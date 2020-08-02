@@ -68,7 +68,7 @@ public class FingerTable {
 	
 	//generic method and its results totally depends only input parameters
 	public static boolean canBeSuccessor(long nodeID, long givenPeerID,long currSuccessor){
-		return nodeID!=givenPeerID && distance(nodeID,givenPeerID) < distance(nodeID,currSuccessor);
+		return nodeID != givenPeerID && distance(nodeID,givenPeerID) < distance(nodeID,currSuccessor);
 	}
 	
 	public boolean canBePredecessor(long givenPeerID){
@@ -78,13 +78,13 @@ public class FingerTable {
 	// return the distance(number of nodes ) between two nodes on the ring
 	private static long distance(long start,long end){
 		if (end < start)
-			end = end + Setting.RING_KEYSPACE ;
+			end 				= end + Setting.RING_KEYSPACE ;
 		return end - start;    
 	}
 	
 	public synchronized boolean updatePredecessor(long newPredecessorID){
 		if (canBePredecessor(newPredecessorID)){
-			predecessorID = newPredecessorID;
+			predecessorID 			= newPredecessorID;
 			return true;
 		}
 		return false;
