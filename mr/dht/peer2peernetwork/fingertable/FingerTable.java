@@ -142,13 +142,13 @@ public class FingerTable {
 		if (curID == getPeerID())
 			;// use predecessor to construct ft bc it is empty
 		if (getPredecessorID() == NONE)
-			predecessorID = getContentAtPos(table.length-1);
+			predecessorID 			= getContentAtPos(table.length-1);
 	}
 
 	// find the highest predecessor of id
 	private long findClosestPrecedingNode(long id){
-		for (int i= table.length -1; i>=0 ;--i){
-			long entryNodeID = getContentAtPos(i);
+		for (int i= table.length -1; i>=0; --i){
+			long entryNodeID 		= getContentAtPos(i);
 			if (entryNodeID != id && canBeSuccessor(peerID, entryNodeID, id ))
 				return entryNodeID;
 		}
