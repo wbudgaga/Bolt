@@ -182,6 +182,7 @@ public class FTManager {
 	public RemotePeer getSuccessor(){
 		return peerQueue.getPeer(ft.getSuccessor());
 	}
+	
 	public RemotePeer getPredecessor(){
 		return peerQueue.getPeer(ft.getPredecessorID());
 	}
@@ -189,12 +190,13 @@ public class FTManager {
 	public FingerTable getFt() {
 		return ft;
 	}
+	
 	public void print() {
 		ft.print();
 	}
 
 	public void setFt(FingerTable ft) {
-		this.ft = ft;
+		this.ft 			= ft;
 	}
 /*	public static void main(String s[]) throws InvalidFingerTableEntry, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		Peer p = new Peer("test", 5, 0);
@@ -205,4 +207,5 @@ public class FTManager {
 		ft.print();
 		
 	}
-*/}
+*/
+}
