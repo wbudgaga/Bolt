@@ -147,12 +147,13 @@ public class FTManager {
 	}
 
 	protected boolean  isHealthyPeer(long peerID){
-		if (getHealthyPeer(peerID)==null)
+		if (getHealthyPeer(peerID) == null)
 			return false;
 		return true;
 	}
+	
 	private RemotePeer getHealthyPeer(long peerID){
-		RemotePeer peer = peerQueue.getPeer(peerID);
+		RemotePeer peer 		= peerQueue.getPeer(peerID);
 		if (peer != null && !peer.isAlive()){
 			removePeer(peerID);
 			return null;
