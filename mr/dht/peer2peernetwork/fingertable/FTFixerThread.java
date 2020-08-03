@@ -1,7 +1,6 @@
 package mr.dht.peer2peernetwork.fingertable;
 
 import java.io.IOException;
-
 import mr.dht.peer2peernetwork.nodes.Setting;
 
 public class FTFixerThread extends Thread {
