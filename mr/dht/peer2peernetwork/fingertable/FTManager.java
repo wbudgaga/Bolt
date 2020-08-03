@@ -19,14 +19,14 @@ public class FTManager {
 	
 	public FTManager(Peer peer, int fingerTableSize){
 		createFT(peer.getID(), fingerTableSize);
-		peerQueue		= new CircularPeerQueue(Setting.PEER_CACHE_SIZE);
-		this.localPeer 	= peer;
+		peerQueue			= new CircularPeerQueue(Setting.PEER_CACHE_SIZE);
+		this.localPeer 			= peer;
 	}
 	
 	private void createFT(long peerID, int fingerTableSize){
-		this.ft	 		= new FingerTable(this,peerID, fingerTableSize);
-		ftSize			= fingerTableSize;
-//		ftFixer 		= new FTFixerThread(this);
+		this.ft	 			= new FingerTable(this,peerID, fingerTableSize);
+		ftSize				= fingerTableSize;
+//		ftFixer 			= new FTFixerThread(this);
 	//	ftFixer.start();
 	}
 	
@@ -53,7 +53,7 @@ public class FTManager {
 		if (predUpdateStatus)
 			predecessorChangeNotification(oldPredecessor, newPeer);
 
-		boolean succUpdateStatus = tryToUpdateSucc(newPeer);
+		boolean succUpdateStatus 	= tryToUpdateSucc(newPeer);
 		
 		if (predUpdateStatus || succUpdateStatus){
 			storePeer(newPeer);
