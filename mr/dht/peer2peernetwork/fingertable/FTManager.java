@@ -11,18 +11,18 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 
 
 public class FTManager {
-	private FingerTable 	ft;
+	private FingerTable 		ft;
 	private Peer 		  	localPeer;
-	private FTFixerThread 	ftFixer;
-	private CircularPeerQueue peerQueue; 
+	private FTFixerThread 		ftFixer;
+	private CircularPeerQueue 	peerQueue; 
 	private int 			ftSize;
 	
 	public FTManager(Peer peer, int fingerTableSize){
 		createFT(peer.getID(), fingerTableSize);
 		peerQueue		= new CircularPeerQueue(Setting.PEER_CACHE_SIZE);
-		
 		this.localPeer 	= peer;
 	}
+	
 	private void createFT(long peerID, int fingerTableSize){
 		this.ft	 		= new FingerTable(this,peerID, fingerTableSize);
 		ftSize			= fingerTableSize;
