@@ -74,11 +74,12 @@ public class FTManager {
 	}
 	
 	public void setSuccessor(RemotePeer remotePeer) throws IOException, InvalidFingerTableEntry {
-		if (ft.getSuccessor()== remotePeer.getID())
+		if (ft.getSuccessor() == remotePeer.getID())
 			return;
 		if (tryToUpdateSucc(remotePeer))
 			print();
 	}
+	
 	private boolean tryToUpdateSucc(RemotePeer newPeer)throws InvalidFingerTableEntry, IOException{
 		long oldSuccID = ft.getContentAtPos(FingerTable.SUCCESSORIdx);
 		
