@@ -81,8 +81,7 @@ public class FTManager {
 	}
 	
 	private boolean tryToUpdateSucc(RemotePeer newPeer)throws InvalidFingerTableEntry, IOException{
-		long oldSuccID = ft.getContentAtPos(FingerTable.SUCCESSORIdx);
-		
+		long oldSuccID 			= ft.getContentAtPos(FingerTable.SUCCESSORIdx);
 		if (tryToUpdateFTEnteries(newPeer)){
 			storePeer(newPeer);
 			if (oldSuccID != ft.getSuccessor()){
@@ -92,6 +91,7 @@ public class FTManager {
 		}
 		return false;
 	}
+	
 	private void successorChangeNotification(RemotePeer oldSucc, RemotePeer newSucc) throws IOException{
 		System.out.println("Successor has been changed");
 		//tiger a process to let the new peer to change its predecessor to cur node 
