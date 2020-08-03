@@ -27,5 +27,4 @@ public class FTFixerThread extends Thread {
 			e.printStackTrace();
 		}
 	}
-
 }
