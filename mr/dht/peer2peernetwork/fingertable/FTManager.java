@@ -102,11 +102,10 @@ public class FTManager {
 		}
 	}
 
-/////////////////////////////////////////////////////////////
 	public HashMap<Long, RemotePeer> getAllRemotePeers(){
 		HashMap<Long, RemotePeer> peersList = new HashMap<Long, RemotePeer>();
 		for (int i=0; i<ftSize; ++i){
-			long peerID = ft.getContentAtPos(i);
+			long peerID 		= ft.getContentAtPos(i);
 			if (!peersList.containsKey(peerID) && peerID != localPeer.getID())
 				peersList.put(peerID, peerQueue.getPeer(peerID));
 		}
@@ -115,7 +114,7 @@ public class FTManager {
 	}
 
 	protected void confirmDirectNeighbors() throws IOException{
-		RemotePeer succ = getSuccessor();
+		RemotePeer succ 		= getSuccessor();
 /*		if (succ != null)
 			succ.getPredecessor(localPeer.getNodeData());
 *//*		RemotePeer pred = getPredecessor();
