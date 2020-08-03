@@ -66,12 +66,13 @@ public class FTManager {
 	private void predecessorChangeNotification(RemotePeer oldPre, RemotePeer newPre) throws IOException{
 		System.out.println("Predecessor has been changed");
 		//tiger a process to let the new peer to change its predecessor to cur node 
-		if (oldPre!=null){//inform the old predecessor about the new successor 
+		if (oldPre != null){//inform the old predecessor about the new successor 
 			newPre.setPredecessor1(oldPre.getNodeData());
 			oldPre.setSuccessor1(newPre.getNodeData());
 		}
 		newPre.setSuccessor(localPeer.getNodeData());
 	}
+	
 	public void setSuccessor(RemotePeer remotePeer) throws IOException, InvalidFingerTableEntry {
 		if (ft.getSuccessor()== remotePeer.getID())
 			return;
