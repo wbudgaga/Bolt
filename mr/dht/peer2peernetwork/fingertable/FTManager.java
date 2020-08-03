@@ -166,14 +166,14 @@ public class FTManager {
 	}
 	
 	private boolean tryToUpdateFTEnteries(RemotePeer newPeer) throws InvalidFingerTableEntry{
-		int indexOfAddedElement = ft.addEntry(newPeer.getID());
+		int indexOfAddedElement 	= ft.addEntry(newPeer.getID());
 		if (indexOfAddedElement == FingerTable.NONE)
 			return false;
 		return true;
 	}
 	
 	public void setPredecessor(RemotePeer remotePeer) throws IOException, InvalidFingerTableEntry {
-		if (ft.getPredecessorID()== remotePeer.getID())
+		if (ft.getPredecessorID() == remotePeer.getID())
 			return;
 		if (tryToAddNewPeer(remotePeer))
 			print();
