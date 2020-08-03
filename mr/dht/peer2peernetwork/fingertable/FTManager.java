@@ -137,11 +137,11 @@ public class FTManager {
 	}
 	
 */	
-	
 	public synchronized boolean storePeer(RemotePeer peer) {
 		peerQueue.add(peer.getID(), peer);
 		return true;
 	}
+	
 	public synchronized RemotePeer getPeer(long peerID) {
 		return peerQueue.getPeer(peerID);
 	}
