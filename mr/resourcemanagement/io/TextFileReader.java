@@ -79,7 +79,7 @@ public class TextFileReader extends DataSource<Long, String>{
 	
 	@Override
 	public void setBuffer(BlockingQueue<TaskData<Long, String>>  buf) {
-		this.dataQueue 	= buf;
+		this.dataQueue 							= buf;
 	}
 
 	@Override
