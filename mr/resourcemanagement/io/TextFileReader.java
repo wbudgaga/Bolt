@@ -56,8 +56,8 @@ public class TextFileReader extends DataSource<Long, String>{
 		char c;
 		while(buf.hasRemaining() && (buf.get()!='\n'));
 		if (pos<buf.position()){
-			String line = getLine(buf, pos, buf.position());
-			pos = buf.position() ;
+			String line 						= getLine(buf, pos, buf.position());
+			pos 							= buf.position() ;
 			return line;
 		}
 		return null;
@@ -66,9 +66,9 @@ public class TextFileReader extends DataSource<Long, String>{
 	@Override
 	public void passNextDataList() throws IOException, InterruptedException{
 		String line;
-		ByteBuffer buf = ByteBuffer.allocateDirect( Setting.CHUNK_SIZE );
+		ByteBuffer buf 							= ByteBuffer.allocateDirect( Setting.CHUNK_SIZE );
 		readchunk(chunkName, buf);
-		while ((line= getLine(buf))!=null/*keepReading && lineNum<100000*/){//loop over one file
+		while ((line= getLine(buf)) != null/*keepReading && lineNum<100000*/){//loop over one file
 			dataQueue.offer(getTaskDataObject(lineNum++, line));
 			//.out.println("###########################"+keepReading);
 /*			if (line.length()>1000000)
