@@ -59,17 +59,18 @@ public abstract class DataSource <K,V> {
 		public void setChunkName(String cn){
 			chunkName 					= cn;
 		}
-		public void addBuffer(ByteBuffer buf) throws InterruptedException{
-			byteBuff = buf;
-		}
 		
+		public void addBuffer(ByteBuffer buf) throws InterruptedException{
+			byteBuff 					= buf;
+		}
 		
 		public ByteBuffer take() throws InterruptedException{
 			return ByteBufferSynch.take();
 		}
+		
 		@Override
 		public void execute() throws IOException, InterruptedException {
-			fChannel 			= new FileInputStream(chunkName).getChannel();
+			fChannel 					= new FileInputStream(chunkName).getChannel();
 			//ByteBuffer byteBuff = take();
 			byteBuff.clear();
 			System.out.println("#################start#############");
@@ -81,5 +82,4 @@ public abstract class DataSource <K,V> {
 			System.out.println("#################end#############");
 		}
 	}
-
 }
