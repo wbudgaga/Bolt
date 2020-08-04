@@ -28,7 +28,7 @@ public class TextFileReader extends DataSource<Long, String>{
 	private final BlockingQueue<TaskData<Long, String>> internalDataQueue 	= new ArrayBlockingQueue<TaskData<Long,String>>(Setting.INPUT_QUEUESIZE);
     
 	public <K,V> TextFileReader(String chunkFullName) throws FileNotFoundException, InterruptedException{	
-		chunkName = chunkFullName;
+		chunkName 							= chunkFullName;
 		initQueue(); 
 	}
 
@@ -36,6 +36,7 @@ public class TextFileReader extends DataSource<Long, String>{
 		for (int i = 0; i < Setting.INPUT_QUEUESIZE; ++i)
 			internalDataQueue.offer(new TaskData<Long, String>(0l,""));
 	}
+	
 	private TaskData getTaskDataObject(long id, String data) throws InterruptedException{
 		TaskData taskData = internalDataQueue.take();
 		taskData.setDataID(id);
