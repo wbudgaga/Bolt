@@ -20,12 +20,12 @@ import mr.resourcemanagement.datatype.TaskData;
 import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 
 public class TextFileReader extends DataSource<Long, String>{
-	private volatile boolean 							keepReading = true;
+	private volatile boolean keepReading 					= true;
 	private String chunkName;
 	private int pos;
-	private Long										lineNum = 0l;
+	private Long lineNum 							= 0l;
 	private BlockingQueue<TaskData<Long, String>> 		dataQueue;
-	private final BlockingQueue<TaskData<Long, String>> internalDataQueue = new ArrayBlockingQueue<TaskData<Long,String>>(Setting.INPUT_QUEUESIZE);
+	private final BlockingQueue<TaskData<Long, String>> internalDataQueue 	= new ArrayBlockingQueue<TaskData<Long,String>>(Setting.INPUT_QUEUESIZE);
     
 	public <K,V> TextFileReader(String chunkFullName) throws FileNotFoundException, InterruptedException{	
 		chunkName = chunkFullName;
