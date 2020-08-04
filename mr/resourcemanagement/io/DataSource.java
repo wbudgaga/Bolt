@@ -23,8 +23,8 @@ import mr.resourcemanagement.datatype.TaskData;
 import mr.resourcemanagement.datatype.TaskDataQueue;
 
 public abstract class DataSource <K,V> {
-	protected long 		alreadyreadBytes	= 0; 
-	public    static final TaskData POISON 		= new TaskData(0,"");
+	protected long 		alreadyreadBytes			= 0; 
+	public    static final TaskData POISON 				= new TaskData(0,"");
 	
 	//private final BlockingQueue<TaskData<Long, String>> internalDataQueue = new ArrayBlockingQueue<TaskData<Long,String>>(Setting.INPUT_QUEUESIZE);
 	private ThreadPoolManager	ioThread;
@@ -33,7 +33,7 @@ public abstract class DataSource <K,V> {
 	public abstract void returnTaskDataObject(TaskData<K, V> td);
 	
 	public void setIOThreadPool(ThreadPoolManager ioThreadPool){
-		ioThread 				= ioThreadPool;
+		ioThread 						= ioThreadPool;
 	}
 	
 	protected void readLine(Task t){
@@ -42,7 +42,7 @@ public abstract class DataSource <K,V> {
 	
 	//reads the whole chunk's bytes and store them in buf in synchronize way
 	protected void readchunk(String cn, ByteBuffer buf) throws InterruptedException{
-		ChunkReader chunkReader 		= new ChunkReader();
+		ChunkReader chunkReader 				= new ChunkReader();
 		chunkReader.setChunkName(cn);
 		chunkReader.addBuffer(buf);
 		ioThread.addTask(chunkReader);
@@ -57,7 +57,7 @@ public abstract class DataSource <K,V> {
 		private final BlockingQueue<ByteBuffer> ByteBufferSynch = new ArrayBlockingQueue<ByteBuffer>(1);
 		
 		public void setChunkName(String cn){
-			chunkName = cn;
+			chunkName 					= cn;
 		}
 		public void addBuffer(ByteBuffer buf) throws InterruptedException{
 			byteBuff = buf;
