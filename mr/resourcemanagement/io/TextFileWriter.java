@@ -38,6 +38,7 @@ public class TextFileWriter extends DataWriter<String, Long>{
 		}
 		++alreadyWritten;
 	}
+	
 	public void close() throws IOException {
 		out.flush();
 		out.close();
