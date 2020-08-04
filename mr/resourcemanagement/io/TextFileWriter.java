@@ -18,24 +18,23 @@ public class TextFileWriter extends DataWriter<String, Long>{
 	private BufferedWriter out;
 	
 	public <K,V> TextFileWriter(String dstDir, String fName) throws IOException{
-		file 			= new File(dstDir,fName); 
+		file 						= new File(dstDir,fName); 
 		openFile();
 	}
 	
 	public void openFile() throws IOException{
-		FileWriter f 		= new FileWriter(file);
-		out 			= new BufferedWriter(f, Setting.CHUNK_SIZE);
+		FileWriter f 					= new FileWriter(file);
+		out 						= new BufferedWriter(f, Setting.CHUNK_SIZE);
 	}
 	
 	public void write(HashMap<String, Long> dataBuffer) throws IOException{
 		//dataBuffer.resetCounter();
 		//HashMap<String, ArrayList<Long>>  kVBuffer = dataBuffer.getOutputBuf();
-		final Iterator<Entry<String, Long>> mapIter = dataBuffer.entrySet().iterator();
+		final Iterator<Entry<String, Long>> mapIter 	= dataBuffer.entrySet().iterator();
 		while (mapIter.hasNext()) {
-			final Entry<String, Long> dataItem = mapIter.next();
+			final Entry<String, Long> dataItem 	= mapIter.next();
 			//mapIter.remove();
-			
-			out.write(dataItem.getKey()+":"+dataItem.getValue()+"\n");
+			out.write(dataItem.getKey() + ":" + dataItem.getValue() + "\n");
 		}
 		++alreadyWritten;
 	}
