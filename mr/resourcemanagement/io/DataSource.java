@@ -23,7 +23,7 @@ import mr.resourcemanagement.datatype.TaskData;
 import mr.resourcemanagement.datatype.TaskDataQueue;
 
 public abstract class DataSource <K,V> {
-	protected long 				alreadyreadBytes=0; 
+	protected long 		alreadyreadBytes	= 0; 
 	public    static final TaskData POISON 		= new TaskData(0,"");
 	
 	//private final BlockingQueue<TaskData<Long, String>> internalDataQueue = new ArrayBlockingQueue<TaskData<Long,String>>(Setting.INPUT_QUEUESIZE);
@@ -33,8 +33,9 @@ public abstract class DataSource <K,V> {
 	public abstract void returnTaskDataObject(TaskData<K, V> td);
 	
 	public void setIOThreadPool(ThreadPoolManager ioThreadPool){
-		ioThread = ioThreadPool;
+		ioThread 				= ioThreadPool;
 	}
+	
 	protected void readLine(Task t){
 		ioThread.addTask(t);
 	}
