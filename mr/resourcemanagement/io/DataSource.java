@@ -39,9 +39,10 @@ public abstract class DataSource <K,V> {
 	protected void readLine(Task t){
 		ioThread.addTask(t);
 	}
+	
 	//reads the whole chunk's bytes and store them in buf in synchronize way
 	protected void readchunk(String cn, ByteBuffer buf) throws InterruptedException{
-		ChunkReader chunkReader = new ChunkReader();
+		ChunkReader chunkReader 		= new ChunkReader();
 		chunkReader.setChunkName(cn);
 		chunkReader.addBuffer(buf);
 		ioThread.addTask(chunkReader);
