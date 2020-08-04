@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import mr.dht.peer2peernetwork.util.UtilClass;
 
 public class DataReader {
-	protected ArrayList<String> 		dirFiles;
-	protected int				curFileIdx	= -1;
+	protected ArrayList<String> dirFiles;
+	protected int		    curFileIdx	= -1;
 	
 	public DataReader(String srcDir, String ext){
-		dirFiles 					= UtilClass.readFilesFromDir(srcDir, ext);
+		dirFiles 			= UtilClass.readFilesFromDir(srcDir, ext);
 	}
 	
 	public DataReader(String srcDir){
-		dirFiles 					= UtilClass.readFilesFromDir(srcDir);
+		dirFiles 			= UtilClass.readFilesFromDir(srcDir);
 	}
 	
 	private File getFile(int fIndex){
-		String fName = dirFiles.get(fIndex);
+		String fName 			= dirFiles.get(fIndex);
 		return new File(fName); 
 	}
 
@@ -28,5 +28,4 @@ public class DataReader {
 		}
 		return null;
 	}
-
 }
