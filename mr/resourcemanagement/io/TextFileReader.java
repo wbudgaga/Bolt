@@ -88,13 +88,12 @@ public class TextFileReader extends DataSource<Long, String>{
 	}
 	
 	public static void main(String[] args) throws IOException, InterruptedException{
-		TextFileReader t = new TextFileReader("/s/chopin/b/grad/wbudgaga/noaa/1332_10.txt");
-		ThreadPoolManager ioThreadPool 		= new ThreadPoolManager(2);
+		TextFileReader t 						= new TextFileReader("/s/chopin/b/grad/wbudgaga/noaa/1332_10.txt");
+		ThreadPoolManager ioThreadPool 					= new ThreadPoolManager(2);
 		t.setIOThreadPool(ioThreadPool);
 		ioThreadPool.start();
 		t.passNextDataList();
 		ioThreadPool.stop();
-		ioThreadPool=null;
-		System.out.println("EEEEEEEEEEEEEEEEEEEEE");
+		ioThreadPool 							= null;
 	}
 }
