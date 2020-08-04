@@ -38,14 +38,14 @@ public class TextFileReader extends DataSource<Long, String>{
 	}
 	
 	private TaskData getTaskDataObject(long id, String data) throws InterruptedException{
-		TaskData taskData = internalDataQueue.take();
+		TaskData taskData 						= internalDataQueue.take();
 		taskData.setDataID(id);
 		taskData.setData(data);
 		return taskData;
 	}
 	private String getLine(ByteBuffer b, int s, int e){
-		byte bt[] = new byte[e-s-1];
-		int oldPos = b.position();
+		byte bt[] 							= new byte[e-s-1];
+		int oldPos 							= b.position();
 		b.position(s);
 		b.get(bt);
 		b.position(oldPos);
