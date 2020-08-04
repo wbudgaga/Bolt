@@ -9,9 +9,8 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.resourcemanagement.datatype.ReducerBuffer;
 import mr.resourcemanagement.datatype.TaskDataQueue;
 
-
 public abstract class DataWriter <K,V> {
-	protected long 	alreadyWritten 	= 0;
+	protected long 	alreadyWritten 			= 0;
 	protected File 	file;
 	protected String outputFullName;
 	public abstract void write(HashMap<K, V>  reducerBuffer) throws IOException;
