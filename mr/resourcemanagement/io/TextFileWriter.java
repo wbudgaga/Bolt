@@ -23,9 +23,10 @@ public class TextFileWriter extends DataWriter<String, Long>{
 	}
 	
 	public void openFile() throws IOException{
-		FileWriter f = new FileWriter(file);
-		out = new BufferedWriter(f, Setting.CHUNK_SIZE);
+		FileWriter f 		= new FileWriter(file);
+		out 			= new BufferedWriter(f, Setting.CHUNK_SIZE);
 	}
+	
 	public void write(HashMap<String, Long> dataBuffer) throws IOException{
 		//dataBuffer.resetCounter();
 		//HashMap<String, ArrayList<Long>>  kVBuffer = dataBuffer.getOutputBuf();
