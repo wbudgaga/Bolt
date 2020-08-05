@@ -15,11 +15,11 @@ public class RandomPeerRequestConnectingHandler implements ConnectorListener {
 	private Client  localPeer;
 	
 	public  RandomPeerRequestConnectingHandler(Client localPeer){
-		this.localPeer = localPeer;
+		this.localPeer 				= localPeer;
 	}
 	
 	public void sendRequest(PacketChannel pc) throws IOException{
-		RandomPeerRequest randomPeerRequestMSG = new RandomPeerRequest();
+		RandomPeerRequest randomPeerRequestMSG 	= new RandomPeerRequest();
 		randomPeerRequestMSG.setPeer(localPeer.getNodeData());
 		MessageHandler.sendMessage(pc, randomPeerRequestMSG);
 	}
@@ -27,7 +27,7 @@ public class RandomPeerRequestConnectingHandler implements ConnectorListener {
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
+			PacketChannel pChannel 		= new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
 			System.out.println("["+ connector + "] Connected: " + sc.socket().getInetAddress() );
 			sendRequest(pChannel);
 		} catch (IOException | ClassNotFoundException e) {
@@ -37,5 +37,4 @@ public class RandomPeerRequestConnectingHandler implements ConnectorListener {
 
 	@Override
 	public void connectionFailed(Connector connector, Exception cause) {System.err.println(" ######connectionFailed ###########");}
-
 }
