@@ -17,14 +17,14 @@ public class Connecting4QueryResultsHandler implements ConnectorListener {
 	private Lookup lookupMSG;
 	
 	public   Connecting4QueryResultsHandler(Peer localPeer, Lookup lookupMSG){
-		lPeer 			= localPeer;
-		this.lookupMSG	= lookupMSG;
+		lPeer 					= localPeer;
+		this.lookupMSG				= lookupMSG;
 	}
 	
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
+			PacketChannel pChannel 		= new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
 			RemotePeer newPeer = RemotePeer.getInstance(lookupMSG.getSourcePeer().getPeer(), pChannel);
 			newPeer.queryResult(lookupMSG.getQueryKey(), lookupMSG.getMsgUUID(), lookupMSG.getSrcPeerHandlerID(), lPeer.getNodeData());
 
