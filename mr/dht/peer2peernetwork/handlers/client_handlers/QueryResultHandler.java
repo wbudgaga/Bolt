@@ -13,7 +13,6 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 import mr.dht.peer2peernetwork.wireformates.QueryResult;
 
 public class QueryResultHandler extends MessageHandler{
-
 	@Override
 	public int getHandlerID() {
 		return Message.QUERY_RESULT;
@@ -21,10 +20,10 @@ public class QueryResultHandler extends MessageHandler{
 
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		QueryResult queryResult = (QueryResult) msg;
+		QueryResult queryResult 		= (QueryResult) msg;
 		try {
 			if (queryResult.getPeer() != null){
-				RemotePeer remotePeer = RemotePeer.getInstance(queryResult.getPeer(), pc);
+				RemotePeer remotePeer 	= RemotePeer.getInstance(queryResult.getPeer(), pc);
 				System.out.println(pc.getSocketChannel().getRemoteAddress()+"----------------handleQueryResultin client--------------------------queryKey= "+queryResult.getQueryKey()+" on === "+queryResult.getPeer().getPeer().getPeerID());
 				((Client) node).handleQueryResult(queryResult.getQueryKey(), remotePeer);
 			}
@@ -33,6 +32,5 @@ public class QueryResultHandler extends MessageHandler{
 		} catch (InvalidFingerTableEntry e) {
 			e.printStackTrace();
 		}
-		
 	}
 }
