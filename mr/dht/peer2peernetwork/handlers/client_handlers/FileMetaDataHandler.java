@@ -1,6 +1,5 @@
 package mr.dht.peer2peernetwork.handlers.client_handlers;
 
-
 import java.io.IOException;
 
 import mr.communication.handlers.PacketChannel;
@@ -15,8 +14,6 @@ import mr.resourcemanagement.execution.mrtasks.management.CopyAndForwardTask;
 import mr.resourcemanagement.execution.mrtasks.management.MetaDataManager;
 
 public class FileMetaDataHandler extends MessageHandler{
-	
-
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
