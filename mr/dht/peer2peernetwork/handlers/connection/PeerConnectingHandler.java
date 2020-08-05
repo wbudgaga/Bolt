@@ -19,9 +19,8 @@ public class PeerConnectingHandler implements ConnectorListener {
 	
 	public   PeerConnectingHandler(Peer localPeer, PeerData srcPeer){
 		lPeer 			= localPeer;
-		connectingPeer	= srcPeer;
+		connectingPeer		= srcPeer;
 	}
-	
 	
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
