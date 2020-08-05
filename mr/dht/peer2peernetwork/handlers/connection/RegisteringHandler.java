@@ -15,11 +15,11 @@ public class RegisteringHandler implements ConnectorListener {
 	private Peer  localPeer;
 	
 	public  RegisteringHandler(Peer localPeer){
-		this.localPeer = localPeer;
+		this.localPeer 				= localPeer;
 	}
 	
 	public void register(PacketChannel pc) throws IOException{
-		RegisterRequest registerRequestMSG = new RegisterRequest();
+		RegisterRequest registerRequestMSG 	= new RegisterRequest();
 		registerRequestMSG.setPeer(localPeer.getNodeData());
 		MessageHandler.sendMessage(pc, registerRequestMSG);
 	}
@@ -27,7 +27,7 @@ public class RegisteringHandler implements ConnectorListener {
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
+			PacketChannel pChannel 		= new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
 			System.out.println("["+ connector + "] Connected: " + sc.socket().getInetAddress() );
 			register(pChannel);
 		} catch (IOException | ClassNotFoundException e) {
@@ -37,5 +37,4 @@ public class RegisteringHandler implements ConnectorListener {
 
 	@Override
 	public void connectionFailed(Connector connector, Exception cause) {System.err.println(" ######connectionFailed ###########");}
-
 }
