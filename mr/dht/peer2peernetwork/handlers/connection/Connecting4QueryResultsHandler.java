@@ -25,7 +25,7 @@ public class Connecting4QueryResultsHandler implements ConnectorListener {
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
 			PacketChannel pChannel 		= new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
-			RemotePeer newPeer = RemotePeer.getInstance(lookupMSG.getSourcePeer().getPeer(), pChannel);
+			RemotePeer newPeer 		= RemotePeer.getInstance(lookupMSG.getSourcePeer().getPeer(), pChannel);
 			newPeer.queryResult(lookupMSG.getQueryKey(), lookupMSG.getMsgUUID(), lookupMSG.getSrcPeerHandlerID(), lPeer.getNodeData());
 
 		} catch (IOException | ClassNotFoundException e) {
