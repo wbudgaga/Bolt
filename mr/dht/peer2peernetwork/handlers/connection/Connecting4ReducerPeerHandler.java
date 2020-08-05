@@ -26,8 +26,8 @@ public class Connecting4ReducerPeerHandler implements ConnectorListener {
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
-			RemotePeer mapPeer = RemotePeer.getInstance(frr.getSourcePeer().getPeer(), pChannel);
+			PacketChannel pChannel 	= new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
+			RemotePeer mapPeer 	= RemotePeer.getInstance(frr.getSourcePeer().getPeer(), pChannel);
 			if (lPeer.getResourceManager().findRunningReducer(mapPeer, frr)){//in case the reducer is running
 				mapPeer.queryResult(frr.getQueryKey(), frr.getMsgUUID(), frr.getSrcPeerHandlerID(), lPeer.getNodeData());
 			}
