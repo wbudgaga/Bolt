@@ -20,8 +20,8 @@ public class Connecting4ReducerPeerHandler implements ConnectorListener {
 	private FindRunningReducer frr;
 	
 	public   Connecting4ReducerPeerHandler(Peer localPeer, FindRunningReducer lookupMSG){
-		lPeer 		= localPeer;
-		this.frr	= lookupMSG;
+		lPeer 				= localPeer;
+		this.frr			= lookupMSG;
 	}
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
