@@ -24,15 +24,14 @@ public class RandomPeerHandler extends MessageHandler{
 
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		PeerData 	pd = ((RandomPeer)msg).getPeer();
+		PeerData pd 				= ((RandomPeer)msg).getPeer();
 		try {
-			RemotePeer randomPeer = RemotePeer.getInstance(pd, pc);
+			RemotePeer randomPeer 		= RemotePeer.getInstance(pd, pc);
 			//((Client) node).handleRandomPeer(randomPeer);
 			((Client) node).initiateConnectionManager(randomPeer.getNodeData().getHost(), randomPeer.getNodeData().getPortNum(), new ClientPeerConnectingHandler(((Client) node), pd));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 }
