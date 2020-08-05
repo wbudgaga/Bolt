@@ -22,8 +22,8 @@ public class NewPeerNotifyingHandler implements ConnectorListener {
 	private PeerData connectingPeer;
 	
 	public   NewPeerNotifyingHandler(Peer localPeer, PeerData remotePeer){
-		lPeer 			= localPeer;
-		connectingPeer	= remotePeer;
+		lPeer 				= localPeer;
+		connectingPeer			= remotePeer;
 	}
 	
 	
