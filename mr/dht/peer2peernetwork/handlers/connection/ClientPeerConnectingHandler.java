@@ -19,16 +19,15 @@ public class ClientPeerConnectingHandler implements ConnectorListener {
 	private PeerData connectingPeer;
 	
 	public   ClientPeerConnectingHandler(Client localPeer, PeerData srcPeer){
-		lPeer 			= localPeer;
-		connectingPeer	= srcPeer;
+		lPeer 					= localPeer;
+		connectingPeer				= srcPeer;
 	}
-	
 	
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
-			RemotePeer newPeer = RemotePeer.getInstance(connectingPeer, pChannel);
+			PacketChannel pChannel 		= new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    			
+			RemotePeer newPeer 		= RemotePeer.getInstance(connectingPeer, pChannel);
 			lPeer.handleRandomPeer(newPeer);
 
 		} catch (IOException | ClassNotFoundException | InvalidFingerTableEntry e) {
