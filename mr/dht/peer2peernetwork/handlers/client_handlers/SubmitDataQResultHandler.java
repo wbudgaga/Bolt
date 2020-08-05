@@ -21,7 +21,7 @@ public class SubmitDataQResultHandler extends MessageHandler{
 	
 	@Override
 	public void handle(Socket link, Message msg) {
-		QueryResult queryResult = (QueryResult) msg;
+		QueryResult queryResult 		= (QueryResult) msg;
 		System.out.println("     ############SubmitDataQResultHandler########### searchKey:"+queryResult.getQueryKey()+"   fund peer:"+queryResult.getPeer().getPeer().getPeerID());
 	}
 
