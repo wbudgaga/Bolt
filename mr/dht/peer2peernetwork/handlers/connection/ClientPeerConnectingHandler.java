@@ -38,6 +38,5 @@ public class ClientPeerConnectingHandler implements ConnectorListener {
 	@Override
 	public void connectionFailed(Connector connector, Exception cause) {
 		// TODO Auto-generated method stub
-		
 	}
 }
