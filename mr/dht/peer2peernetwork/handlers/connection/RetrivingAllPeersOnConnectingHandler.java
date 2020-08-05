@@ -20,7 +20,7 @@ public class RetrivingAllPeersOnConnectingHandler implements ConnectorListener {
 	}
 	
 	public void sendRequest(PacketChannel pc) throws IOException{
-		GetAllPeers allPeersRequest = new GetAllPeers();
+		GetAllPeers allPeersRequest 	= new GetAllPeers();
 		allPeersRequest.setPeer(localPeer.getNodeData());
 		MessageHandler.sendMessage(pc, allPeersRequest);
 	}
