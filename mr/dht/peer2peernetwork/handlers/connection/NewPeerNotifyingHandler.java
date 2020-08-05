@@ -30,8 +30,8 @@ public class NewPeerNotifyingHandler implements ConnectorListener {
 	@Override
 	public synchronized void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    
-			RemotePeer newPeer = RemotePeer.getInstance(connectingPeer, pChannel);
+			PacketChannel pChannel 	= new PacketChannel(sc,lPeer.getSelector(), new MultiMSGDecoder(),lPeer.getMessageHandler());    
+			RemotePeer newPeer 	= RemotePeer.getInstance(connectingPeer, pChannel);
 			lPeer.addNewPeer(newPeer);
 			newPeer.setSuccessor(lPeer.getNodeData());
 		} catch (IOException | ClassNotFoundException | InvalidFingerTableEntry  e) {
@@ -42,6 +42,5 @@ public class NewPeerNotifyingHandler implements ConnectorListener {
 	@Override
 	public void connectionFailed(Connector connector, Exception cause) {
 		// TODO Auto-generated method stub
-		
 	}
 }
