@@ -19,9 +19,9 @@ public class GetAllPeersResponseHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
-			PeersList peersInfoListMsg = (PeersList) msg;
-			Client client = getNode();
-			System.out.println("PeersList received "+peersInfoListMsg.getPeerList().length);
+			PeersList peersInfoListMsg 	= (PeersList) msg;
+			Client client 			= getNode();
+			System.out.println("PeersList received " + peersInfoListMsg.getPeerList().length);
 			for(PeerInfo pi: peersInfoListMsg.getPeerList()){
 				client.initiateConnectionManager(pi.getPeer().getHost(),pi.getPeer().getPortNum(), new ClientPeerConnectingHandler(client,pi.getPeer()));
 			}
