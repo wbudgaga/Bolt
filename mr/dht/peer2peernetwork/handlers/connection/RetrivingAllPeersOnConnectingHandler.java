@@ -28,7 +28,7 @@ public class RetrivingAllPeersOnConnectingHandler implements ConnectorListener {
 	@Override
 	public void connectionEstablished(Connector connector, SocketChannel sc) {
 		try {
-			PacketChannel pChannel = new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
+			PacketChannel pChannel 	= new PacketChannel(sc,localPeer.getSelector(), new MultiMSGDecoder(),localPeer.getMessageHandler());    
 			System.out.println("["+ connector + "] Connected: " + sc.socket().getInetAddress() );
 			sendRequest(pChannel);
 		} catch (IOException | ClassNotFoundException e) {
@@ -38,5 +38,4 @@ public class RetrivingAllPeersOnConnectingHandler implements ConnectorListener {
 
 	@Override
 	public void connectionFailed(Connector connector, Exception cause) {System.err.println(" ######connectionFailed ###########");}
-
 }
