@@ -16,7 +16,7 @@ public class RetrivingAllPeersOnConnectingHandler implements ConnectorListener {
 	private Client  localPeer;
 	
 	public  RetrivingAllPeersOnConnectingHandler(Client localPeer){
-		this.localPeer = localPeer;
+		this.localPeer 			= localPeer;
 	}
 	
 	public void sendRequest(PacketChannel pc) throws IOException{
