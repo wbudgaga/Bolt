@@ -78,7 +78,7 @@ public class DataStagger  extends Client{
 	}
 
 	public void submitDataset(String datasetName, String  dataDir) throws InterruptedException {
-		dss = new DatasetStagger(taskThreadPool, this, STAGGER_POOL_SIZE);
+		dss 							= new DatasetStagger(taskThreadPool, this, STAGGER_POOL_SIZE);
 		dss.setDataset(datasetName, dataDir);
 		try {
 			initiateConnectionManager(Setting.DISCOVER_HOST,Setting.DISCOVER_PORT, new RetrivingAllPeersOnConnectingHandler(this));
