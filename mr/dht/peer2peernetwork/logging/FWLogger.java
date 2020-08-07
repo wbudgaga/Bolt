@@ -31,9 +31,9 @@ public class FWLogger {
 	 public void createLogger(long jobID, String logDir, String fileName) throws SecurityException, IOException{
 		fileName 				= logDir +fileName;
 		UtilClass.createPath(logDir);
-		Logger logger = Logger.getLogger(fileName);
+		Logger logger 				= Logger.getLogger(fileName);
 		logger.setUseParentHandlers(false);
-		FileHandler handler = new FileHandler(fileName);
+		FileHandler handler 			= new FileHandler(fileName);
 		handler.setFormatter(new LogFormatter());
 		logger.addHandler(handler);
 		loggers.put(jobID, logger);
