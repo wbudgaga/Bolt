@@ -15,15 +15,15 @@ import mr.dht.peer2peernetwork.wireformates.TextNumTaskData;
 
 public class ClientCMDThread extends Thread{
 	private BufferedReader 	bufferedReader;
-	private CMDLineInterface 	userCommand;
+	private CMDLineInterface userCommand;
 	
 	public ClientCMDThread(CMDLineInterface userInterface){
-		this.userCommand =  userInterface;
-		bufferedReader 	= new BufferedReader(new InputStreamReader(System.in));
+		this.userCommand 				=  userInterface;
+		bufferedReader 					= new BufferedReader(new InputStreamReader(System.in));
 	}
 	
 	private void search(String command){
-		String[] para  = command.split(" ");
+		String[] para  					= command.split(" ");
 		if (para.length > 1)
 			userCommand.lookup(Long.parseLong(para[1]), Message.QUERY_RESULT);
 		else
