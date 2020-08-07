@@ -8,8 +8,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
-
 import mr.dht.peer2peernetwork.handlers.connection.RetrivingAllPeersOnConnectingHandler;
 import mr.dht.peer2peernetwork.threadpool.ThreadPoolManager;
 import mr.dht.peer2peernetwork.util.UtilClass;
@@ -18,12 +16,12 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 import mr.dht.peer2peernetwork.wireformates.StoreFileRequest;
 
 public class DataStagger  extends Client{
-	public final int 						THREAD_POOL_SIZE	= 5;//Runtime.getRuntime().availableProcessors();
-	public final int 						STAGGER_POOL_SIZE	= 2 * THREAD_POOL_SIZE;
-	private ThreadPoolManager 				taskThreadPool;  
-	public final int 						chunksMSGQueueSize = 40000;
-	public final int 						metaMSGQueueSize 	= 2 * STAGGER_POOL_SIZE;
-	private BlockingQueue<Message>  		chunksMSGs	= new ArrayBlockingQueue<Message>(chunksMSGQueueSize);
+	public final int HREAD_POOL_SIZE				= 5;//Runtime.getRuntime().availableProcessors();
+	public final int STAGGER_POOL_SIZE				= 2 * THREAD_POOL_SIZE;
+	private ThreadPoolManager taskThreadPool;  
+	public final int chunksMSGQueueSize 				= 40000;
+	public final int metaMSGQueueSize 				= 2 * STAGGER_POOL_SIZE;
+	private BlockingQueue<Message>  chunksMSGs			= new ArrayBlockingQueue<Message>(chunksMSGQueueSize);
 	private DatasetStagger dss;
 
 	private PeerCacher		peersCacher;
