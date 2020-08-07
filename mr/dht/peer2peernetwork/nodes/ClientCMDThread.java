@@ -54,7 +54,7 @@ public class ClientCMDThread extends Thread{
 		return job;
 */	
 		return null;
-		}
+	}
 	
 	private void jobSubmit(String command) {
 		String[] para  = command.split(" ");
