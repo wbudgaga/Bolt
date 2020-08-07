@@ -80,8 +80,7 @@ public class Client  extends LNode implements CMDLineInterface{
 	public void setNumOfClusterPeers(int n){}
 	public void setDatasetMetaData(DatasetMetaData datasetMetaData) throws IOException{}
 	public void setFileMetaData(FileMetaData fileMetaData) throws IOException{}
-//#############################################################################################
-	
+//############################################################################################
 
 	//=============================================================
 		private String getJobTaskID(long jobID, int taskID, String taskType){
@@ -93,12 +92,13 @@ public class Client  extends LNode implements CMDLineInterface{
 	}
 		
 	public void startJobBatch() throws IOException{
-		StartJobBatch msg = new StartJobBatch();
+		StartJobBatch msg 							= new StartJobBatch();
 		msg.setPeer(getNodeData());
 		for (RemotePeer p: cachedPeers.values()){
 			p.sendMessage(msg);
 		}
 	}
+	
 	public synchronized void handleQueryResult(long queryKey, RemotePeer rp) throws InvalidFingerTableEntry, IOException{
 	}
 //##############################################################################################	
