@@ -33,8 +33,8 @@ import mr.resourcemanagement.execution.mrtasks.management.DataRouter;
 import mr.resourcemanagement.execution.mrtasks.management.JobTasksManager;
 
 public class Client  extends LNode implements CMDLineInterface{
-	public RemotePeer		remotePeer;
-	private final Object LOCK = new Object();
+	public RemotePeer remotePeer;
+	private final Object LOCK 					= new Object();
 	private ConcurrentHashMap <String,Long> pendingJobs = new ConcurrentHashMap<String,Long>();//<jobID+"_"+TaskID,rKey>
 	private ConcurrentHashMap <Long,BlockingQueue<StartMapTask>> pendingJobTasks = new ConcurrentHashMap<Long,BlockingQueue<StartMapTask>>();//<jobID,<tasks>>
 	protected ConcurrentHashMap <Long,RemotePeer> cachedPeers = new ConcurrentHashMap<Long,RemotePeer>();
