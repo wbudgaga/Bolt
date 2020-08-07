@@ -98,7 +98,7 @@ public class DataStagger  extends Client{
 		}
 		try{
 			int 	port 						= Integer.parseInt(args[0]);			
-			DataStagger ds 	= new DataStagger("DataStagger",port);
+			DataStagger ds 						= new DataStagger("DataStagger",port);
 			ds.startup(port);
 			ds.submitDataset(args[1], args[2]);
 
@@ -112,4 +112,4 @@ public class DataStagger  extends Client{
 			e.printStackTrace();
 		}
 	}
-}	
+}
