@@ -13,13 +13,13 @@ import mr.dht.peer2peernetwork.wireformates.MessageFactory;
 
 public class FWLogger {
 	private static FWLogger instance;	
-	private Map<Long,Logger> loggers = new HashMap<Long,Logger>();
+	private Map<Long,Logger> loggers 		= new HashMap<Long,Logger>();
 	
 	private FWLogger() {}
 	
 	public  static  FWLogger getInstance() {
 		if (instance == null){
-			instance = new FWLogger();
+			instance 			= new FWLogger();
 		}
 	    return instance;
 	}
@@ -27,8 +27,9 @@ public class FWLogger {
 	 public void log(long jobID, String text){
 		 loggers.get(jobID).log(Level.INFO,text);
 	 }
+	
 	 public void createLogger(long jobID, String logDir, String fileName) throws SecurityException, IOException{
-		fileName = logDir +fileName;
+		fileName 				= logDir +fileName;
 		UtilClass.createPath(logDir);
 		Logger logger = Logger.getLogger(fileName);
 		logger.setUseParentHandlers(false);
