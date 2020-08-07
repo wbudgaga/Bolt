@@ -56,7 +56,7 @@ public class DataStagger  extends Client{
 		returnObjToQueue(chunkMSG);
 	}
 	public  synchronized void sendMetaDataToPeer(long hashedKey, FileMetaData metaMSG) throws IOException{
-		RemotePeer[] chunkPeers = peersCacher.getPeer(hashedKey);
+		RemotePeer[] chunkPeers 				= peersCacher.getPeer(hashedKey);
 		chunkPeers[0].sendMessage(metaMSG);
 	}
 
