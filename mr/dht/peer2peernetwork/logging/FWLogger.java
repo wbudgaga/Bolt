@@ -39,13 +39,12 @@ public class FWLogger {
 		loggers.put(jobID, logger);
 	}	
 		public static void main(String args[]) throws SecurityException, IOException {
-			 String logDir = Setting.LOCAL_DIR + "logging/";
-			 FWLogger l = FWLogger.getInstance();
+			 String logDir 			= Setting.LOCAL_DIR + "logging/";
+			 FWLogger l 			= FWLogger.getInstance();
 			 l.createLogger(3, "c:\\tmp\\t\\", "log3");
 			 l.createLogger(7, "c:\\tmp\\t\\", "log7");
 			l.log(3,"absce");
 			l.log(7,"123mmmmmmmmmmmmm");
 			l.log(3,".....");		
 		}
-
 }
