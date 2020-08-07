@@ -1,7 +1,6 @@
 package mr.dht.peer2peernetwork.nodes;
 
 public interface CommandLineInterface {
-
 	public void printFT();
 	public void print();
 	public void sendData(String srcFile);
