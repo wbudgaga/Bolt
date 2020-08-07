@@ -37,8 +37,8 @@ public class Client  extends LNode implements CMDLineInterface{
 	private final Object LOCK 							= new Object();
 	private ConcurrentHashMap <String,Long> pendingJobs 				= new ConcurrentHashMap<String,Long>();//<jobID+"_"+TaskID,rKey>
 	private ConcurrentHashMap <Long,BlockingQueue<StartMapTask>> pendingJobTasks 	= new ConcurrentHashMap<Long,BlockingQueue<StartMapTask>>();//<jobID,<tasks>>
-	protected ConcurrentHashMap <Long,RemotePeer> cachedPeers = new ConcurrentHashMap<Long,RemotePeer>();
-	private ConcurrentHashMap <Long,TextNumTaskData> pendingTasksData = new ConcurrentHashMap<Long,TextNumTaskData>();
+	protected ConcurrentHashMap <Long,RemotePeer> cachedPeers 			= new ConcurrentHashMap<Long,RemotePeer>();
+	private ConcurrentHashMap <Long,TextNumTaskData> pendingTasksData 		= new ConcurrentHashMap<Long,TextNumTaskData>();
 	public boolean 	allJobSubmitted = false;
 
 	
