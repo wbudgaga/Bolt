@@ -9,6 +9,5 @@ public interface CMDLineInterface {
 	public void lookup(long key, int respHandlerID);
 	public void submitJob(JobDescriptor job);
 	public void submitTestBuffer(HashMap<String, Long[]> outputBuf, long jobID, int numOfReducers,int reducerIDX);
-	public void submitDataSet(String name, String loc);
-	
+	public void submitDataSet(String name, String loc);	
 }
