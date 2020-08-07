@@ -46,6 +46,7 @@ public class DataStagger  extends Client{
 	protected  void returnObjToQueue(Message sfr){
 		chunksMSGs.offer(sfr);
 	}
+	
 	protected synchronized StoreFileRequest getChunkMSG() throws InterruptedException{
 		return (StoreFileRequest) chunksMSGs.take();
 	}
@@ -55,6 +56,7 @@ public class DataStagger  extends Client{
 		chunkPeers[0].sendMessage(chunkMSG);
 		returnObjToQueue(chunkMSG);
 	}
+	
 	public  synchronized void sendMetaDataToPeer(long hashedKey, FileMetaData metaMSG) throws IOException{
 		RemotePeer[] chunkPeers 				= peersCacher.getPeer(hashedKey);
 		chunkPeers[0].sendMessage(metaMSG);
@@ -95,7 +97,7 @@ public class DataStagger  extends Client{
 		    return;
 		}
 		try{
-			int 	port 	= Integer.parseInt(args[0]);			
+			int 	port 						= Integer.parseInt(args[0]);			
 			DataStagger ds 	= new DataStagger("DataStagger",port);
 			ds.startup(port);
 			ds.submitDataset(args[1], args[2]);
