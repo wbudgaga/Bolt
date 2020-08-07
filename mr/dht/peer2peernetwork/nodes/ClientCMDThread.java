@@ -121,7 +121,7 @@ public class ClientCMDThread extends Thread{
 	}
 
 	public HashMap<String, Long[]> createTestBuf(){
-		HashMap<String, Long[]> 	outputBuf = new HashMap<String, Long[]>();
+		HashMap<String, Long[]> 	outputBuf 		= new HashMap<String, Long[]>();
 		outputBuf.put("key1", new Long[]{12l,80l,461819041972l});
 		outputBuf.put("key2", new Long[]{0l,-2l});
 		outputBuf.put("walid", new Long[]{2l,4l, 28l,45l});
@@ -162,5 +162,4 @@ public class ClientCMDThread extends Thread{
 			System.err.println("Invalid Command!");
 		}
 	}
-
 }
