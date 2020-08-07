@@ -133,10 +133,10 @@ public class Client  extends LNode implements CMDLineInterface{
 		    return;
 		}
 		try{
-			int 	port 		= Integer.parseInt(args[0]);
-			peer = new Client("client",port);
+			int 	port 							= Integer.parseInt(args[0]);
+			peer 								= new Client("client",port);
 			peer.startup(port);
-			ClientCMDThread cl = new ClientCMDThread(peer);
+			ClientCMDThread cl 						= new ClientCMDThread(peer);
 			cl.start();
 
 		}catch(NumberFormatException e){
@@ -154,7 +154,7 @@ public class Client  extends LNode implements CMDLineInterface{
 	      sc.socket().setReceiveBufferSize(2*1024);
 	      sc.socket().setSendBufferSize(2*1024);
 	      // The contructor enables reading automatically.
-	      PacketChannel pc = new PacketChannel(sc, selector, new MultiMSGDecoder(), new ClientMessageHandler(this));
+	      PacketChannel pc 								= new PacketChannel(sc, selector, new MultiMSGDecoder(), new ClientMessageHandler(this));
 	      pc.resumeReading();
 		} catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 		      e.printStackTrace();
@@ -164,19 +164,16 @@ public class Client  extends LNode implements CMDLineInterface{
 	@Override
 	public void socketError(Acceptor acceptor, Exception ex) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void socketException(PacketChannel pc, Exception ex) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void socketDisconnected(PacketChannel pc) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
