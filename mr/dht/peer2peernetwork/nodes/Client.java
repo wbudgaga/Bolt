@@ -39,7 +39,7 @@ public class Client  extends LNode implements CMDLineInterface{
 	private ConcurrentHashMap <Long,BlockingQueue<StartMapTask>> pendingJobTasks 	= new ConcurrentHashMap<Long,BlockingQueue<StartMapTask>>();//<jobID,<tasks>>
 	protected ConcurrentHashMap <Long,RemotePeer> cachedPeers 			= new ConcurrentHashMap<Long,RemotePeer>();
 	private ConcurrentHashMap <Long,TextNumTaskData> pendingTasksData 		= new ConcurrentHashMap<Long,TextNumTaskData>();
-	public boolean 	allJobSubmitted = false;
+	public boolean 	allJobSubmitted 						= false;
 
 	
 	public Client(String name, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
@@ -47,8 +47,8 @@ public class Client  extends LNode implements CMDLineInterface{
 	}
 			
 	public void handleRandomPeer(RemotePeer rp) throws InvalidFingerTableEntry, IOException{
-		remotePeer = rp;
-		System.out.println("random peer ("+rp.getID()+") has been received###########");
+		remotePeer 								= rp;
+		System.out.println("random peer (" + rp.getID() + ") has been received###########");
 	}
 
 	public void print(){
