@@ -57,18 +57,18 @@ public class ClientCMDThread extends Thread{
 	}
 	
 	private void jobSubmit(String command) {
-		String[] para  = command.split(" ");
+		String[] para  						= command.split(" ");
 		JobDescriptor job;
 		System.err.println("number of inputs:"+para.length );
 		if (para.length == 2){
 			System.err.println("Enter the name of text file you want load a job from:");
 			try {
-				job = JobDescriptor.loadfromFile(readCommand());
+				job 					= JobDescriptor.loadfromFile(readCommand());
 				
 			} catch (NumberFormatException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				job = null;
+				job 					= null;
 			}
 			
 		}else{
