@@ -28,8 +28,8 @@ public class DataStagger  extends Client{
 	
 	public DataStagger(String name, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, NoSuchAlgorithmException {
 		super(name, port);
-		taskThreadPool 		= new ThreadPoolManager(THREAD_POOL_SIZE);
-		peersCacher 		= new PeerCacher();
+		taskThreadPool 						= new ThreadPoolManager(THREAD_POOL_SIZE);
+		peersCacher 						= new PeerCacher();
 		initiatPools();
 	}
 	
