@@ -72,7 +72,7 @@ public class ClientCMDThread extends Thread{
 			}
 			
 		}else{
-			job = createJob(para[1]);
+			job 						= createJob(para[1]);
 		}
 		userCommand.submitJob(job);
 	}
