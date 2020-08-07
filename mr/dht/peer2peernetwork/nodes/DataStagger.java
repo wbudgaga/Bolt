@@ -35,7 +35,7 @@ public class DataStagger  extends Client{
 	
 	private void initiatPools(){
 		for (int i=0; i < chunksMSGQueueSize; ++i){
-			StoreFileRequest sfr = new StoreFileRequest();
+			StoreFileRequest sfr 				= new StoreFileRequest();
 			sfr.setReplicarionFactore(1/*Setting.REPLICATION_FACTOR*/);
 			sfr.setBufferSize(FileStagger.SPLIT_PART_SIZE);
 			sfr.setFileBytes(new byte[FileStagger.SPLIT_PART_SIZE]);
@@ -51,7 +51,7 @@ public class DataStagger  extends Client{
 	}
 	
 	public  synchronized void sendDataToPeer(long hashedKey, Message chunkMSG) throws IOException{
-		RemotePeer[] chunkPeers = peersCacher.getPeer(hashedKey);
+		RemotePeer[] chunkPeers 				= peersCacher.getPeer(hashedKey);
 		chunkPeers[0].sendMessage(chunkMSG);
 		returnObjToQueue(chunkMSG);
 	}
