@@ -101,15 +101,15 @@ public class ClientCMDThread extends Thread{
 */	}
 	
 	private void submitnJobs(String command)  {
-		String[] para  = command.split(" ");
+		String[] para  						= command.split(" ");
 		if (para.length < 1){
 			System.err.println("Enter the number of jobs:");
 			return;
 		}
-		int n = Integer.parseInt(para[1]);
-		JobDescriptor[] job=null;
+		int n 							= Integer.parseInt(para[1]);
+		JobDescriptor[] job					= null;
 		try {
-			job = JobDescriptor.createJobs(n);
+			job 						= JobDescriptor.createJobs(n);
 		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		}
