@@ -85,7 +85,7 @@ public class Client  extends LNode implements CMDLineInterface{
 
 	//=============================================================
 		private String getJobTaskID(long jobID, int taskID, String taskType){
-			return jobID+"_"+taskType+taskID;
+			return jobID + "_" + taskType + taskID;
 		}
 	//=============================================================		
 	@Override
