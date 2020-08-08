@@ -115,7 +115,7 @@ public class TestWriteToFile {
 		for (int j=0; j<buffSizes.length; ++j){
 			int sum 			= 0;
 			for (int i=0; i<itr; ++i){
-				sum += storeUsingNIOMapped(fn, buffSizes[j]);
+				sum 			+= storeUsingNIOMapped(fn, buffSizes[j]);
 			}
 			System.out.println("storeUsingNIOMapped, "+labels[j]+": "+(sum/(float)itr));
 			System.out.println("=======================================================");
