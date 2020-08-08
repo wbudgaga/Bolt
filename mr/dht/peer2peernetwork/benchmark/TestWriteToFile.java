@@ -50,13 +50,13 @@ public class TestWriteToFile {
 			offset 				+= len;
 		}
 	    f.flush();
-	    long end = System.currentTimeMillis();
+	    long end 					= System.currentTimeMillis();
 	    f.close();
 	    System.out.println("  time: "+ (end - start)  + " ms");
 	    return (int) (end - start);
 	}
 	public int storeUsingBufferedOutputStream(String fn, int bufSize) throws IOException{
-		BufferedOutputStream f = new BufferedOutputStream(new FileOutputStream(fn), bufSize);
+		BufferedOutputStream f 			= new BufferedOutputStream(new FileOutputStream(fn), bufSize);
   	   long start = System.currentTimeMillis();
 		int offset =0;
 		int remaining;// = data.length;
