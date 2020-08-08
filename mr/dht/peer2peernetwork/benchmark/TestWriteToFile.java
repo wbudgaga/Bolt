@@ -83,10 +83,10 @@ public class TestWriteToFile {
 		while (offset < data.length){
 			remaining 			=  data.length -  offset;
 			int len 			= remaining>bufSize?bufSize:remaining;
-			readBytes = fChannel.write(ByteBuffer.wrap(data, 0, len));
-			offset += readBytes;
+			readBytes 			= fChannel.write(ByteBuffer.wrap(data, 0, len));
+			offset 				+= readBytes;
 		}
-		long end = System.currentTimeMillis();
+		long end 				= System.currentTimeMillis();
 		fChannel.close();
 		System.out.println("  time: "+ (end - start)+ " ms");
 		return (int) (end - start);
