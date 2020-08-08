@@ -57,8 +57,8 @@ public class TestWriteToFile {
 	}
 	public int storeUsingBufferedOutputStream(String fn, int bufSize) throws IOException{
 		BufferedOutputStream f 			= new BufferedOutputStream(new FileOutputStream(fn), bufSize);
-  	   long start = System.currentTimeMillis();
-		int offset =0;
+  	   long start 					= System.currentTimeMillis();
+		int offset 				= 0;
 		int remaining;// = data.length;
 		while (offset < data.length){
 			remaining =  data.length -  offset;
