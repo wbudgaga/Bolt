@@ -92,8 +92,8 @@ public class TestWriteToFile {
 		return (int) (end - start);
 	}
 	public int storeUsingNIOMapped(String fn, int bufSize) throws IOException{
-		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
-		MappedByteBuffer mb = fChannel.map( FileChannel.MapMode.READ_ONLY, 0L, fChannel.size( ) );
+		FileChannel fChannel 			= new FileInputStream(fn).getChannel();
+		MappedByteBuffer mb 			= fChannel.map( FileChannel.MapMode.READ_ONLY, 0L, fChannel.size( ) );
 		long start = System.currentTimeMillis();
 		int offset =0;
 		int readBytes;
