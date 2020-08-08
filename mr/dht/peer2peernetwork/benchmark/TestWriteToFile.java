@@ -113,7 +113,7 @@ public class TestWriteToFile {
 	
 	public void testOutputStream(String fn, int itr) throws IOException{
 		for (int j=0; j<buffSizes.length; ++j){
-			int sum =0;
+			int sum 			= 0;
 			for (int i=0; i<itr; ++i){
 				sum += storeUsingNIOMapped(fn, buffSizes[j]);
 			}
