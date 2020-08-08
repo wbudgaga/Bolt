@@ -64,11 +64,11 @@ public class TestWriteToFile {
 			remaining 			=  data.length -  offset;
 			int len 			= remaining>bufSize?bufSize:remaining;
 			f.write(data,offset,len);
-			offset += len;
+			offset 				+= len;
 		}
 
 	    f.flush();
-		long end = System.currentTimeMillis();
+		long end 				= System.currentTimeMillis();
 		f.close();
 		System.out.println("  time: "+ (end - start)+ " ms");
 		return (int) (end - start);
