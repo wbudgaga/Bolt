@@ -81,8 +81,8 @@ public class TestWriteToFile {
 		int readBytes;
 		int remaining;// = data.length;
 		while (offset < data.length){
-			remaining =  data.length -  offset;
-			int len = remaining>bufSize?bufSize:remaining;
+			remaining 			=  data.length -  offset;
+			int len 			= remaining>bufSize?bufSize:remaining;
 			readBytes = fChannel.write(ByteBuffer.wrap(data, 0, len));
 			offset += readBytes;
 		}
