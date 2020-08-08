@@ -61,8 +61,8 @@ public class TestWriteToFile {
 		int offset 				= 0;
 		int remaining;// = data.length;
 		while (offset < data.length){
-			remaining =  data.length -  offset;
-			int len = remaining>bufSize?bufSize:remaining;
+			remaining 			=  data.length -  offset;
+			int len 			= remaining>bufSize?bufSize:remaining;
 			f.write(data,offset,len);
 			offset += len;
 		}
