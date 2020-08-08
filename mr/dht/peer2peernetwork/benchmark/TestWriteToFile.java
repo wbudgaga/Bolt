@@ -33,8 +33,8 @@ public class TestWriteToFile {
 
 	
 	public void createRandomData(int size){
-		data = new byte[size];
-		Random randomGenerater = new Random();
+		data 					= new byte[size];
+		Random randomGenerater 			= new Random();
 		randomGenerater.nextBytes(data);
 	}
 	
