@@ -123,8 +123,8 @@ public class TestWriteToFile {
 	}
 	
 	public static void main(String[] args) throws IOException{//input: full file name, #iterations
-		String fn=args[0];
-		int itr = Integer.parseInt(args[1]);
+		String fn				= args[0];
+		int itr 				= Integer.parseInt(args[1]);
 		TestWriteToFile twtf = new TestWriteToFile();
 		twtf.createRandomData(512*Setting.MEGA);
 		twtf.testOutputStream(fn, itr);
