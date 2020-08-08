@@ -44,8 +44,8 @@ public class TestWriteToFile {
 		int offset 				= 0;
 		int remaining;// = data.length;
 		while (offset < data.length){
-			remaining =  data.length -  offset;
-			int len = remaining>arraySize?arraySize:remaining;
+			remaining 			=  data.length -  offset;
+			int len 			= remaining>arraySize?arraySize:remaining;
 			f.write(data,offset,len);
 			offset += len;
 		}
