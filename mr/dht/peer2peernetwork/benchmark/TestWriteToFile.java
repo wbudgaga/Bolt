@@ -75,8 +75,8 @@ public class TestWriteToFile {
 	}
 
 	public int storeUsingNIO(String fn, int bufSize) throws IOException{
-		FileChannel fChannel 		= new FileOutputStream(fn).getChannel();
-		long start = System.currentTimeMillis();
+		FileChannel fChannel 			= new FileOutputStream(fn).getChannel();
+		long start 				= System.currentTimeMillis();
 		int offset =0;
 		int readBytes;
 		int remaining;// = data.length;
