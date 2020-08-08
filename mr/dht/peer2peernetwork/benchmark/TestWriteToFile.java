@@ -47,7 +47,7 @@ public class TestWriteToFile {
 			remaining 			=  data.length -  offset;
 			int len 			= remaining>arraySize?arraySize:remaining;
 			f.write(data,offset,len);
-			offset += len;
+			offset 				+= len;
 		}
 	    f.flush();
 	    long end = System.currentTimeMillis();
