@@ -39,8 +39,8 @@ public class TestWriteToFile {
 	}
 	
 	public int storeUsingFileOutputStreamArray(String fn, int arraySize) throws IOException{
-		FileOutputStream f = new FileOutputStream(fn);
-		long start = System.currentTimeMillis();
+		FileOutputStream f 			= new FileOutputStream(fn);
+		long start 				= System.currentTimeMillis();
 		int offset =0;
 		int remaining;// = data.length;
 		while (offset < data.length){
