@@ -22,14 +22,14 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.resourcemanagement.io.DataSource;
 
 public class TestWriteToFile {
-	private static final int ITERATIONS 	= 5;
-	private static final int RECORD_COUNT 	= 5242880; //(int) (8* Math.pow(10, 6));
+	private static final int ITERATIONS 		= 5;
+	private static final int RECORD_COUNT 		= 5242880; //(int) (8* Math.pow(10, 6));
 //	private static final String RECORD 		= "Here is just sample line using to read and store using different available methods for testing them\n";
 //	private static final int RECSIZE 		= RECORD.getBytes().length;
 	private byte[] data;//		= new String[RECORD_COUNT];
 	
 	public int[] buffSizes={8*Setting.KILO, 16*Setting.KILO, 32*Setting.KILO, 64*Setting.KILO, 128*Setting.KILO, 265*Setting.KILO, 512*Setting.KILO,Setting.MEGA, 8*Setting.MEGA, 16*Setting.MEGA, 32*Setting.MEGA,64*Setting.MEGA, 128*Setting.MEGA, 265*Setting.MEGA};
-	public String[] labels={"8K"," 16K"," 32K"," 64K"," 128K"," 265K"," 512K","1M","8M","16M","32M","64M","128M","265M"};
+	public String[] labels				= {"8K"," 16K"," 32K"," 64K"," 128K"," 265K"," 512K","1M","8M","16M","32M","64M","128M","265M"};
 
 	
 	public void createRandomData(int size){
