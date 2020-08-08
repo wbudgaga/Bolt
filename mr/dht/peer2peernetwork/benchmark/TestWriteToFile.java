@@ -99,10 +99,10 @@ public class TestWriteToFile {
 		int readBytes;
 		int remaining;// = data.length;
 		while (offset < data.length){
-			remaining =  data.length -  offset;
-			int len = remaining>bufSize?bufSize:remaining;
+			remaining 			=  data.length -  offset;
+			int len 			= remaining>bufSize?bufSize:remaining;
 			mb.put(data, 0, len);			
-			offset += len;
+			offset 				+= len;
 		}
 		long end = System.currentTimeMillis();
 		fChannel.close();
