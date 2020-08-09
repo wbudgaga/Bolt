@@ -47,8 +47,8 @@ public class PeerTest implements CommandLineInterface{
 	public static void main(String args[]) throws InstantiationException, IllegalAccessException, IOException, ClassNotFoundException, InvalidFingerTableEntry {
 		PeerTest peer;
 		try{
-			int 	port 		= 5;
-			String 	nickName 	= "mainTest";
+			int 	port 				= 5;
+			String 	nickName 			= "mainTest";
 			peer = new PeerTest(nickName,5,port);
 			CommandLineThread cl = new CommandLineThread(peer);
 			cl.start();
