@@ -34,8 +34,8 @@ public class FingerTableTest {
 		PeerData p1 				= getPeerData(8,"test1","host1", 1);
 		PeerData p2 				= getPeerData(13,"test2","host2", 2);
 		RemotePeer rp 				= RemotePeer.getInstance(p1);
-		RemotePeer rp1 = RemotePeer.getInstance(p2);
-		FTManager ftm = new FTManager(p, 4);
+		RemotePeer rp1 				= RemotePeer.getInstance(p2);
+		FTManager ftm 				= new FTManager(p, 4);
 		
 		ftm.addNewPeer(rp);
 		ftm.print();
