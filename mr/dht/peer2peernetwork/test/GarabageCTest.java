@@ -5,8 +5,8 @@ import java.io.FileInputStream;
 
 public class GarabageCTest {
 	public static void testNumToString(){
-		StringBuilder s =new StringBuilder();
-		int c=10;
+		StringBuilder s 		= new StringBuilder();
+		int c	= 10;
 		while(true){
 			new Integer(c).toString();
 		}
@@ -18,5 +18,4 @@ public class GarabageCTest {
 	public static void main(String[] s){
 		testNumToString();
 	}
-
 }
