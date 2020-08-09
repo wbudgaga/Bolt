@@ -23,8 +23,8 @@ public class PeerTest implements CommandLineInterface{
 	}
 		
 	public void lookup(long key){
-		RemotePeer rp= p.lookup(key);
-		System.out.println("key: "+key+ " has been found at "+rp.getID());
+		RemotePeer rp					= p.lookup(key);
+		System.out.println("key: " + key + " has been found at " + rp.getID());
 	}
 
 	public void print(){
