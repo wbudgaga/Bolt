@@ -50,7 +50,7 @@ public class PeerTest implements CommandLineInterface{
 			int 	port 				= 5;
 			String 	nickName 			= "mainTest";
 			peer = new PeerTest(nickName,5,port);
-			CommandLineThread cl = new CommandLineThread(peer);
+			CommandLineThread cl 			= new CommandLineThread(peer);
 			cl.start();
 /*			peer.addNewPeer();
 			peer.print();
@@ -79,7 +79,5 @@ public class PeerTest implements CommandLineInterface{
 	@Override
 	public void printFT() {
 		// TODO Auto-generated method stub
-		
 	}
-
 }
