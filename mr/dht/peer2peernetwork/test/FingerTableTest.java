@@ -16,12 +16,12 @@ import mr.dht.peer2peernetwork.wireformates.MessageFactory;
 public class FingerTableTest {
 	
 	public static Message getMSG(byte[] msg) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
-		MessageFactory mf = MessageFactory.getInstance();
+		MessageFactory mf 			= MessageFactory.getInstance();
 		return mf.createMessage(msg);
 	}
 	
 	public static PeerData getPeerData(long id,String name, String host, int port) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
-		PeerData pd = new PeerData();
+		PeerData pd 				= new PeerData();
 		pd.setHost(host);
 		pd.setNickName(name);
 		pd.setPeerID(id);
