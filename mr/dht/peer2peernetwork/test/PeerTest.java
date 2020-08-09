@@ -32,18 +32,18 @@ public class PeerTest implements CommandLineInterface{
 		p.getNodeData().print();
 		PeerData.printRowSeparator();
 	}
-
 		
 	public void addNewPeer() throws IOException, InvalidFingerTableEntry{
 		long id 					= UtilClass.getRandomNumber(0, 16);
-		PeerData pd = new PeerData();
+		PeerData pd 					= new PeerData();
 		pd.setHost("host_"+id);
 		pd.setPeerID(id);
 		pd.setPortNum((int)id +123);
 		pd.setNickName("name_"+id);
-		RemotePeer rp = RemotePeer.getInstance(pd);
+		RemotePeer rp 					= RemotePeer.getInstance(pd);
 		p.setSuccessor(rp);
 	}
+	
 	public static void main(String args[]) throws InstantiationException, IllegalAccessException, IOException, ClassNotFoundException, InvalidFingerTableEntry {
 		PeerTest peer;
 		try{
