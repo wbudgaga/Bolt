@@ -41,7 +41,7 @@ public class CircularBuffer<T> {
 	  }
 
 	  public static void main(String[] args) {
-	    CircularBuffer<String> b = new CircularBuffer<String>(3);
+	    CircularBuffer<String> b 	= new CircularBuffer<String>(3);
 	    for (int i = 0; i < 10; i++) {
 	        System.out.println("Start: " + b);
 	        b.add("One");
@@ -66,4 +66,4 @@ public class CircularBuffer<T> {
 	        b.get();
 	    }
 	  }
-	}
+}
