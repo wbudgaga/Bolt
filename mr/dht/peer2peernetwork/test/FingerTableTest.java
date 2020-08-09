@@ -30,9 +30,8 @@ public class FingerTableTest {
 	}
 
 	public static void testAddFT() throws InstantiationException, IllegalAccessException, ClassNotFoundException, InvalidFingerTableEntry, IOException{
-		Peer p = new Peer("test", 5, 0);
-		
-		PeerData p1 = getPeerData(8,"test1","host1", 1);
+		Peer p 					= new Peer("test", 5, 0);
+		PeerData p1 				= getPeerData(8,"test1","host1", 1);
 		PeerData p2 = getPeerData(13,"test2","host2", 2);
 		RemotePeer rp = RemotePeer.getInstance(p1);
 		RemotePeer rp1 = RemotePeer.getInstance(p2);
