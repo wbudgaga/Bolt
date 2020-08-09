@@ -16,10 +16,9 @@ import mr.dht.peer2peernetwork.util.UtilClass;
 public class PeerTest implements CommandLineInterface{
 	private Peer 			p;
 	private RemoteDiscovery remoteDiscovery;
-	
 
 	public PeerTest(String name,int id, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
-		p = new Peer(name, id, port);
+		p 						= new Peer(name, id, port);
 		//p.startup();		
 	}
 		
@@ -36,7 +35,7 @@ public class PeerTest implements CommandLineInterface{
 
 		
 	public void addNewPeer() throws IOException, InvalidFingerTableEntry{
-		long id = UtilClass.getRandomNumber(0, 16);
+		long id 					= UtilClass.getRandomNumber(0, 16);
 		PeerData pd = new PeerData();
 		pd.setHost("host_"+id);
 		pd.setPeerID(id);
