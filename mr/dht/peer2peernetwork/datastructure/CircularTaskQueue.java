@@ -47,6 +47,7 @@ public class CircularTaskQueue extends CircularQueue{
 		objects.put(k, peer);
 		return true;
 	}
+	
 	public Task remove(Long k){
 		return objects.remove(k);
 	}
@@ -64,8 +65,5 @@ public class CircularTaskQueue extends CircularQueue{
 		if (contains(k)  && remove(addToCache(k))!=null)
 			return true;
 		return false;
-	}
-
-	//======================================================================	
-	
+	}	
 }
