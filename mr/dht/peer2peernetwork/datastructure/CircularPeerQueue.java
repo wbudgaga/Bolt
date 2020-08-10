@@ -25,12 +25,12 @@ public class CircularPeerQueue extends CircularQueue{
 	}
 	public void getCachedPeers(HashMap<Long, RemotePeer> peersList){
 		resetTheItrator();
-		long  peerID = getCacheNextKey();
+		long  peerID 				= getCacheNextKey();
 		while (peerID != NOTEXIST){
 			if (peerID!= 0 && !peersList.containsKey(peerID)){
 				peersList.put(peerID, getPeer(peerID));
 			}
-			peerID = getNextKeyOnCirularCache();
+			peerID 				= getNextKeyOnCirularCache();
 		}
 	}
 	/*======================================================================
