@@ -24,9 +24,9 @@ public class CircularQueue{
 		this.keysList 					= new long[maxSize];
 	}
 	protected void resetPos(long k){
-		int idx = isInCache(k);
+		int idx 					= isInCache(k);
 		if (idx!=NOTEXIST)
-			keysList[idx] 	= 0;
+			keysList[idx] 				= 0;
 	}
 
 	public int isInCache(long k){
