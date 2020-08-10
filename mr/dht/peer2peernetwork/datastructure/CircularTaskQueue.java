@@ -25,14 +25,15 @@ public class CircularTaskQueue extends CircularQueue{
 	public Task getCacheNextPeer(){
 		return objects.get(getCacheNextKey());
 	}
+	
 	public void getCachedTasks(HashMap<Long, Task> tasksList){
 		resetTheItrator();
-		long  taskID = getCacheNextKey();
+		long  taskID 			= getCacheNextKey();
 		while (taskID != NOTEXIST){
-			if (taskID!= 0 && !tasksList.containsKey(taskID)){
+			if (taskID != 0 && !tasksList.containsKey(taskID)){
 				tasksList.put(taskID, getTask(taskID));
 			}
-			taskID = getNextKeyOnCirularCache();
+			taskID 			= getNextKeyOnCirularCache();
 		}
 	}
 	/*======================================================================
