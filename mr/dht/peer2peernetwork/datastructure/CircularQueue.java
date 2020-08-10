@@ -30,8 +30,8 @@ public class CircularQueue{
 	}
 
 	public int isInCache(long k){
-		for(int i=0; i<keysList.length;++i)
-			if (keysList[i]==k){
+		for(int i=0; i<keysList.length; ++i)
+			if (keysList[i] == k){
 				return i;
 			}
 		return NOTEXIST;
@@ -39,8 +39,8 @@ public class CircularQueue{
 	
 	//add to current pos and returns the deleted key
 	protected long addToCache(long k){
-		long oldKey 		= keysList[addPos];
-		keysList[addPos] 	= k;
+		long oldKey 					= keysList[addPos];
+		keysList[addPos] 				= k;
 		addPos 				= (addPos + 1) % maxSize;
 		return oldKey;
 	}
