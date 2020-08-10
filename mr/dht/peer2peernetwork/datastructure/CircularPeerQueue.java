@@ -65,9 +65,9 @@ public class CircularPeerQueue extends CircularQueue{
 
 	//======================================================================	
 	
-		public static void main(String args[]){
-			CircularPeerQueue c = new CircularPeerQueue(3);
-			c.add(30l,null);
+	public static void main(String args[]){
+		CircularPeerQueue c = new CircularPeerQueue(3);
+		c.add(30l,null);
 			c.add(20l,null);
 			c.add(18l,null);
 			c.add(15l,null);
