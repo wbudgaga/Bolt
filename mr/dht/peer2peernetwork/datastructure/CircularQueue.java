@@ -63,9 +63,9 @@ public class CircularQueue{
 	}
 	
 	public static void main(String args[]){
-		HashMap<Long, RemotePeer> peersList = new HashMap<Long, RemotePeer> ();
-		CircularTaskQueue c = new CircularTaskQueue(3);
-		Task t=null;
+		HashMap<Long, RemotePeer> peersList 		= new HashMap<Long, RemotePeer> ();
+		CircularTaskQueue c 				= new CircularTaskQueue(3);
+		Task t 						= null;
 		c.add(30l,t);
 		c.add(20l,t);
 		c.add(18l,t);
@@ -83,6 +83,4 @@ public class CircularQueue{
 		}
 
 	}
-
 }
-
