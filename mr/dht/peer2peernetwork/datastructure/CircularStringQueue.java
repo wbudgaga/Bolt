@@ -61,7 +61,5 @@ public class CircularStringQueue extends CircularQueue{
 		if (contains(k)  && remove(addToCache(k))!=null)
 			return true;
 		return false;
-	}
-
-	//======================================================================	
+	}	
 }
