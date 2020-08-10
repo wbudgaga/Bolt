@@ -70,9 +70,9 @@ public class CircularPeerQueue extends CircularQueue{
 		c.add(30l,null);
 		c.add(20l,null);
 		c.add(18l,null);
-			c.add(15l,null);
-			c.add(10l,null);
-			for (int i =0; i<3;i++){
+		c.add(15l,null);
+		c.add(10l,null);
+		for (int i =0; i<3;i++){
 				System.out.println(c.getNextKeyOnCirularCache());
 			}
 			
