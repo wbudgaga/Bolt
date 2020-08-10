@@ -8,11 +8,11 @@ import mr.dht.peer2peernetwork.threadpool.Task;
  * This class is designed to hold a list of members and with ability to cache(fixed size) removed peers 
  */
 public class CircularTaskQueue extends CircularQueue{
-	private HashMap<Long,Task> objects  = new HashMap<Long,Task>();
+	private HashMap<Long,Task> objects  	= new HashMap<Long,Task>();
 	
 	public CircularTaskQueue(HashMap<Long,Task> objects,int size){
 		super(size);
-		this.objects 	= objects;
+		this.objects 			= objects;
 	}
 	
 	public CircularTaskQueue(int size){
