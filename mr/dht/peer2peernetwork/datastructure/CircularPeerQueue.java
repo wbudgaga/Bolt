@@ -7,11 +7,11 @@ import mr.dht.peer2peernetwork.nodes.RemotePeer;
  * This class is designed to hold a list of members and with ability to cache(fixed size) removed peers 
  */
 public class CircularPeerQueue extends CircularQueue{
-	private HashMap<Long,RemotePeer> objects  = new HashMap<Long,RemotePeer>();
+	private HashMap<Long,RemotePeer> objects  	= new HashMap<Long,RemotePeer>();
 	
 	public CircularPeerQueue(HashMap<Long,RemotePeer> objects,int size){
 		super(size);
-		this.objects 	= objects;
+		this.objects 				= objects;
 	}
 	public CircularPeerQueue(int size){
 		super(size);
