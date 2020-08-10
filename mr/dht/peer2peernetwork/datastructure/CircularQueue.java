@@ -20,8 +20,8 @@ public class CircularQueue{
 	cache management
 	======================================================================*/	
 	public CircularQueue(int size){
-		this.maxSize 	= size;
-		this.keysList 	= new long[maxSize];
+		this.maxSize 					= size;
+		this.keysList 					= new long[maxSize];
 	}
 	protected void resetPos(long k){
 		int idx = isInCache(k);
