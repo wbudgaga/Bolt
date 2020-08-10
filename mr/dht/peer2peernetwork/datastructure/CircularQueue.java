@@ -8,13 +8,13 @@ import mr.dht.peer2peernetwork.threadpool.Task;
  * This class is designed to hold a list of members and with ability to cache(fixed size) removed peers 
  */
 public class CircularQueue{
-	public final int 	NOTEXIST	= -1;
-	public final int 	INCACHE		= 0;
-	public final int 	INBUFFER	= 1;
+	public final int 	NOTEXIST			= -1;
+	public final int 	INCACHE				= 0;
+	public final int 	INBUFFER			= 1;
 	private long[]		keysList;
-	private int 		addPos		= 0;
-	private int 		curPos		= 0;
-	private int 		posMarker	= 0;
+	private int 		addPos				= 0;
+	private int 		curPos				= 0;
+	private int 		posMarker			= 0;
 	private int 		maxSize;	
 	/*======================================================================
 	cache management
