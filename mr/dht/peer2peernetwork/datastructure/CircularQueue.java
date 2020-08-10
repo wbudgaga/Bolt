@@ -41,13 +41,13 @@ public class CircularQueue{
 	protected long addToCache(long k){
 		long oldKey 					= keysList[addPos];
 		keysList[addPos] 				= k;
-		addPos 				= (addPos + 1) % maxSize;
+		addPos 						= (addPos + 1) % maxSize;
 		return oldKey;
 	}
 
 	public long getNextKeyOnCirularCache(){
-		long k = keysList[curPos];
-		curPos	 = (curPos + 1) % maxSize;
+		long k 						= keysList[curPos];
+		curPos	 					= (curPos + 1) % maxSize;
 		return k;
 	}
 	public void resetTheItrator(){
