@@ -51,13 +51,13 @@ public class CircularQueue{
 		return k;
 	}
 	public void resetTheItrator(){
-		posMarker = 0;
+		posMarker 					= 0;
 	}
 	public long getCacheNextKey(){
 		if (posMarker == maxSize){
 			return -1;
 		}
-		long k = keysList[posMarker];
+		long k 						= keysList[posMarker];
 		++posMarker;
 		return k;
 	}
