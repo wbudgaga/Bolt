@@ -25,12 +25,12 @@ public class CircularStringQueue extends CircularQueue{
 	
 	public void getCachedStrings(HashMap<Long, String> StringsList){
 		resetTheItrator();
-		long  StringID = getCacheNextKey();
+		long  StringID 				= getCacheNextKey();
 		while (StringID != NOTEXIST){
-			if (StringID!= 0 && !StringsList.containsKey(StringID)){
+			if (StringID != 0 && !StringsList.containsKey(StringID)){
 				StringsList.put(StringID, getString(StringID));
 			}
-			StringID = getNextKeyOnCirularCache();
+			StringID 			= getNextKeyOnCirularCache();
 		}
 	}
 	/*======================================================================
