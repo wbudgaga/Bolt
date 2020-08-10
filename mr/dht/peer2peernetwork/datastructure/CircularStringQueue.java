@@ -5,11 +5,11 @@ import java.util.HashMap;
  * This class is designed to hold a list of members and with ability to cache(fixed size) removed peers 
  */
 public class CircularStringQueue extends CircularQueue{
-	private HashMap<Long,String> objects  = new HashMap<Long,String>();
+	private HashMap<Long,String> objects  		= new HashMap<Long,String>();
 	
 	public CircularStringQueue(HashMap<Long,String> objects,int size){
 		super(size);
-		this.objects 	= objects;
+		this.objects 				= objects;
 	}
 	
 	public CircularStringQueue(int size){
