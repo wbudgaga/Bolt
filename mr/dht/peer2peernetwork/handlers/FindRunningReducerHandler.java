@@ -26,10 +26,11 @@ public class FindRunningReducerHandler extends MessageHandler{
 	public Peer getNode(){
 		return (Peer) node;
 	}
+	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		FindRunningReducer frr = (FindRunningReducer) msg;
-		Peer lPeer = getNode();
+		FindRunningReducer frr 			= (FindRunningReducer) msg;
+		Peer lPeer 				= getNode();
 		try {
 			RemotePeer peer = lPeer.getResponsiblePeer(frr.getQueryKey());
 			if (peer==null){// lPerr is the responsible
