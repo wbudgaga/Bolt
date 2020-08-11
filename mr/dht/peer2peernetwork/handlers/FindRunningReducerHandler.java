@@ -33,10 +33,10 @@ public class FindRunningReducerHandler extends MessageHandler{
 		Peer lPeer 					= getNode();
 		try {
 			RemotePeer peer 			= lPeer.getResponsiblePeer(frr.getQueryKey());
-			if (peer==null){// lPerr is the responsible
+			if (peer == null){// lPerr is the responsible
 				RemotePeer mapPeer 		= lPeer.getQueryPeer(frr);
-				if (mapPeer==null){
-					PeerData srcPeer = frr.getSourcePeer().getPeer();
+				if (mapPeer == null){
+					PeerData srcPeer 	= frr.getSourcePeer().getPeer();
 					lPeer.initiateConnectionManager(srcPeer.getHost(),srcPeer.getPortNum(), new Connecting4ReducerPeerHandler(lPeer, frr));
 					return;
 				}
