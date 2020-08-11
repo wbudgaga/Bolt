@@ -23,7 +23,6 @@ public class StartMapTaskHandler extends MessageHandler{
 	public void startMapTask(PacketChannel pc, StartMapTask startMRTaskMSG){
 		PeerInfo pd 						= startMRTaskMSG.getPeer();
 		long 	 jobID 						= startMRTaskMSG.getJobID();
-		
 		MapTaskInfo<Long,String,String,Long> mapTask 		= new MapTaskInfo<Long, String, String, Long>();
 		mapTask.setDataPath(Setting.MRJOBS_DIR + startMRTaskMSG.getDataInputPath());
 		mapTask.setTaskClassName(startMRTaskMSG.getTaskClassName());
@@ -32,7 +31,7 @@ public class StartMapTaskHandler extends MessageHandler{
 		mapTask.setNumOfReducer(startMRTaskMSG.getNumOfReducers());
 		mapTask.setPartitionerClassName("mr.resourcemanagement.datapartitioning.ModPartitioner");
 		try {
-			JobTasksManager jTaskManager = ((Peer) node).getResourceManager().getOrCreateJobTaskManager(jobID);
+			JobTasksManager jTaskManager 			= ((Peer) node).getResourceManager().getOrCreateJobTaskManager(jobID);
 			jTaskManager.processMapTask(mapTask);		
 		} catch (Exception e) {
 			e.printStackTrace();
