@@ -24,8 +24,8 @@ public class StartMapTaskHandler extends MessageHandler{
 		PeerInfo pd 						= startMRTaskMSG.getPeer();
 		long 	 jobID 						= startMRTaskMSG.getJobID();
 		
-		MapTaskInfo<Long,String,String,Long> mapTask = new MapTaskInfo<Long, String, String, Long>();
-		mapTask.setDataPath(Setting.MRJOBS_DIR+startMRTaskMSG.getDataInputPath());
+		MapTaskInfo<Long,String,String,Long> mapTask 		= new MapTaskInfo<Long, String, String, Long>();
+		mapTask.setDataPath(Setting.MRJOBS_DIR + startMRTaskMSG.getDataInputPath());
 		mapTask.setTaskClassName(startMRTaskMSG.getTaskClassName());
 		mapTask.setTaskID(startMRTaskMSG.getTaskID());
 		mapTask.setJobID(jobID);
