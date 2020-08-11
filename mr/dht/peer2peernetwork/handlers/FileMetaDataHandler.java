@@ -16,7 +16,7 @@ public class FileMetaDataHandler extends MessageHandler{
 	
 	public void handleDatasetMetaData(PacketChannel pc, FileMetaData metaData) {
 		System.out.println(" file>> " + metaData.getFileHashedKey()+ "  "+metaData.getFileName());
-		Peer lp = (Peer) node; 
+		Peer lp 				= (Peer) node; 
 		MetaDataManager metaMGR = lp.getResourceManager().getMetadataManager();
 		metaMGR.addFile(metaData.getFileHashedKey(), metaData);
 		try {
