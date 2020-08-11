@@ -17,8 +17,8 @@ public class DatasetMetaDataHandler extends MessageHandler{
 		System.out.println(" dataSet>> " + metaData.getDataSetHashKey());
 		System.out.println(metaData.getFileNameList());
 		System.out.println(metaData.getFileSizeList());
-		Peer lp = (Peer) node; 
-		MetaDataManager metaMGR = lp.getResourceManager().getMetadataManager();
+		Peer lp 						= (Peer) node; 
+		MetaDataManager metaMGR 				= lp.getResourceManager().getMetadataManager();
 		metaMGR.addDataset(metaData.getDataSetHashKey(), metaData);
 		try {
 			metaMGR.flushDatasets();
