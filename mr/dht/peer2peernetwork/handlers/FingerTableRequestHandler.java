@@ -31,7 +31,7 @@ public class FingerTableRequestHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
-			FingerTableRequest ftReqestMsg = (FingerTableRequest) msg;
+			FingerTableRequest ftReqestMsg 	= (FingerTableRequest) msg;
 			RemotePeer sender 		= RemotePeer.getInstance(ftReqestMsg.getPeer(),pc);
 			sendFingerTableResponse(sender);
 		} catch (IOException e) {
