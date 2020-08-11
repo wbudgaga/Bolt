@@ -18,10 +18,10 @@ public class FingerTableRequestHandler extends MessageHandler{
 	private void sendFingerTableResponse(RemotePeer sender) throws IOException{
 		System.out.println("sending My FT to "+sender.getID());
 		PeerInfo[] allPeersInfo = getNode().getAllRemotePeersInfo();
-		PeerInfo pred 			= getNode().getPredecessor().getPeerInfo();
-		PeerInfo me 			= new PeerInfo();
+		PeerInfo pred 				= getNode().getPredecessor().getPeerInfo();
+		PeerInfo me 				= new PeerInfo();
 		me.setPeer(getNode().getNodeData());
-		FingerTableResponse gpr = new FingerTableResponse();
+		FingerTableResponse gpr 		= new FingerTableResponse();
 		gpr.setPeer(me);
 		gpr.setPredecessor(pred);
 		gpr.setPeerList(allPeersInfo);
@@ -32,7 +32,7 @@ public class FingerTableRequestHandler extends MessageHandler{
 	public void handle(PacketChannel pc, Message msg) {
 		try {
 			FingerTableRequest ftReqestMsg = (FingerTableRequest) msg;
-			RemotePeer sender = RemotePeer.getInstance(ftReqestMsg.getPeer(),pc);
+			RemotePeer sender 		= RemotePeer.getInstance(ftReqestMsg.getPeer(),pc);
 			sendFingerTableResponse(sender);
 		} catch (IOException e) {
 			e.printStackTrace();
