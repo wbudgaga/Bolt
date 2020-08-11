@@ -21,8 +21,8 @@ import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 public class StartMapTaskHandler extends MessageHandler{
 	
 	public void startMapTask(PacketChannel pc, StartMapTask startMRTaskMSG){
-		PeerInfo pd 	= startMRTaskMSG.getPeer();
-		long 	 jobID 	= startMRTaskMSG.getJobID();
+		PeerInfo pd 						= startMRTaskMSG.getPeer();
+		long 	 jobID 						= startMRTaskMSG.getJobID();
 		
 		MapTaskInfo<Long,String,String,Long> mapTask = new MapTaskInfo<Long, String, String, Long>();
 		mapTask.setDataPath(Setting.MRJOBS_DIR+startMRTaskMSG.getDataInputPath());
