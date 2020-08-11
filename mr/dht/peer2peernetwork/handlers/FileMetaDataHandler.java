@@ -12,12 +12,11 @@ import mr.dht.peer2peernetwork.wireformates.StoreFileRequest;
 import mr.resourcemanagement.execution.mrtasks.management.CopyAndForwardTask;
 import mr.resourcemanagement.execution.mrtasks.management.MetaDataManager;
 
-public class FileMetaDataHandler extends MessageHandler{
-	
+public class FileMetaDataHandler extends MessageHandler{	
 	public void handleDatasetMetaData(PacketChannel pc, FileMetaData metaData) {
 		System.out.println(" file>> " + metaData.getFileHashedKey()+ "  "+metaData.getFileName());
 		Peer lp 				= (Peer) node; 
-		MetaDataManager metaMGR = lp.getResourceManager().getMetadataManager();
+		MetaDataManager metaMGR 		= lp.getResourceManager().getMetadataManager();
 		metaMGR.addFile(metaData.getFileHashedKey(), metaData);
 		try {
 			metaMGR.flushFiles();
