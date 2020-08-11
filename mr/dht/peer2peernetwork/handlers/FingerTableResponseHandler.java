@@ -18,8 +18,8 @@ public class FingerTableResponseHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
-			FingerTableResponse ftRespMsg = (FingerTableResponse) msg;
-			RemotePeer peer = RemotePeer.getInstance(ftRespMsg.getPredecessor());
+			FingerTableResponse ftRespMsg 		= (FingerTableResponse) msg;
+			RemotePeer peer 			= RemotePeer.getInstance(ftRespMsg.getPredecessor());
 			getNode().addNewPeer(peer);
 			peer = RemotePeer.getInstance(ftRespMsg.getPeer());
 			getNode().addNewPeer(peer);
