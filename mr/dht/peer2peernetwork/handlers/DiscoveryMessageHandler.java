@@ -6,8 +6,7 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 
 public class DiscoveryMessageHandler extends LocalMessageHandler{
 
-	public DiscoveryMessageHandler(LNode node) throws ClassNotFoundException,
-		InstantiationException, IllegalAccessException {
+	public DiscoveryMessageHandler(LNode node) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		super(node);
 	}			   
 				
