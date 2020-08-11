@@ -23,7 +23,7 @@ public class FingerTableResponseHandler extends MessageHandler{
 			getNode().addNewPeer(peer);
 			peer 					= RemotePeer.getInstance(ftRespMsg.getPeer());
 			getNode().addNewPeer(peer);
-			System.out.println("ft received from "+peer.getID());
+			System.out.println("ft received from " + peer.getID());
 			for(PeerInfo pi: ftRespMsg.getPeerList()){
 				peer 				= RemotePeer.getInstance(pi);
 				getNode().addNewPeer(peer);
