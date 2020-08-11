@@ -48,6 +48,7 @@ public class StartMapTaskHandler extends MessageHandler{
 		return Message.START_MAPTask;
 	}
 }
+
 /*public <K1,V1,K2,V2>  void processMapTask(int refCount, MapTaskInfo<K1,V1,K2,V2> mapTaskInfo) throws Exception{
 	long jobID = mapTaskInfo.getJobID();
 	JobTasksManager jTaskManager = getOrCreateJobTaskManager(jobID);
