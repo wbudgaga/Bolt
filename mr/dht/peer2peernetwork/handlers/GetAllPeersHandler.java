@@ -26,10 +26,11 @@ public class GetAllPeersHandler extends MessageHandler{
 	}
 		
 	private void sendFingerTableResponse(PacketChannel pc, PeerInfo[] allPeersInfo) throws IOException{
-		PeersList peersListMsg = new PeersList();
+		PeersList peersListMsg 				= new PeersList();
 		peersListMsg.setPeerList(allPeersInfo);
 		sendMessage(pc, peersListMsg);
 	}
+	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		handleGetAllPeers(pc, (GetAllPeers)msg);
