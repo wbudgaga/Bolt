@@ -26,10 +26,10 @@ public class GetPredecessorHandler extends MessageHandler{
 		GetPredecessor getPredMsg 		= (GetPredecessor) msg;
 		PeerData senderInfor 			= getPredMsg.getPeer();
 		
-		if (senderInfor.getPeerID()== pred.getID())
+		if (senderInfor.getPeerID() == pred.getID())
 			return;
 		System.out.println(senderInfor.getPeerID()+" asked me about my pred:  "+ pred.getID());
-		RemotePeer sender = RemotePeer.getInstance(senderInfor);
+		RemotePeer sender 			= RemotePeer.getInstance(senderInfor);
 		try {
 			sendGetPredecessorResponse(sender,pred);
 		} catch (IOException e) {
