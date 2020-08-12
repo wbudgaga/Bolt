@@ -24,7 +24,7 @@ public class GetFileMetaDataHandler extends MessageHandler{
 	}
 	public synchronized void handleGetFileMetaData(PacketChannel pc, GetFileMetaData message) {
 		MetaDataManager metaMGR 			= getNode().getResourceManager().getMetadataManager();
-		if (message.getHashedKey()==-1)
+		if (message.getHashedKey() == -1)
 			handleGetAllFilesMetaData(pc, metaMGR);
 		else
 			sendMessage(pc,metaMGR.getFile(message.getHashedKey()));
