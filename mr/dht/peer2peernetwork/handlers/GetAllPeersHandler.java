@@ -17,8 +17,8 @@ public class GetAllPeersHandler extends MessageHandler{
 	
 	public synchronized void handleGetAllPeers(PacketChannel pc, GetAllPeers message) {
 		try{
-			PeerInfo[] allPeersInfo = getNode().getPeerInfoList();
-			if (allPeersInfo !=null)
+			PeerInfo[] allPeersInfo 		= getNode().getPeerInfoList();
+			if (allPeersInfo != null)
 				sendFingerTableResponse(pc, allPeersInfo);
 		}catch(IOException e){
 			e.printStackTrace();
