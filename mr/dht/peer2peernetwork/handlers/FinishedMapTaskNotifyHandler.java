@@ -18,10 +18,10 @@ public class FinishedMapTaskNotifyHandler extends MessageHandler{
 			System.out.println("handleJobManagerAboutFinishedMap: There is no task for a given jobID:========>"+jobID);
 			return false;
 		}
-		int remainingMaps = jTaskManager.decreaseMapRef(finishedMapTaskNotify.getNumOfFinishedMaps());
+		int remainingMaps 					= jTaskManager.decreaseMapRef(finishedMapTaskNotify.getNumOfFinishedMaps());
 		//System.out.println(Setting.LOCAL_DIR+"#################   reducer received finshed map notificastion  ===>"+remainingMaps);
 		
-		if (remainingMaps==0){
+		if (remainingMaps == 0){
 			jTaskManager.stopReducers(pd.getPeer().getPeerID(), finishedMapTaskNotify.getNumOfSentBuffers());
 		}
 		return true;
