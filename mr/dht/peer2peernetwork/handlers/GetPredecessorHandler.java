@@ -24,7 +24,7 @@ public class GetPredecessorHandler extends MessageHandler{
 	public void handle(PacketChannel pc, Message msg) {
 		RemotePeer pred 			= getNode().getPredecessor();
 		GetPredecessor getPredMsg 		= (GetPredecessor) msg;
-		PeerData senderInfor = getPredMsg.getPeer();
+		PeerData senderInfor 			= getPredMsg.getPeer();
 		
 		if (senderInfor.getPeerID()== pred.getID())
 			return;
