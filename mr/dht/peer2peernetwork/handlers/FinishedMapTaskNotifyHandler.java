@@ -11,8 +11,8 @@ import mr.resourcemanagement.execution.mrtasks.management.JobTasksManager;
 public class FinishedMapTaskNotifyHandler extends MessageHandler{
 	
 	public synchronized boolean handleJobManagerAboutFinishedMap(PacketChannel pc, FinishedMapTaskNotify finishedMapTaskNotify) throws Exception{
-		PeerInfo pd 	= finishedMapTaskNotify.getPeer();
-		long 	 jobID 	= finishedMapTaskNotify.getJobID();	
+		PeerInfo pd 						= finishedMapTaskNotify.getPeer();
+		long 	 jobID 						= finishedMapTaskNotify.getJobID();	
 		JobTasksManager jTaskManager = ((Peer) node).getResourceManager().getJobTaskManager(jobID);
 		if (jTaskManager== null){
 			System.out.println("handleJobManagerAboutFinishedMap: There is no task for a given jobID:========>"+jobID);
