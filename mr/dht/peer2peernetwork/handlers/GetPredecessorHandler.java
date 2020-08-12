@@ -16,14 +16,14 @@ public class GetPredecessorHandler extends MessageHandler{
 	}
 		
 	private void sendGetPredecessorResponse(RemotePeer sender,  RemotePeer predPeer) throws IOException{
-		GetPredecessorResponse gpr = new GetPredecessorResponse();
+		GetPredecessorResponse gpr 		= new GetPredecessorResponse();
 		gpr.setPeer(predPeer.getNodeData());
 		sender.message(gpr);
 	}
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		RemotePeer pred = getNode().getPredecessor();
-		GetPredecessor getPredMsg = (GetPredecessor) msg;
+		RemotePeer pred 			= getNode().getPredecessor();
+		GetPredecessor getPredMsg 		= (GetPredecessor) msg;
 		PeerData senderInfor = getPredMsg.getPeer();
 		
 		if (senderInfor.getPeerID()== pred.getID())
