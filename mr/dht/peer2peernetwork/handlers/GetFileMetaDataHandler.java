@@ -17,13 +17,13 @@ public class GetFileMetaDataHandler extends MessageHandler{
 	}
 	
 	public  void handleGetAllFilesMetaData(PacketChannel pc, MetaDataManager metaMGR) {
-		ArrayList<FileMetaData> metaList =metaMGR.getAllFiles();
+		ArrayList<FileMetaData> metaList 		= metaMGR.getAllFiles();
 		for (FileMetaData metaData:metaList)
 			sendMessage(pc,metaData);
 
 	}
 	public synchronized void handleGetFileMetaData(PacketChannel pc, GetFileMetaData message) {
-		MetaDataManager metaMGR = getNode().getResourceManager().getMetadataManager();
+		MetaDataManager metaMGR 			= getNode().getResourceManager().getMetadataManager();
 		if (message.getHashedKey()==-1)
 			handleGetAllFilesMetaData(pc, metaMGR);
 		else
