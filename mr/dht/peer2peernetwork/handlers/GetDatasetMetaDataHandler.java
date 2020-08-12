@@ -15,7 +15,7 @@ public class GetDatasetMetaDataHandler extends MessageHandler{
 	}
 	
 	public  void handleGetAllDatasetMetaData(PacketChannel pc, MetaDataManager metaMGR) {
-		ArrayList<DatasetMetaData> metaList =metaMGR.getAllDatasets();
+		ArrayList<DatasetMetaData> metaList 		= metaMGR.getAllDatasets();
 		for (DatasetMetaData metaData:metaList)
 			sendMessage(pc,metaData);
 
