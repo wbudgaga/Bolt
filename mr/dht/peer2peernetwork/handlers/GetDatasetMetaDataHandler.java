@@ -21,8 +21,8 @@ public class GetDatasetMetaDataHandler extends MessageHandler{
 
 	}
 	public synchronized void handleGetDatasetMetaData(PacketChannel pc, GetDatasetMetaData message) {
-		MetaDataManager metaMGR = getNode().getResourceManager().getMetadataManager();
-		if (message.getHashedKey()==-1)
+		MetaDataManager metaMGR 			= getNode().getResourceManager().getMetadataManager();
+		if (message.getHashedKey() == -1)
 			handleGetAllDatasetMetaData(pc, metaMGR);
 		else
 			sendMessage(pc,metaMGR.getDataset(message.getHashedKey()));
