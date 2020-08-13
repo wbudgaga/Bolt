@@ -17,8 +17,8 @@ public class GetPredecessorResponseHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		System.out.println("GetPredecessor response receieved ");
-		GetPredecessorResponse responseMsg = (GetPredecessorResponse) msg;
-		RemotePeer rp = RemotePeer.getInstance(responseMsg.getPeer());
+		GetPredecessorResponse responseMsg 	= (GetPredecessorResponse) msg;
+		RemotePeer rp 				= RemotePeer.getInstance(responseMsg.getPeer());
 		try {
 			getNode().setSuccessor(rp);
 		} catch (IOException e) {
