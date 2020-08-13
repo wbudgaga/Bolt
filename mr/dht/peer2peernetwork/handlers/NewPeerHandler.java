@@ -16,7 +16,7 @@ public class NewPeerHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		NewPeer peerInfo = (NewPeer) msg;
+		NewPeer peerInfo 		= (NewPeer) msg;
 		try {
 			getNode().addNewPeer(RemotePeer.getInstance(peerInfo,pc));
 		} catch (IOException e) {
