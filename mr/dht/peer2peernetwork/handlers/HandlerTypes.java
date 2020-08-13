@@ -116,5 +116,4 @@ public interface HandlerTypes {
 			 return values()[i].toString();
 		 }
 	}
-
 }
