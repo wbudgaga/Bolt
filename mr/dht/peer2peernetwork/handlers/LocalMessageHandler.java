@@ -20,14 +20,14 @@ public abstract class LocalMessageHandler {
 	}
 	
 	protected void createMessageHandlerObject(Class<MessageHandler> handlerClass) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		MessageHandler msgHandler = (MessageHandler) handlerClass.newInstance();
+		MessageHandler msgHandler 				= (MessageHandler) handlerClass.newInstance();
 		msgHandler.setNode(node);
 		addMessageHandler(msgHandler.getHandlerID(), msgHandler);
 	}
 	
 	public void handle(PacketChannel pc, Message msg) throws InstantiationException, IllegalAccessException{
 		MessageHandler handler = getMessageHandler(msg.getHandlerID());
-		if (handler==null){
+		if (handler == null){
 			System.out.println("There is no message handler for message-id "+msg.getMessageID());
 			return;
 		}
