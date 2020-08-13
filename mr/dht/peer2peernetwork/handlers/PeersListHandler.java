@@ -19,7 +19,7 @@ public class PeersListHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
-			PeersList peersInfoListMsg = (PeersList) msg;
+			PeersList peersInfoListMsg 	= (PeersList) msg;
 			System.out.println("PeersList received ");
 			for(PeerInfo pi: peersInfoListMsg.getPeerList()){
 				getNode().notifyRemotePeer(pi.getPeer());
