@@ -13,10 +13,9 @@ import mr.dht.peer2peernetwork.wireformates.RandomPeer;
 public class RandomPeerHandler extends MessageHandler{
 	
 	public void handleRandomPeer(PacketChannel pc, RandomPeer randomPeerMSG){// pc represents discovery node
-		PeerData 	pd = randomPeerMSG.getPeer();
+		PeerData 	pd 				= randomPeerMSG.getPeer();
 		try {
-			
-			RemotePeer randomPeer = RemotePeer.getInstance(pd, pc);
+			RemotePeer randomPeer 			= RemotePeer.getInstance(pd, pc);
 			System.out.println("RandomPeer recieved   "+randomPeer.getID());
 			((Peer) node).handleRandomPeer(randomPeer);
 		} catch (InvalidFingerTableEntry | IOException e1) {
