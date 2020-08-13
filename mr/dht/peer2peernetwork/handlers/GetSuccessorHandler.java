@@ -27,10 +27,10 @@ public class GetSuccessorHandler extends MessageHandler{
 			RemotePeer succ 		= getNode().getSuccessor();
 			GetSuccessor getSuccMsg 	= (GetSuccessor) msg;
 			PeerData senderInfo 		= getSuccMsg.getPeer();
-			if (senderInfo.getPeerID()== succ.getID())
+			if (senderInfo.getPeerID() == succ.getID())
 				return;
-			System.out.println(senderInfo.getPeerID()+" asked me about my succ:  "+ succ.getID());
-			RemotePeer sender = RemotePeer.getInstance(senderInfo, pc);
+			System.out.println(senderInfo.getPeerID() + " asked me about my succ:  " + succ.getID());
+			RemotePeer sender 		= RemotePeer.getInstance(senderInfo, pc);
 			sendGetSuccessorResponse(sender, succ);
 		} catch (IOException e) {
 			e.printStackTrace();
