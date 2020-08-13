@@ -11,11 +11,11 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 import mr.dht.peer2peernetwork.wireformates.Predecessor;
 
 public abstract class LocalMessageHandler {
-	private Map<Integer,MessageHandler> messageHandlers = new HashMap<Integer,MessageHandler>(); 
+	private Map<Integer,MessageHandler> messageHandlers 		= new HashMap<Integer,MessageHandler>(); 
 	protected LNode node;
 
 	public LocalMessageHandler(LNode node) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		this.node = node;
+		this.node 						= node;
 		loadMessageHandlers();
 	}
 	
