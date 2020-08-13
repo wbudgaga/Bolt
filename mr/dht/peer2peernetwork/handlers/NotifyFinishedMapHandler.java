@@ -33,7 +33,7 @@ public class NotifyFinishedMapHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		QueryResult queryResult = (QueryResult) msg;
+		QueryResult queryResult 		= (QueryResult) msg;
 		try {
 			handleQueryResult(pc, queryResult);
 		} catch (IOException e) {
