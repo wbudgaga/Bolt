@@ -25,8 +25,8 @@ public class GetSuccessorHandler extends MessageHandler{
 	public void handle(PacketChannel pc, Message msg) {
 		try {
 			RemotePeer succ 		= getNode().getSuccessor();
-			GetSuccessor getSuccMsg = (GetSuccessor) msg;
-			PeerData senderInfo = getSuccMsg.getPeer();
+			GetSuccessor getSuccMsg 	= (GetSuccessor) msg;
+			PeerData senderInfo 		= getSuccMsg.getPeer();
 			if (senderInfo.getPeerID()== succ.getID())
 				return;
 			System.out.println(senderInfo.getPeerID()+" asked me about my succ:  "+ succ.getID());
