@@ -16,7 +16,7 @@ public class GetSuccessorHandler extends MessageHandler{
 	}
 		
 	private void sendGetSuccessorResponse(RemotePeer sender, RemotePeer succ) throws IOException{
-		GetSuccessorResponse gpr = new GetSuccessorResponse();
+		GetSuccessorResponse gpr 		= new GetSuccessorResponse();
 		gpr.setPeer(succ.getNodeData());
 		sendMessage(sender.getpChannel(), gpr);
 	}
@@ -24,7 +24,7 @@ public class GetSuccessorHandler extends MessageHandler{
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
-			RemotePeer succ = getNode().getSuccessor();
+			RemotePeer succ 		= getNode().getSuccessor();
 			GetSuccessor getSuccMsg = (GetSuccessor) msg;
 			PeerData senderInfo = getSuccMsg.getPeer();
 			if (senderInfo.getPeerID()== succ.getID())
