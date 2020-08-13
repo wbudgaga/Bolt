@@ -8,7 +8,7 @@ public class PeerInfoHandler extends MessageHandler{
 			
 	@Override
 	public void handle(PacketChannel pc, Message msg1) {
-		PeerInfo msg = (PeerInfo) msg1;
+		PeerInfo msg 				= (PeerInfo) msg1;
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeerID()+"  "+msg.getPeer().getNickName()+"  "+msg.getPeer().getHost()+"  "+msg.getPeer().getPortNum()+"  ");	
 	}
 
