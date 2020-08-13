@@ -26,7 +26,7 @@ public abstract class LocalMessageHandler {
 	}
 	
 	public void handle(PacketChannel pc, Message msg) throws InstantiationException, IllegalAccessException{
-		MessageHandler handler = getMessageHandler(msg.getHandlerID());
+		MessageHandler handler 					= getMessageHandler(msg.getHandlerID());
 		if (handler == null){
 			System.out.println("There is no message handler for message-id "+msg.getMessageID());
 			return;
@@ -53,13 +53,14 @@ public abstract class LocalMessageHandler {
 		  
 	  public void packetSent(PacketChannel pc, ByteBuffer pckt) {//##########################################################
 	    try {
-	      pc.resumeReading();
+	      	pc.resumeReading();
 	    } catch (Exception e) {    
-	      e.printStackTrace();
+	      	e.printStackTrace();
 	    }
 	  }
+	
 	  public void packetArrived(PacketChannel pc, Message msg) {
-		  try {
+		try {
 			handle(pc, msg);
 		} catch (InstantiationException e) {
 			e.printStackTrace();
