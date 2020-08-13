@@ -13,9 +13,9 @@ public class PeerMessageHandler extends LocalMessageHandler{
 
 	protected void loadMessageHandlers() throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		PeerMSGHandlerClasses[] classIDs = PeerMSGHandlerClasses.values();
-		for (int i=0;i<classIDs.length;++i){
+		for (int i = 0; i < classIDs.length; ++i){
 			@SuppressWarnings("unchecked")
-			Class<MessageHandler> handlerClass = (Class<MessageHandler>) Class.forName(Setting.HANDLER_PACKAGE + classIDs[i].toString());
+			Class<MessageHandler> handlerClass 	= (Class<MessageHandler>) Class.forName(Setting.HANDLER_PACKAGE + classIDs[i].toString());
 			createMessageHandlerObject(handlerClass);
 		}
 	}
