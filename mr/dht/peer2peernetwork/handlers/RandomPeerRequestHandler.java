@@ -18,8 +18,8 @@ public class RandomPeerRequestHandler extends MessageHandler{
 		Discovery discovery 		= getNode();
 		RemotePeer randomPeer 		= discovery.getRandomPeer();
 		System.out.println("RandomPeerRequest message has been received...");	
-		RandomPeer npMSG = new RandomPeer();
-		if (randomPeer!=null)
+		RandomPeer npMSG 		= new RandomPeer();
+		if (randomPeer != null)
 			npMSG.setPeer(randomPeer.getNodeData());
 		else 
 			npMSG.setPeer(discovery.getNodeData());
