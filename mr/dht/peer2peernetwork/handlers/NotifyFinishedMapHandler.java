@@ -22,14 +22,13 @@ public class NotifyFinishedMapHandler extends MessageHandler{
 	}
 	
 	public void handleQueryResult(PacketChannel pc, QueryResult queryResult) throws IOException {
-		RemotePeer rp = new RemotePeer(queryResult.getPeer().getPeer());
-		JobTasksManager jTaskManager =  ((Peer) node).getResourceManager().pollMSGJob(queryResult.getMsgUUID());
-		if (jTaskManager==null){
+		RemotePeer rp 				= new RemotePeer(queryResult.getPeer().getPeer());
+		JobTasksManager jTaskManager 		=  ((Peer) node).getResourceManager().pollMSGJob(queryResult.getMsgUUID());
+		if (jTaskManager == null){
 			System.out.println("NotifyFinishedMapHandler: There is no job for the message with UUID"+queryResult.getMsgUUID());
 			return;
 		}
 		jTaskManager.publishFinishedMap(queryResult.getMsgUUID(),rp);
-		
 	}	
 	
 	@Override
