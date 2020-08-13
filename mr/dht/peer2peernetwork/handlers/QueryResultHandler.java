@@ -17,10 +17,10 @@ public class QueryResultHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		QueryResult queryResult = (QueryResult) msg;
+		QueryResult queryResult 		= (QueryResult) msg;
 		try {
 			if (queryResult.getPeer() != null){
-				RemotePeer remotePeer = RemotePeer.getInstance(queryResult.getPeer(),pc);
+				RemotePeer remotePeer 	= RemotePeer.getInstance(queryResult.getPeer(),pc);
 				getNode().handleQueryResult(queryResult.getQueryKey(), remotePeer);
 			}
 		} catch (IOException e) {
