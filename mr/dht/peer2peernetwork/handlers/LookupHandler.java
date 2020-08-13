@@ -38,7 +38,7 @@ public class LookupHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		Lookup lookupMSG =  (Lookup)msg;
+		Lookup lookupMSG 		=  (Lookup)msg;
 		try {
 			getNode().lookup(lookupMSG);
 		} catch (IOException e) {
