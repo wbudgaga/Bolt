@@ -19,8 +19,7 @@ public class GetSuccessorResponseHandler extends MessageHandler{
 		try {
 			System.out.println("GetSuccessor response receieved ");
 			GetSuccessorResponse responseMsg 		= (GetSuccessorResponse) msg;
-			RemotePeer rp = RemotePeer.getInstance(responseMsg.getPeer(),pc);
-		
+			RemotePeer rp 					= RemotePeer.getInstance(responseMsg.getPeer(),pc);
 			getNode().setPredecessor(rp);
 		} catch (IOException e) {
 			e.printStackTrace();
