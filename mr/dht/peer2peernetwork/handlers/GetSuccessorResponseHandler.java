@@ -13,11 +13,12 @@ public class GetSuccessorResponseHandler extends MessageHandler{
 	public Peer getNode(){
 		return (Peer) node;
 	}
+	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
 		try {
 			System.out.println("GetSuccessor response receieved ");
-			GetSuccessorResponse responseMsg = (GetSuccessorResponse) msg;
+			GetSuccessorResponse responseMsg 		= (GetSuccessorResponse) msg;
 			RemotePeer rp = RemotePeer.getInstance(responseMsg.getPeer(),pc);
 		
 			getNode().setPredecessor(rp);
