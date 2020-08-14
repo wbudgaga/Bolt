@@ -30,7 +30,7 @@ public class RegisterRequestHandler extends MessageHandler{
 
 			if (discovery.storePeer(newPeer)){
 				sendRegisterResonse(pc,Message.SUCCEESS,"");
-				System.out.println("Peer registration accepted "+newPeer.getID());
+				System.out.println("Peer registration accepted " + newPeer.getID());
 				PeerInfo[] allPeersInfo = getNode().getPeerInfoList(newPeer.getID());
 				if (allPeersInfo != null)
 					sendFingerTableResponse(pc, allPeersInfo);
@@ -45,7 +45,7 @@ public class RegisterRequestHandler extends MessageHandler{
 	}
 		
 	private void sendFingerTableResponse(PacketChannel pc, PeerInfo[] allPeersInfo) throws IOException{
-		PeersList peersListMsg 			= new PeersList();
+		PeersList peersListMsg 				= new PeersList();
 		peersListMsg.setPeerList(allPeersInfo);
 		sendMessage(pc, peersListMsg);
 	}
