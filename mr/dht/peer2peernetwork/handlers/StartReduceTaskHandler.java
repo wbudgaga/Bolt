@@ -20,7 +20,7 @@ public class StartReduceTaskHandler extends MessageHandler{
 		long 	 jobID 					= startMRTaskMSG.getJobID();
 		long 	 taskID					= startMRTaskMSG.getTaskID();
 		
-		ResourceManager resourceManager = ((Peer) node).getResourceManager();
+		ResourceManager resourceManager 		= ((Peer) node).getResourceManager();
 		try {
 			JobTasksManager jTaskManager = resourceManager.getOrCreateJobTaskManager(jobID);
 			if (jTaskManager.hasAlreadyRTask(taskID)){
