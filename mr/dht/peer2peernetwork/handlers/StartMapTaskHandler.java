@@ -21,19 +21,19 @@ import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 public class StartMapTaskHandler extends MessageHandler{
 	
 	public void startMapTask(PacketChannel pc, StartMapTask startMRTaskMSG){
-		//PeerInfo pd 				= startMRTaskMSG.getPeer();
-		long 	 jobID 				= startMRTaskMSG.getJobID();
-		long 	 taskID				= startMRTaskMSG.getTaskID();
-		ResourceManager resourceManager 	= ((Peer) node).getResourceManager();
+		//PeerInfo pd 						= startMRTaskMSG.getPeer();
+		long 	 jobID 						= startMRTaskMSG.getJobID();
+		long 	 taskID						= startMRTaskMSG.getTaskID();
+		ResourceManager resourceManager 			= ((Peer) node).getResourceManager();
 		try {
-			JobTasksManager jTaskManager 	= resourceManager.getOrCreateJobTaskManager(jobID);
+			JobTasksManager jTaskManager 			= resourceManager.getOrCreateJobTaskManager(jobID);
 			if (jTaskManager.hasAlreadyMTask(taskID)){
 				System.out.println("It could not process the mapTask because a task with the same id(jobID:" + jobID + ", taskID:" + taskID + ") is already exist");
 				return;
 			}
 			jTaskManager.incLocMaps();
 			// this data could be redundant. this should be solved in future
-			JobInfo jobInfo 		= jTaskManager.getJobInfo(); 
+			JobInfo jobInfo 				= jTaskManager.getJobInfo(); 
 			jobInfo.setMTaskClassName(startMRTaskMSG.getTaskClassName());
 			jobInfo.setNumOfReducer(startMRTaskMSG.getNumOfReducers());
 			jobInfo.setOutputName(startMRTaskMSG.getOutputName());
