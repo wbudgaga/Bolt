@@ -37,7 +37,7 @@ public class SearchMessageHandler extends MessageHandler{
 	public void handleQueryResult(Socket link, QueryResult0 queryResult) {
 		if (queryResult.getPeer() != null){
 			System.out.println(" search response received !");
-			Get msg = new Get();
+			Get msg 				= new Get();
 			msg.setFileName(((Search)node).word);
 			try {
 				ConnectionManager.sendData(link.getOutputStream(), msg);
