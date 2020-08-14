@@ -22,9 +22,9 @@ public class StartReduceTaskHandler extends MessageHandler{
 		
 		ResourceManager resourceManager 		= ((Peer) node).getResourceManager();
 		try {
-			JobTasksManager jTaskManager = resourceManager.getOrCreateJobTaskManager(jobID);
+			JobTasksManager jTaskManager 		= resourceManager.getOrCreateJobTaskManager(jobID);
 			if (jTaskManager.hasAlreadyRTask(taskID)){
-				System.out.println("It could not process the reduce task because a task with the same id("+taskID+") is already exist");
+				System.out.println("It could not process the reduce task because a task with the same id(" + taskID + ") is already exist");
 				return;
 			}
 			jTaskManager.incLocReducers();
