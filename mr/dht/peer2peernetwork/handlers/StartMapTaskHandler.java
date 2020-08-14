@@ -33,7 +33,7 @@ public class StartMapTaskHandler extends MessageHandler{
 			}
 			jTaskManager.incLocMaps();
 			// this data could be redundant. this should be solved in future
-			JobInfo jobInfo = jTaskManager.getJobInfo(); 
+			JobInfo jobInfo 		= jTaskManager.getJobInfo(); 
 			jobInfo.setMTaskClassName(startMRTaskMSG.getTaskClassName());
 			jobInfo.setNumOfReducer(startMRTaskMSG.getNumOfReducers());
 			jobInfo.setOutputName(startMRTaskMSG.getOutputName());
