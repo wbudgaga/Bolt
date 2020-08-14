@@ -27,12 +27,12 @@ public class TextNumTaskDataHandler extends MessageHandler{
 		
 		ReduceTask rTask 			= jTaskManager.getReduceTask(textNumTaskData.getTaskID());
 		if (rTask == null){
-			System.out.println(textNumTaskData.getTaskID()+": getTaskIDxxxxxxxxxxxxxxxxxjobID="+jTaskManager.getJobInfo().getJobID()+"xxxxxxxxxxxxxxxxxxxxxxxxreducerExist: "+jTaskManager.hasAlreadyRTask(textNumTaskData.getTaskID())+"..."+Setting.HOSTNAME);
+			System.out.println(textNumTaskData.getTaskID() + ": getTaskIDxxxxxxxxxxxxxxxxxjobID=" + jTaskManager.getJobInfo().getJobID() + "xxxxxxxxxxxxxxxxxxxxxxxxreducerExist: " + jTaskManager.hasAlreadyRTask(textNumTaskData.getTaskID()) + "..." + Setting.HOSTNAME);
 			return true;
 			//throw new Exception(textNumTaskData.getTaskID()+": getTaskIDxxxxxxxxxxxxxxxxxjobID="+jTaskManager.getJobInfo().getJobID()+"xxxxxxxxxxxxxxxxxxxxxxxxreducerExist: "+jTaskManager.hasAlreadyRTask(textNumTaskData.getTaskID())+"..."+Setting.HOSTNAME);
 		}
 
-		HashMap buf = textNumTaskData.getDataBuf();
+		HashMap buf 				= textNumTaskData.getDataBuf();
 		feedReducer(pd.getPeer().getPeerID(), rTask, buf);
 		return true;
 	}	
