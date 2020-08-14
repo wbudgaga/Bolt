@@ -17,7 +17,7 @@ public class SuccessorHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		Successor peerInfo = (Successor) msg;
+		Successor peerInfo 			= (Successor) msg;
 		try {
 			getNode().setSuccessor(RemotePeer.getInstance(peerInfo,pc));
 		} catch (IOException e) {
