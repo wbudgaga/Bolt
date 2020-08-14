@@ -41,6 +41,7 @@ public class TextNumTaskDataHandler extends MessageHandler{
 		for (Map.Entry<String, ArrayList<Long>> e:buf.entrySet()){
 			rTask.offer(e.getKey(), e.getValue());
 		}
+		
 		rTask.incNumOfReceivedBuffers(srcPeerID);
 		//FWLogger.getInstance().log(jobID, rTask.getNumOfReceivedBuffers(srcPeerID)+" buffers have been received from :========>"+srcPeerID+"..........size: "+buf.size() +"   ");
 	}
@@ -50,7 +51,6 @@ public class TextNumTaskDataHandler extends MessageHandler{
 		try {
 			handleArrivedTaskData(pc, (TextNumTaskData)msg);
 		} catch (Exception e) {
-			
 			e.printStackTrace();
 			System.exit(0);
 		}
