@@ -16,9 +16,9 @@ import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 
 public class StartReduceTaskHandler extends MessageHandler{	
 	public void startReduceTask(PacketChannel pc, StartReduceTask startMRTaskMSG){
-		PeerInfo pd 	= startMRTaskMSG.getPeer();
-		long 	 jobID 	= startMRTaskMSG.getJobID();
-		long 	 taskID	= startMRTaskMSG.getTaskID();
+		PeerInfo pd 					= startMRTaskMSG.getPeer();
+		long 	 jobID 					= startMRTaskMSG.getJobID();
+		long 	 taskID					= startMRTaskMSG.getTaskID();
 		
 		ResourceManager resourceManager = ((Peer) node).getResourceManager();
 		try {
