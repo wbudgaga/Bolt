@@ -33,13 +33,13 @@ public class ReducerPeerHandler extends MessageHandler{
 			return;
 		}
 		//System.out.println("the Peer that has ID: " +rp.getNodeData().getPeerID()+ " is reponsible for routing K: "+ queryResult.getQueryKey());
-		DataRouter dataRouter = jTaskManager.getDataRouter();
+		DataRouter dataRouter 				= jTaskManager.getDataRouter();
 		dataRouter.setRoutingPeer(queryResult.getQueryKey(), rp);
 	}	
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		QueryResult queryResult = (QueryResult) msg;
+		QueryResult queryResult 			= (QueryResult) msg;
 		try {
 			handleQueryResult(pc, queryResult);
 		} catch (IOException e) {
