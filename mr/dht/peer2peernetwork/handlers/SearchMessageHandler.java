@@ -43,7 +43,7 @@ public class SearchMessageHandler extends MessageHandler{
 				ConnectionManager.sendData(link.getOutputStream(), msg);
 				byte[] msgBytes 		= ReceivingTask.receiveMessageFrom(link.getInputStream());
 				GetResponse response 		= (GetResponse) MessageFactory.getInstance().createMessage(msgBytes);
-				System.out.println(((Search)node).word+"##  ressponse received "+response.getStatus());
+				System.out.println(((Search)node).word + "##  ressponse received " + response.getStatus());
 				if (response.getStatus() != -1)
 					addLinks(ByteStream.byteArrayToString(response.getFileBytes()));
 				((Search)node).setResultCount(1);
@@ -58,5 +58,4 @@ public class SearchMessageHandler extends MessageHandler{
 			}
 		}
 	}	
-
 }
