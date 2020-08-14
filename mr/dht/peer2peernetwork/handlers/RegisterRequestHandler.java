@@ -26,7 +26,7 @@ public class RegisterRequestHandler extends MessageHandler{
 	public synchronized void handleRegisterRequest(PacketChannel pc, RegisterRequest message) {
 		try{
 			RemotePeer newPeer		= RemotePeer.getInstance(message.getPeer(), pc);
-			Discovery discovery 	= getNode();
+			Discovery discovery 		= getNode();
 
 			if (discovery.storePeer(newPeer)){
 				sendRegisterResonse(pc,Message.SUCCEESS,"");
