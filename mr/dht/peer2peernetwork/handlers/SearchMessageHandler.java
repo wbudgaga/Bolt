@@ -27,8 +27,8 @@ public class SearchMessageHandler extends MessageHandler{
 	}
 	
 	public void addLinks(String linkScore){
-		String[] linksList = linkScore.split(System.getProperty("line.separator")) ;
-		for (int i = 0; i < linksList.length ; ++i ){
+		String[] linksList 				= linkScore.split(System.getProperty("line.separator")) ;
+		for (int i = 0; i < linksList.length; ++i ){
 			String[] linkScr = linksList[i].split(",");
 			((Search)node).addResult(linkScr[0], Float.parseFloat(linkScr[1]));
 		}
