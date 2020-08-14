@@ -27,9 +27,9 @@ public class ReducerPeerHandler extends MessageHandler{
 		RemotePeer rp 	q				= new RemotePeer(queryResult.getPeer().getPeer(), pc);
 		Peer lPeer 					= (Peer) node;
 		lPeer.cachePeer(rp);
-		JobTasksManager jTaskManager =  lPeer.getResourceManager().pollMSGJob(queryResult.getMsgUUID());
-		if (jTaskManager==null){
-			System.out.println(Setting.HOSTNAME+"There is no job for the message with UUID"+queryResult.getMsgUUID());
+		JobTasksManager jTaskManager 			=  lPeer.getResourceManager().pollMSGJob(queryResult.getMsgUUID());
+		if (jTaskManager == null){
+			System.out.println(Setting.HOSTNAME + "There is no job for the message with UUID" + queryResult.getMsgUUID());
 			return;
 		}
 		//System.out.println("the Peer that has ID: " +rp.getNodeData().getPeerID()+ " is reponsible for routing K: "+ queryResult.getQueryKey());
