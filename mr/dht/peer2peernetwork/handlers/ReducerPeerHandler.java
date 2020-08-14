@@ -24,8 +24,8 @@ public class ReducerPeerHandler extends MessageHandler{
 	}
 	
 	public void handleQueryResult(PacketChannel pc, QueryResult queryResult) throws IOException {
-		RemotePeer rp = new RemotePeer(queryResult.getPeer().getPeer(), pc);
-		Peer lPeer = (Peer) node;
+		RemotePeer rp 	q				= new RemotePeer(queryResult.getPeer().getPeer(), pc);
+		Peer lPeer 					= (Peer) node;
 		lPeer.cachePeer(rp);
 		JobTasksManager jTaskManager =  lPeer.getResourceManager().pollMSGJob(queryResult.getMsgUUID());
 		if (jTaskManager==null){
