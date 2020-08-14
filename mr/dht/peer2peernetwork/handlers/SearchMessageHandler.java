@@ -41,8 +41,8 @@ public class SearchMessageHandler extends MessageHandler{
 			msg.setFileName(((Search)node).word);
 			try {
 				ConnectionManager.sendData(link.getOutputStream(), msg);
-				byte[] msgBytes = ReceivingTask.receiveMessageFrom(link.getInputStream());
-				GetResponse response = (GetResponse) MessageFactory.getInstance().createMessage(msgBytes);
+				byte[] msgBytes 		= ReceivingTask.receiveMessageFrom(link.getInputStream());
+				GetResponse response 		= (GetResponse) MessageFactory.getInstance().createMessage(msgBytes);
 				System.out.println(((Search)node).word+"##  ressponse received "+response.getStatus());
 				if (response.getStatus() != -1)
 					addLinks(ByteStream.byteArrayToString(response.getFileBytes()));
