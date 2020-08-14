@@ -21,11 +21,11 @@ public class TextNumTaskDataHandler extends MessageHandler{
 		long 	 jobID 				= textNumTaskData.getJobID();
 		JobTasksManager jTaskManager 		= ((Peer) node).getResourceManager().getJobTaskManager(jobID);
 		if (jTaskManager == null){
-			System.out.println("there is no job(id:"+ jobID+" for a given!");
+			System.out.println("there is no job(id:" + jobID + " for a given!");
 			return false;
 		}		
 		
-		ReduceTask rTask = jTaskManager.getReduceTask(textNumTaskData.getTaskID());
+		ReduceTask rTask 			= jTaskManager.getReduceTask(textNumTaskData.getTaskID());
 		if (rTask==null){
 			System.out.println(textNumTaskData.getTaskID()+": getTaskIDxxxxxxxxxxxxxxxxxjobID="+jTaskManager.getJobInfo().getJobID()+"xxxxxxxxxxxxxxxxxxxxxxxxreducerExist: "+jTaskManager.hasAlreadyRTask(textNumTaskData.getTaskID())+"..."+Setting.HOSTNAME);
 			return true;
