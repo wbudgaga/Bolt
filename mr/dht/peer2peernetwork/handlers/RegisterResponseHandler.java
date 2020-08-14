@@ -7,7 +7,6 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 import mr.dht.peer2peernetwork.wireformates.Response;
 
 public class RegisterResponseHandler extends MessageHandler{
-	
 	public RegisterResponseHandler(){}
 	
 	public Peer getHandler(LNode peer){
@@ -16,11 +15,11 @@ public class RegisterResponseHandler extends MessageHandler{
 	
 	@Override
 	public void handle(PacketChannel pc, Message msg1) {
-		Response msg = (Response) msg1;
-		if (msg.getStatusCode()==Message.SUCCEESS)
+		Response msg 				= (Response) msg1;
+		if (msg.getStatusCode() == Message.SUCCEESS)
 			System.out.println("The peer has joined the DHT");
 		else{
-			System.out.println("The peer could not join the DHT. The reason:"+msg.getAdditionalInfo());
+			System.out.println("The peer could not join the DHT. The reason:" + msg.getAdditionalInfo());
 			node.exit();
 		}
 	}
