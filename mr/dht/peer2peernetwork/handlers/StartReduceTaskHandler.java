@@ -29,7 +29,7 @@ public class StartReduceTaskHandler extends MessageHandler{
 			}
 			jTaskManager.incLocReducers();
 			// this data could be redundant. this should be solved in future
-			JobInfo jobInfo = jTaskManager.getJobInfo(); 
+			JobInfo jobInfo 			= jTaskManager.getJobInfo(); 
 			jobInfo.setRTaskClassName(startMRTaskMSG.getTaskClassName());
 			
 			ReduceTaskInfo<Long,String,String,Long> reduceTaskInfo = new ReduceTaskInfo<Long, String, String, Long>(startMRTaskMSG.getNumberOfMappers());
