@@ -23,9 +23,9 @@ public class SubmitDataQResultHandler extends MessageHandler{
 	
 	public void handleQueryResult(PacketChannel pc, QueryResult queryResult) throws IOException {
 		RemotePeer rp = new RemotePeer(queryResult.getPeer().getPeer());
-		JobTasksManager jTaskManager =  ((Peer) node).getResourceManager().pollMSGJob(queryResult.getMsgUUID());
-		if (jTaskManager==null){
-			System.out.println("There is no job for the message with UUID"+queryResult.getMsgUUID());
+		JobTasksManager jTaskManager 			=  ((Peer) node).getResourceManager().pollMSGJob(queryResult.getMsgUUID());
+		if (jTaskManager == null){
+			System.out.println("There is no job for the message with UUID" + queryResult.getMsgUUID());
 			return;
 		}
 		jTaskManager.pushBufferToReducer(queryResult.getMsgUUID(),rp);
