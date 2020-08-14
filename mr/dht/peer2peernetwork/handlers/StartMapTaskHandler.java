@@ -38,8 +38,8 @@ public class StartMapTaskHandler extends MessageHandler{
 			jobInfo.setNumOfReducer(startMRTaskMSG.getNumOfReducers());
 			jobInfo.setOutputName(startMRTaskMSG.getOutputName());
 			////////////////////////////////////////////////////////////////
-			MapTaskInfo<Long,String,String,Long> mapTask = new MapTaskInfo<Long, String, String, Long>();
-			mapTask.setInputPath(Setting.DATA_DIR+"/d0/"+startMRTaskMSG.getTaskID());
+			MapTaskInfo<Long,String,String,Long> mapTask 	= new MapTaskInfo<Long, String, String, Long>();
+			mapTask.setInputPath(Setting.DATA_DIR+"/d0/" + startMRTaskMSG.getTaskID());
 			mapTask.setJobID(jobID);
 			mapTask.setTaskID(taskID);
 			mapTask.setPartitionerClassName("mr.resourcemanagement.datapartitioning.ModPartitioner");
