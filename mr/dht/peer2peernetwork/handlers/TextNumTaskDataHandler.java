@@ -17,7 +17,7 @@ import mr.resourcemanagement.execution.mrtasks.management.JobTasksManager;
 
 public class TextNumTaskDataHandler extends MessageHandler{
 	public boolean handleArrivedTaskData(PacketChannel pc, TextNumTaskData textNumTaskData) throws Exception{
-		PeerInfo pd 	= textNumTaskData.getPeer();
+		PeerInfo pd 				= textNumTaskData.getPeer();
 		long 	 jobID 	= textNumTaskData.getJobID();
 		JobTasksManager jTaskManager = ((Peer) node).getResourceManager().getJobTaskManager(jobID);
 		if (jTaskManager== null){
