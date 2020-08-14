@@ -19,8 +19,8 @@ public class TextNumTaskDataHandler extends MessageHandler{
 	public boolean handleArrivedTaskData(PacketChannel pc, TextNumTaskData textNumTaskData) throws Exception{
 		PeerInfo pd 				= textNumTaskData.getPeer();
 		long 	 jobID 				= textNumTaskData.getJobID();
-		JobTasksManager jTaskManager = ((Peer) node).getResourceManager().getJobTaskManager(jobID);
-		if (jTaskManager== null){
+		JobTasksManager jTaskManager 		= ((Peer) node).getResourceManager().getJobTaskManager(jobID);
+		if (jTaskManager == null){
 			System.out.println("there is no job(id:"+ jobID+" for a given!");
 			return false;
 		}		
