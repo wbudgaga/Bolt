@@ -21,10 +21,10 @@ import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 public class StartMapTaskHandler extends MessageHandler{
 	
 	public void startMapTask(PacketChannel pc, StartMapTask startMRTaskMSG){
-		//PeerInfo pd 	= startMRTaskMSG.getPeer();
-		long 	 jobID 	= startMRTaskMSG.getJobID();
-		long 	 taskID	= startMRTaskMSG.getTaskID();
-		ResourceManager resourceManager = ((Peer) node).getResourceManager();
+		//PeerInfo pd 				= startMRTaskMSG.getPeer();
+		long 	 jobID 				= startMRTaskMSG.getJobID();
+		long 	 taskID				= startMRTaskMSG.getTaskID();
+		ResourceManager resourceManager 	= ((Peer) node).getResourceManager();
 		try {
 			JobTasksManager jTaskManager = resourceManager.getOrCreateJobTaskManager(jobID);
 			if (jTaskManager.hasAlreadyMTask(taskID)){
