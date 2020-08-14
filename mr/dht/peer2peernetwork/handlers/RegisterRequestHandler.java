@@ -36,7 +36,7 @@ public class RegisterRequestHandler extends MessageHandler{
 					sendFingerTableResponse(pc, allPeersInfo);
 			}
 			else{
-				System.out.println("Peer registration not accepted "+newPeer.getID());
+				System.out.println("Peer registration not accepted " + newPeer.getID());
 				sendRegisterResonse(pc,Message.FAILURE," Peer with the same ID is already registered");
 			}
 		}catch(IOException e){
@@ -45,7 +45,7 @@ public class RegisterRequestHandler extends MessageHandler{
 	}
 		
 	private void sendFingerTableResponse(PacketChannel pc, PeerInfo[] allPeersInfo) throws IOException{
-		PeersList peersListMsg 		= new PeersList();
+		PeersList peersListMsg 			= new PeersList();
 		peersListMsg.setPeerList(allPeersInfo);
 		sendMessage(pc, peersListMsg);
 	}
