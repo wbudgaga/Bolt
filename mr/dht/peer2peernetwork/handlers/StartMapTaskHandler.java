@@ -26,9 +26,9 @@ public class StartMapTaskHandler extends MessageHandler{
 		long 	 taskID				= startMRTaskMSG.getTaskID();
 		ResourceManager resourceManager 	= ((Peer) node).getResourceManager();
 		try {
-			JobTasksManager jTaskManager = resourceManager.getOrCreateJobTaskManager(jobID);
+			JobTasksManager jTaskManager 	= resourceManager.getOrCreateJobTaskManager(jobID);
 			if (jTaskManager.hasAlreadyMTask(taskID)){
-				System.out.println("It could not process the mapTask because a task with the same id(jobID:"+jobID+", taskID:"+taskID+") is already exist");
+				System.out.println("It could not process the mapTask because a task with the same id(jobID:" + jobID + ", taskID:" + taskID + ") is already exist");
 				return;
 			}
 			jTaskManager.incLocMaps();
