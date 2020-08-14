@@ -17,7 +17,7 @@ public class RegisterRequestHandler extends MessageHandler{
 	}
 	
 	private void sendRegisterResonse(PacketChannel pc,byte registerStatus,String info) throws IOException  {
-		RegisterResponse message = new RegisterResponse();
+		RegisterResponse message 			= new RegisterResponse();
 		message.setStatusCode(registerStatus);
 		message.setAdditionalInfo(info);
 		sendMessage(pc, message);
