@@ -9,7 +9,7 @@ public class StartJobBatchHandler extends MessageHandler{
 		
 	@Override
 	public void handle(PacketChannel pc, Message msg) {
-		ResourceManager resourceManager = ((Peer) node).getResourceManager();
+		ResourceManager resourceManager 	= ((Peer) node).getResourceManager();
 		try {
 			resourceManager.execute();
 		} catch (Exception e) {
