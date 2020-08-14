@@ -22,8 +22,8 @@ public class SearchMessageHandler extends MessageHandler{
 	
 	public SearchMessageHandler(Node node) {
 		super(node);
-		sourceDir = new File(Setting.SOURCE_DIR).listFiles()[0].getAbsolutePath();
-		sourceDir = new File(sourceDir,"search").getAbsolutePath();
+		sourceDir 					= new File(Setting.SOURCE_DIR).listFiles()[0].getAbsolutePath();
+		sourceDir 					= new File(sourceDir,"search").getAbsolutePath();
 	}
 	
 	public void addLinks(String linkScore){
