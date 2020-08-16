@@ -9,8 +9,8 @@ public class Worker implements Runnable{
 	private Task	 		job 			= null;
 	
 	public Worker(ThreadPoolManager manager, int workerID){
-		theManager 		= manager;
-		workerThread 	= new Thread(this,"workerThread-"+workerID);
+		theManager 					= manager;
+		workerThread 					= new Thread(this,"workerThread-"+workerID);
 		
 	}
 	
