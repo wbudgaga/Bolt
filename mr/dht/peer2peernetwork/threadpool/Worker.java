@@ -32,7 +32,7 @@ public class Worker implements Runnable{
 
 	private void processJob() throws IOException, InterruptedException{
 		job.execute();
-		job = null;
+		job 						= null;
 		theManager.workerFinished(this);
 	}
 	
