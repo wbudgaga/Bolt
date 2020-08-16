@@ -26,8 +26,8 @@ public class SingleClient implements ConnectorListener {
     connector.connect();
   }
   private ByteBuffer generateNextPacket() {
-	  Predecessor r = new Predecessor();
-	  PeerData peer = new PeerData();
+	  Predecessor r 		= new Predecessor();
+	  PeerData peer 		= new PeerData();
 	  peer.setHost("host1");
 	  peer.setNickName("Walid Budgaga"+packetsSent);
 	  peer.setPeerID(19041972);
