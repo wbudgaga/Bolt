@@ -43,8 +43,8 @@ public class SingleClient implements ConnectorListener {
     try {
       sc.socket().setReceiveBufferSize(2*1024);
       sc.socket().setSendBufferSize(2*1024);
-      PeerMessageHandler h = new PeerMessageHandler(null);//#######################
-      pChannel = new PacketChannel(sc,st, new SimpleProtocolDecoder(), h);    
+      PeerMessageHandler h 		= new PeerMessageHandler(null);//#######################
+      pChannel 				= new PacketChannel(sc,st, new SimpleProtocolDecoder(), h);    
       System.out.println("["+ connector + "] Connected: " + sc.socket().getInetAddress() );
       checkAllConnected();
     } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
