@@ -52,7 +52,7 @@ public class ThreadPoolManager{
 	private  void assignTasks(){
 		if (taskQueue.size() > 0 && workerQueue.size()>0){
 			Task task 			= taskQueue.poll();
-			Worker workerThread = workerQueue.poll();
+			Worker workerThread 		= workerQueue.poll();
 			workerThread.assignTask(task);
 		}
 	}
