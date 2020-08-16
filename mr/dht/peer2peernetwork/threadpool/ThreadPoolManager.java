@@ -3,13 +3,11 @@ package mr.dht.peer2peernetwork.threadpool;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
-
 // Starts and manages the work between workers that execute taks
 public class ThreadPoolManager{
-	private Worker[] 		workers;
+	private Worker[] 	workers;
 	private Queue<Task> 	taskQueue 		= new LinkedList<Task>();
-	private Queue<Worker> 	workerQueue 	= new LinkedList<Worker>();
+	private Queue<Worker> 	workerQueue 		= new LinkedList<Worker>();
 	
 	public ThreadPoolManager() {
 		createWorkers(1);
