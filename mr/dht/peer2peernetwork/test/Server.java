@@ -14,8 +14,8 @@ public class Server implements AcceptorListener {
   private final SelectorThread st;  
   
   public Server(int listenPort) throws Exception {
-    st = new SelectorThread();    
-    Acceptor acceptor = new Acceptor(listenPort, st, this);
+    st 					= new SelectorThread();    
+    Acceptor acceptor 			= new Acceptor(listenPort, st, this);
     acceptor.openServerSocket();
     System.out.println("Listening on port: " + listenPort);
   }  
