@@ -46,20 +46,20 @@ public class Worker implements Runnable{
 	public void run() {
 		while(true){
 			synchronized(this){
-					if (!hasJob())
-						try {
-							wait();
-						} catch (InterruptedException e) {
-							//e.printStackTrace();
-						}
-					if (hasJob())
-						try {
-							processJob();
-						} catch (IOException e) {
-							e.printStackTrace();
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
+				if (!hasJob())
+					try {
+						wait();
+					} catch (InterruptedException e) {
+						//e.printStackTrace();
+					}
+				if (hasJob())
+					try {
+						processJob();
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 			}
 		}
 	
