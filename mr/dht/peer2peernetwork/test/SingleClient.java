@@ -51,10 +51,12 @@ public class SingleClient implements ConnectorListener {
       e.printStackTrace();
     }
   }
+	
   public void connectionFailed(Connector connector, Exception cause) {
-    System.out.println("["+ connector + "] Error: " + cause.getMessage());
+    System.out.println("[" + connector + "] Error: " + cause.getMessage());
     checkAllConnected();
   }
+	
   private void connectionClosed() {
       st.requestClose();      
       System.exit(1);
