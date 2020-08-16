@@ -26,7 +26,7 @@ public class Worker implements Runnable{
 	}
 
 	protected synchronized void assignTask(Task newTask){
-		this.job = newTask;
+		this.job 					= newTask;
 		notify();
 	}
 
