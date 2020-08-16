@@ -33,8 +33,8 @@ public class SingleClient implements ConnectorListener {
 	  peer.setPeerID(19041972);
 	  peer.setPortNum(5005);
 	  r.setPeer(peer);
-	  byte[] msgBody =  r.packMessage();
-	  byte[] all = ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);  
+	  byte[] msgBody 		=  r.packMessage();
+	  byte[] all 			= ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);  
 	  ByteBuffer buffer = ByteBuffer.wrap(all);
 	  return buffer;
   }
