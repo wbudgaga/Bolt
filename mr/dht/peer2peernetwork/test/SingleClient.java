@@ -67,8 +67,9 @@ public class SingleClient implements ConnectorListener {
 	    packetsSent++;
 	    pc.sendPacket(packet);  
   }
+	
   private void checkAllConnected() {   
-      if (pChannel!=null)
+      if (pChannel != null)
       	sendPacket(pChannel);
      // pChannel = null;
   }
