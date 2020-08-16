@@ -21,14 +21,13 @@ public class Server implements AcceptorListener {
   }  
     
   public void socketConnected(Acceptor acceptor, SocketChannel sc) {    
-    System.out.println("["+ acceptor + "] Socket connected: " + 
-        sc.socket().getInetAddress());
+    System.out.println("[" + acceptor + "] Socket connected: " + sc.socket().getInetAddress());
     try {
       sc.socket().setReceiveBufferSize(2*1024);
       sc.socket().setSendBufferSize(2*1024);
-      PeerMessageHandler h = new PeerMessageHandler(null);
+      PeerMessageHandler h 		= new PeerMessageHandler(null);
       // The contructor enables reading automatically.
-      PacketChannel pc = new PacketChannel(sc, st, new SimpleProtocolDecoder(), h);
+      PacketChannel pc 			= new PacketChannel(sc, st, new SimpleProtocolDecoder(), h);
       pc.resumeReading();
     } catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
       e.printStackTrace();
