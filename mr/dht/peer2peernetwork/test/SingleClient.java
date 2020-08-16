@@ -61,8 +61,9 @@ public class SingleClient implements ConnectorListener {
       st.requestClose();      
       System.exit(1);
   }
+	
   private void sendPacket(PacketChannel pc) {
-	    ByteBuffer packet = generateNextPacket();
+	    ByteBuffer packet 		= generateNextPacket();
 	    packetsSent++;
 	    pc.sendPacket(packet);  
   }
