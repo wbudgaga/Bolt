@@ -5,8 +5,8 @@ import java.io.IOException;
 // Thread that execute tasks 
 public class Worker implements Runnable{
 	private ThreadPoolManager 	theManager;
-	private Thread	 			workerThread;
-	private Task	 			job 			= null;
+	private Thread	 		workerThread;
+	private Task	 		job 			= null;
 	
 	public Worker(ThreadPoolManager manager, int workerID){
 		theManager 		= manager;
