@@ -35,9 +35,10 @@ public class SingleClient implements ConnectorListener {
 	  r.setPeer(peer);
 	  byte[] msgBody 		=  r.packMessage();
 	  byte[] all 			= ByteStream.join(ByteStream.intToByteArray(msgBody.length), msgBody);  
-	  ByteBuffer buffer = ByteBuffer.wrap(all);
+	  ByteBuffer buffer 		= ByteBuffer.wrap(all);
 	  return buffer;
   }
+	
   public void connectionEstablished(Connector connector, SocketChannel sc) {    
     try {
       sc.socket().setReceiveBufferSize(2*1024);
