@@ -73,9 +73,10 @@ public class SingleClient implements ConnectorListener {
       	sendPacket(pChannel);
      // pChannel = null;
   }
+	
   public static void main(String[] args) throws Exception {    
-    InetSocketAddress remotePoint = new InetSocketAddress(args[0], Integer.parseInt(args[1]));
-    SelectorThread st = new SelectorThread();
+    InetSocketAddress remotePoint 	= new InetSocketAddress(args[0], Integer.parseInt(args[1]));
+    SelectorThread st 			= new SelectorThread();
     new SingleClient(remotePoint, st);
   }
 }
