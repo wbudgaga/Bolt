@@ -21,8 +21,8 @@ public class SingleClient implements ConnectorListener {
   private int packetsSent 		= 0;
  
   public SingleClient(InetSocketAddress remotePoint, SelectorThread st) throws Exception {    
-	this.st = st;
-    Connector connector = new Connector(st, remotePoint, this);
+	this.st 			= st;
+    Connector connector 		= new Connector(st, remotePoint, this);
     connector.connect();
   }
   private ByteBuffer generateNextPacket() {
