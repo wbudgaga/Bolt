@@ -35,12 +35,11 @@ public class Server implements AcceptorListener {
   }
   
   public void socketError(Acceptor acceptor, Exception ex) {
-    System.out.println("["+ acceptor + "] Error: " + ex.getMessage());
+    System.out.println("[" + acceptor + "] Error: " + ex.getMessage());
   }
 
   public static void main(String[] args) throws Exception {    
-	  int listenPort = Integer.parseInt(args[0]);
+	  int listenPort 		= Integer.parseInt(args[0]);
 	  new Server(listenPort);
   }
-  
 }
