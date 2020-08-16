@@ -17,8 +17,8 @@ import mr.dht.peer2peernetwork.wireformates.Predecessor;
 
 public class SingleClient implements ConnectorListener {
   private final SelectorThread st;  
-  private PacketChannel pChannel = null;
-  private int packetsSent = 0;
+  private PacketChannel pChannel 	= null;
+  private int packetsSent 		= 0;
  
   public SingleClient(InetSocketAddress remotePoint, SelectorThread st) throws Exception {    
 	this.st = st;
