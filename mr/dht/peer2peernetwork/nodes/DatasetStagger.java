@@ -20,9 +20,9 @@ public class DatasetStagger  extends Task{
 	protected final DataStagger	dataStagger;
 	
 	public DatasetStagger(ThreadPoolManager  taskThreadPool, DataStagger ds, int staggerSize) {
-		this.taskThreadPool = taskThreadPool;
-		dataStagger = ds;
-		fileStaggerPool		= new ArrayBlockingQueue<FileStagger>(staggerSize);
+		this.taskThreadPool 		= taskThreadPool;
+		dataStagger 			= ds;
+		fileStaggerPool			= new ArrayBlockingQueue<FileStagger>(staggerSize);
 		for (int i = 0; i < staggerSize; ++ i){
 			returnObjToQueue(new FileStagger(this));
 		}
