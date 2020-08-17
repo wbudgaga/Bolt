@@ -129,7 +129,7 @@ public class Discovery extends LNode{
 	@Override
 	public void socketDisconnected(PacketChannel pc) {
 		RemotePeer rp 						=  peers.get(pc);
-		if (rp==null)
+		if (rp == null)
 			System.out.println("[" + pc.toString() + "] Disconnected.");
 		else
 			System.out.println("[" + rp.getID() + "] Disconnected.");
@@ -143,8 +143,8 @@ public class Discovery extends LNode{
 		    return;
 		}
 		try{
-			int port = Integer.parseInt(args[0]);
-			 Discovery discovery = new Discovery(port);
+			int port 					= Integer.parseInt(args[0]);
+			 Discovery discovery 				= new Discovery(port);
 			discovery.startup();
 		}catch(NumberFormatException e){
 			System.err.println("Discovery Node: the values of portnum must be integer");
