@@ -13,11 +13,11 @@ import mr.dht.peer2peernetwork.wireformates.DatasetMetaData;
 import mr.resourcemanagement.io.DataReader;
 
 public class DatasetStagger  extends Task{
-	private String 							datasetName;
-	private String 							datasetDir;
-	private ThreadPoolManager 				taskThreadPool;  
-	private final BlockingQueue<FileStagger>fileStaggerPool;
-	protected final DataStagger				dataStagger;
+	private String 	datasetName;
+	private String 	datasetDir;
+	private ThreadPoolManager taskThreadPool;  
+	private final BlockingQueue<FileStagger> fileStaggerPool;
+	protected final DataStagger	dataStagger;
 	
 	public DatasetStagger(ThreadPoolManager  taskThreadPool, DataStagger ds, int staggerSize) {
 		this.taskThreadPool = taskThreadPool;
