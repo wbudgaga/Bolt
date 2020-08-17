@@ -46,7 +46,7 @@ public class DatasetStagger  extends Task{
 		DataReader 	dataReader 	= new DataReader(datasetDir); 
 		String 		baseName 	=  datasetName+"_";//  .%04d" ;
 		File 		dataFile 	= dataReader.nextFile();
-		DatasetMetaData dataMeta = new DatasetMetaData();
+		DatasetMetaData dataMeta 	= new DatasetMetaData();
 		
 		dataMeta.setDataSetHashKey(UtilClass.hashMKey(datasetName));
 //		int i = 0;
