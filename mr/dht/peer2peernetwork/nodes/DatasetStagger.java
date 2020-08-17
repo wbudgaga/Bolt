@@ -31,9 +31,10 @@ public class DatasetStagger  extends Task{
 	public DataStagger getDataStagger(){
 		return dataStagger;
 	}
+	
 	public void setDataset(String datasetName, String  dataDir){
-		this.datasetName	= datasetName;
-		this.datasetDir 	= dataDir;
+		this.datasetName		= datasetName;
+		this.datasetDir 		= dataDir;
 	}
 	
 	protected void returnObjToQueue(FileStagger fs){
