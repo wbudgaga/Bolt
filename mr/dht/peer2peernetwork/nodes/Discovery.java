@@ -56,7 +56,7 @@ public class Discovery extends LNode{
 		int idx 						= UtilClass.getRandomNumber(0, size -1);
 		int c 							= 0;
 		for (Map.Entry<PacketChannel, RemotePeer> peerEntry : peers.entrySet()){
-			if (c==idx){
+			if (c == idx){
 				return peerEntry.getValue();
 			}
 			++c;
@@ -67,7 +67,7 @@ public class Discovery extends LNode{
 	public synchronized boolean storePeer(RemotePeer peer) {
 		if (peerIDs.add(peer.getID())){
 			peers.put(peer.getpChannel(), peer);
-			peerListChange = true;
+			peerListChange 					= true;
 			return true;
 		}		
 		return false;
