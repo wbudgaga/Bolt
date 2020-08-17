@@ -42,15 +42,15 @@ public class Discovery extends LNode{
 		PeerInfo[] peersList 					= new PeerInfo[peers.size()-1];
 		int i							= 0;
 		for(RemotePeer peer:peers.values())
-			if (peer.getID()!=peerID){
-				peersList[i]=peer.getPeerInfo();
+			if (peer.getID() != peerID){
+				peersList[i]				= peer.getPeerInfo();
 				++i;
 			}
 		return peersList;
 	}
 
 	public synchronized RemotePeer getRandomPeer(){
-		int size = peers.size();
+		int size 						= peers.size();
 		if(size==0)
 			return null;
 		int idx = UtilClass.getRandomNumber(0, size -1);
