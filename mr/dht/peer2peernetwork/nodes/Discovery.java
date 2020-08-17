@@ -74,8 +74,8 @@ public class Discovery extends LNode{
 	}
 	
 	public synchronized boolean removePeer(PacketChannel  pChannel) {
-		RemotePeer remotedPeer = peers.remove(pChannel);
-		if (remotedPeer!=null){
+		RemotePeer remotedPeer 					= peers.remove(pChannel);
+		if (remotedPeer != null){
 			peerIDs.remove(remotedPeer.getID());
 			peerListChange = true;
 			return true;
