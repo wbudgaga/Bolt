@@ -63,18 +63,16 @@ public class DatasetStagger  extends Task{
 		}
 		dataStagger.sendDataToPeer(dataMeta.getDataSetHashKey(), dataMeta);//submit dataset' metadata
 		//dataStagger.pendChunk(dataMeta.getDataSetHashKey(), DataStagger.POISION_MSG);
-
 	}
 
 	@Override
 	public void execute() throws IOException, InterruptedException {
 		try {
-			System.out.println("Submitting the dataset "+datasetName+"  ...");
+			System.out.println("Submitting the dataset " + datasetName + "  ...");
 			submitDataset();
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
 	}
-}	
+}
