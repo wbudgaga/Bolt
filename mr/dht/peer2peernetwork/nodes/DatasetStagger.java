@@ -51,7 +51,7 @@ public class DatasetStagger  extends Task{
 		dataMeta.setDataSetHashKey(UtilClass.hashMKey(datasetName));
 //		int i = 0;
 		while(dataFile != null){
-			FileStagger fs = fileStaggerPool.take();
+			FileStagger fs 		= fileStaggerPool.take();
 			fs.setFile(dataFile);
 			fs.setChunkNameFormat(baseName+dataFile.getName()+".%04d");
 			taskThreadPool.addTask(fs);
@@ -59,7 +59,7 @@ public class DatasetStagger  extends Task{
 /*			if (dataFile!=null)
 				break;
 			
-*/			dataFile = dataReader.nextFile();
+*/			dataFile 		= dataReader.nextFile();
 		}
 		dataStagger.sendDataToPeer(dataMeta.getDataSetHashKey(), dataMeta);//submit dataset' metadata
 		//dataStagger.pendChunk(dataMeta.getDataSetHashKey(), DataStagger.POISION_MSG);
