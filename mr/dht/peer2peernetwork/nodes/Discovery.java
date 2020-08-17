@@ -102,15 +102,15 @@ public class Discovery extends LNode{
 	      		sc.socket().setSendBufferSize(2*1024);
 	      		// The contructor enables reading automatically.
 	      		PacketChannel pc 				= new PacketChannel(sc, selector, new MultiMSGDecoder(), new DiscoveryMessageHandler(this));
-	      pc.resumeReading();
+	      		pc.resumeReading();
 		} catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-		      e.printStackTrace();
-	    }
+		      	e.printStackTrace();
+	    	}
 	}
 
 	@Override
 	public void socketError(Acceptor acceptor, Exception ex) {
-		System.out.println("["+ acceptor + "] Error: " + ex.getMessage());
+		System.out.println("[" + acceptor + "] Error: " + ex.getMessage());
 	}	
 	
 	public void print(){
@@ -120,21 +120,22 @@ public class Discovery extends LNode{
 		PeerData.printRowSeparator();
 	}
 	
-	
 	@Override
 	public void socketException(PacketChannel pc, Exception ex) {
 		System.out.println("[" + pc.toString() + "] Error: " + ex.getMessage());
 		removePeer(pc);
 	}
+	
 	@Override
 	public void socketDisconnected(PacketChannel pc) {
-		RemotePeer rp =  peers.get(pc);
+		RemotePeer rp 						=  peers.get(pc);
 		if (rp==null)
 			System.out.println("[" + pc.toString() + "] Disconnected.");
 		else
 			System.out.println("[" + rp.getID() + "] Disconnected.");
 		removePeer(pc);
 	}	
+
 	public static void main(String args[]) throws InstantiationException, IllegalAccessException, IOException, ClassNotFoundException{	      
 		if (args.length < 1) {
 			System.err.println("Discovery Node:  Usage:");
