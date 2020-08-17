@@ -77,12 +77,11 @@ public class Discovery extends LNode{
 		RemotePeer remotedPeer 					= peers.remove(pChannel);
 		if (remotedPeer != null){
 			peerIDs.remove(remotedPeer.getID());
-			peerListChange = true;
+			peerListChange 					= true;
 			return true;
 		}		
 		return false;
 	}
-
 
 	public boolean startup() throws InstantiationException, IllegalAccessException, IOException, InterruptedException, ClassNotFoundException{
 		// Discovery main loop
@@ -90,10 +89,11 @@ public class Discovery extends LNode{
 			Thread.sleep(Setting.DISCOVERY_UPDATE_TIME);
 			if (peerListChange){
 				print();
-				peerListChange =false;
+				peerListChange 				= false;
 			}
 		}
 	}
+	
 	@Override
 	public void socketConnected(Acceptor acceptor, SocketChannel sc) {
 		System.out.println("["+ acceptor + "] connection received: " + sc);
