@@ -96,12 +96,12 @@ public class Discovery extends LNode{
 	
 	@Override
 	public void socketConnected(Acceptor acceptor, SocketChannel sc) {
-		System.out.println("["+ acceptor + "] connection received: " + sc);
+		System.out.println("[" + acceptor + "] connection received: " + sc);
 		try {
-	      sc.socket().setReceiveBufferSize(2*1024);
-	      sc.socket().setSendBufferSize(2*1024);
-	      // The contructor enables reading automatically.
-	      PacketChannel pc = new PacketChannel(sc, selector, new MultiMSGDecoder(), new DiscoveryMessageHandler(this));
+	      		sc.socket().setReceiveBufferSize(2*1024);
+	      		sc.socket().setSendBufferSize(2*1024);
+	      		// The contructor enables reading automatically.
+	      		PacketChannel pc 				= new PacketChannel(sc, selector, new MultiMSGDecoder(), new DiscoveryMessageHandler(this));
 	      pc.resumeReading();
 		} catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 		      e.printStackTrace();
