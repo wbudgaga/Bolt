@@ -16,9 +16,9 @@ import mr.dht.peer2peernetwork.util.UtilClass;
 import mr.dht.peer2peernetwork.wireformates.PeerInfo;
 
 public class Discovery extends LNode{
-	private Set<Long> peerIDs = new	HashSet<Long>();
-	private ConcurrentHashMap<PacketChannel, RemotePeer> peers = new	ConcurrentHashMap<PacketChannel, RemotePeer>();
-	private boolean peerListChange =false;
+	private Set<Long> peerIDs 					= new	HashSet<Long>();
+	private ConcurrentHashMap<PacketChannel, RemotePeer> peers 	= new	ConcurrentHashMap<PacketChannel, RemotePeer>();
+	private boolean peerListChange 					= false;
 	
 	public Discovery(int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException{
 		super(port);
