@@ -142,6 +142,7 @@ public class Discovery extends LNode{
 			System.err.println("         mr.dht.peer2peernetwork.nodes.Discovery portnum");
 		    return;
 		}
+		
 		try{
 			int port 					= Integer.parseInt(args[0]);
 			 Discovery discovery 				= new Discovery(port);
