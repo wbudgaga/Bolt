@@ -37,10 +37,10 @@ public class Discovery extends LNode{
 	}
 
 	public PeerInfo[] getPeerInfoList(long peerID) throws IOException{
-		if (peers.size()<2)
+		if (peers.size() < 2)
 			return null;
-		PeerInfo[] peersList = new PeerInfo[peers.size()-1];
-		int i=0;
+		PeerInfo[] peersList 					= new PeerInfo[peers.size()-1];
+		int i							= 0;
 		for(RemotePeer peer:peers.values())
 			if (peer.getID()!=peerID){
 				peersList[i]=peer.getPeerInfo();
