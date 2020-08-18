@@ -104,5 +104,4 @@ public class FileStagger extends Task{
 		}
 		datasetStagger.returnObjToQueue(this);
 	}
-	
 }
