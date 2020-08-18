@@ -15,14 +15,14 @@ import mr.dht.peer2peernetwork.wireformates.FileMetaData;
 import mr.dht.peer2peernetwork.wireformates.StoreFileRequest;
 
 public class FileStagger extends Task{
-	private FileChannel 	fChannel;
-	private File 			srcFile;
-	private String 			chunkNameFormat;
-	private DatasetStagger	datasetStagger;
-	private DataStagger		dataStagger;
-	public  static int		SPLIT_PART_SIZE = Setting.RECEIVEBUFF_SIZE - 10 * Setting.KILO;
-	private ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
-	private FileMetaData 	fileMetaData = new FileMetaData();
+	private FileChannel fChannel;
+	private File srcFile;
+	private String 	chunkNameFormat;
+	private DatasetStagger datasetStagger;
+	private DataStagger dataStagger;
+	public  static int SPLIT_PART_SIZE = Setting.RECEIVEBUFF_SIZE - 10 * Setting.KILO;
+	private ByteBuffer buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
+	private FileMetaData fileMetaData = new FileMetaData();
 	
 	public FileStagger(DatasetStagger datasetStagger){
 		this.datasetStagger 	= datasetStagger;
