@@ -25,14 +25,15 @@ public class FileStagger extends Task{
 	private FileMetaData fileMetaData 	= new FileMetaData();
 	
 	public FileStagger(DatasetStagger datasetStagger){
-		this.datasetStagger 	= datasetStagger;
-		dataStagger				= datasetStagger.getDataStagger();
+		this.datasetStagger 		= datasetStagger;
+		dataStagger			= datasetStagger.getDataStagger();
 		fileMetaData.setChunkSize(Setting.CHUNK_SIZE);
 		fileMetaData.setReplicationFactor(Setting.REPLICATION_FACTOR);
 	}
+	
 	public void setFile(File srcFile){
-		this.srcFile = srcFile;
-		String fName = srcFile.getName();
+		this.srcFile 			= srcFile;
+		String fName 			= srcFile.getName();
 		fileMetaData.setFileName(fName);
 		fileMetaData.setFileSize(srcFile.length());
 		fileMetaData.setFileHashedKey(UtilClass.hashMKey(fName));
