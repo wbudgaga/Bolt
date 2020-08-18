@@ -67,8 +67,8 @@ public class FileStagger extends Task{
 
 	public void submitFile() throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		fChannel 			= new FileInputStream(srcFile).getChannel();
-		long totalBytesRead = 0;
-		int  chunkCount		= 0;
+		long totalBytesRead 		= 0;
+		int  chunkCount			= 0;
 		int lastChunkSize		= (int) (fChannel.size() % Setting.CHUNK_SIZE);
 		buffer.clear();
 		while (totalBytesRead < fChannel.size()){
