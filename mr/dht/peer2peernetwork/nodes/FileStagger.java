@@ -44,7 +44,7 @@ public class FileStagger extends Task{
 	}
 	
 	private void sendChunkPart(Long hashedKey, int bufSize) throws InterruptedException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-		StoreFileRequest sfr 	= dataStagger.getChunkMSG();		
+		StoreFileRequest sfr 		= dataStagger.getChunkMSG();		
 		byte[] chunkBytes 		= sfr.getFileBytes();
 		sfr.setBufferSize(bufSize);
 		buffer.get(chunkBytes,0,bufSize);
