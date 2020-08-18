@@ -72,13 +72,13 @@ public class FileStagger extends Task{
 		int lastChunkSize		= (int) (fChannel.size() % Setting.CHUNK_SIZE);
 		buffer.clear();
 		while (totalBytesRead < fChannel.size()){
-			int bytesRead = fChannel.read(buffer);     
+			int bytesRead 		= fChannel.read(buffer);     
 			if (bytesRead == -1) {
 				fChannel.close();
 				System.out.println("ERROR: Reading file is failed");
 				return;
 			}
-			totalBytesRead += bytesRead;
+			totalBytesRead 		+= bytesRead;
 			buffer.flip();
 			if (buffer.remaining() >= Setting.CHUNK_SIZE){
 				submitFileChunck(String.format(chunkNameFormat,chunkCount++),Setting.CHUNK_SIZE);
