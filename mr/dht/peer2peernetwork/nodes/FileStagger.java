@@ -53,9 +53,9 @@ public class FileStagger extends Task{
 	}
 
 	public void submitFileChunck(String chunkName, int splitSize) throws InterruptedException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-		int numOfChunkParts = splitSize / SPLIT_PART_SIZE;
-		Long hashedKey 		= UtilClass.hashMKey(chunkName);
-		for (int i=0; i<numOfChunkParts; ++i){
+		int numOfChunkParts 		= splitSize / SPLIT_PART_SIZE;
+		Long hashedKey 			= UtilClass.hashMKey(chunkName);
+		for (int i = 0; i<numOfChunkParts; ++i){
 			sendChunkPart(hashedKey, SPLIT_PART_SIZE);
 			//Thread.sleep(100);
 		}
