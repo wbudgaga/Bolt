@@ -20,9 +20,9 @@ public class FileStagger extends Task{
 	private String 	chunkNameFormat;
 	private DatasetStagger datasetStagger;
 	private DataStagger dataStagger;
-	public  static int SPLIT_PART_SIZE = Setting.RECEIVEBUFF_SIZE - 10 * Setting.KILO;
+	public  static int SPLIT_PART_SIZE 	= Setting.RECEIVEBUFF_SIZE - 10 * Setting.KILO;
 	private ByteBuffer buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
-	private FileMetaData fileMetaData = new FileMetaData();
+	private FileMetaData fileMetaData 	= new FileMetaData();
 	
 	public FileStagger(DatasetStagger datasetStagger){
 		this.datasetStagger 	= datasetStagger;
