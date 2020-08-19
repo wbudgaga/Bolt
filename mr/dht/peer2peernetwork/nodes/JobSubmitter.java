@@ -67,15 +67,15 @@ public class JobSubmitter  extends Client{
 	}
 
 	public void submitJob(int jobIDX){
-		JobDescriptor job = getIterationJob(jobIDX);
+		JobDescriptor job 				= getIterationJob(jobIDX);
 		tasksSubmitter.setJob(job);
 		threadPool.addTask(tasksSubmitter);
 	}
 	
 	public void jobSubmitted() throws InterruptedException, IOException{
 		++numOfSubmittedJobs;
-		System.out.println(numOfSubmittedJobs+" of "+numOfExecutions+ " jobs are submitted ");
-		if (numOfSubmittedJobs< numOfExecutions){
+		System.out.println(numOfSubmittedJobs + " of " + numOfExecutions + " jobs are submitted ");
+		if (numOfSubmittedJobs < numOfExecutions){
 			submitJob(numOfSubmittedJobs+1);
 			for (Long chunkID:chunck_IDs){
 				tasksSubmitter.putChunkID(chunkID);
