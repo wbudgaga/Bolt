@@ -58,7 +58,7 @@ public class JobSubmitter  extends Client{
 	}
 	
 	public void startJobBatch() throws IOException {
-		StartJobBatch msg = new StartJobBatch();
+		StartJobBatch msg 				= new StartJobBatch();
 		msg.setPeer(getNodeData());
 		System.out.println("################# sending batch msgs");
 		for (RemotePeer p: peersCacher.getCachedPeers()){
