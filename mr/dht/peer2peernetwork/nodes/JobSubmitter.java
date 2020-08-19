@@ -192,10 +192,10 @@ public class JobSubmitter  extends Client{
 	}
 
 	public void submitJob(JobDescriptor job, int  numOfExecutions) throws InterruptedException {
-		datasetName =job.getJobInputData();
-		this.numOfExecutions = numOfExecutions;
-		this.job = job;
-		tasksSubmitter = new JobTasksSubmitter(this); 
+		datasetName 					= job.getJobInputData();
+		this.numOfExecutions 				= numOfExecutions;
+		this.job 					= job;
+		tasksSubmitter 					= new JobTasksSubmitter(this); 
 		try {
 			initiateConnectionManager(Setting.DISCOVER_HOST,Setting.DISCOVER_PORT, new RetrivingAllPeersOnConnectingHandler(this));
 		} catch (IOException e) {
