@@ -96,7 +96,7 @@ public class JobSubmitter  extends Client{
 			}
 			synchronized(LUCK) {
 				--numOfFiles;
-				System.out.println("### remaining metadata: "+numOfFiles);
+				System.out.println("### remaining metadata: " + numOfFiles);
 				if (numOfFiles == 0)
 					tasksSubmitter.putChunkID(POISON);
 			}
@@ -202,6 +202,7 @@ public class JobSubmitter  extends Client{
 			e.printStackTrace();
 		}
 	}
+	
 	//#############################################################################################
 	/*
 	 * Main Method
@@ -213,8 +214,8 @@ public class JobSubmitter  extends Client{
 		    return;
 		}
 		try{
-			int 	port 		= Integer.parseInt(args[0]);			
-			JobSubmitter ds 	= new JobSubmitter("tasksSubmitter",port);
+			int 	port 				= Integer.parseInt(args[0]);			
+			JobSubmitter ds 			= new JobSubmitter("tasksSubmitter",port);
 			ds.startup(port);
 			JobDescriptor job = JobDescriptor.loadfromFile(args[1]);
 			ds.submitJob(job, Integer.parseInt(args[2]));
