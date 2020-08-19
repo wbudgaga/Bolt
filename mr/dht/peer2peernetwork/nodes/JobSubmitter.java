@@ -90,7 +90,7 @@ public class JobSubmitter  extends Client{
 		long chunkID;
 		try {
 			for (int i = 0; i<fileMetaData.getNumOfChunks(); ++i){
-				chunkID = UtilClass.hashMKey(String.format(baseName,i));
+				chunkID 			= UtilClass.hashMKey(String.format(baseName,i));
 				chunck_IDs.add(chunkID);
 				tasksSubmitter.putChunkID(chunkID);
 			}
