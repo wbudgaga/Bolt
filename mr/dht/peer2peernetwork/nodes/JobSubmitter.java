@@ -116,10 +116,11 @@ public class JobSubmitter  extends Client{
 	public void setNumOfClusterPeers(int n){
 		peersCacher.setNumOfExpectedPeers(n);
 	}
+	
 //#############################################################################################
 	public void getDatasetMetaData() throws IOException {
-		long datasetHK = UtilClass.hashMKey(datasetName);
-		RemotePeer[] datasetPeer = peersCacher.getPeer(datasetHK);
+		long datasetHK 					= UtilClass.hashMKey(datasetName);
+		RemotePeer[] datasetPeer 			= peersCacher.getPeer(datasetHK);
 		GetDatasetMetaData datasetMetaDataRqust = new GetDatasetMetaData();
 		datasetMetaDataRqust.setPeer(getNodeData());
 		datasetMetaDataRqust.setHashedKey(datasetHK);
