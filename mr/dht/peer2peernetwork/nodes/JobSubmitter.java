@@ -36,9 +36,10 @@ public class JobSubmitter  extends Client{
 	}
 	
 	public  synchronized void sendDataToPeer(long hashedKey, Message chunkMSG) throws IOException{
-		RemotePeer[] chunkPeers = peersCacher.getPeer(hashedKey);
+		RemotePeer[] chunkPeers 			= peersCacher.getPeer(hashedKey);
 		chunkPeers[0].sendMessage(chunkMSG);
 	}
+	
 	public  synchronized void sendMetaDataToPeer(long hashedKey, FileMetaData metaMSG) throws IOException{
 		RemotePeer[] chunkPeers = peersCacher.getPeer(hashedKey);
 		chunkPeers[0].sendMessage(metaMSG);
