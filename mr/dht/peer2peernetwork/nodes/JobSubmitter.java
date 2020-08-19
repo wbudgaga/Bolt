@@ -147,7 +147,7 @@ public class JobSubmitter  extends Client{
 	}
 	
 	public void testMapTasks(int jobIDX) throws IOException{
-		JobDescriptor job = getIterationJob(jobIDX);
+		JobDescriptor job 				= getIterationJob(jobIDX);
 		tasksSubmitter.setJob(job);
 		threadPool.addTask(tasksSubmitter);
 		tasksSubmitter.submitMapTasks(12778640);
