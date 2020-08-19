@@ -47,8 +47,8 @@ public class JobSubmitter  extends Client{
 	
 //#############################################################################################	
 	public void setDatasetMetaData(DatasetMetaData datasetMetaData) throws IOException{
-		ArrayList<String> filesList = datasetMetaData.getFileNameList();
-		numOfFiles = filesList.size();
+		ArrayList<String> filesList 			= datasetMetaData.getFileNameList();
+		numOfFiles 					= filesList.size();
 		submitJob(1);
 		for (String fileName: filesList){
 			getFileMetaData(UtilClass.hashMKey(fileName));
