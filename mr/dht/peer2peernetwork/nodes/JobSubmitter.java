@@ -106,8 +106,8 @@ public class JobSubmitter  extends Client{
 	}
 	
 	public void getFileMetaData(long fileHK) throws IOException {
-		RemotePeer[] datasetPeer = peersCacher.getPeer(fileHK);
-		GetFileMetaData fileMetaDataRqust = new GetFileMetaData();
+		RemotePeer[] datasetPeer 			= peersCacher.getPeer(fileHK);
+		GetFileMetaData fileMetaDataRqust 		= new GetFileMetaData();
 		fileMetaDataRqust.setPeer(getNodeData());
 		fileMetaDataRqust.setHashedKey(fileHK);
 		datasetPeer[0].sendMessage(fileMetaDataRqust);
