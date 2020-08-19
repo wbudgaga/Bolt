@@ -97,13 +97,14 @@ public class JobSubmitter  extends Client{
 			synchronized(LUCK) {
 				--numOfFiles;
 				System.out.println("### remaining metadata: "+numOfFiles);
-				if (numOfFiles==0)
+				if (numOfFiles == 0)
 					tasksSubmitter.putChunkID(POISON);
 			}
 		} catch (InterruptedException e) {
 				e.printStackTrace();
 		}
 	}
+	
 	public void getFileMetaData(long fileHK) throws IOException {
 		RemotePeer[] datasetPeer = peersCacher.getPeer(fileHK);
 		GetFileMetaData fileMetaDataRqust = new GetFileMetaData();
