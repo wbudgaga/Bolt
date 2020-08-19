@@ -32,7 +32,7 @@ public class JobSubmitter  extends Client{
 	
 	public JobSubmitter(String name, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, NoSuchAlgorithmException {
 		super(name, port);
-		peersCacher 		= new PeerCacher();
+		peersCacher 					= new PeerCacher();
 	}
 	
 	public  synchronized void sendDataToPeer(long hashedKey, Message chunkMSG) throws IOException{
