@@ -86,10 +86,10 @@ public class JobSubmitter  extends Client{
 	}
 	
 	public void setFileMetaData(FileMetaData fileMetaData) throws IOException{
-		String 		baseName 	=  datasetName+"_"+fileMetaData.getFileName()+".%04d";
+		String 		baseName 			=  datasetName+"_"+fileMetaData.getFileName()+".%04d";
 		long chunkID;
 		try {
-			for (int i=0;i<fileMetaData.getNumOfChunks(); ++i){
+			for (int i = 0; i<fileMetaData.getNumOfChunks(); ++i){
 				chunkID = UtilClass.hashMKey(String.format(baseName,i));
 				chunck_IDs.add(chunkID);
 				tasksSubmitter.putChunkID(chunkID);
