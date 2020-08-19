@@ -217,7 +217,7 @@ public class JobSubmitter  extends Client{
 			int 	port 				= Integer.parseInt(args[0]);			
 			JobSubmitter ds 			= new JobSubmitter("tasksSubmitter",port);
 			ds.startup(port);
-			JobDescriptor job = JobDescriptor.loadfromFile(args[1]);
+			JobDescriptor job 			= JobDescriptor.loadfromFile(args[1]);
 			ds.submitJob(job, Integer.parseInt(args[2]));
 
 		}catch(NumberFormatException e){
@@ -230,4 +230,4 @@ public class JobSubmitter  extends Client{
 			e.printStackTrace();
 		}
 	}
-}	
+}
