@@ -19,16 +19,16 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 import mr.dht.peer2peernetwork.wireformates.StartJobBatch;
 
 public class JobSubmitter  extends Client{
-	private String 				datasetName;
-	private PeerCacher			peersCacher;
+	private String 			datasetName;
+	private PeerCacher		peersCacher;
 	private JobTasksSubmitter	tasksSubmitter;
 	private volatile int 		numOfFiles; 
 	private volatile int		numOfExecutions;
-	private volatile int		numOfSubmittedJobs=0; 
+	private volatile int		numOfSubmittedJobs	= 0; 
 	private JobDescriptor 		job;
-	public static final Long	POISON  = new Long(0);
-	public static final Object	LUCK  = new Object();
-	private ArrayList<Long>     chunck_IDs = new ArrayList<Long>();
+	public static final Long	POISON  		= new Long(0);
+	public static final Object	LUCK  			= new Object();
+	private ArrayList<Long>     	chunck_IDs 		= new ArrayList<Long>();
 	
 	public JobSubmitter(String name, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, NoSuchAlgorithmException {
 		super(name, port);
