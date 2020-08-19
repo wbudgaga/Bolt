@@ -121,7 +121,7 @@ public class JobSubmitter  extends Client{
 	public void getDatasetMetaData() throws IOException {
 		long datasetHK 					= UtilClass.hashMKey(datasetName);
 		RemotePeer[] datasetPeer 			= peersCacher.getPeer(datasetHK);
-		GetDatasetMetaData datasetMetaDataRqust = new GetDatasetMetaData();
+		GetDatasetMetaData datasetMetaDataRqust 	= new GetDatasetMetaData();
 		datasetMetaDataRqust.setPeer(getNodeData());
 		datasetMetaDataRqust.setHashedKey(datasetHK);
 		datasetPeer[0].sendMessage(datasetMetaDataRqust);
@@ -135,7 +135,7 @@ public class JobSubmitter  extends Client{
 	}
 
 	private JobDescriptor getIterationJob(int jobNr){
-		JobDescriptor job_n = new JobDescriptor();
+		JobDescriptor job_n 				= new JobDescriptor();
 		job_n.setJobName(job.getJobName()+jobNr);
 		job_n.setJobID(UtilClass.hashMKey(job_n.getJobName()));
 		job_n.setNumOfReducers(job.getNumOfReducers());
