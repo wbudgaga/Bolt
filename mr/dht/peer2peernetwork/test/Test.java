@@ -16,11 +16,11 @@ public class Test<T> {
 	public static void main(String s[]){
 		String ext 		= "";
 		byte[] a 		= new byte[0];
-		int idx=498;
-		idx = (idx +1) % 500;
-		idx = (idx +1) % 500;
+		int idx			= 498;
+		idx 			= (idx +1) % 500;
+		idx 			= (idx +1) % 500;
 		System.out.println(idx);
-		int[] lst = {2,4,6,8,0};
+		int[] lst 		= {2,4,6,8,0};
 		int[] l1 = Arrays.copyOfRange(lst,1,3);
 		System.out.println(l1.length);
 		System.out.println("StartMqapTask".contains("Map")+"    mm="+Integer.MAX_VALUE/1000000+"    "+("ahbsvext.xt".endsWith(ext)));
