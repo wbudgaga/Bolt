@@ -30,8 +30,8 @@ public class TestBlockingQueue extends Task{
 	public void execute() throws IOException, InterruptedException {
 		while(true){
 			if (t==1 && count<10){
-				count+=1;
-				System.out.println("putting "+count);
+				count				+= 1;
+				System.out.println("putting " + count);
 				readyBuffers.offer(count);
 			}
 				
@@ -41,5 +41,4 @@ public class TestBlockingQueue extends Task{
 				System.out.println("after");
 		}
 	}
-
 }
