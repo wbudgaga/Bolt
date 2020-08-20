@@ -21,11 +21,12 @@ public class TestRWriteFToFile {
 	
 	
 	public void storeUsingFileWriter(String fn) throws IOException{
-		FileWriter f = new FileWriter(fn);
-		   long start = System.currentTimeMillis();
+		FileWriter f 				= new FileWriter(fn);
+		   long start 				= System.currentTimeMillis();
 		   for (int i=0; i< RECORD_COUNT; ++i) {
 		        f.write(RECORD);
 		    }
+		
 		    f.flush();
 		    f.close();
 		    long end = System.currentTimeMillis();
