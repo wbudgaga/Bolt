@@ -37,14 +37,14 @@ public class TestRWriteFToFile {
 		FileWriter f 				= new FileWriter(fn);
 		String txt				= "";
 		   long start 				= System.currentTimeMillis();
-		   for (int i=0; i< RECORD_COUNT; ++i) {
-		        txt+=RECORD;
+		   for (int i = 0; i< RECORD_COUNT; ++i) {
+		        txt				+= RECORD;
 		    }
 		   f.write(txt);
 		   f.flush();
 		   f.close();
-		   long end = System.currentTimeMillis();
-		   System.out.println("At Once Using fileWriter: " +(end - start) / 1000f + " seconds");
+		   long end				= System.currentTimeMillis();
+		   System.out.println("At Once Using fileWriter: " + (end - start) / 1000f + " seconds");
 	}
 	
 	public void storeUsingBufferedWriter(String fn, int bufSize) throws IOException{
