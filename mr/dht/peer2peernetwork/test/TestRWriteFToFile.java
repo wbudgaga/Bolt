@@ -23,14 +23,14 @@ public class TestRWriteFToFile {
 	public void storeUsingFileWriter(String fn) throws IOException{
 		FileWriter f 				= new FileWriter(fn);
 		   long start 				= System.currentTimeMillis();
-		   for (int i=0; i< RECORD_COUNT; ++i) {
+		   for (int i = 0; i< RECORD_COUNT; ++i) {
 		        f.write(RECORD);
 		    }
 		
 		    f.flush();
 		    f.close();
-		    long end = System.currentTimeMillis();
-		    System.out.println("One By one Using fileWriter: " +(end - start) / 1000f + " seconds");
+		    long end 				= System.currentTimeMillis();
+		    System.out.println("One By one Using fileWriter: " + (end - start) / 1000f + " seconds");
 	}
 
 	public void storeUsingFileWriterAsOnce(String fn) throws IOException{
