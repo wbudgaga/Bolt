@@ -23,14 +23,13 @@ public class Test<T> {
 		int[] lst 		= {2,4,6,8,0};
 		int[] l1 		= Arrays.copyOfRange(lst,1,3);
 		System.out.println(l1.length);
-		System.out.println("StartMqapTask".contains("Map")+"    mm="+Integer.MAX_VALUE/1000000+"    "+("ahbsvext.xt".endsWith(ext)));
+		System.out.println("StartMqapTask".contains("Map") + "    mm=" + Integer.MAX_VALUE/1000000 + "    " + ("ahbsvext.xt".endsWith(ext)));
 		System.out.println("abc. Thm>q \'".replaceAll("[^a-zA-Z]", " "));
-		Test<Long> t = new Test<>();
+		Test<Long> t 		= new Test<>();
 		t.setT(50l);
 		System.out.println(t.getT());
 		
-		int l= -11;
-		System.out.println(Integer.MAX_VALUE+"  ###  "+(l&Integer.MAX_VALUE));
+		int l			= -11;
+		System.out.println(Integer.MAX_VALUE + "  ###  " + (l&Integer.MAX_VALUE));
 	}
-
 }
