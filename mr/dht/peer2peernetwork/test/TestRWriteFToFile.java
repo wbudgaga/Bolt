@@ -34,9 +34,9 @@ public class TestRWriteFToFile {
 	}
 
 	public void storeUsingFileWriterAsOnce(String fn) throws IOException{
-		FileWriter f = new FileWriter(fn);
-		String txt="";
-		   long start = System.currentTimeMillis();
+		FileWriter f 				= new FileWriter(fn);
+		String txt				= "";
+		   long start 				= System.currentTimeMillis();
 		   for (int i=0; i< RECORD_COUNT; ++i) {
 		        txt+=RECORD;
 		    }
