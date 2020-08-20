@@ -19,8 +19,8 @@ public class TestBlockingQueue extends Task{
 	public static void main(String[] args) {
 		ThreadPoolManager t 				= new ThreadPoolManager(4);
 		t.start();
-		TestBlockingQueue producer = new TestBlockingQueue(1);
-		TestBlockingQueue consumer = new TestBlockingQueue(2);
+		TestBlockingQueue producer 			= new TestBlockingQueue(1);
+		TestBlockingQueue consumer 			= new TestBlockingQueue(2);
 		t.addTask(consumer);
 		t.addTask(producer);
 		
