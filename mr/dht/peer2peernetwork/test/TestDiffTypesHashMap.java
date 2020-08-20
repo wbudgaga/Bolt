@@ -26,10 +26,9 @@ public class TestDiffTypesHashMap {
 		
 		tst.store(1l, b1);
 		tst.store(10l, b2);
-		int i =0;
+		int i 								= 0;
 		System.out.println("@@@@@  "+i);
 		ReducerBuffer<Integer,String> r= tst.get(1l);
 		ReducerBuffer<Integer,Integer> r2= tst.get(10l);
 	}
-
 }
