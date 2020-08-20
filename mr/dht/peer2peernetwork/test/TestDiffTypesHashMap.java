@@ -21,8 +21,8 @@ public class TestDiffTypesHashMap {
 	 */
 	public static void main(String[] args) {
 		TestDiffTypesHashMap tst 					= new TestDiffTypesHashMap();
-		ReducerBuffer b1 = new ReducerBuffer<Integer,String>(0, null);
-		ReducerBuffer b2 = new ReducerBuffer<Integer,Integer>(0,null);
+		ReducerBuffer b1 						= new ReducerBuffer<Integer,String>(0, null);
+		ReducerBuffer b2 						= new ReducerBuffer<Integer,Integer>(0,null);
 		
 		tst.store(1l, b1);
 		tst.store(10l, b2);
