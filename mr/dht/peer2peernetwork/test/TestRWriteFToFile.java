@@ -51,8 +51,8 @@ public class TestRWriteFToFile {
 		FileWriter f 				= new FileWriter(fn);
 		BufferedWriter out 			= new BufferedWriter(f, bufSize);
 
-		   long start = System.currentTimeMillis();
-		   for (int i=0; i< RECORD_COUNT; ++i) {
+		   long start 				= System.currentTimeMillis();
+		   for (int i = 0; i < RECORD_COUNT; ++i) {
 		        out.write(RECORD);
 		    }
 		    out.flush();
