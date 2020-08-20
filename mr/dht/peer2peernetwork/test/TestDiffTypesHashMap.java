@@ -6,7 +6,7 @@ import mr.resourcemanagement.datatype.ReducerBuffer;
 import mr.resourcemanagement.execution.mrtasks.MapTaskInfo;
 
 public class TestDiffTypesHashMap {
-	private static ConcurrentHashMap <Long,ReducerBuffer>	mapTaskInfoList 	= new ConcurrentHashMap<Long,ReducerBuffer>();
+	private static ConcurrentHashMap <Long,ReducerBuffer> mapTaskInfoList 	= new ConcurrentHashMap<Long,ReducerBuffer>();
 	
 	public static void store(Long id, ReducerBuffer rb){
 		mapTaskInfoList.put(id, rb);
@@ -20,7 +20,7 @@ public class TestDiffTypesHashMap {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		TestDiffTypesHashMap tst = new TestDiffTypesHashMap();
+		TestDiffTypesHashMap tst 					= new TestDiffTypesHashMap();
 		ReducerBuffer b1 = new ReducerBuffer<Integer,String>(0, null);
 		ReducerBuffer b2 = new ReducerBuffer<Integer,Integer>(0,null);
 		
