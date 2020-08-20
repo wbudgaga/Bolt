@@ -9,15 +9,15 @@ import mr.dht.peer2peernetwork.threadpool.ThreadPoolManager;
 import mr.resourcemanagement.datatype.ReducerBuffer;
 
 public class TestBlockingQueue extends Task{
-	private static BlockingQueue<Integer>  readyBuffers= new ArrayBlockingQueue<Integer>(1000);
+	private static BlockingQueue<Integer>  readyBuffers	= new ArrayBlockingQueue<Integer>(1000);
 	private int t; //1:producer, 2:consumer
-	private int count=0; 
+	private int count					= 0; 
 	public TestBlockingQueue(int ty){
 		t=ty;
 	}
 	
 	public static void main(String[] args) {
-		ThreadPoolManager t = new ThreadPoolManager(4);
+		ThreadPoolManager t 				= new ThreadPoolManager(4);
 		t.start();
 		TestBlockingQueue producer = new TestBlockingQueue(1);
 		TestBlockingQueue consumer = new TestBlockingQueue(2);
