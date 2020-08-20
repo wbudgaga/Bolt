@@ -10,13 +10,12 @@ public class Test<T> {
 	}
 
 	public void setT(T t) {
-		this.t = t;
+		this.t		 	= t;
 	}
 	
-	
 	public static void main(String s[]){
-		String ext ="";
-		byte[] a = new byte[0];
+		String ext 		= "";
+		byte[] a 		= new byte[0];
 		int idx=498;
 		idx = (idx +1) % 500;
 		idx = (idx +1) % 500;
