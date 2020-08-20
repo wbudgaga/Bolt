@@ -64,12 +64,11 @@ public class TestRWriteFToFile {
 	public void readUsingBufferedWriter(String fn, int bufSize) throws IOException{
 		BufferedReader br 			= new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(fn))),bufSize);
 		String line;
-		long start = System.currentTimeMillis();
-		while ((line= br.readLine())!=null);
-
+		long start 				= System.currentTimeMillis();
+		while ((line = br.readLine())!=null);
 		br.close();
-		    long end = System.currentTimeMillis();
-		    System.out.println(bufSize+" Using BufferedWriter: " +(end - start) / 1000f + " seconds");
+		long end 				= System.currentTimeMillis();
+		System.out.println(bufSize + " Using BufferedWriter: " + (end - start) / 1000f + " seconds");
 	}
 
 	public static void main(String[] args) throws IOException{
