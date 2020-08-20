@@ -14,10 +14,10 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.resourcemanagement.io.DataSource;
 
 public class TestRWriteFToFile {
-	private static final int ITERATIONS = 5;
-	private static final int RECORD_COUNT = (int) (8* Math.pow(10, 6));
-	private static final String RECORD = "Help I am trapped in a fortune cookie factory\n";
-	private static final int RECSIZE = RECORD.getBytes().length;
+	private static final int ITERATIONS 		= 5;
+	private static final int RECORD_COUNT 		= (int) (8* Math.pow(10, 6));
+	private static final String RECORD 		= "Help I am trapped in a fortune cookie factory\n";
+	private static final int RECSIZE 		= RECORD.getBytes().length;
 	
 	
 	public void storeUsingFileWriter(String fn) throws IOException{
