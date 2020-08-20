@@ -48,8 +48,8 @@ public class TestRWriteFToFile {
 	}
 	
 	public void storeUsingBufferedWriter(String fn, int bufSize) throws IOException{
-		FileWriter f = new FileWriter(fn);
-		BufferedWriter out = new BufferedWriter(f, bufSize);
+		FileWriter f 				= new FileWriter(fn);
+		BufferedWriter out 			= new BufferedWriter(f, bufSize);
 
 		   long start = System.currentTimeMillis();
 		   for (int i=0; i< RECORD_COUNT; ++i) {
