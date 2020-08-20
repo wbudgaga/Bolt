@@ -72,7 +72,7 @@ public class TestRWriteFToFile {
 	}
 
 	public static void main(String[] args) throws IOException{
-		TestRWriteFToFile twtf = new TestRWriteFToFile();
+		TestRWriteFToFile twtf 			= new TestRWriteFToFile();
 		//twtf.storeUsingFileWriter("/tmp/f1.txt");
 		//twtf.storeUsingFileWriterAsOnce("/tmp/f2.txt");
 		twtf.readUsingBufferedWriter("/tmp/f3.txt", (int) (1* Setting.KILO));
