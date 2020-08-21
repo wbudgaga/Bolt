@@ -27,10 +27,10 @@ import mr.resourcemanagement.execution.mrtasks.management.MetaDataManager;
 import mr.resourcemanagement.execution.mrtasks.management.ResourceManager;
 
 public class Peer extends LNode{
-	private FTManager 		ftManager;
+	private FTManager 	ftManager;
 	private ResourceManager resourceManager;
-	private boolean alreadyAskeForFT= false;
-	private ConcurrentHashMap<String, PacketChannel> pendingAcceptedConnections = new ConcurrentHashMap<String, PacketChannel>();
+	private boolean alreadyAskeForFT						= false;
+	private ConcurrentHashMap<String, PacketChannel> pendingAcceptedConnections 	= new ConcurrentHashMap<String, PacketChannel>();
 
 	public Peer(String name,long id, int port) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException {
 		super(name, id, port);
@@ -41,25 +41,26 @@ public class Peer extends LNode{
 	}
 
 	public RemotePeer getResponsiblePeer(long key) throws IOException{
-		if (key>=Setting.RING_KEYSPACE)
-			key = key % Setting.RING_KEYSPACE;
-		
+		if (key >= Setting.RING_KEYSPACE)
+			key 								= key % Setting.RING_KEYSPACE;	
 		return ftManager.lookup(key);//null means the local peer is responsible for a given key
 	}
+	
 	public RemotePeer getQueryPeer(Lookup lookupMSG) throws IOException{
-		PeerData srcPeerData = lookupMSG.getSourcePeer().getPeer();
+		PeerData srcPeerData 							= lookupMSG.getSourcePeer().getPeer();
 		return ftManager.getPeer(srcPeerData.getPeerID());
 	}
 
 	public void cachePeer(RemotePeer rp){
 		ftManager.storePeer(rp);
 	}
+	
 	public void lookup(Lookup lookupMSG) throws IOException{
-		RemotePeer remotePeer = getResponsiblePeer(lookupMSG.getQueryKey());
-		if (remotePeer==null){//null means the local peer is responsible for a given key
-			RemotePeer srcPeer = getQueryPeer(lookupMSG);
+		RemotePeer remotePeer 							= getResponsiblePeer(lookupMSG.getQueryKey());
+		if (remotePeer == null){//null means the local peer is responsible for a given key
+			RemotePeer srcPeer 						= getQueryPeer(lookupMSG);
 			if(srcPeer == null){
-				PeerData srcPeerData = lookupMSG.getSourcePeer().getPeer();
+				PeerData srcPeerData 					= lookupMSG.getSourcePeer().getPeer();
 				initiateConnectionManager(srcPeerData.getHost(),srcPeerData.getPortNum(), new Connecting4QueryResultsHandler(this, lookupMSG));
 			}else
 				srcPeer.queryResult(lookupMSG.getQueryKey(), lookupMSG.getMsgUUID(), lookupMSG.getSrcPeerHandlerID(), getNodeData());
@@ -68,7 +69,7 @@ public class Peer extends LNode{
 	}
 	
 	public void setPredecessor(RemotePeer remotePeer) throws IOException, InvalidFingerTableEntry {
-		if (remotePeer!=null)
+		if (remotePeer	!= null)
 			ftManager.setPredecessor(remotePeer);//updatePredecessor(remotePeer);
 	}
 
