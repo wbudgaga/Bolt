@@ -166,7 +166,7 @@ public class Peer extends LNode{
 			PeerInfo pi = Peer.loadPeerData();
 			port 		= pi.getPeer().getPortNum();
 			nickName 	= pi.getPeer().getNickName();
-			peerID 		= pi.getPeer().getPeerID();
+			peerID 						= pi.getPeer().getPeerID();
 		}else{
 			if (args.length < 2) {
 				System.err.println("Peer Node:  Usage:");
