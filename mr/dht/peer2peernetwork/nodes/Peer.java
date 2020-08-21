@@ -178,7 +178,7 @@ public class Peer extends LNode{
 		}
 		try{
 			
-			peer 				= new Peer(nickName,peerID,port);
+			peer 						= new Peer(nickName,peerID,port);
 			if (Setting.FLUSH_PEER_DATA)
 				peer.flushPeerData();
 			
