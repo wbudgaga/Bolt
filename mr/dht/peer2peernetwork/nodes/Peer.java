@@ -83,7 +83,7 @@ public class Peer extends LNode{
 	public PeerInfo[]  getAllRemotePeersInfo() throws IOException{
 		HashMap<Long, RemotePeer> list 						= ftManager.getAllRemotePeers();
 		int 		size 							= list.size();
-		PeerInfo[] 	peerInfoList 		= new PeerInfo[size];
+		PeerInfo[] 	peerInfoList 						= new PeerInfo[size];
 		int i = 0;
 		for (Map.Entry<Long, RemotePeer> entry : list.entrySet()) {
 			peerInfoList[i]= entry.getValue().getPeerInfo();
@@ -94,8 +94,8 @@ public class Peer extends LNode{
 
 	public void handleQueryResult(long queryKey, RemotePeer rp) throws InvalidFingerTableEntry, IOException{
 		addNewPeer(rp);
-		if (alreadyAskeForFT==false){
-			alreadyAskeForFT = true;
+		if (alreadyAskeForFT == false){
+			alreadyAskeForFT 						= true;
 			System.out.println("ASKING FOR FT ..............................................");
 //			ftManager.getSuccessor().getFT(getNodeData());
 		}
@@ -119,10 +119,9 @@ public class Peer extends LNode{
 	public void notifyRemotePeer(PeerData peer) throws IOException, InvalidFingerTableEntry{
 		initiateConnectionManager(peer.getHost(),peer.getPortNum(), new NewPeerNotifyingHandler(this,peer));
 	}
-	
 
 	public void addNewPeer(RemotePeer peer) throws IOException, InvalidFingerTableEntry{
-		if (peer.getID()!=getNodeData().getPeerID())
+		if (peer.getID() != getNodeData().getPeerID())
 			if (ftManager.addNewPeer(peer))
 				ftManager.print();
 	}
