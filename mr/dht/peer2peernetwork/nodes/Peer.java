@@ -191,9 +191,9 @@ public class Peer extends LNode{
 	}
 
 	private void flushPeerData() throws IOException{
-		PeerInfo pi = new PeerInfo();
+		PeerInfo pi 						= new PeerInfo();
 		pi.setPeer(getNodeData());
-		UtilClass.flushData(pi, Setting.DATA_DIR+"setting.txt");
+		UtilClass.flushData(pi, Setting.DATA_DIR + "setting.txt");
 	}
 	private static PeerInfo loadPeerData() throws IOException{
 		PeerInfo pi 						= new PeerInfo();
