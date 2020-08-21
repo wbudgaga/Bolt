@@ -165,7 +165,7 @@ public class Peer extends LNode{
 		if (Setting.FLUSH_PEER_DATA==false){
 			PeerInfo pi = Peer.loadPeerData();
 			port 		= pi.getPeer().getPortNum();
-			nickName 	= pi.getPeer().getNickName();
+			nickName 					= pi.getPeer().getNickName();
 			peerID 						= pi.getPeer().getPeerID();
 		}else{
 			if (args.length < 2) {
