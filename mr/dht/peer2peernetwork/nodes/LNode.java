@@ -23,7 +23,7 @@ public abstract class LNode extends Node implements AcceptorListener{
 	public LNode(int listeningPort) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException{
 		super(Setting.DISCOVER_ID, Setting.DISCOVER_NAME);
 		setHostData(listeningPort);	
-		messageHandler = new DiscoveryMessageHandler(this);
+		messageHandler 				= new DiscoveryMessageHandler(this);
 		startListining(listeningPort);
 	}
 
