@@ -45,17 +45,18 @@ public abstract class LNode extends Node implements AcceptorListener{
 		
 	public void initiateConnectionManager(String host, int port, ConnectorListener listener) throws IOException{
 		InetSocketAddress remotePoint 		= new InetSocketAddress(host, port);
-	    Connector connector 			= new Connector(selector, remotePoint, listener);
-	    connector.connect();
+	    	Connector connector 			= new Connector(selector, remotePoint, listener);
+	    	connector.connect();
 	}
 
 	protected boolean startListining(int port) throws IOException{
-		selector = new SelectorThread();
-		Acceptor acceptor = new Acceptor(port,selector, this);
-	    acceptor.openServerSocket();
-	    System.out.println("Listening on port: " + port);
+		selector 				= new SelectorThread();
+		Acceptor acceptor 			= new Acceptor(port,selector, this);
+	    	acceptor.openServerSocket();
+	    	System.out.println("Listening on port: " + port);
 		return true;
 	}
+	
 	protected boolean stopListining(int port) throws IOException{
 		return true;
 	}	
