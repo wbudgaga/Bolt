@@ -81,8 +81,8 @@ public class Peer extends LNode{
 	}
 	
 	public PeerInfo[]  getAllRemotePeersInfo() throws IOException{
-		HashMap<Long, RemotePeer> list = ftManager.getAllRemotePeers();
-		int 		size 	= list.size();
+		HashMap<Long, RemotePeer> list 						= ftManager.getAllRemotePeers();
+		int 		size 							= list.size();
 		PeerInfo[] 	peerInfoList 		= new PeerInfo[size];
 		int i = 0;
 		for (Map.Entry<Long, RemotePeer> entry : list.entrySet()) {
