@@ -173,8 +173,8 @@ public class Peer extends LNode{
 				System.err.println("         java mr.dht.peer2peernetwork.nodes.Peer portnum nickname [ID]");
 			    return;
 			}			
-			port 		= Integer.parseInt(args[0]);
-			peerID		= Long.parseLong(args[2]);
+			port 						= Integer.parseInt(args[0]);
+			peerID						= Long.parseLong(args[2]);
 		}
 		try{
 			
