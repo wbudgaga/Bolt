@@ -158,12 +158,12 @@ public class Peer extends LNode{
 	public static void main(String args[]) throws InstantiationException, IllegalAccessException, IOException, ClassNotFoundException {
 		Peer peer;
 		int 	port ;
-		String 	nickName 	= args[1];
+		String 	nickName 					= args[1];
 		long    peerID;
 		//System.out.println(Setting.FLUSH_PEER_DATA+"#############" +args.length+"   "+(Setting.FLUSH_PEER_DATA==false || args.length==0));
 		Setting.setPeerFolder(nickName.split("_")[1]);
 		if (Setting.FLUSH_PEER_DATA==false){
-			PeerInfo pi = Peer.loadPeerData();
+			PeerInfo pi 					= Peer.loadPeerData();
 			port 						= pi.getPeer().getPortNum();
 			nickName 					= pi.getPeer().getNickName();
 			peerID 						= pi.getPeer().getPeerID();
