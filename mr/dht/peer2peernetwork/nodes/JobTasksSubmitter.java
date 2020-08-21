@@ -33,8 +33,8 @@ public class JobTasksSubmitter  extends Task{
 		chunksIDs.put(chunkID);
 	}
 	public void submitMapTasks(long key) throws IOException{		
-		StartMapTask msg = new StartMapTask();
-		PeerInfo taskOwner =new PeerInfo();
+		StartMapTask msg 		= new StartMapTask();
+		PeerInfo taskOwner  		= new PeerInfo();
 		taskOwner.setPeer(jobSubmitter.getNodeData());
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(job.getJobID());
