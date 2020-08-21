@@ -132,7 +132,7 @@ public class Peer extends LNode{
 	
 	public void startup() throws Exception{
 		ftManager 		= new FTManager(this, Setting.NUMBER_OF_FT_ENTRIES);
-		resourceManager = new ResourceManager(this);
+		resourceManager 					= new ResourceManager(this);
 		resourceManager.start();
 		initiateConnectionManager(Setting.DISCOVER_HOST,Setting.DISCOVER_PORT, new RegisteringHandler(this));
 	}
@@ -142,7 +142,7 @@ public class Peer extends LNode{
 	public void socketConnected(Acceptor acceptor, SocketChannel sc) {
 	//	System.out.println("["+ acceptor + "] connection received: " + sc);
 		try {
-			PacketChannel pc = new PacketChannel(sc, selector, new MultiMSGDecoder(), new PeerMessageHandler(this));
+			PacketChannel pc 				= new PacketChannel(sc, selector, new MultiMSGDecoder(), new PeerMessageHandler(this));
 			pendingAcceptedConnections.putIfAbsent(sc.socket().getInetAddress().toString(), pc);
 			pc.resumeReading();
 		} catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
