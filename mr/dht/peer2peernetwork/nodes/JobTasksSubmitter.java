@@ -47,9 +47,9 @@ public class JobTasksSubmitter  extends Task{
 	}
 	
 	public void submitReduceTask(int idx) throws IOException{	
-		long key = UtilClass.GetReduceKey(job.getJobOutputName(), idx);
-		StartReduceTask msg = new StartReduceTask();
-		PeerInfo taskOwner =new PeerInfo();
+		long key 			= UtilClass.GetReduceKey(job.getJobOutputName(), idx);
+		StartReduceTask msg 		= new StartReduceTask();
+		PeerInfo taskOwner 		= new PeerInfo();
 		taskOwner.setPeer(jobSubmitter.getNodeData());
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(job.getJobID());
