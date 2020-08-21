@@ -66,7 +66,7 @@ public abstract class LNode extends Node implements AcceptorListener{
 	}
 
 	public void setSelector(SelectorThread selector) {
-		this.selector = selector;
+		this.selector 				= selector;
 	}
 	protected void setHostData(int port){
 		try {
@@ -81,7 +81,7 @@ public abstract class LNode extends Node implements AcceptorListener{
 	}
 
 	public void setMessageHandler(LocalMessageHandler handler) {
-		this.messageHandler = handler;
+		this.messageHandler 			= handler;
 	}
 	public abstract void socketException(PacketChannel pc, Exception ex);
 	public abstract void socketDisconnected(PacketChannel pc);
