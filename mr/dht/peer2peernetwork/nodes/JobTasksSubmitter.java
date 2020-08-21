@@ -25,7 +25,7 @@ public class JobTasksSubmitter  extends Task{
 		
 	}
 	public void setJob(JobDescriptor job){
-		this.job = job;
+		this.job 			= job;
 		numOfChunks=0;
 	}
 	
