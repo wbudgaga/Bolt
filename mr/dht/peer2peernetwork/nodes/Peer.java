@@ -85,7 +85,7 @@ public class Peer extends LNode{
 		int 		size 							= list.size();
 		PeerInfo[] 	peerInfoList 						= new PeerInfo[size];
 		int i = 0;
-		for (Map.Entry<Long, RemotePeer> entry : list.entrySet()) {
+		for (Map.Entry<Long, RemotePeer > entry : list.entrySet()) {
 			peerInfoList[i]= entry.getValue().getPeerInfo();
 			++i;
 		}
@@ -131,7 +131,7 @@ public class Peer extends LNode{
 	}
 	
 	public void startup() throws Exception{
-		ftManager 		= new FTManager(this, Setting.NUMBER_OF_FT_ENTRIES);
+		ftManager 						= new FTManager(this, Setting.NUMBER_OF_FT_ENTRIES);
 		resourceManager 					= new ResourceManager(this);
 		resourceManager.start();
 		initiateConnectionManager(Setting.DISCOVER_HOST,Setting.DISCOVER_PORT, new RegisteringHandler(this));
