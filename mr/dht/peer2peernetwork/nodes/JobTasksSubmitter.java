@@ -15,13 +15,13 @@ import mr.dht.peer2peernetwork.wireformates.StartMapTask;
 import mr.dht.peer2peernetwork.wireformates.StartReduceTask;
 
 public class JobTasksSubmitter  extends Task{
-	private final JobSubmitter	jobSubmitter;
-	private JobDescriptor		job;
+	private final JobSubmitter jobSubmitter;
+	private JobDescriptor	 job;
 	private BlockingQueue<Long>  chunksIDs	= new ArrayBlockingQueue<Long>(1000);
 	private volatile int 	numOfChunks     = 0;
 	
 	public JobTasksSubmitter(JobSubmitter jobSubmitter) {
-		this.jobSubmitter = jobSubmitter;
+		this.jobSubmitter 		= jobSubmitter;
 		
 	}
 	public void setJob(JobDescriptor job){
