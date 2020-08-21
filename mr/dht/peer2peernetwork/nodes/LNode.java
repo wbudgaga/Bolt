@@ -44,8 +44,8 @@ public abstract class LNode extends Node implements AcceptorListener{
 	}
 		
 	public void initiateConnectionManager(String host, int port, ConnectorListener listener) throws IOException{
-		InetSocketAddress remotePoint = new InetSocketAddress(host, port);
-	    Connector connector = new Connector(selector, remotePoint, listener);
+		InetSocketAddress remotePoint 		= new InetSocketAddress(host, port);
+	    Connector connector 			= new Connector(selector, remotePoint, listener);
 	    connector.connect();
 	}
 
