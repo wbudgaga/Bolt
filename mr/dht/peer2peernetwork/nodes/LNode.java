@@ -31,7 +31,7 @@ public abstract class LNode extends Node implements AcceptorListener{
 	public LNode(String  name, int listeningPort) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException{
 		super(Setting.DISCOVER_ID, Setting.DISCOVER_NAME);
 		setHostData(listeningPort);	
-		messageHandler = new ClientMessageHandler(this);
+		messageHandler 				= new ClientMessageHandler(this);
 		//startListining(listeningPort);
 	}
 
@@ -39,7 +39,7 @@ public abstract class LNode extends Node implements AcceptorListener{
 	public LNode(String  name,long id, int listeningPort) throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException{
 		super(id, name);
 		setHostData(listeningPort);
-		messageHandler = new PeerMessageHandler(this);
+		messageHandler 				= new PeerMessageHandler(this);
 		startListining(listeningPort);
 	}
 		
