@@ -64,13 +64,13 @@ public class JobTasksSubmitter  extends Task{
 	public void execute() throws IOException {//OK
 		try {
 			while(true){
-				Long chunkID = chunksIDs.take();
+				Long chunkID 	= chunksIDs.take();
 				if (chunkID.equals(JobSubmitter.POISON))
 					break;
 				submitMapTasks(chunkID);
 			}
 			System.out.println("########submit reduce tasks####################"+job.getNumOfReducers());
-			for (int i=1;i<=job.getNumOfReducers();++i){
+			for (int i = 1 ;n i <= job.getNumOfReducers(); ++i){
 				submitReduceTask(i);
 			}
 			jobSubmitter.jobSubmitted();
