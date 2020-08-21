@@ -203,7 +203,7 @@ public class Peer extends LNode{
 
 	@Override
 	public void socketException(PacketChannel pc, Exception ex) {
-		System.out.println("Exception is thrown on the connection from "+Setting.HOSTNAME+ " RemotePeer: "+pc+"\n Exception:"+ex.getMessage());
+		System.out.println("Exception is thrown on the connection from " + Setting.HOSTNAME + " RemotePeer: " + pc + "\n Exception:" + ex.getMessage());
 		System.exit(-1);
 	}
 
@@ -212,4 +212,3 @@ public class Peer extends LNode{
 		//.out.println("Connection is disconnected betweem me("+Setting.HOSTNAME+" and  " +pc);		
 	}
 }
-	
