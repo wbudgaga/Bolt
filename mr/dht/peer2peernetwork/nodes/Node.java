@@ -6,7 +6,7 @@ import mr.communication.io.SelectorThread;
 import mr.dht.peer2peernetwork.threadpool.ThreadPoolManager;
 
 public abstract class Node {
-	protected PeerData			nodeData;
+	protected PeerData		nodeData;
 	protected ThreadPoolManager	threadPool;
 
 	protected Node(PeerData peerData) throws IOException{
@@ -15,14 +15,14 @@ public abstract class Node {
 	}
 
 	protected Node(long id, String  name) throws IOException{
-		this.nodeData = new PeerData();
+		this.nodeData 						= new PeerData();
 		this.nodeData.setNickName(name);
 		this.nodeData.setPeerID(id);
 		startThreadPool();
 	}
 
 	protected void startThreadPool(){
-		threadPool 	= new ThreadPoolManager(Setting.THREADPOOL_SIZE);
+		threadPool 						= new ThreadPoolManager(Setting.THREADPOOL_SIZE);
 		threadPool.start();
 	}
 	
