@@ -33,6 +33,7 @@ public abstract class Node {
 	public PeerData getNodeData() {
 		return nodeData;
 	}
+	
 	public void setNodeData(PeerData nodeData) {
 		this.nodeData = nodeData;
 	}
