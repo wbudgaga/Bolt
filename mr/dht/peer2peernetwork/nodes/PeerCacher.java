@@ -44,7 +44,7 @@ public class PeerCacher {
 			for(int i = 0; i < peersIDs.length; ++i)
 				newArry[i]			= peersIDs[i];
 		}
-		peersIDs=newArry;
+		peersIDs					= newArry;
 	}
 	
 	private void insert(int idx, long id){
