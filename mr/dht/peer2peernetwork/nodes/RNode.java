@@ -48,7 +48,7 @@ public abstract class RNode extends Node{
 	
 	public static Lookup getLookupMSG(long key, int respHandlerID, PeerData sourceNode) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		//Lookup lookupMSG = (Lookup) MessageFactory.getInstance().getMessageInstance(Message.LOOKUP);
-		Lookup lookupMSG = new  Lookup();
+		Lookup lookupMSG 		= new  Lookup();
 		lookupMSG.setSourcePeer(RemotePeer.getPeerInfo(sourceNode));
 		lookupMSG.setSrcPeerHandlerID(respHandlerID);
 		lookupMSG.setQueryKey(key);
@@ -58,7 +58,7 @@ public abstract class RNode extends Node{
 	}
 
 	public static FindRunningReducer getFindRunningReducerMSG(long key, long jobID, int taskID, PeerData sourceNode) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-		FindRunningReducer lookupMSG = new FindRunningReducer();
+		FindRunningReducer lookupMSG 	= new FindRunningReducer();
 		lookupMSG.setSourcePeer(RemotePeer.getPeerInfo(sourceNode));
 		lookupMSG.setQueryKey(key);
 		lookupMSG.setHops(1);
@@ -67,7 +67,6 @@ public abstract class RNode extends Node{
 		lookupMSG.setReduceID(taskID);
 		return lookupMSG;
 	}
-
 /*	protected void sendMessage(Message msg, String host, int port) throws IOException{
 		connectionManager.sendMessage(msg, host, port);
 	}
