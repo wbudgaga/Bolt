@@ -19,9 +19,11 @@ public class PeerData {
 	public long getPeerID() {
 		return peerID;
 	}
+	
 	public void setPeerID(long peerID) {
-		this.peerID = peerID;
+		this.peerID 		= peerID;
 	}
+	
 	public int getPortNum() {
 		return portNum;
 	}
