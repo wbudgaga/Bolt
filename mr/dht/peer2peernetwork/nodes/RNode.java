@@ -26,8 +26,9 @@ public abstract class RNode extends Node{
 		nodeData.setPortNum(port);
 		setpChannel(pChannel);
 	}
+	
 	protected void startThreadPool(){
-		threadPool 	= new ThreadPoolManager(2);
+		threadPool 			= new ThreadPoolManager(2);
 		threadPool.start();
 	}
 	
@@ -38,7 +39,7 @@ public abstract class RNode extends Node{
 	}
 
 	public void setpChannel(PacketChannel pChannel) {
-		this.pChannel = pChannel;
+		this.pChannel 			= pChannel;
 	}
 
 	public void sendMessage(Message msg) throws IOException{
