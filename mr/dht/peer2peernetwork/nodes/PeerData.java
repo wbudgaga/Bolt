@@ -27,9 +27,11 @@ public class PeerData {
 	public int getPortNum() {
 		return portNum;
 	}
+	
 	public void setPortNum(int portNum) {
-		this.portNum = portNum;
+		this.portNum 		= portNum;
 	}
+	
 	public String getNickName() {
 		return nickName;
 	}
