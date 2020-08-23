@@ -8,10 +8,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import mr.dht.peer2peernetwork.fingertable.FingerTable;
 
 public class PeerCacher {
-	private ConcurrentHashMap<Long,RemotePeer> peers = new ConcurrentHashMap<Long,RemotePeer>();//<peerID,RemotePeer>
-	private ConcurrentHashMap<Long,Long> peersMin = new ConcurrentHashMap<Long,Long>();//<peerID,min>==><max,min>
-	private long[]						peersIDs;
-	private int 						expectedPeers = -1;
+	private ConcurrentHashMap<Long,RemotePeer> peers 	= new ConcurrentHashMap<Long,RemotePeer>();//<peerID,RemotePeer>
+	private ConcurrentHashMap<Long,Long> peersMin 		= new ConcurrentHashMap<Long,Long>();//<peerID,min>==><max,min>
+	private long[]	peersIDs;
+	private int 	expectedPeers 				= -1;
 	
 	public void setNumOfExpectedPeers(int n){
 		expectedPeers = n;
