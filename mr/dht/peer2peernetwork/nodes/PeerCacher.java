@@ -55,14 +55,14 @@ public class PeerCacher {
 	}
 	
 	private void updateMin(){
-		for (int i=0; i<peersIDs.length-1;++i){
+		for (int i = 0; i < peersIDs.length - 1; ++i){
 			peersMin.put(peersIDs[i], peersIDs[i+1]+1);
 		}
 		peersMin.put(peersIDs[peersIDs.length-1], peersIDs[0]+1);
 	}
 	
 	public synchronized void putPeer(Long qKey, RemotePeer rp){
-		Long queryKey = qKey % Setting.RING_KEYSPACE;
+		Long queryKey 					= qKey % Setting.RING_KEYSPACE;
 		long peerID = rp.getID();
 		Long min = peersMin.get(peerID);
 		if (min==null){
