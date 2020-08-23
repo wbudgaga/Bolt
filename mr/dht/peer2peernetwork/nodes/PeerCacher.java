@@ -63,8 +63,8 @@ public class PeerCacher {
 	
 	public synchronized void putPeer(Long qKey, RemotePeer rp){
 		Long queryKey 					= qKey % Setting.RING_KEYSPACE;
-		long peerID = rp.getID();
-		Long min = peersMin.get(peerID);
+		long peerID 					= rp.getID();
+		Long min 					= peersMin.get(peerID);
 		if (min==null){
 			peers.put(peerID, rp);
 			peersMin.put(peerID, queryKey);
