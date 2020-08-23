@@ -95,13 +95,13 @@ public class PeerCacher {
 	}
 	public static void main(String args[]) throws IOException {
 		PeerCacher pc 					= new PeerCacher();
-		RemotePeer rp =  RemotePeer.getInstance(getPeerData(1000),null);
+		RemotePeer rp 					=  RemotePeer.getInstance(getPeerData(1000),null);
 		pc.addPeer(rp);
 		pc.addPeer(RemotePeer.getInstance(getPeerData(600),null));
 		pc.addPeer(RemotePeer.getInstance(getPeerData(200),null));
 		pc.addPeer(RemotePeer.getInstance(getPeerData(800),null));
 		//pc.putPeer(300l, rp);
-		RemotePeer rp1[]=  pc.getPeer(1500l);
+		RemotePeer rp1[]				=  pc.getPeer(1500l);
 		//System.out.println(rp1[0].getID());
 	}
 }
