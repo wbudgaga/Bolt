@@ -14,12 +14,13 @@ public class PeerCacher {
 	private int 	expectedPeers 				= -1;
 	
 	public void setNumOfExpectedPeers(int n){
-		expectedPeers = n;
+		expectedPeers 					= n;
 	}
 	
 	public ArrayList<RemotePeer> getCachedPeers(){
 		return new ArrayList<RemotePeer> (peers.values());
 	}
+	
 	public boolean AreAllPeersReceived(){
 		return peers.size()==expectedPeers;
 	}
