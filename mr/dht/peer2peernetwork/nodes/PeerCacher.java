@@ -28,13 +28,13 @@ public class PeerCacher {
 	public synchronized void addPeer(RemotePeer rp){
 		peers.put(rp.getID(), rp);
 		icrArray();
-		int i=0;
+		int i 						= 0;
 		while ( i<(peersIDs.length-1) && rp.getID()<peersIDs[i])
 			++i;
 		insert(i, rp.getID());
-		
 		updateMin();
 	}
+	
 	private void icrArray(){
 		long[] newArry;
 		if (peersIDs==null)
