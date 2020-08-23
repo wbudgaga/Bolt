@@ -22,8 +22,9 @@ public class PeerCacher {
 	}
 	
 	public boolean AreAllPeersReceived(){
-		return peers.size()==expectedPeers;
+		return peers.size() == expectedPeers;
 	}
+	
 	public synchronized void addPeer(RemotePeer rp){
 		peers.put(rp.getID(), rp);
 		icrArray();
