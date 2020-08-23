@@ -37,15 +37,16 @@ public class PeerCacher {
 	
 	private void icrArray(){
 		long[] newArry;
-		if (peersIDs==null)
-			newArry= new long[1];
+		if (peersIDs == null)
+			newArry 				= new long[1];
 		else{
-			newArry= new long[peersIDs.length+1];
-			for(int i=0; i<peersIDs.length;++i)
-				newArry[i]=peersIDs[i];
+			newArry					= new long[peersIDs.length+1];
+			for(int i = 0; i < peersIDs.length; ++i)
+				newArry[i]			= peersIDs[i];
 		}
 		peersIDs=newArry;
 	}
+	
 	private void insert(int idx, long id){
 		int i=peersIDs.length-1;
 		for (; i>idx; --i)
