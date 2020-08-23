@@ -89,12 +89,12 @@ public class PeerCacher {
 	}
 	
 	public static PeerData getPeerData(long id){
-		PeerData pd = new PeerData();
+		PeerData pd 					= new PeerData();
 		pd.setPeerID(id);
 		return pd;
 	}
 	public static void main(String args[]) throws IOException {
-		PeerCacher pc = new PeerCacher();
+		PeerCacher pc 					= new PeerCacher();
 		RemotePeer rp =  RemotePeer.getInstance(getPeerData(1000),null);
 		pc.addPeer(rp);
 		pc.addPeer(RemotePeer.getInstance(getPeerData(600),null));
