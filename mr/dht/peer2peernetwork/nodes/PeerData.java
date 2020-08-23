@@ -11,9 +11,11 @@ public class PeerData {
 	public String getHost() {
 		return host;
 	}
+	
 	public void setHost(String hostName) {
-		this.host = hostName;
+		this.host 		= hostName;
 	}
+	
 	public long getPeerID() {
 		return peerID;
 	}
