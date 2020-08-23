@@ -48,11 +48,12 @@ public class PeerCacher {
 	}
 	
 	private void insert(int idx, long id){
-		int i=peersIDs.length-1;
-		for (; i>idx; --i)
+		int i						= peersIDs.length-1;
+		for (; i > idx; --i)
 			peersIDs[i]=peersIDs[i-1];
-		peersIDs[i]=id;
+		peersIDs[i]					= id;
 	}
+	
 	private void updateMin(){
 		for (int i=0; i<peersIDs.length-1;++i){
 			peersMin.put(peersIDs[i], peersIDs[i+1]+1);
