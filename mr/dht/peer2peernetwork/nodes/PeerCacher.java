@@ -75,8 +75,8 @@ public class PeerCacher {
 	}
 	
 	public  RemotePeer[] getPeer(Long qKey){// return peer,closest
-		Long queryKey = qKey % Setting.RING_KEYSPACE;
-		long closestPeer = -1;
+		Long queryKey 					= qKey % Setting.RING_KEYSPACE;
+		long closestPeer 				= -1;
 		for (Map.Entry<Long,Long> entryItem: peersMin.entrySet()){
 			long pID = entryItem.getKey();
 			if (FingerTable.canBeSuccessor(entryItem.getValue(), queryKey, pID)){
