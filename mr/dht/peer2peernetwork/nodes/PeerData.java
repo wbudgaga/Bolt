@@ -41,12 +41,13 @@ public class PeerData {
 	}
 	
 	public String getAddress() {
-		return  host+":"+portNum;
+		return  host + ":" + portNum;
 	}
 
 	public static void printRowSeparator(){
 		System.out.println("======================================================");
 	}
+	
 	public static void printHeader(){
 		printRowSeparator();
 		System.out.println(String.format(" %-6s  %-20s  %s ",		"PeerID",	"Peer's NickName"," Host Address"));
