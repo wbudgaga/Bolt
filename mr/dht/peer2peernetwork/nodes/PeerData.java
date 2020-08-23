@@ -35,8 +35,9 @@ public class PeerData {
 	public String getNickName() {
 		return nickName;
 	}
+	
 	public void setNickName(String nickName) {
-		this.nickName = nickName;
+		this.nickName 		= nickName;
 	}
 	
 	public String getAddress() {
