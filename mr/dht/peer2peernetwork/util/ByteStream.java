@@ -37,13 +37,13 @@ public class ByteStream {
 		return ret;
 	}
 		
-		public static final byte[] longToByteArray(long value) {
-			return toByteArray(value,8);
-		}
+	public static final byte[] longToByteArray(long value) {
+		return toByteArray(value,8);
+	}
 
-		public static final byte[] intToByteArray(int value) {
-			return toByteArray(value,4);
-		}
+	public static final byte[] intToByteArray(int value) {
+		return toByteArray(value,4);
+	}
 
 		public static final int byteArrayToInt(byte [] b) {
 			return (int) byteArrayToLong(b);
