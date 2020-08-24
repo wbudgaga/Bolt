@@ -49,9 +49,9 @@ public class ByteStream {
 		return (int) byteArrayToLong(b);
 	}								
 		
-		public static final byte[] StringToByteArray(String value) {
-			return value.getBytes();
-		}
+	public static final byte[] StringToByteArray(String value) {
+		return value.getBytes();
+	}
 		
 		public static final String  byteArrayToString(byte[] value) {
 			return new String(value);
