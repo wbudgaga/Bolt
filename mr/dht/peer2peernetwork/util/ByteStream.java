@@ -53,16 +53,17 @@ public class ByteStream {
 		return value.getBytes();
 	}
 		
-		public static final String  byteArrayToString(byte[] value) {
-			return new String(value);
-		}
+	public static final String  byteArrayToString(byte[] value) {
+		return new String(value);
+	}
 
-		private static final byte[] joinTwoArrays(byte[] array1, byte[] array2) {
-			byte [] resultArray = new byte[array1.length + array2.length];
-			System.arraycopy(array1,0,resultArray,0         ,array1.length);
-			System.arraycopy(array2, 0, resultArray, array1.length, array2.length);
-			return resultArray;
-		}
+	private static final byte[] joinTwoArrays(byte[] array1, byte[] array2) {
+		byte [] resultArray 		= new byte[array1.length + array2.length];
+		System.arraycopy(array1,0,resultArray,0         ,array1.length);
+		System.arraycopy(array2, 0, resultArray, array1.length, array2.length);
+		return resultArray;
+	}
+	
 		public static final byte[] join(byte[] array1, byte[] array2) {
 			if (array1==null && array2==null)
 				return null;
