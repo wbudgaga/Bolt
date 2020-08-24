@@ -64,16 +64,16 @@ public class ByteStream {
 		return resultArray;
 	}
 	
-		public static final byte[] join(byte[] array1, byte[] array2) {
-			if (array1==null && array2==null)
-				return null;
-			if (array1==null && array2!=null)
-				return array2;
-			if (array1!=null && array2==null)
-				return array1;
+	public static final byte[] join(byte[] array1, byte[] array2) {
+		if (array1==null && array2==null)
+			return null;
+		if (array1==null && array2!=null)
+			return array2;
+		if (array1!=null && array2==null)
+			return array1;
 
-			return joinTwoArrays(array1,array2);
-		}
+		return joinTwoArrays(array1,array2);
+	}
 		
 		public static byte[] readFileBytes(File file){
 			try {
