@@ -45,9 +45,9 @@ public class ByteStream {
 		return toByteArray(value,4);
 	}
 
-		public static final int byteArrayToInt(byte [] b) {
-			return (int) byteArrayToLong(b);
-		}								
+	public static final int byteArrayToInt(byte [] b) {
+		return (int) byteArrayToLong(b);
+	}								
 		
 		public static final byte[] StringToByteArray(String value) {
 			return value.getBytes();
