@@ -1,6 +1,5 @@
 package mr.dht.peer2peernetwork.util;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,18 +8,16 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 // this class contains static methods (helps methods) that are used by packing and unpacking between primitive types and byte stream
 public class ByteStream {
-	
-		public static final byte[] getBytes(byte[]  byteStream,int start, int length){
-			byte[] bytes = new byte[length];
-			int end = start+length;
-			for(int i = start; i< end; ++i){
-				bytes[i-start] = byteStream[i];
-			}
-			return bytes;
+	public static final byte[] getBytes(byte[]  byteStream,int start, int length){
+		byte[] bytes = new byte[length];
+		int end = start+length;
+		for(int i = start; i< end; ++i){
+			bytes[i-start] = byteStream[i];
 		}
+		return bytes;
+	}
 
 		public static byte[] toByteArray(long value, int n){  
 	        byte[] ret = new byte[n];  
