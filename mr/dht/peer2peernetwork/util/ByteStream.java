@@ -11,22 +11,22 @@ import java.util.Arrays;
 // this class contains static methods (helps methods) that are used by packing and unpacking between primitive types and byte stream
 public class ByteStream {
 	public static final byte[] getBytes(byte[]  byteStream,int start, int length){
-		byte[] bytes = new byte[length];
-		int end = start+length;
+		byte[] bytes 		= new byte[length];
+		int end 		= start+length;
 		for(int i = start; i< end; ++i){
-			bytes[i-start] = byteStream[i];
+			bytes[i-start] 	= byteStream[i];
 		}
 		return bytes;
 	}
 
-		public static byte[] toByteArray(long value, int n){  
-	        byte[] ret = new byte[n];  
-	        for(int i=0;i<n;++i){
+	public static byte[] toByteArray(long value, int n){  
+	        byte[] ret 		= new byte[n];  
+	        for(int i = 0; i < n; ++i){
 	        	int idx = n-(i+1);
 	        	ret[i] = (byte) ((value >>> (idx*8))); 
 	        }
 	        return ret;  
-	    }
+	}
 				
 		public static final long byteArrayToLong(byte [] b) {
 			long ret = 0;			
