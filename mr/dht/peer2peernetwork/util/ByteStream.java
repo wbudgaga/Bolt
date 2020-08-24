@@ -29,10 +29,10 @@ public class ByteStream {
 	}
 				
 	public static final long byteArrayToLong(byte [] b) {
-		long ret = 0;			
-		for(int i=0;i<b.length;++i){
-			ret <<= 8;
-			ret ^= b[i] & 0xFF;
+		long ret 		= 0;			
+		for(int i = 0; i < b.length; ++i){
+			ret 		<<= 8;
+			ret 		^= b[i] & 0xFF;
 		}
 		return ret;
 	}
