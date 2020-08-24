@@ -22,8 +22,8 @@ public class ByteStream {
 	public static byte[] toByteArray(long value, int n){  
 	        byte[] ret 		= new byte[n];  
 	        for(int i = 0; i < n; ++i){
-	        	int idx = n-(i+1);
-	        	ret[i] = (byte) ((value >>> (idx*8))); 
+	        	int idx 	= n-(i+1);
+	        	ret[i] 		= (byte) ((value >>> (idx*8))); 
 	        }
 	        return ret;  
 	}
