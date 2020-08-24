@@ -28,14 +28,14 @@ public class ByteStream {
 	        return ret;  
 	}
 				
-		public static final long byteArrayToLong(byte [] b) {
-			long ret = 0;			
-			for(int i=0;i<b.length;++i){
-		    	 ret <<= 8;
-			     ret ^= b[i] & 0xFF;
-			}
-			return ret;
+	public static final long byteArrayToLong(byte [] b) {
+		long ret = 0;			
+		for(int i=0;i<b.length;++i){
+			ret <<= 8;
+			ret ^= b[i] & 0xFF;
 		}
+		return ret;
+	}
 		
 		public static final byte[] longToByteArray(long value) {
 			return toByteArray(value,8);
