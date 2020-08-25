@@ -106,8 +106,8 @@ public class ByteStream {
 	}
 
 	public static byte[] readFileBytes(String sourceDir, String fileName){
-			File file = new File(sourceDir,fileName); 
-			return readFileBytes(file);
+		File file = new File(sourceDir,fileName); 
+		return readFileBytes(file);
 	}
 		
 		/**
