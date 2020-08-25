@@ -75,9 +75,9 @@ public class ByteStream {
 	}
 		
 	public static byte[] readFileBytes(File file){
-			try {
-				InputStream is = new FileInputStream(file);
-				long length = file.length();
+		try {
+			InputStream is = new FileInputStream(file);
+			long length = file.length();
 				if (length > Integer.MAX_VALUE) {
 			        System.out.println("File is too large. It can not be transfered!");
 			        return null;
