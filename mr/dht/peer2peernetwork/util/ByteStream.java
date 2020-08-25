@@ -74,7 +74,7 @@ public class ByteStream {
 		return joinTwoArrays(array1,array2);
 	}
 		
-		public static byte[] readFileBytes(File file){
+	public static byte[] readFileBytes(File file){
 			try {
 				InputStream is = new FileInputStream(file);
 				long length = file.length();
@@ -105,7 +105,7 @@ public class ByteStream {
 				e.printStackTrace();
 			}
 			return null;
-		}
+	}
 
 		public static byte[] readFileBytes(String sourceDir, String fileName){
 			File file = new File(sourceDir,fileName); 
