@@ -136,13 +136,13 @@ public class ByteStream {
 		byte[] buf = new byte[size / 2];
 		int j = 0;
 		for (int i = 0; i < size; i++) {
-				String a = hexString.substring(i, i + 2);
-				int valA = Integer.parseInt(a, 16);
-				i++;
-				buf[j] = (byte) valA;
-				j++;
-			}
-			return buf;
+			String a = hexString.substring(i, i + 2);
+			int valA = Integer.parseInt(a, 16);
+			i++;
+			buf[j] = (byte) valA;
+			j++;
+		}
+		return buf;
 	}
 		
 		public static final byte[] packString(String value) {
