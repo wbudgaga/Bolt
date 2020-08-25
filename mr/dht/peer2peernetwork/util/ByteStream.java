@@ -96,9 +96,7 @@ public class ByteStream {
 
 			// Close the input stream and send the msg
 			is.close();
-			return bytes;
-			    
-			 
+			return bytes; 
 		} catch (FileNotFoundException e) {
 			System.out.println("The file: "+file.getName()+ " could not be found in: "+file.getPath());
 		} catch (IOException e) {
@@ -107,10 +105,10 @@ public class ByteStream {
 		return null;
 	}
 
-		public static byte[] readFileBytes(String sourceDir, String fileName){
+	public static byte[] readFileBytes(String sourceDir, String fileName){
 			File file = new File(sourceDir,fileName); 
 			return readFileBytes(file);
-		}
+	}
 		
 		/**
 		* This method converts a set of bytes into a Hexadecimal representation.
