@@ -94,17 +94,17 @@ public class ByteStream {
 				throw new IOException("Could not completely read file "+file.getName());
 			}
 
-			    // Close the input stream and send the msg
-			    is.close();
-			    return bytes;
+			// Close the input stream and send the msg
+			is.close();
+			return bytes;
 			    
 			 
-			} catch (FileNotFoundException e) {
-				System.out.println("The file: "+file.getName()+ " could not be found in: "+file.getPath());
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			return null;
+		} catch (FileNotFoundException e) {
+			System.out.println("The file: "+file.getName()+ " could not be found in: "+file.getPath());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 		public static byte[] readFileBytes(String sourceDir, String fileName){
