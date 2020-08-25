@@ -185,12 +185,11 @@ public class ByteStream {
 		return Arrays.copyOfRange(byteStream, 4, byteStream.length); 
 	}
 
-		public static void main(String[] s){
-			int l= Integer.MAX_VALUE-1;
-			
-			byte[] b= intToByteArray(l);
-			int l1 = byteArrayToInt(b);
-			long lll =12;
-			System.out.println(StringToByteArray("abc").length+"    " +StringToByteArray("123").length+"====>"+longToByteArray(lll).length);
-		}
+	public static void main(String[] s){
+		int l= Integer.MAX_VALUE-1;	
+		byte[] b= intToByteArray(l);
+		int l1 = byteArrayToInt(b);
+		long lll =12;
+		System.out.println(StringToByteArray("abc").length+"    " +StringToByteArray("123").length+"====>"+longToByteArray(lll).length);
+	}
 }
