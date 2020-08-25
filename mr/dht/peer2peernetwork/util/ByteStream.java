@@ -83,11 +83,11 @@ public class ByteStream {
 			        return null;
 			}
 				
-				byte[] bytes = new byte[(int)length];
-			    // Read in the bytes
-			    int offset = 0;
-			    int numRead = 0;
-			    while (offset < bytes.length && (numRead=is.read(bytes, offset, bytes.length-offset)) >= 0) {
+			byte[] bytes = new byte[(int)length];
+			// Read in the bytes
+			int offset = 0;
+			int numRead = 0;
+			while (offset < bytes.length && (numRead=is.read(bytes, offset, bytes.length-offset)) >= 0) {
 			        offset += numRead;
 			    }
 			    if (offset < bytes.length) {
