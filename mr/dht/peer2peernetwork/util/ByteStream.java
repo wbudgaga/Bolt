@@ -124,13 +124,14 @@ public class ByteStream {
 		}
 		return strBuf.toString();
 	}
-		/**
-		* This method converts a specified hexadecimal String into a set of bytes.
-		*
-		* @param hexString
-		* @return
-		*/
-		public static byte[] convertHexToBytes(String hexString) {
+	
+	/**
+	* This method converts a specified hexadecimal String into a set of bytes.
+	*
+	* @param hexString
+	* @return
+	*/
+	public static byte[] convertHexToBytes(String hexString) {
 			int size = hexString.length();
 			byte[] buf = new byte[size / 2];
 			int j = 0;
