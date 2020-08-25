@@ -145,10 +145,11 @@ public class ByteStream {
 		return buf;
 	}
 		
-		public static final byte[] packString(String value) {
-			byte[] bytes = StringToByteArray(value);
-			return join(intToByteArray(bytes.length), bytes);
-		}
+	public static final byte[] packString(String value) {
+		byte[] bytes = StringToByteArray(value);
+		return join(intToByteArray(bytes.length), bytes);
+	}
+	
 		public static final byte[] packLongArray(Long[] value) {
 			byte[] bytes = intToByteArray(value.length);
 			for (Long v:value){
