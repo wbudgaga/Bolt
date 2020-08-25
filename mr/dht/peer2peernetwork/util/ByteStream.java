@@ -180,10 +180,10 @@ public class ByteStream {
 		return join(packetLegthInBytes, packetBody);
 	}
 	
-		// remove the header which is 4 bytes at the beginning of the packet
-		public static byte[] removePacketHeader(byte[] byteStream){
-			return Arrays.copyOfRange(byteStream, 4, byteStream.length); 
-		}
+	// remove the header which is 4 bytes at the beginning of the packet
+	public static byte[] removePacketHeader(byte[] byteStream){
+		return Arrays.copyOfRange(byteStream, 4, byteStream.length); 
+	}
 
 		public static void main(String[] s){
 			int l= Integer.MAX_VALUE-1;
