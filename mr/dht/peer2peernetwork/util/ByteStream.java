@@ -150,13 +150,13 @@ public class ByteStream {
 		return join(intToByteArray(bytes.length), bytes);
 	}
 	
-		public static final byte[] packLongArray(Long[] value) {
-			byte[] bytes = intToByteArray(value.length);
-			for (Long v:value){
-				bytes = join(bytes,longToByteArray(v));
-			}
-			return bytes;
+	public static final byte[] packLongArray(Long[] value) {
+		byte[] bytes = intToByteArray(value.length);
+		for (Long v:value){
+			bytes = join(bytes,longToByteArray(v));
 		}
+		return bytes;
+	}
 
 		public static final byte[] packLongArrayList(ArrayList<Long> value) {
 			byte[] bytes = intToByteArray(value.size());
