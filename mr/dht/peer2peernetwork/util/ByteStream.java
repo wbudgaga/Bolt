@@ -175,9 +175,9 @@ public class ByteStream {
 	}
 
 	public static byte[] addPacketHeader(byte [] packetBody){
-			int packetLegth = packetBody.length;
-			byte[] packetLegthInBytes = intToByteArray(packetLegth);
-			return join(packetLegthInBytes, packetBody);
+		int packetLegth = packetBody.length;
+		byte[] packetLegthInBytes = intToByteArray(packetLegth);
+		return join(packetLegthInBytes, packetBody);
 	}
 	
 		// remove the header which is 4 bytes at the beginning of the packet
