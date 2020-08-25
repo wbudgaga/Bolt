@@ -116,14 +116,14 @@ public class ByteStream {
 	public static String convertBytesToHex(byte[] buf) {
 		StringBuffer strBuf = new StringBuffer();
 		for (int i = 0; i < buf.length; i++) {
-				int byteValue = (int) buf[i] & 0xff;
-				if (byteValue <= 15) {
-					strBuf.append("0");
-				}
-				strBuf.append(Integer.toString(byteValue, 16));
+			int byteValue = (int) buf[i] & 0xff;
+			if (byteValue <= 15) {
+				strBuf.append("0");
 			}
-			return strBuf.toString();
+			strBuf.append(Integer.toString(byteValue, 16));
 		}
+		return strBuf.toString();
+	}
 		/**
 		* This method converts a specified hexadecimal String into a set of bytes.
 		*
