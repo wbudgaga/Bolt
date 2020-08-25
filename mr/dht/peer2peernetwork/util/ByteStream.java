@@ -134,8 +134,8 @@ public class ByteStream {
 	public static byte[] convertHexToBytes(String hexString) {
 		int size = hexString.length();
 		byte[] buf = new byte[size / 2];
-			int j = 0;
-			for (int i = 0; i < size; i++) {
+		int j = 0;
+		for (int i = 0; i < size; i++) {
 				String a = hexString.substring(i, i + 2);
 				int valA = Integer.parseInt(a, 16);
 				i++;
@@ -143,7 +143,7 @@ public class ByteStream {
 				j++;
 			}
 			return buf;
-		}
+	}
 		
 		public static final byte[] packString(String value) {
 			byte[] bytes = StringToByteArray(value);
