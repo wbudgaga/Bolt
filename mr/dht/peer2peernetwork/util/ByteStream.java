@@ -166,13 +166,13 @@ public class ByteStream {
 		return bytes;
 	}
 
-		public static final byte[] packStringArrayList(ArrayList<String> value) {
-			byte[] bytes = intToByteArray(value.size());
-			for (String v:value){
-				bytes = join(bytes,packString(v));
-			}
-			return bytes;
+	public static final byte[] packStringArrayList(ArrayList<String> value) {
+		byte[] bytes = intToByteArray(value.size());
+		for (String v:value){
+			bytes = join(bytes,packString(v));
 		}
+		return bytes;
+	}
 
 		public static byte[] addPacketHeader(byte [] packetBody){
 			int packetLegth = packetBody.length;
