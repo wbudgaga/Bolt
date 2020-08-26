@@ -175,8 +175,8 @@ public class ByteStream {
 	}
 
 	public static byte[] addPacketHeader(byte [] packetBody){
-		int packetLegth = packetBody.length;
-		byte[] packetLegthInBytes = intToByteArray(packetLegth);
+		int packetLegth 		= packetBody.length;
+		byte[] packetLegthInBytes 	= intToByteArray(packetLegth);
 		return join(packetLegthInBytes, packetBody);
 	}
 	
