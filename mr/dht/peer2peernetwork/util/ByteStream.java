@@ -58,7 +58,7 @@ public class ByteStream {
 	}
 
 	private static final byte[] joinTwoArrays(byte[] array1, byte[] array2) {
-		byte [] resultArray 		= new byte[array1.length + array2.length];
+		byte [] resultArray 	= new byte[array1.length + array2.length];
 		System.arraycopy(array1,0,resultArray,0         ,array1.length);
 		System.arraycopy(array2, 0, resultArray, array1.length, array2.length);
 		return resultArray;
