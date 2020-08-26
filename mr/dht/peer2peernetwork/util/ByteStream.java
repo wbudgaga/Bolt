@@ -151,9 +151,9 @@ public class ByteStream {
 	}
 	
 	public static final byte[] packLongArray(Long[] value) {
-		byte[] bytes = intToByteArray(value.length);
+		byte[] bytes 		= intToByteArray(value.length);
 		for (Long v:value){
-			bytes = join(bytes,longToByteArray(v));
+			bytes 		= join(bytes,longToByteArray(v));
 		}
 		return bytes;
 	}
