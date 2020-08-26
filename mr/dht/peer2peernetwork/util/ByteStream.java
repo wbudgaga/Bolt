@@ -146,7 +146,7 @@ public class ByteStream {
 	}
 		
 	public static final byte[] packString(String value) {
-		byte[] bytes = StringToByteArray(value);
+		byte[] bytes 		= StringToByteArray(value);
 		return join(intToByteArray(bytes.length), bytes);
 	}
 	
