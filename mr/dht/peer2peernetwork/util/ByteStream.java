@@ -167,9 +167,9 @@ public class ByteStream {
 	}
 
 	public static final byte[] packStringArrayList(ArrayList<String> value) {
-		byte[] bytes = intToByteArray(value.size());
+		byte[] bytes 		= intToByteArray(value.size());
 		for (String v:value){
-			bytes = join(bytes,packString(v));
+			bytes	 	= join(bytes,packString(v));
 		}
 		return bytes;
 	}
