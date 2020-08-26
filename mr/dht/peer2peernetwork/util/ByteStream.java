@@ -83,7 +83,7 @@ public class ByteStream {
 			        return null;
 			}
 				
-			byte[] bytes = new byte[(int)length];
+			byte[] bytes 	= new byte[(int)length];
 			// Read in the bytes
 			int offset 	= 0;
 			int numRead 	= 0;
@@ -98,7 +98,7 @@ public class ByteStream {
 			is.close();
 			return bytes; 
 		} catch (FileNotFoundException e) {
-			System.out.println("The file: "+file.getName()+ " could not be found in: "+file.getPath());
+			System.out.println("The file: " + file.getName() + " could not be found in: " + file.getPath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
