@@ -145,8 +145,8 @@ public class Murmur3Hashing {
         h2 				^= k2;
 
         h2 				= Long.rotateLeft(h2, 31);
-        h2 += h1;
-        h2 = h2 * 5 + 0x38495ab5;
+        h2 				+= h1;
+        h2 				= h2 * 5 + 0x38495ab5;
     }
 
     private void checkFinished() {
