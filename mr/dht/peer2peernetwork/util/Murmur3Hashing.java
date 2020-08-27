@@ -225,17 +225,17 @@ public class Murmur3Hashing {
         checkFinished();
         byte[] bytes 			= new byte[16];
         for (int i = 0; i < 8; i++) {
-            bytes[i] = (byte) ((finishedH2 >>> (56 - i * 8)) & 0xff);
+            bytes[i] 			= (byte) ((finishedH2 >>> (56 - i * 8)) & 0xff);
         }
         for (int i = 0; i < 8; i++) {
-            bytes[8 + i] = (byte) ((finishedH1 >>> (56 - i * 8)) & 0xff);
+            bytes[8 + i] 		= (byte) ((finishedH1 >>> (56 - i * 8)) & 0xff);
         }
         return bytes;
     }
 
     public byte[] getValueBytesLittleEndian() {
         checkFinished();
-        byte[] bytes = new byte[16];
+        byte[] bytes 			= new byte[16];
         for (int i = 0; i < 8; i++) {
             bytes[i] = (byte) ((finishedH1 >>> (i * 8)) & 0xff);
         }
