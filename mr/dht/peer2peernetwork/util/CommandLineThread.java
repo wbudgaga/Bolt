@@ -11,8 +11,8 @@ public class CommandLineThread extends Thread{
 	private CommandLineInterface 	userCommand;
 	
 	public CommandLineThread(CommandLineInterface userInterface){
-		this.userCommand =  userInterface;
-		bufferedReader 	= new BufferedReader(new InputStreamReader(System.in));
+		this.userCommand 		=  userInterface;
+		bufferedReader 			= new BufferedReader(new InputStreamReader(System.in));
 	}
 
 	private void sendData(String command){
