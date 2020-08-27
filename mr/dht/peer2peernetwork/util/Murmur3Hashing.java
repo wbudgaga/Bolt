@@ -111,11 +111,11 @@ public class Murmur3Hashing {
         int remainder 			= len & 0xF;
         int stop 			= off + len - remainder;
         for (int i = off; i < stop; i += 16) {
-            long k1 = getLongLE(b, i);
-            long k2 = getLongLE(b, i + 8);
+            long k1 			= getLongLE(b, i);
+            long k2 			= getLongLE(b, i + 8);
             applyKs(k1, k2);
         }
-        length += stop - off;
+        length 				+= stop - off;
 
         for (int i = 0; i < remainder; i++) {
             update(b[stop + i]);
