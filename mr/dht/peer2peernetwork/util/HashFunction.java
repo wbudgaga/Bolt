@@ -31,10 +31,10 @@ public class HashFunction{
     	}
 	
     	public static void main(String[] args) throws NoSuchAlgorithmException {
-    		long k =17l;
-    		HashFunction f = new HashFunction();
+    		long k 			= 17l;
+    		HashFunction f 		= new HashFunction();
         	System.out.println(f.hash(k));
-        	BigInteger b = f.hash1(ByteStream.longToByteArray(k));
+        	BigInteger b 		= f.hash1(ByteStream.longToByteArray(k));
         	System.out.println(b.longValue() );
     	}
 }
