@@ -6,15 +6,12 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-
-
 import java.math.BigInteger;
-
 
 public class Murmur3Hashing {
 
-    private static final long C1 = 0x87c37b91114253d5L;
-    private static final long C2 = 0x4cf5ad432745937fL;
+    private static final long C1 	= 0x87c37b91114253d5L;
+    private static final long C2 	= 0x4cf5ad432745937fL;
 
     private final long seed;
 
@@ -31,13 +28,13 @@ public class Murmur3Hashing {
     private long finishedH2;
 
     public Murmur3Hashing() {
-        seed = 0;
+        seed 				= 0;
     }
 
     public Murmur3Hashing(int seed) {
-        this.seed = seed & (0xffffffffL); // unsigned
-        h1 = seed;
-        h2 = seed;
+        this.seed 			= seed & (0xffffffffL); // unsigned
+        h1 				= seed;
+        h2 				= seed;
     }
 
     public void update(int b) {
