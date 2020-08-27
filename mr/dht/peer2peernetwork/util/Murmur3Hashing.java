@@ -39,7 +39,7 @@ public class Murmur3Hashing {
         finished 			= false;
         switch (partialPos) {
             case 0:
-                partialK1 = 0xff & b;
+                partialK1 		= 0xff & b;
                 break;
             case 1:
                 partialK1 |= (0xff & b) << 8;
@@ -63,7 +63,7 @@ public class Murmur3Hashing {
                 partialK1 |= (0xffL & b) << 56;
                 break;
             case 8:
-                partialK2 = 0xff & b;
+                partialK2 		= 0xff & b;
                 break;
             case 9:
                 partialK2 |= (0xff & b) << 8;
@@ -91,7 +91,7 @@ public class Murmur3Hashing {
         partialPos++;
         if (partialPos == 16) {
             applyKs(partialK1, partialK2);
-            partialPos = 0;
+            partialPos 			= 0;
         }
         length++;
     }
@@ -101,15 +101,15 @@ public class Murmur3Hashing {
     }
 
     public void update(byte[] b, int off, int len) {
-        finished = false;
+        finished 			= false;
         while (partialPos != 0 && len > 0) {
             update(b[off]);
             off++;
             len--;
         }
 
-        int remainder = len & 0xF;
-        int stop = off + len - remainder;
+        int remainder 			= len & 0xF;
+        int stop 			= off + len - remainder;
         for (int i = off; i < stop; i += 16) {
             long k1 = getLongLE(b, i);
             long k2 = getLongLE(b, i + 8);
