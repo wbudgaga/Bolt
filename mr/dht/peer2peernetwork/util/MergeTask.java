@@ -25,11 +25,12 @@ public class MergeTask extends Task{
 	}
 	
 	private void createUniformSearchFile(){
-		String text="";
-        links = (HashMap<String, Float>) UtilClass.sortByValue(links);
-    	for (Map.Entry<String,Float> entity : links.entrySet())
-    			text += entity.getKey()+","+entity.getValue()+System.getProperty("line.separator");
-    	UtilClass.storeFile(new File(fileName), text);
+		String text			= "";
+        	links 				= (HashMap<String, Float>) UtilClass.sortByValue(links);
+		
+    		for (Map.Entry<String,Float> entity : links.entrySet())
+    			text 			+= entity.getKey()+","+entity.getValue()+System.getProperty("line.separator");
+    		UtilClass.storeFile(new File(fileName), text);
 	}	
 	
 	@Override
