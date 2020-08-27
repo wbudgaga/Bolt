@@ -153,10 +153,10 @@ public class Murmur3Hashing {
         if (!finished) {
             finished 			= true;
             finishedH1 			= h1;
-            finishedH2 = h2;
+            finishedH2 			= h2;
             if (partialPos > 0) {
                 if (partialPos > 8) {
-                    long k2 = partialK2 * C2;
+                    long k2 		= partialK2 * C2;
                     k2 = Long.rotateLeft(k2, 33);
                     k2 *= C1;
                     finishedH2 ^= k2;
