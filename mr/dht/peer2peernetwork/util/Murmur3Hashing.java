@@ -132,8 +132,8 @@ public class Murmur3Hashing {
     private void applyKs(long k1, long k2) {
         k1 				*= C1;
         k1 				= Long.rotateLeft(k1, 31);
-        k1 *= C2;
-        h1 ^= k1;
+        k1 				*= C2;
+        h1 				^= k1;
 
         h1 = Long.rotateLeft(h1, 27);
         h1 += h2;
