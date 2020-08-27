@@ -216,14 +216,14 @@ public class Murmur3Hashing {
     private String getPaddedHexString(long value) {
         String string 			= Long.toHexString(value);
         while (string.length() < 16) {
-            string = '0' + string;
+            string 			= '0' + string;
         }
         return string;
     }
 
     public byte[] getValueBytesBigEndian() {
         checkFinished();
-        byte[] bytes = new byte[16];
+        byte[] bytes 			= new byte[16];
         for (int i = 0; i < 8; i++) {
             bytes[i] = (byte) ((finishedH2 >>> (56 - i * 8)) & 0xff);
         }
