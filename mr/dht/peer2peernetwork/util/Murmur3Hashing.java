@@ -167,26 +167,26 @@ public class Murmur3Hashing {
                 finishedH1 		^= k1;
             }
 
-            finishedH1 ^= length;
-            finishedH2 ^= length;
+            finishedH1 			^= length;
+            finishedH2 			^= length;
 
-            finishedH1 += finishedH2;
-            finishedH2 += finishedH1;
+            finishedH1 			+= finishedH2;
+            finishedH2 			+= finishedH1;
 
-            finishedH1 = fmix64(finishedH1);
-            finishedH2 = fmix64(finishedH2);
+            finishedH1 			= fmix64(finishedH1);
+            finishedH2 			= fmix64(finishedH2);
 
-            finishedH1 += finishedH2;
-            finishedH2 += finishedH1;
+            finishedH1 			+= finishedH2;
+            finishedH2 			+= finishedH1;
         }
     }
 
     private long fmix64(long k) {
-        k ^= k >>> 33;
-        k *= 0xff51afd7ed558ccdL;
-        k ^= k >>> 33;
-        k *= 0xc4ceb9fe1a85ec53L;
-        k ^= k >>> 33;
+        k 				^= k >>> 33;
+        k 				*= 0xff51afd7ed558ccdL;
+        k 				^= k >>> 33;
+        k 				*= 0xc4ceb9fe1a85ec53L;
+        k 				^= k >>> 33;
         return k;
     }
 
