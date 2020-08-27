@@ -157,14 +157,14 @@ public class Murmur3Hashing {
             if (partialPos > 0) {
                 if (partialPos > 8) {
                     long k2 		= partialK2 * C2;
-                    k2 = Long.rotateLeft(k2, 33);
-                    k2 *= C1;
-                    finishedH2 ^= k2;
+                    k2 			= Long.rotateLeft(k2, 33);
+                    k2 			*= C1;
+                    finishedH2 		^= k2;
                 }
-                long k1 = partialK1 * C1;
-                k1 = Long.rotateLeft(k1, 31);
-                k1 *= C2;
-                finishedH1 ^= k1;
+                long k1 		= partialK1 * C1;
+                k1 			= Long.rotateLeft(k1, 31);
+                k1 			*= C2;
+                finishedH1 		^= k1;
             }
 
             finishedH1 ^= length;
