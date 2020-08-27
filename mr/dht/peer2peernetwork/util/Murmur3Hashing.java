@@ -246,16 +246,17 @@ public class Murmur3Hashing {
     }
 
     public void reset() {
-        h1 = seed;
-        h2 = seed;
-        length = 0;
-        partialPos = 0;
-        finished = false;
+        h1 				= seed;
+        h2 				= seed;
+        length 				= 0;
+        partialPos 			= 0;
+        finished 			= false;
     }
+	
 
-public static void main(String args[]) throws IOException {
-	long s =0;
-			long t1,t2;
+    public static void main(String args[]) throws IOException {
+	long s 				= 0;
+	long t1,t2;
 /*	for( int i=0; i<1000; ++i){
 		byte[] bytes = ByteStream.intToByteArray(UtilClass.getRandomNumber(0,(int)Math.pow(2, 32)));
 		t1 = System.nanoTime();
@@ -266,7 +267,7 @@ public static void main(String args[]) throws IOException {
 	}
 	System.out.println("Avg: "+(s/1000.0));
 */		
-	Murmur3Hashing h = new Murmur3Hashing();
+	Murmur3Hashing h 		= new Murmur3Hashing();
 	h.update(23);
 	System.out.println(h.getValue());
 /*	for( int i=0; i<1000; ++i){
