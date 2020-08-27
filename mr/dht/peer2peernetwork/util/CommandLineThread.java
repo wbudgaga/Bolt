@@ -24,7 +24,7 @@ public class CommandLineThread extends Thread{
 	}
 	
 	private void search(String command){
-		String[] para  = command.split(" ");
+		String[] para  			= command.split(" ");
 		if (para.length > 1)
 			userCommand.search(para[1],para.length==3?para[2]:null);
 		else
@@ -55,5 +55,4 @@ public class CommandLineThread extends Thread{
 			System.err.println("Invalid Command!");
 		}
 	}
-
 }
