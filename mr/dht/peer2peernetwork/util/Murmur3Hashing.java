@@ -141,10 +141,10 @@ public class Murmur3Hashing {
 
         k2 				*= C2;
         k2 				= Long.rotateLeft(k2, 33);
-        k2 *= C1;
-        h2 ^= k2;
+        k2 				*= C1;
+        h2 				^= k2;
 
-        h2 = Long.rotateLeft(h2, 31);
+        h2 				= Long.rotateLeft(h2, 31);
         h2 += h1;
         h2 = h2 * 5 + 0x38495ab5;
     }
