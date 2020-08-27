@@ -12,10 +12,8 @@ import mr.dht.peer2peernetwork.wireformates.QueryResult;
 import mr.dht.peer2peernetwork.wireformates.Successor;
 
 public class RemotePeer extends RNode{
-
 	public RemotePeer(long id, String name, String host, int port, PacketChannel pChannel) throws IOException {
 		super(id, name, host, port, pChannel);
-		
 	}
 
 	public void validyChannel(PacketChannel pChannel) throws IOException{
