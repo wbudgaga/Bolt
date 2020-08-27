@@ -82,12 +82,12 @@ public class RemotePeer extends RNode{
 	}
 
 	public void getSuccessor(PeerData pd) throws IOException{
-		GetSuccessor succMSG = new GetSuccessor();
+		GetSuccessor succMSG 		= new GetSuccessor();
 		succMSG.setPeer(pd);
 		sendMessage(succMSG);
 	}
 	public void queryResult(long queryKey, long msgID, int handlerID, PeerData responsible) throws IOException{
-		QueryResult queryResultMSG = new QueryResult();
+		QueryResult queryResultMSG 	= new QueryResult();
 		queryResultMSG.setPeer(getPeerInfo(responsible));
 		queryResultMSG.setHandlerID(handlerID);
 		queryResultMSG.setMsgUUID(msgID);
@@ -95,8 +95,6 @@ public class RemotePeer extends RNode{
 		queryResultMSG.setHandlerID(handlerID);
 		sendMessage(queryResultMSG);
 	}
-
-
 /*
 */
 
@@ -129,7 +127,7 @@ public class RemotePeer extends RNode{
 
 */
 	public static PeerInfo getPeerInfo(PeerData nodeData){
-		PeerInfo peerInfo = new PeerInfo();
+		PeerInfo peerInfo 	= new PeerInfo();
 		peerInfo.setPeer(nodeData);
 		return peerInfo;
 	}
