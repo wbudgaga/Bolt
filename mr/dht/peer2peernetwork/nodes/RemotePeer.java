@@ -34,12 +34,12 @@ public class RemotePeer extends RNode{
 	}
 
 	public long lookup(long key, int respHandlerID, PeerData sourceNode) throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-		Lookup lookupMSG = getLookupMSG(key, respHandlerID, sourceNode);
+		Lookup lookupMSG 		= getLookupMSG(key, respHandlerID, sourceNode);
 		if (Setting.PRINT_QUERY_MESSAGES)
-			System.out.println("\nLookup query started for the key: "+ key +" and sent to the peer ID:"+getID());
-		System.out.println("####################beforesendAFTER append a chunk : "+key+ "   [0]="+getID());
+			System.out.println("\nLookup query started for the key: " + key + " and sent to the peer ID:" + getID());
+		System.out.println("####################beforesendAFTER append a chunk : " + key + "   [0]=" + getID());
 		sendMessage(lookupMSG);
-		System.out.println("####################====AFTER append a chunk : "+key+ "   [0]="+getID());
+		System.out.println("####################====AFTER append a chunk : " + key + "   [0]=" + getID());
 		return lookupMSG.getMsgUUID(); 
 	}
 	public void forward(Lookup forward) throws IOException{
