@@ -17,24 +17,24 @@ public class HashFunction{
 	}
 	
 	public synchronized BigInteger hash1(byte[]  key){
-        	byte[] messageDigest 		= md.digest(key);
+        	byte[] messageDigest 	= md.digest(key);
         	return new BigInteger(messageDigest);
 	}
 
 	
 	public long hash(String key){
-        return hash(key.getBytes());
-    }
-	public long hash(Long key){
-        return hash(ByteStream.longToByteArray(key));
-    }
-
+        	return hash(key.getBytes());
+    	}
 	
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-    	long k =17l;
-    	HashFunction f = new HashFunction();
-        System.out.println(f.hash(k));
-        BigInteger b = f.hash1(ByteStream.longToByteArray(k));
-        System.out.println(b.longValue() );
-    }
+	public long hash(Long key){
+        	return hash(ByteStream.longToByteArray(key));
+    	}
+	
+    	public static void main(String[] args) throws NoSuchAlgorithmException {
+    		long k =17l;
+    		HashFunction f = new HashFunction();
+        	System.out.println(f.hash(k));
+        	BigInteger b = f.hash1(ByteStream.longToByteArray(k));
+        	System.out.println(b.longValue() );
+    	}
 }
