@@ -8,18 +8,18 @@ import mr.dht.peer2peernetwork.threadpool.Task;
 
 public class MergeTask extends Task{
 	private String 	fileName;
-	private HashMap<String,Float> links = new HashMap<String,Float>();
+	private HashMap<String,Float> links 	= new HashMap<String,Float>();
 	
 	public MergeTask(File existingFile, String newLinks){
 		addLinks(newLinks);
-		addLinks(ByteStream.byteArrayToString(ByteStream.readFileBytes(existingFile)));
-		fileName = existingFile.getAbsolutePath();
+		addLinks( ByteStream.byteArrayToString(ByteStream.readFileBytes(existingFile)) );
+		fileName 			= existingFile.getAbsolutePath();
 	}
 	
 	public void addLinks(String linkScore){
-		String[] linksList = linkScore.split(System.getProperty("line.separator")) ;
+		String[] linksList 		= linkScore.split(System.getProperty("line.separator")) ;
 		for (int i = 0; i < linksList.length ; ++i ){
-			String[] linkScr = linksList[i].split(",");
+			String[] linkScr 	= linksList[i].split(",");
 			links.put(linkScr[0], Float.parseFloat(linkScr[1]));
 		}
 	}
