@@ -1,6 +1,5 @@
 package mr.dht.peer2peernetwork.util;
 
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.nio.ByteBuffer;
@@ -9,7 +8,6 @@ import java.nio.ByteOrder;
 import java.math.BigInteger;
 
 public class Murmur3Hashing {
-
     private static final long C1 	= 0x87c37b91114253d5L;
     private static final long C2 	= 0x4cf5ad432745937fL;
 
@@ -38,7 +36,7 @@ public class Murmur3Hashing {
     }
 
     public void update(int b) {
-        finished = false;
+        finished 			= false;
         switch (partialPos) {
             case 0:
                 partialK1 = 0xff & b;
