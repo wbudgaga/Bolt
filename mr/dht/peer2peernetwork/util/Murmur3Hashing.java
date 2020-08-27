@@ -151,8 +151,8 @@ public class Murmur3Hashing {
 
     private void checkFinished() {
         if (!finished) {
-            finished = true;
-            finishedH1 = h1;
+            finished 			= true;
+            finishedH1 			= h1;
             finishedH2 = h2;
             if (partialPos > 0) {
                 if (partialPos > 8) {
