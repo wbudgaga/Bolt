@@ -42,11 +42,12 @@ public class RemotePeer extends RNode{
 		System.out.println("####################====AFTER append a chunk : " + key + "   [0]=" + getID());
 		return lookupMSG.getMsgUUID(); 
 	}
+	
 	public void forward(Lookup forward) throws IOException{
 		if (Setting.PRINT_QUERY_MESSAGES){
 		//	System.out.println("\nLookup query searching for the key: "+ forward.getQueryKey() +" is forwarded to peer ID: "+getID());
-		}
-		if (forward.getHops()>25){
+		} 
+		if (forward.getHops() > 25){
 			System.out.println("\nLookup could not be forwarded because the number of hops is :" +forward.getHops());
 			return;
 		}
@@ -56,7 +57,7 @@ public class RemotePeer extends RNode{
 	}
 	
 	public void setSuccessor(PeerData pData) throws IOException{
-		Successor successorMSG = new Successor();
+		Successor successorMSG 		= new Successor();
 		successorMSG.setPeer(pData);
 		sendMessage(successorMSG);
 	}
