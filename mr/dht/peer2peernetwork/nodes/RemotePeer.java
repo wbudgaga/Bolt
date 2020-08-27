@@ -20,6 +20,7 @@ public class RemotePeer extends RNode{
 		if (!pChannel.setRemotePeer(this))
 			throw new IOException("New remote peer could created because there is already one for this channel");
 	}
+	
 	public RemotePeer(PeerData nodeData, PacketChannel pChannel) throws IOException {
 		super(nodeData, pChannel);
 	}
