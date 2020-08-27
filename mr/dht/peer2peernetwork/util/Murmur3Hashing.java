@@ -203,7 +203,7 @@ public class Murmur3Hashing {
 
     /** Positive value. */
     public BigInteger getValueBigInteger() {
-        byte[] bytes = getValueBytesBigEndian();
+        byte[] bytes 			= getValueBytesBigEndian();
         return new BigInteger(1, bytes);
     }
 
@@ -214,7 +214,7 @@ public class Murmur3Hashing {
     }
 
     private String getPaddedHexString(long value) {
-        String string = Long.toHexString(value);
+        String string 			= Long.toHexString(value);
         while (string.length() < 16) {
             string = '0' + string;
         }
