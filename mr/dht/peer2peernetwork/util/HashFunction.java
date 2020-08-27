@@ -8,17 +8,17 @@ public class HashFunction{
 	private MessageDigest md;
 	
 	public HashFunction() throws NoSuchAlgorithmException{
-		md = MessageDigest.getInstance("MD5");//SHA1 MD5
+		md 			= MessageDigest.getInstance("MD5");//SHA1 MD5
 	}
 	
 	public synchronized long hash(byte[]  key){
-        byte[] messageDigest = md.digest(key);
-        return (ByteStream.byteArrayToLong(messageDigest) & Long.MAX_VALUE);
+       	 	byte[] messageDigest 	= md.digest(key);
+        	return (ByteStream.byteArrayToLong(messageDigest) & Long.MAX_VALUE);
 	}
 	
 	public synchronized BigInteger hash1(byte[]  key){
-        byte[] messageDigest = md.digest(key);
-        return new BigInteger(messageDigest);
+        	byte[] messageDigest 		= md.digest(key);
+        	return new BigInteger(messageDigest);
 	}
 
 	
