@@ -18,7 +18,7 @@ public class RemotePeerLocal extends RemotePeer{
 	
 	public RemotePeerLocal(long id, String name, String host, int port, LocalMessageHandler	messageHandler) throws IOException {
 		super(id, name, host, port, null);
-		this.messageHandler = messageHandler;
+		this.messageHandler 		= messageHandler;
 	}
 
 	public void sendMessage(Message msg) throws IOException{
@@ -30,5 +30,4 @@ public class RemotePeerLocal extends RemotePeer{
 			e.printStackTrace();
 		}
 	}
-
 }
