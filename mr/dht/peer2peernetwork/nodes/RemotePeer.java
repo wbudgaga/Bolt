@@ -62,7 +62,7 @@ public class RemotePeer extends RNode{
 		sendMessage(successorMSG);
 	}
 	public void setPredecessor(PeerData pData) throws IOException{
-		Predecessor predecessorMSG = new Predecessor();
+		Predecessor predecessorMSG 	= new Predecessor();
 		predecessorMSG.setPeer(pData);
 		sendMessage(predecessorMSG);
 	}
@@ -76,7 +76,7 @@ public class RemotePeer extends RNode{
 	}
 
 	public void setPeerInfo(PeerData pData) throws IOException{
-		PeerInfo pInfo = new PeerInfo();
+		PeerInfo pInfo 			= new PeerInfo();
 		pInfo.setPeer(pData);
 		sendMessage(pInfo);
 	}
