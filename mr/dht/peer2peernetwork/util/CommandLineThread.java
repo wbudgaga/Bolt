@@ -16,8 +16,8 @@ public class CommandLineThread extends Thread{
 	}
 
 	private void sendData(String command){
-		String[] para  = command.split(" ");
-		if (para.length==2)
+		String[] para  			= command.split(" ");
+		if (para.length == 2)
 			userCommand.sendData(para[1]);
 		else
 			System.err.println("Invalid File Name!");
