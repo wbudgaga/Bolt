@@ -52,11 +52,13 @@ public class DatasetMetaData extends Message{
 		fileNameList.add(fileName);
 		fileSizeList.add(size);
 	}
+	
 	public long getDataSetHashKey() {
 		return dataSetHashKey;
 	}
+	
 	public void setDataSetHashKey(long dataSetHashKey) {
-		this.dataSetHashKey = dataSetHashKey;
+		this.dataSetHashKey 	= dataSetHashKey;
 	}
 
 	public int getReplicateNr() {
@@ -73,9 +75,9 @@ public class DatasetMetaData extends Message{
 		ByteBuffer buffer 	= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
 		fChannel.read(buffer);
 		buffer.flip();
-		byte[] db= new byte[buffer.remaining()];
+		byte[] db		= new byte[buffer.remaining()];
 		buffer.get(db);
-		DatasetMetaData d1 = new DatasetMetaData();
+		DatasetMetaData d1 	= new DatasetMetaData();
 		d1.setReplicateNr(5);
 		d1.initiate(db);
 		System.out.println(d1.getDataSetHashKey());
