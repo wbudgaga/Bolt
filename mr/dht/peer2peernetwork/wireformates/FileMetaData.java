@@ -49,14 +49,14 @@ public class FileMetaData extends Message{
 
 	public static void main(String args[]) throws IOException {
 		FileMetaData d 		= new FileMetaData();
-		FileChannel fChannel 		= new FileInputStream("c:\\tmp\\3279056892").getChannel();	
-		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
+		FileChannel fChannel 	= new FileInputStream("c:\\tmp\\3279056892").getChannel();	
+		ByteBuffer buffer 	= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
 		fChannel.read(buffer);
 		buffer.flip();
-		byte[] db= new byte[buffer.remaining()];
+		byte[] db		= new byte[buffer.remaining()];
 		buffer.get(db);
 	
-		FileMetaData d1 = new FileMetaData();
+		FileMetaData d1 	= new FileMetaData();
 		d1.setReplicateNr((byte)50);
 		d1.initiate(db);
 		System.out.println(d1.getFileHashedKey());
