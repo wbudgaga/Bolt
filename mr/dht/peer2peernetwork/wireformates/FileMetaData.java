@@ -17,10 +17,10 @@ public class FileMetaData extends Message{
 	private int 	numOfChunks;
 	private int 	chunkSize;
 	
-	
 	public FileMetaData() {
 		super(FILE_META, FILE_META);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
 		setFileHashedKey( unpackLongField( byteStream ) );
@@ -35,10 +35,10 @@ public class FileMetaData extends Message{
 	@Override
 	protected byte[] packMessageBody() {
 		byte[] buffer = ByteStream.join(ByteStream.longToByteArray(getFileHashedKey()), ByteStream.packString(getFileName()));
-			   buffer = ByteStream.join(buffer,ByteStream.longToByteArray(getFileSize()));
-			   buffer = ByteStream.join(buffer,new byte[]{getReplicateNr()});
-			   buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getReplicationFactor()));
-			   buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getNumOfChunks()));
+		buffer = ByteStream.join(buffer,ByteStream.longToByteArray(getFileSize()));
+		buffer = ByteStream.join(buffer,new byte[]{getReplicateNr()});
+		buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getReplicationFactor()));
+		buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getNumOfChunks()));
 		return  ByteStream.join(buffer,ByteStream.intToByteArray(getChunkSize()));
 	}
 
