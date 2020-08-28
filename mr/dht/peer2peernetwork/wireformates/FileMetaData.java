@@ -72,15 +72,19 @@ public class FileMetaData extends Message{
 	public long getFileHashedKey() {
 		return fileHashedKey;
 	}
+	
 	public void setFileHashedKey(long fileHashedKey) {
-		this.fileHashedKey = fileHashedKey;
+		this.fileHashedKey 	= fileHashedKey;
 	}
+	
 	public String getFileName() {
 		return fileName;
 	}
+	
 	public void setFileName(String fileName) {
-		this.fileName = fileName;
+		this.fileName 		= fileName;
 	}
+	
 	public int getReplicationFactor() {
 		return replicationFactor;
 	}
