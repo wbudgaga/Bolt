@@ -95,13 +95,14 @@ public class FileMetaData extends Message{
 		return numOfChunks;
 	}
 	public void setNumOfChunks(int numOfChunks) {
-		this.numOfChunks = numOfChunks;
+		this.numOfChunks 	= numOfChunks;
 	}
+	
 	public int getChunkSize() {
 		return chunkSize;
 	}
 	public void setChunkSize(int chunkSize) {
-		this.chunkSize = chunkSize;
+		this.chunkSize 		= chunkSize;
 	}
 
 	public byte getReplicateNr() {
