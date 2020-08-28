@@ -31,8 +31,8 @@ public class DatasetMetaData extends Message{
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] buffer = ByteStream.join(ByteStream.longToByteArray(getDataSetHashKey()), ByteStream.intToByteArray(getReplicateNr()));
-			   buffer = ByteStream.join(buffer,ByteStream.packStringArrayList(fileNameList));
+		byte[] buffer 		= ByteStream.join(ByteStream.longToByteArray(getDataSetHashKey()), ByteStream.intToByteArray(getReplicateNr()));
+		buffer 			= ByteStream.join(buffer,ByteStream.packStringArrayList(fileNameList));
 		return  ByteStream.join(buffer,ByteStream.packLongArrayList(fileSizeList));
 	}
 
