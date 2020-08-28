@@ -34,11 +34,11 @@ public class FileMetaData extends Message{
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] buffer = ByteStream.join(ByteStream.longToByteArray(getFileHashedKey()), ByteStream.packString(getFileName()));
-		buffer = ByteStream.join(buffer,ByteStream.longToByteArray(getFileSize()));
-		buffer = ByteStream.join(buffer,new byte[]{getReplicateNr()});
-		buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getReplicationFactor()));
-		buffer = ByteStream.join(buffer,ByteStream.intToByteArray(getNumOfChunks()));
+		byte[] buffer 		= ByteStream.join(ByteStream.longToByteArray(getFileHashedKey()), ByteStream.packString(getFileName()));
+		buffer 			= ByteStream.join(buffer,ByteStream.longToByteArray(getFileSize()));
+		buffer 			= ByteStream.join(buffer,new byte[]{getReplicateNr()});
+		buffer 			= ByteStream.join(buffer,ByteStream.intToByteArray(getReplicationFactor()));
+		buffer 			= ByteStream.join(buffer,ByteStream.intToByteArray(getNumOfChunks()));
 		return  ByteStream.join(buffer,ByteStream.intToByteArray(getChunkSize()));
 	}
 
@@ -48,7 +48,7 @@ public class FileMetaData extends Message{
 	}
 
 	public static void main(String args[]) throws IOException {
-		FileMetaData d = new FileMetaData();
+		FileMetaData d 		= new FileMetaData();
 		FileChannel fChannel 		= new FileInputStream("c:\\tmp\\3279056892").getChannel();	
 		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
 		fChannel.read(buffer);
