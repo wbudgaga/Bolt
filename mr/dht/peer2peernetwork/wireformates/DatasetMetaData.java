@@ -62,13 +62,15 @@ public class DatasetMetaData extends Message{
 	public int getReplicateNr() {
 		return replicateNr;
 	}
+	
 	public void setReplicateNr(int replicateNr) {
-		this.replicateNr = replicateNr;
+		this.replicateNr 	= replicateNr;
 	}
+	
 	public static void main(String args[]) throws IOException {
-		DatasetMetaData d = new DatasetMetaData();
-		FileChannel fChannel 		= new FileInputStream("c:\\tmp\\304841012").getChannel();	
-		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
+		DatasetMetaData d 	= new DatasetMetaData();
+		FileChannel fChannel 	= new FileInputStream("c:\\tmp\\304841012").getChannel();	
+		ByteBuffer buffer 	= ByteBuffer.allocateDirect(Setting.CHUNK_SIZE);
 		fChannel.read(buffer);
 		buffer.flip();
 		byte[] db= new byte[buffer.remaining()];
