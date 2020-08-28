@@ -11,21 +11,22 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.dht.peer2peernetwork.util.ByteStream;
 
 public class DatasetMetaData extends Message{
-	private long				dataSetHashKey;
-	private int 				replicateNr=1;
-	private ArrayList<String> 	fileNameList = new ArrayList<String>();
-	private ArrayList<Long> 	fileSizeList = new ArrayList<Long>();
+	private long	dataSetHashKey;
+	private int 	replicateNr		= 1;
+	private ArrayList<String> fileNameList 	= new ArrayList<String>();
+	private ArrayList<Long> fileSizeList 	= new ArrayList<Long>();
 	
 	
 	public DatasetMetaData() {
 		super(DATASET_META, DATASET_META);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
 		setDataSetHashKey( unpackLongField( byteStream ) );
 		setReplicateNr( unpackIntField( byteStream ) );
-		fileNameList = unpackStringArrayListField( byteStream ) ;
-		fileSizeList = unpackLongArrayListField( byteStream ) ;
+		fileNameList 			= unpackStringArrayListField( byteStream ) ;
+		fileSizeList 			= unpackLongArrayListField( byteStream ) ;
 	}
 
 	@Override
