@@ -109,12 +109,12 @@ public class FileMetaData extends Message{
 		return replicateNr;
 	}
 	public void setReplicateNr(byte replicateNr) {
-		this.replicateNr = replicateNr;
+		this.replicateNr 	= replicateNr;
 	}
 	public long getFileSize() {
 		return fileSize;
 	}
 	public void setFileSize(long fileSize) {
-		this.fileSize = fileSize;
+		this.fileSize 		= fileSize;
 	}
 }
