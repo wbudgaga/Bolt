@@ -14,15 +14,17 @@ public class FindRunningReducer extends Lookup{
 		super(FIND_RUNNING_REDUCER, FIND_RUNNING_REDUCER);
 		setSrcPeerHandlerID(REDUCERPEER);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
 		unpackMessage(byteStream);
 		setJobID(unpackLongField(byteStream));
 		setReduceID(unpackIntField(byteStream));
 	}
+	
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] bytes= super.packMessageBody();
+		byte[] bytes		= super.packMessageBody();
 		bytes= ByteStream.join (bytes,ByteStream.longToByteArray(getJobID()));
 		return ByteStream.join (bytes,ByteStream.intToByteArray(getReduceID()));
 	}
@@ -37,7 +39,7 @@ public class FindRunningReducer extends Lookup{
 	}
 
 	public void setReduceID(int reduceID) {
-		this.reduceID = reduceID;
+		this.reduceID 		= reduceID;
 	}
 
 	public long getJobID() {
@@ -45,7 +47,7 @@ public class FindRunningReducer extends Lookup{
 	}
 
 	public void setJobID(long jobID) {
-		this.jobID = jobID;
+		this.jobID 		= jobID;
 	}
 	
 	public static void main(String[] a){
