@@ -49,7 +49,7 @@ public abstract class Setting {
 	public static String INPUT_FILE_EXT		= "";
 	public static String SOURCE_DIR			= "/tmp/budgaga/pages";//used by StoreData
 	public static String MESSSAGE_PACKAGE		= "mr.dht.peer2peernetwork.wireformates.";//used by StoreData
-	public static String	HANDLER_PACKAGE		    = "mr.dht.peer2peernetwork.handlers.";//used by StoreData
+	public static String HANDLER_PACKAGE		= "mr.dht.peer2peernetwork.handlers.";//used by StoreData
 	public static String	CLIENT_HANDLER_PACKAGE	= "mr.dht.peer2peernetwork.handlers.client_handlers.";//used by resouceManger
 	public static String	MR_HANDLER_PACKAGE		= "mr.dht.peer2peernetwork.handlers.mr_handlers.";//used by resouceManger	
 		
