@@ -53,11 +53,11 @@ public abstract class Setting {
 	public static String CLIENT_HANDLER_PACKAGE	= "mr.dht.peer2peernetwork.handlers.client_handlers.";//used by resouceManger
 	public static String MR_HANDLER_PACKAGE		= "mr.dht.peer2peernetwork.handlers.mr_handlers.";//used by resouceManger	
 		
-	public static String	TASK_PACKAGE		= "mr.resourcemanagement.execution.mrtasks.tasks.";//used to hold mr tasks
+	public static String TASK_PACKAGE		= "mr.resourcemanagement.execution.mrtasks.tasks.";//used to hold mr tasks
 
-	public static String	REDUCER_BASENAME	= "%s_r.%04d";
+	public static String REDUCER_BASENAME		= "%s_r.%04d";
 	
-	public static boolean	CLR_FILES_ON_START		= false;
+	public static boolean CLR_FILES_ON_START	= false;
 	public static boolean	PRINT_FT_ON_UPDATE		= false;
 	public static boolean	PRINT_QUERY_MESSAGES	= false;
 	public static boolean	FLUSH_PEER_DATA			= false;
