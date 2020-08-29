@@ -58,16 +58,16 @@ public abstract class Setting {
 	public static String REDUCER_BASENAME		= "%s_r.%04d";
 	
 	public static boolean CLR_FILES_ON_START	= false;
-	public static boolean	PRINT_FT_ON_UPDATE		= false;
-	public static boolean	PRINT_QUERY_MESSAGES	= false;
-	public static boolean	FLUSH_PEER_DATA			= false;
-	public static boolean	LOAD_METADATA			= true;
+	public static boolean PRINT_FT_ON_UPDATE	= false;
+	public static boolean PRINT_QUERY_MESSAGES	= false;
+	public static boolean FLUSH_PEER_DATA		= false;
+	public static boolean LOAD_METADATA		= true;
 	
 	//sizes
-	public static int		REPLICATION_FACTOR		= 3;
-	public static int		PEER_CACHE_SIZE			= 10;
-	public static int		DISCOVER_THREADPOOL_SIZE= 10;
-	public static int 		THREADPOOL_SIZE 		= 10;
+	public static int REPLICATION_FACTOR		= 3;
+	public static int PEER_CACHE_SIZE			= 10;
+	public static int DISCOVER_THREADPOOL_SIZE= 10;
+	public static int THREADPOOL_SIZE 		= 10;
 	
 	public static int 		INPUT_QUEUESIZE 		= 50;
 	public static int 		NUM_MAPBUFFERS	 		= 50;
