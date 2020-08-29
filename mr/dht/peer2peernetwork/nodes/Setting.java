@@ -7,31 +7,32 @@ import mr.dht.peer2peernetwork.util.UtilClass;
 
 
 public abstract class Setting {
-	public static String	BOLT_DIR				= "/tmp/MRlocalDir/"; //used by peers
-	public static String 	HOSTNAME				= "";
-	public static String 	LOCAL_DIR				= "";
-	public static String 	LOG_DIR					= "";
-	public static String	MRJOBS_DIR				= ""; //used by peers
-	public static String	DATA_DIR				= "";
+	public static String	BOLT_DIR		= "/tmp/MRlocalDir/"; //used by peers
+	public static String 	HOSTNAME		= "";
+	public static String 	LOCAL_DIR		= "";
+	public static String 	LOG_DIR			= "";
+	public static String	MRJOBS_DIR		= ""; //used by peers
+	public static String	DATA_DIR		= "";
 
 	
-    static{
+    	static{
 		try {
-			HOSTNAME = java.net.InetAddress.getLocalHost().getHostName();
-			int pointLoc = HOSTNAME.indexOf('.');
-			if (pointLoc >0 )
-				HOSTNAME = HOSTNAME.substring(0, pointLoc);
+			HOSTNAME 			= java.net.InetAddress.getLocalHost().getHostName();
+			int pointLoc 			= HOSTNAME.indexOf('.');
+			if (pointLoc > 0 )
+				HOSTNAME 		= HOSTNAME.substring(0, pointLoc);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
-    }
-    public static final void setPeerFolder(String dir){
-    	LOCAL_DIR   = "/s/"+HOSTNAME+"/"+dir+BOLT_DIR;
-    	LOG_DIR 	= LOCAL_DIR+"logging/";
-    	MRJOBS_DIR	= LOCAL_DIR+"jobs/";
-    	DATA_DIR	= LOCAL_DIR+"data/";
-    	for (int i=0; i < Setting.REPLICATION_FACTOR; ++i){
-    		UtilClass.createPath(DATA_DIR+"d"+i);
+    	}
+	
+    	public static final void setPeerFolder(String dir){
+    		LOCAL_DIR   = "/s/"+HOSTNAME+"/"+dir+BOLT_DIR;
+    		LOG_DIR 	= LOCAL_DIR+"logging/";
+    		MRJOBS_DIR	= LOCAL_DIR+"jobs/";
+    		DATA_DIR	= LOCAL_DIR+"data/";
+    		for (int i=0; i < Setting.REPLICATION_FACTOR; ++i){
+    			UtilClass.createPath(DATA_DIR+"d"+i);
     		UtilClass.createPath(DATA_DIR+"datasetsMeta"+i);
     		UtilClass.createPath(DATA_DIR+"filesMeta"+i);
     	}
