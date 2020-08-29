@@ -5,7 +5,6 @@ import java.net.UnknownHostException;
 
 import mr.dht.peer2peernetwork.util.UtilClass;
 
-
 public abstract class Setting {
 	public static String	BOLT_DIR		= "/tmp/MRlocalDir/"; //used by peers
 	public static String 	HOSTNAME		= "";
@@ -46,8 +45,8 @@ public abstract class Setting {
 	public static int DISCOVER_PORT			= 5000;
 	public static int FT_UPDATE_TIME		= 30 * 1000; //millisecond : the needed time in FTFixerThread to update finger table
 	public static int DISCOVERY_UPDATE_TIME		= 1000; //millisecond : the needed time in updaterThread to update finger table
-	public static int 		MOVE_FILE_CHECK_TIME	= 45 * 1000;
-	public static String	INPUT_FILE_EXT			= "";
+	public static int MOVE_FILE_CHECK_TIME		= 45 * 1000;
+	public static String INPUT_FILE_EXT		= "";
 	public static String	SOURCE_DIR				= "/tmp/budgaga/pages";//used by StoreData
 	public static String	MESSSAGE_PACKAGE		= "mr.dht.peer2peernetwork.wireformates.";//used by StoreData
 	public static String	HANDLER_PACKAGE		    = "mr.dht.peer2peernetwork.handlers.";//used by StoreData
