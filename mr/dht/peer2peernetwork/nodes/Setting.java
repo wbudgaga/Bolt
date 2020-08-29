@@ -27,20 +27,20 @@ public abstract class Setting {
     	}
 	
     	public static final void setPeerFolder(String dir){
-    		LOCAL_DIR   = "/s/"+HOSTNAME+"/"+dir+BOLT_DIR;
-    		LOG_DIR 	= LOCAL_DIR+"logging/";
-    		MRJOBS_DIR	= LOCAL_DIR+"jobs/";
-    		DATA_DIR	= LOCAL_DIR+"data/";
-    		for (int i=0; i < Setting.REPLICATION_FACTOR; ++i){
-    			UtilClass.createPath(DATA_DIR+"d"+i);
-    		UtilClass.createPath(DATA_DIR+"datasetsMeta"+i);
-    		UtilClass.createPath(DATA_DIR+"filesMeta"+i);
+    		LOCAL_DIR   				= "/s/"+HOSTNAME+"/"+dir+BOLT_DIR;
+    		LOG_DIR 				= LOCAL_DIR+"logging/";
+    		MRJOBS_DIR				= LOCAL_DIR+"jobs/";
+    		DATA_DIR				= LOCAL_DIR+"data/";
+    		for (int i = 0; i < Setting.REPLICATION_FACTOR; ++i){
+    			UtilClass.createPath(DATA_DIR + "d"+i);
+    			UtilClass.createPath(DATA_DIR + "datasetsMeta"+i);
+    			UtilClass.createPath(DATA_DIR + "filesMeta"+i);
+    		}
     	}
-    }
     
-	public static int 		NUMBER_OF_FT_ENTRIES	= 32;
-	public static long 		RING_KEYSPACE			= (long) Math.pow(2, NUMBER_OF_FT_ENTRIES);
-	public static String	DISCOVER_NAME			= "discovery";
+	public static int NUMBER_OF_FT_ENTRIES		= 32;
+	public static long RING_KEYSPACE		= (long) Math.pow(2, NUMBER_OF_FT_ENTRIES);
+	public static String DISCOVER_NAME		= "discovery";
 	public static final String 	STOP_LIST			= "/s/chopin/b/grad/budgaga/noaa/mrWorkdir/benchmark/english.stop";
 	public static int		DISCOVER_ID 			= 0;
 	public static String	DISCOVER_HOST			= "lion";
