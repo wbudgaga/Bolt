@@ -14,7 +14,6 @@ public abstract class Setting {
 	public static String	MRJOBS_DIR		= ""; //used by peers
 	public static String	DATA_DIR		= "";
 
-	
     	static{
 		try {
 			HOSTNAME 			= java.net.InetAddress.getLocalHost().getHostName();
