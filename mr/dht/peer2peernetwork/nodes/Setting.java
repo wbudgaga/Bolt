@@ -42,8 +42,8 @@ public abstract class Setting {
 	public static String DISCOVER_NAME		= "discovery";
 	public static final String STOP_LIST		= "/s/chopin/b/grad/budgaga/noaa/mrWorkdir/benchmark/english.stop";
 	public static int DISCOVER_ID 			= 0;
-	public static String	DISCOVER_HOST			= "lion";
-	public static int 		DISCOVER_PORT			= 5000;
+	public static String DISCOVER_HOST		= "lion";
+	public static int DISCOVER_PORT			= 5000;
 	public static int 		FT_UPDATE_TIME			= 30 * 1000; //millisecond : the needed time in FTFixerThread to update finger table
 	public static int 		DISCOVERY_UPDATE_TIME	= 1000; //millisecond : the needed time in updaterThread to update finger table
 	public static int 		MOVE_FILE_CHECK_TIME	= 45 * 1000;
