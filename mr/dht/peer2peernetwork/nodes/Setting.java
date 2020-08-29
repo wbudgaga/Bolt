@@ -73,7 +73,7 @@ public abstract class Setting {
 	public static int NUM_MAPBUFFERS	 	= 50;
 	public static int NUM_REDUCEBUFFERS		= 50;
 	
-	public static int KILO					 	= 1024;
+	public static int KILO				= 1024;
 	public static int MEGA					 	= (int) Math.pow(1024,2);
 	public static int CHUNK_SIZE		 			= 128 * MEGA;
 	public static int RECEIVEBUFF_SIZE		 	= 1 * MEGA;
