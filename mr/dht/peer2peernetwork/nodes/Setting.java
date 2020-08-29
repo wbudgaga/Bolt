@@ -65,8 +65,8 @@ public abstract class Setting {
 	
 	//sizes
 	public static int REPLICATION_FACTOR		= 3;
-	public static int PEER_CACHE_SIZE			= 10;
-	public static int DISCOVER_THREADPOOL_SIZE= 10;
+	public static int PEER_CACHE_SIZE		= 10;
+	public static int DISCOVER_THREADPOOL_SIZE.  	= 10;
 	public static int THREADPOOL_SIZE 		= 10;
 	
 	public static int 		INPUT_QUEUESIZE 		= 50;
