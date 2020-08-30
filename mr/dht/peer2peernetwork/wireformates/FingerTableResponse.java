@@ -108,5 +108,4 @@ public class FingerTableResponse extends Message{
 		FingerTableResponse ftr = (FingerTableResponse) f.createMessage(bt);
 		System.out.println(ftr);
 	}
-
 }
