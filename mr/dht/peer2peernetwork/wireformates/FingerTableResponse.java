@@ -26,15 +26,15 @@ public class FingerTableResponse extends Message{
 		pred 			= unpackPeerInfo(byteStream);
 		int size 		= unpackIntField(byteStream);
 		peersData 		= new PeerInfo[size];
-		for (int i=0; i<size; ++i){
+		for (int i = 0; i < size; ++i){
 			peersData[i]	= unpackPeerInfo(byteStream);
 		}
 	}
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] objectBytes = peer.packMessage();
-		byte[] bytes= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);
+		byte[] objectBytes 	= peer.packMessage();
+		byte[] bytes		= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);
 		
 		objectBytes = pred.packMessage();
 		bytes= ByteStream.join (bytes, ByteStream.intToByteArray(objectBytes.length));
