@@ -4,7 +4,6 @@ import mr.dht.peer2peernetwork.nodes.PeerData;
 import mr.dht.peer2peernetwork.nodes.RemotePeer;
 import mr.dht.peer2peernetwork.util.ByteStream;
 
-
 public class FingerTableResponse extends Message{
 	private PeerInfo   peer;
 	private PeerInfo   pred;
@@ -15,8 +14,8 @@ public class FingerTableResponse extends Message{
 	}
 
 	private PeerInfo unpackPeerInfo(byte[] byteStream){
-		byte[] bytes = readObjectBytes(byteStream);
-		PeerInfo peer = new PeerInfo();
+		byte[] bytes 		= readObjectBytes(byteStream);
+		PeerInfo peer 		= new PeerInfo();
 		peer.initiate(bytes);
 		return peer;
 	}
