@@ -64,7 +64,7 @@ public class FingerTableResponse extends Message{
 	}	
 	
 	public void setPredecessor(PeerInfo pred){
-		this.pred = pred; 
+		this.pred 		= pred; 
 	}
 	
 	public PeerInfo getPredecessor(){
