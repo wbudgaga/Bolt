@@ -103,11 +103,8 @@ public class FingerTableResponse extends Message{
 		AllPeers.setPeer(peer);
 		AllPeers.setPeerList(pList);
 		
-		MessageFactory f = MessageFactory.getInstance();
-		
-		byte [] bt = AllPeers.packMessage();
-		
-		
+		MessageFactory f 	= MessageFactory.getInstance();
+		byte [] bt 		= AllPeers.packMessage();
 		FingerTableResponse ftr = (FingerTableResponse) f.createMessage(bt);
 		System.out.println(ftr);
 	}
