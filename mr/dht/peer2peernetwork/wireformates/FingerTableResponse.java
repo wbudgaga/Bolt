@@ -24,8 +24,8 @@ public class FingerTableResponse extends Message{
 	public void initiate(byte[] byteStream) {
 		peer 			= unpackPeerInfo(byteStream);
 		pred 			= unpackPeerInfo(byteStream);
-		int size = unpackIntField(byteStream);
-		peersData = new PeerInfo[size];
+		int size 		= unpackIntField(byteStream);
+		peersData 		= new PeerInfo[size];
 		for (int i=0; i<size;++i){
 			peersData[i]= unpackPeerInfo(byteStream);
 		}
