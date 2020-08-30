@@ -92,11 +92,11 @@ public class FingerTableResponse extends Message{
 		
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		FingerTableResponse AllPeers = new FingerTableResponse();
-		PeerInfo peer = getPD(1000, "peer", "peerHost", 5000);
-		PeerInfo pred = getPD(500, "pred", "predHost", 4000);
-		PeerInfo[] pList = new PeerInfo[5];
-		for (int i=0;i<5;++i){
-			pList[i] = getPD(1000+i, "peer"+i, "peerHost"+i, 5000+i);
+		PeerInfo peer 		= getPD(1000, "peer", "peerHost", 5000);
+		PeerInfo pred 		= getPD(500, "pred", "predHost", 4000);
+		PeerInfo[] pList 	= new PeerInfo[5];
+		for (int i = 0; i < 5; ++i){
+			pList[i] 	= getPD(1000 + i, "peer" + i, "peerHost" + i, 5000 + i);
 		}
 		
 		AllPeers.setPredecessor(pred);
