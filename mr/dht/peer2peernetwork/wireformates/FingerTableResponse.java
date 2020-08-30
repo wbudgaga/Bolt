@@ -72,7 +72,7 @@ public class FingerTableResponse extends Message{
 	}
 
 	public void setPeer(PeerInfo peer){
-		this.peer = peer; 
+		this.peer 		= peer; 
 	}
 	
 	public PeerInfo getPeer(){
