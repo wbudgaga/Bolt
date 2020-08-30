@@ -41,8 +41,8 @@ public class FingerTableResponse extends Message{
 		bytes= ByteStream.join (bytes,objectBytes);
 		
 		
-		bytes		= ByteStream.join (bytes,ByteStream.intToByteArray(peersData.length));
-		for (int i=0; i<peersData.length;++i){
+		bytes			= ByteStream.join (bytes,ByteStream.intToByteArray(peersData.length));
+		for (int i = 0; i < peersData.length; ++i){
 			objectBytes = peersData[i].packMessage();
 			bytes		= ByteStream.join (bytes ,ByteStream.intToByteArray(objectBytes.length));
 			bytes		= ByteStream.join (bytes,objectBytes);
