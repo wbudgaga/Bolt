@@ -45,7 +45,7 @@ public class FinishedMapTaskNotify extends Message{
 	}
 	
 	public void setTaskOwner(PeerInfo taskOwner) {
-		this.taskOwner = taskOwner;
+		this.taskOwner 		= taskOwner;
 	}
 
 	public PeerInfo getPeer() {
