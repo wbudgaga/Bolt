@@ -86,12 +86,12 @@ public class FinishedMapTaskNotify extends Message{
 	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		FinishedMapTaskNotify msg = new FinishedMapTaskNotify();
-		PeerInfo taskOwner = getPD(1000, "peer", "peerHost", 5000);
+		PeerInfo taskOwner 	= getPD(1000, "peer", "peerHost", 5000);
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(32119041972l);
 		msg.setNumOfFinishedMaps(13);
 		msg.setNumOfSentBuffers(421);
-		byte [] bt = msg.packMessage();
+		byte [] bt 		= msg.packMessage();
 		
 		MessageFactory f = MessageFactory.getInstance();
 		
