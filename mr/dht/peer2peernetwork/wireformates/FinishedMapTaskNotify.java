@@ -78,7 +78,7 @@ public class FinishedMapTaskNotify extends Message{
 		pd1.setHost(h);
 		pd1.setPeerID(id);
 		pd1.setPortNum(port);
-		PeerInfo pi = new PeerInfo();
+		PeerInfo pi 		= new PeerInfo();
 		pi.setPeer(pd1);
 		return pi;
 	}
