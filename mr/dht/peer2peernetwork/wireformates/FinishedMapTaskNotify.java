@@ -56,7 +56,7 @@ public class FinishedMapTaskNotify extends Message{
 		return jobID;
 	}
 	public void setJobID(long jobID) {
-		this.jobID = jobID;
+		this.jobID 		= jobID;
 	}
 	public int getNumOfFinishedMaps() {
 		return numOfFinishedMaps;
