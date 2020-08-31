@@ -16,8 +16,8 @@ public class FinishedMapTaskNotify extends Message{
 		super(FINISHEDMAPTASKNOTIFY, FINISHEDMAPTASKNOTIFY);
 	}
 	private PeerInfo unpackPeerInfo(byte[] byteStream){
-		byte[] bytes 	= readObjectBytes(byteStream);
-		PeerInfo peer 	= new PeerInfo();
+		byte[] bytes 		= readObjectBytes(byteStream);
+		PeerInfo peer 		= new PeerInfo();
 		peer.initiate(bytes);
 		return peer;
 	}
