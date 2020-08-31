@@ -26,8 +26,8 @@ public class FinishedMapTaskNotify extends Message{
 	public void initiate(byte[] byteStream) {
 		taskOwner 		= unpackPeerInfo(byteStream);
 		jobID			= unpackLongField(byteStream);
-		numOfFinishedMaps= unpackIntField(byteStream);
-		numOfSentBuffers= unpackIntField(byteStream);
+		numOfFinishedMaps	= unpackIntField(byteStream);
+		numOfSentBuffers	= unpackIntField(byteStream);
 	}
 
 	@Override
