@@ -34,8 +34,8 @@ public class FinishedMapTaskNotify extends Message{
 	protected byte[] packMessageBody() {
 		byte[] objectBytes 	= taskOwner.packMessage();
 		byte[] bytes		= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);	
-		bytes= ByteStream.join (bytes, ByteStream.longToByteArray(jobID));
-		bytes= ByteStream.join (bytes, ByteStream.intToByteArray(numOfFinishedMaps));
+		bytes			= ByteStream.join (bytes, ByteStream.longToByteArray(jobID));
+		bytes			= ByteStream.join (bytes, ByteStream.intToByteArray(numOfFinishedMaps));
 		return ByteStream.join (bytes, ByteStream.intToByteArray(numOfSentBuffers));
 	}
 	
