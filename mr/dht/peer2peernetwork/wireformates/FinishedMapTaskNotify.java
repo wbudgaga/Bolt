@@ -62,18 +62,18 @@ public class FinishedMapTaskNotify extends Message{
 		return numOfFinishedMaps;
 	}
 	public void setNumOfFinishedMaps(int n) {
-		this.numOfFinishedMaps = n;
+		this.numOfFinishedMaps 	= n;
 	}
 	public int getNumOfSentBuffers() {
 		return numOfSentBuffers;
 	}
 	public void setNumOfSentBuffers(int n) {
-		this.numOfSentBuffers = n;
+		this.numOfSentBuffers 	= n;
 	}
 
 		
 	public static PeerInfo getPD(long id, String n, String h, int port){
-		PeerData 	pd1 = new  PeerData();
+		PeerData 	pd1 	= new  PeerData();
 		pd1.setNickName(n);
 		pd1.setHost(h);
 		pd1.setPeerID(id);
