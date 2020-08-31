@@ -93,10 +93,9 @@ public class FinishedMapTaskNotify extends Message{
 		msg.setNumOfSentBuffers(421);
 		byte [] bt 		= msg.packMessage();
 		
-		MessageFactory f = MessageFactory.getInstance();
+		MessageFactory f 	= MessageFactory.getInstance();
 		
 		FinishedMapTaskNotify ftr = (FinishedMapTaskNotify) f.createMessage(bt);
 		System.out.println(ftr.getMsgUUID()+"   " + ftr.getNumOfFinishedMaps()+"   "+ftr.getNumOfSentBuffers());
-		
 	}
 }
