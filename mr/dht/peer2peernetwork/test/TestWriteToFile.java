@@ -75,8 +75,8 @@ public class TestWriteToFile {
 	}
 	
 	private String getLine(ByteBuffer b, int s, int e){
-		byte bt[] = new byte[e-s-1];
-		int oldPos = b.position();
+		byte bt[] 			= new byte[e-s-1];
+		int oldPos 			= b.position();
 		b.position(s);
 		b.get(bt);
 		b.position(oldPos);
@@ -84,10 +84,10 @@ public class TestWriteToFile {
 	}
 	
 	public void readUsingNIO01(String fn, int bufSize) throws IOException{
-		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(bufSize);
+		ByteBuffer buffer 		= ByteBuffer.allocateDirect(bufSize);
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
-		ArrayList<String> a = new ArrayList<String> ();
-		long start = System.currentTimeMillis();
+		ArrayList<String> a 		= new ArrayList<String> ();
+		long start 			= System.currentTimeMillis();
 		int bytesRead = 10; 
 		long nn=0;
 		while (bytesRead != -1 && bytesRead != 0){
