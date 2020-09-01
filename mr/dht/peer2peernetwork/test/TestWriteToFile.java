@@ -160,17 +160,17 @@ public class TestWriteToFile {
 
 	public void readUsingNIO1(String fn, int bufSize) throws IOException{
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
-		ByteBuffer buff = fChannel.map(FileChannel.MapMode.READ_ONLY, 0, fChannel.size());
-		long start = System.currentTimeMillis();
-		int bytesRead = 10; 
-		Charset chars = Charset.forName("UTF-8");
-        CharBuffer cbuf = buff.asCharBuffer();
-        int nn =0;
-        while (cbuf.hasRemaining()){
-        	char c = cbuf.get();
-        	if (c=='\n')
-        		++nn;
-        }
+		ByteBuffer buff 		= fChannel.map(FileChannel.MapMode.READ_ONLY, 0, fChannel.size());
+		long start 			= System.currentTimeMillis();
+		int bytesRead 			= 10; 
+		Charset chars 			= Charset.forName("UTF-8");
+        	CharBuffer cbuf 		= buff.asCharBuffer();
+        	int nn 				= 0;
+        	while (cbuf.hasRemaining()){
+        		char c 			= cbuf.get();
+        		if (c == '\n')
+        			++nn;
+        	}
      
 		long end = System.currentTimeMillis();
 		System.out.println(buff.position()+"==="+buff.limit()+"==="+buff.capacity()+" Using NIO(indexOf): " +(end - start) / 1000f + " sec,   "+(end - start)+" ms===>"+nn );
