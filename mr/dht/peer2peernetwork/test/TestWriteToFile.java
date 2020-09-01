@@ -142,20 +142,20 @@ public class TestWriteToFile {
 		while (bytesRead != -1 && bytesRead != 0){
 			bytesRead 		= fChannel.read(buffer);
 			buffer.flip();
-			CharBuffer cbuf =buffer.asCharBuffer();
-			String s = cbuf.toString();
-			int pos = 0, end;
+			CharBuffer cbuf 	= buffer.asCharBuffer();
+			String s 		= cbuf.toString();
+			int pos 		= 0, end;
 			
-			System.out.println(bytesRead+"  ###  "+cbuf.length()+" pos:"+cbuf.position()+"  l:"+cbuf.limit()+"####"+s.indexOf(System.getProperty("line.separator"), pos));
+			System.out.println(bytesRead + "  ###  " + cbuf.length() + " pos:" + cbuf.position() + "  l:" + cbuf.limit() + "####" + s.indexOf(System.getProperty("line.separator"), pos));
 			while ((end = s.indexOf(System.getProperty("line.separator"), pos)) >= 0) {
-				String l = s.substring(pos, end);
-				pos = end + 1;
+				String l 	= s.substring(pos, end);
+				pos 		= end + 1;
 				++nn;
 			}
 			buffer.clear();
 		}
-		long end = System.currentTimeMillis();
-		System.out.println(bytesRead+"==="+bufSize+" Using NIO(indexOf): " +(end - start) / 1000f + " sec,   "+(end - start)+" ms===>"+nn );
+		long end 			= System.currentTimeMillis();
+		System.out.println(bytesRead + "===" + bufSize + " Using NIO(indexOf): " + (end - start) / 1000f + " sec,   " + (end - start) + " ms===>" + nn );
 	}
 
 	public void readUsingNIO1(String fn, int bufSize) throws IOException{
