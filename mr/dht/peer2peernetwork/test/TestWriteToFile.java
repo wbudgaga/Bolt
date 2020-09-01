@@ -134,13 +134,13 @@ public class TestWriteToFile {
 	}
 
 	public void readUsingNIO(String fn, int bufSize) throws IOException{
-		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(bufSize);
+		ByteBuffer buffer 		= ByteBuffer.allocateDirect(bufSize);
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
-		long start = System.currentTimeMillis();
-		int bytesRead = 10; 
-		long nn=0;
+		long start 			= System.currentTimeMillis();
+		int bytesRead 			= 10; 
+		long nn				= 0;
 		while (bytesRead != -1 && bytesRead != 0){
-			bytesRead = fChannel.read(buffer);
+			bytesRead 		= fChannel.read(buffer);
 			buffer.flip();
 			CharBuffer cbuf =buffer.asCharBuffer();
 			String s = cbuf.toString();
