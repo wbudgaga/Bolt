@@ -70,8 +70,8 @@ public class TestWriteToFile {
 		while ((line= br.readLine())!=null) ++nn;
 
 		br.close();
-		    long end = System.currentTimeMillis();
-		    System.out.println(bufSize+" Using BufferedWriter: " +(end - start) / 1000f + " seconds #####"+nn);
+		long end 			= System.currentTimeMillis();
+		System.out.println(bufSize + " Using BufferedWriter: " + (end - start) / 1000f + " seconds #####" + nn);
 	}
 	
 	private String getLine(ByteBuffer b, int s, int e){
