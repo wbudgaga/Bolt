@@ -56,10 +56,10 @@ public class TestWriteToFile {
 		for (int i = 0; i < RECORD_COUNT; ++i) {
 			out.write(RECORD);
 		}
-		    out.flush();
-		    out.close();
-		    long end = System.currentTimeMillis();
-		    System.out.println(bufSize+" Using BufferedWriter: " +(end - start) / 1000f + " seconds");
+		out.flush();
+		out.close();
+		long end 			= System.currentTimeMillis();
+		System.out.println(bufSize + " Using BufferedWriter: " + (end - start) / 1000f + " seconds");
 	}
 
 	public void readUsingBufferedWriter(String fn, int bufSize) throws IOException{
