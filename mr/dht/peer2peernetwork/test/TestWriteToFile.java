@@ -67,8 +67,7 @@ public class TestWriteToFile {
 		String line;
 		long start 			= System.currentTimeMillis();
 		long nn				= 0;
-		while ((line= br.readLine())!=null) ++nn;
-
+		while ((line = br.readLine()) != null) ++nn;
 		br.close();
 		long end 			= System.currentTimeMillis();
 		System.out.println(bufSize + " Using BufferedWriter: " + (end - start) / 1000f + " seconds #####" + nn);
