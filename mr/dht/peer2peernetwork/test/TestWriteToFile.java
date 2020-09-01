@@ -88,31 +88,29 @@ public class TestWriteToFile {
 		FileChannel fChannel 		= new FileInputStream(fn).getChannel();
 		ArrayList<String> a 		= new ArrayList<String> ();
 		long start 			= System.currentTimeMillis();
-		int bytesRead = 10; 
-		long nn=0;
+		int bytesRead 			= 10; 
+		long nn				= 0;
 		while (bytesRead != -1 && bytesRead != 0){
-			bytesRead = fChannel.read(buffer);
+			bytesRead 		= fChannel.read(buffer);
 			buffer.flip();
-			int p = 0;
+			int p 			= 0;
 			while(buffer.hasRemaining()){
-				char c = (char) buffer.get();
-				if (c=='\n'){
+				char c 		= (char) buffer.get();
+				if (c == '\n'){
 					getLine(buffer, p, buffer.position() );
-					p = buffer.position() ;
+					p 	= buffer.position() ;
 					++nn;
 				}
 			}
-			if (p<buffer.limit()){
-				
+			if (p < buffer.limit()){
 				++nn;
 			}
-
 			buffer.clear();
 		}
-		long end = System.currentTimeMillis();
-		System.out.println(bytesRead+"==="+bufSize+" Using NIOmmmmm: " +(end - start) / 1000f + " sec,   "+(end - start)+" ms===>"+nn);
+		
+		long end 			= System.currentTimeMillis();
+		System.out.println(bytesRead + "===" + bufSize + " Using NIOmmmmm: " + (end - start) / 1000f + " sec,   " + (end - start) + " ms===>" + nn);
 	}
-
 
 	public void readUsingNIO0(String fn, int bufSize) throws IOException{
 		ByteBuffer 		buffer 		= ByteBuffer.allocateDirect(bufSize);
