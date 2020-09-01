@@ -172,13 +172,13 @@ public class TestWriteToFile {
         			++nn;
         	}
      
-		long end = System.currentTimeMillis();
-		System.out.println(buff.position()+"==="+buff.limit()+"==="+buff.capacity()+" Using NIO(indexOf): " +(end - start) / 1000f + " sec,   "+(end - start)+" ms===>"+nn );
+		long end 			= System.currentTimeMillis();
+		System.out.println(buff.position() + "===" + buff.limit() + "===" + buff.capacity() + " Using NIO(indexOf): " + (end - start) / 1000f + " sec,   " + (end - start) + " ms===>" + nn );
 	}
 
 	
 	public static void main(String[] args) throws IOException{
-		TestWriteToFile twtf = new TestWriteToFile();
+		TestWriteToFile twtf 		= new TestWriteToFile();
 		//twtf.storeUsingFileWriter("/tmp/f1.txt");
 		//twtf.storeUsingFileWriterAsOnce("/tmp/f2.txt");
 /*		twtf.readUsingNIO("/tmp/tst.txt", (int) (1* Setting.KILO));
