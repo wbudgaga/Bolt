@@ -118,20 +118,19 @@ public class TestWriteToFile {
 		int bytesRead 			= 10; 
 		long nn				= 0;
 		while (bytesRead != -1 && bytesRead != 0){
-			bytesRead = fChannel.read(buffer);
+			bytesRead 		= fChannel.read(buffer);
 			buffer.flip();
-			CharBuffer cbuf =buffer.asCharBuffer();
-			
-			String[] s = cbuf.toString().split(System.getProperty("line.separator"));
-			System.out.println(bytesRead+"  ###  "+buffer.capacity()+" pos:"+buffer.position()+"  l:"+buffer.limit()+"#####"+s.length);
+			CharBuffer cbuf 	= buffer.asCharBuffer();
+			String[] s 		= cbuf.toString().split(System.getProperty("line.separator"));
+			System.out.println(bytesRead + "  ###  " + buffer.capacity() + " pos:" + buffer.position() + "  l:" + buffer.limit() + "#####" + s.length);
 			
 			//System.out.println(s[0]);
 			for (String t:s) ;
-			nn+=s.length;
+			nn			+= s.length;
 			buffer.clear();
 		}
-		long end = System.currentTimeMillis();
-		System.out.println(bytesRead+"==="+bufSize+" Using NIO: " +(end - start) / 1000f + " sec,   "+(end - start)+" ms===>"+nn);
+		long end 			= System.currentTimeMillis();
+		System.out.println(bytesRead + "===" + bufSize + " Using NIO: " + (end - start) / 1000f + " sec,   " + (end - start) + " ms===>" + nn);
 	}
 
 	public void readUsingNIO(String fn, int bufSize) throws IOException{
