@@ -29,10 +29,10 @@ public class TestWriteToFile {
 		for (int i = 0; i < RECORD_COUNT; ++i) {
 			f.write(RECORD);
 		}
-		    f.flush();
-		    f.close();
-		    long end 			= System.currentTimeMillis();
-		    System.out.println("One By one Using fileWriter: " + (end - start) / 1000f + " seconds");
+		f.flush();
+		f.close();
+		long end 			= System.currentTimeMillis();
+		System.out.println("One By one Using fileWriter: " + (end - start) / 1000f + " seconds");
 	}
 
 	public void storeUsingFileWriterAsOnce(String fn) throws IOException{
