@@ -25,10 +25,10 @@ public class TestWriteToFile {
 	
 	public void storeUsingFileWriter(String fn) throws IOException{
 		FileWriter f 			= new FileWriter(fn);
-		   long start 			= System.currentTimeMillis();
-		   for (int i = 0; i < RECORD_COUNT; ++i) {
-		        f.write(RECORD);
-		    }
+		long start 			= System.currentTimeMillis();
+		for (int i = 0; i < RECORD_COUNT; ++i) {
+			f.write(RECORD);
+		}
 		    f.flush();
 		    f.close();
 		    long end 			= System.currentTimeMillis();
@@ -45,8 +45,8 @@ public class TestWriteToFile {
 		   f.write(txt);
 		   f.flush();
 		   f.close();
-		   long end = System.currentTimeMillis();
-		   System.out.println("At Once Using fileWriter: " +(end - start) / 1000f + " seconds");
+		   long end 			= System.currentTimeMillis();
+		   System.out.println("At Once Using fileWriter: " + (end - start) / 1000f + " seconds");
 	}
 	
 	public void storeUsingBufferedWriter(String fn, int bufSize) throws IOException{
