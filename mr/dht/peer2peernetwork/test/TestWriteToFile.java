@@ -63,10 +63,10 @@ public class TestWriteToFile {
 	}
 
 	public void readUsingBufferedWriter(String fn, int bufSize) throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(fn))),bufSize);
+		BufferedReader br 		= new BufferedReader(new InputStreamReader(new BufferedInputStream(new FileInputStream(fn))),bufSize);
 		String line;
-		long start = System.currentTimeMillis();
-		long nn=0;
+		long start 			= System.currentTimeMillis();
+		long nn				= 0;
 		while ((line= br.readLine())!=null) ++nn;
 
 		br.close();
