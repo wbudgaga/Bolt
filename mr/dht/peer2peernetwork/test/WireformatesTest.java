@@ -32,8 +32,8 @@ public class WireformatesTest {
 		byte[] bytes 			= msg.packMessage();
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeerID()+"  "+msg.getPeer().getNickName()+"  "+msg.getPeer().getHost()+"  "+msg.getPeer().getPortNum()+"  ");
 		
-		PeerInfo msg1 = (PeerInfo) getMSG(bytes);
-		LocalMessageHandler handler = new LocalMessageHandler(null);
+		PeerInfo msg1 			= (PeerInfo) getMSG(bytes);
+		LocalMessageHandler handler 	= new LocalMessageHandler(null);
 		handler.handle(null, msg1);
 		
 	}
