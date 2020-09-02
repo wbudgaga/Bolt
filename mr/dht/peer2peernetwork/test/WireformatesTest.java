@@ -78,7 +78,6 @@ public class WireformatesTest {
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeerID()+"  "+msg.getPeer().getNickName()+"  "+msg.getPeer().getHost()+"  "+msg.getPeer().getPortNum()+"  ");
 		System.out.println(msg1.getMessageID()+"  "+msg1.getHandlerID()+"  "+ msg1.getPeer().getPeerID()+"  "+msg1.getPeer().getNickName()+"  "+msg1.getPeer().getHost()+"  "+msg1.getPeer().getPortNum()+"  ");
 	}
-
 	/**
 	 * @param args
 	 * @throws ClassNotFoundException 
@@ -93,5 +92,4 @@ public class WireformatesTest {
 		//testPredecessor();
 
 	}
-
 }
