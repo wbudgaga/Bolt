@@ -71,7 +71,7 @@ public class WireformatesTest {
 	}
 	
 	public static void testPredecessor() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
-		Predecessor msg = new Predecessor();
+		Predecessor msg 		= new Predecessor();
 		msg.setPeer(getPeerData(876519041972L,"Walid S.","red-rock",  173 ));	
 		byte[] bytes = msg.packMessage();
 		Predecessor msg1 = (Predecessor) getMSG(bytes);
