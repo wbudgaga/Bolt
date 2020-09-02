@@ -42,7 +42,7 @@ public class WireformatesTest {
 		RegisterRequest msg 		= new RegisterRequest();
 		msg.setPeer(getPeerData(876519041972L,"Walid S.","red-rock",  1093 ));	
 		byte[] bytes 			= msg.packMessage();
-		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeer().getPeerID()+"  "+msg.getPeer().getPeer().getNickName()+"  "+msg.getPeer().getPeer().getHost()+"  "+msg.getPeer().getPeer().getPortNum()+"  ");
+		System.out.println(msg.getMessageID() + "  " + msg.getHandlerID() + "  " + msg.getPeer().getPeer().getPeerID() + "  " + msg.getPeer().getPeer().getNickName() + "  " + msg.getPeer().getPeer().getHost() + "  " + msg.getPeer().getPeer().getPortNum() + "  ");
 		
 		RegisterRequest msg1 = (RegisterRequest) getMSG(bytes);
 		LocalMessageHandler handler = new LocalMessageHandler(null);
