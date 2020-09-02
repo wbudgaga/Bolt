@@ -56,8 +56,8 @@ public class WireformatesTest {
 		byte[] bytes 			= msg.packMessage();
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getStatusCode()+"  "+msg.getAdditionalInfo());
 		
-		RegisterResponse msg1 = (RegisterResponse) getMSG(bytes);
-		LocalMessageHandler handler = new LocalMessageHandler(null);
+		RegisterResponse msg1 		= (RegisterResponse) getMSG(bytes);
+		LocalMessageHandler handler 	= new LocalMessageHandler(null);
 		handler.handle(null, msg1);
 	}
 
