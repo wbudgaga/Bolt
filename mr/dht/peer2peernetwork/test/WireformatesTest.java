@@ -74,7 +74,7 @@ public class WireformatesTest {
 		Predecessor msg 		= new Predecessor();
 		msg.setPeer(getPeerData(876519041972L,"Walid S.","red-rock",  173 ));	
 		byte[] bytes 			= msg.packMessage();
-		Predecessor msg1 = (Predecessor) getMSG(bytes);
+		Predecessor msg1 		= (Predecessor) getMSG(bytes);
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeerID()+"  "+msg.getPeer().getNickName()+"  "+msg.getPeer().getHost()+"  "+msg.getPeer().getPortNum()+"  ");
 		System.out.println(msg1.getMessageID()+"  "+msg1.getHandlerID()+"  "+ msg1.getPeer().getPeerID()+"  "+msg1.getPeer().getNickName()+"  "+msg1.getPeer().getHost()+"  "+msg1.getPeer().getPortNum()+"  ");
 	}
