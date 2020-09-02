@@ -64,8 +64,8 @@ public class WireformatesTest {
 	public static void testPeerInfo() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
 		PeerInfo msg 			= new PeerInfo();
 		msg.setPeer(getPeerData(876519041972L,"Walid S.","red-rock",  1093 ));	
-		byte[] bytes = msg.packMessage();
-		PeerInfo msg1 = (PeerInfo) getMSG(bytes);
+		byte[] bytes 			= msg.packMessage();
+		PeerInfo msg1 			= (PeerInfo) getMSG(bytes);
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getPeer().getPeerID()+"  "+msg.getPeer().getNickName()+"  "+msg.getPeer().getHost()+"  "+msg.getPeer().getPortNum()+"  ");
 		System.out.println(msg1.getMessageID()+"  "+msg1.getHandlerID()+"  "+ msg1.getPeer().getPeerID()+"  "+msg1.getPeer().getNickName()+"  "+msg1.getPeer().getHost()+"  "+msg1.getPeer().getPortNum()+"  ");
 	}
