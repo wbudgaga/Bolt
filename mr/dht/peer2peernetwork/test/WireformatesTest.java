@@ -50,10 +50,10 @@ public class WireformatesTest {
 	}
 
 	public static void testRegisterResponseHandler() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
-		RegisterResponse msg = new RegisterResponse();
+		RegisterResponse msg 		= new RegisterResponse();
 		msg.setAdditionalInfo(" 876519041972L,Walid S.,red-rock,  1093 ");
 		msg.setStatusCode(Message.SUCCEESS);
-		byte[] bytes = msg.packMessage();
+		byte[] bytes 			= msg.packMessage();
 		System.out.println(msg.getMessageID()+"  "+msg.getHandlerID()+"  "+ msg.getStatusCode()+"  "+msg.getAdditionalInfo());
 		
 		RegisterResponse msg1 = (RegisterResponse) getMSG(bytes);
