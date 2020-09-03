@@ -29,11 +29,11 @@ public class routingKey {
 	}
 	
 	private void storeRd(long jobID, int numOfReducers){
-		long sigmentSize= 65536 / numOfReducers;
-		long jobOffset 	= jobID % sigmentSize;
-		for (int i=0; i<numOfReducers; ++i){
-			int id= (int) (jobOffset + (i * sigmentSize));
-			int pID = getJobPeerIdx(id);
+		long sigmentSize	= 65536 / numOfReducers;
+		long jobOffset 		= jobID % sigmentSize;
+		for (int i = 0; i < numOfReducers; ++i){
+			int id		= (int) (jobOffset + (i * sigmentSize));
+			int pID 	= getJobPeerIdx(id);
 			store(reducers, peersID[pID], 1);
 		}
 	}
