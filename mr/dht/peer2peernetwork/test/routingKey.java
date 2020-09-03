@@ -44,25 +44,24 @@ public class routingKey {
 	}
 	
 	public void process(){
-		
 		int jobID 		= UtilClass.getRandomNumber(0, 65535);
 		int jobPeerIdx 		=  getJobPeerIdx(jobID);
 		store(maps, peersID[jobPeerIdx] , 10);
-		jobPeerIdx =  (jobPeerIdx+1) % peersID.length;
+		jobPeerIdx 		=  (jobPeerIdx+1) % peersID.length;
 		store(maps, peersID[jobPeerIdx] , 10);
-		jobPeerIdx =  (jobPeerIdx+1) % peersID.length;
+		jobPeerIdx 		=  (jobPeerIdx+1) % peersID.length;
 		store(maps, peersID[jobPeerIdx] , 10);
-		
 		storeRd(jobID, 4);
 	}
 
 	
 	public void print(){
-		for (int i =0 ; i < peersID.length ; ++i){
-			int pID = peersID[i];
-			System.out.println("pID:"+pID+ "  maps:"+maps.get(pID)+"    red:"+reducers.get(pID));
+		for (int i = 0 ; i < peersID.length ; ++i){
+			int pID 	= peersID[i];
+			System.out.println("pID:" + pID + "  maps:" + maps.get(pID) + "    red:" + reducers.get(pID));
 		}
 	}
+	
 	public static void main(String[] s) throws Exception{
 		routingKey tst = new routingKey();
 		for (int i=0;i<100;++i)
