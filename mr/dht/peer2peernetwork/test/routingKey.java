@@ -42,10 +42,11 @@ public class routingKey {
 		int old 		= m.get(peerID);
 		m.put(peerID, old + n);
 	}
+	
 	public void process(){
 		
-		int jobID = UtilClass.getRandomNumber(0, 65535);
-		int jobPeerIdx =  getJobPeerIdx(jobID);
+		int jobID 		= UtilClass.getRandomNumber(0, 65535);
+		int jobPeerIdx 		=  getJobPeerIdx(jobID);
 		store(maps, peersID[jobPeerIdx] , 10);
 		jobPeerIdx =  (jobPeerIdx+1) % peersID.length;
 		store(maps, peersID[jobPeerIdx] , 10);
