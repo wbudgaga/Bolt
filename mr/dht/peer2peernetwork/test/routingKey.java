@@ -39,7 +39,7 @@ public class routingKey {
 	}
 
 	public void store(HashMap<Integer, Integer> m, int  peerID, int n){
-		int old = m.get(peerID);
+		int old 		= m.get(peerID);
 		m.put(peerID, old + n);
 	}
 	public void process(){
