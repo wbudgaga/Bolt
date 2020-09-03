@@ -63,10 +63,9 @@ public class routingKey {
 	}
 	
 	public static void main(String[] s) throws Exception{
-		routingKey tst = new routingKey();
-		for (int i=0;i<100;++i)
+		routingKey tst 		= new routingKey();
+		for (int i = 0; i < 100; ++i)
 			tst.process();
 		tst.print();
 	}
-
 }
