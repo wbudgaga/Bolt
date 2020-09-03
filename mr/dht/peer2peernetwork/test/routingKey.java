@@ -8,8 +8,8 @@ import mr.dht.peer2peernetwork.util.UtilClass;
 import mr.resourcemanagement.execution.mrtasks.management.MapTaskOutputHandler;
 
 public class routingKey {
-	HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
-	HashMap<Integer, Integer> reducers = new HashMap<Integer, Integer>();
+	HashMap<Integer, Integer> maps 		= new HashMap<Integer, Integer>();
+	HashMap<Integer, Integer> reducers 	= new HashMap<Integer, Integer>();
 	
 	int[] peersID={1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000,21000,22000,23000,24000,25000,26000,27000,28000,29000,30000,31000,32000,33000,34000,35000,36000,37000,38000,39000,40000,41000,42000,43000,44000,45000,46000,47000,47620,48240,48860,49480,50100,50720,51340,51960,52580,53200,53820,54440,55060,55680,56300,56920,57540,58160,58780,59400,60020,60640,61260,61880,62500,63120,63740,64360,64980,65535};
 	
