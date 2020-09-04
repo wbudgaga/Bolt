@@ -116,8 +116,8 @@ public final class MurmurHash3 {
     final int c2 			= 0x1b873593;
     int h1 				= seed;
     int pos 				= offset;
-    int end = offset + len;
-    int k1 = 0;
+    int end 				= offset + len;
+    int k1 				= 0;
     int k2 = 0;
     int shift = 0;
     int bits = 0;
