@@ -88,15 +88,15 @@ public final class MurmurHash3 {
         k1 				|= (data[roundedEnd + 1] & 0xff) << 8;
         // fallthrough
       case 1:
-        k1 |= (data[roundedEnd] & 0xff);
-        k1 *= c1;
-        k1 = (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
-        k1 *= c2;
-        h1 ^= k1;
+        k1 				|= (data[roundedEnd] & 0xff);
+        k1 				*= c1;
+        k1 				= (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
+        k1 				*= c2;
+        h1 				^= k1;
     }
 
     // finalization
-    h1 ^= len;
+    h1 					^= len;
 
     // fmix(h1);
     h1 ^= h1 >>> 16;
