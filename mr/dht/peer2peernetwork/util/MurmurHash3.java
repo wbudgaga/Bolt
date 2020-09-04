@@ -198,15 +198,15 @@ public final class MurmurHash3 {
 
     // handle tail
     if (shift > 0) {
-      nBytes += shift >> 3;
-      k1 *= c1;
-      k1 = (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
-      k1 *= c2;
-      h1 ^= k1;
+      nBytes 				+= shift >> 3;
+      k1 				*= c1;
+      k1 				= (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
+      k1 				*= c2;
+      h1 				^= k1;
     }
 
     // finalization
-    h1 ^= nBytes;
+    h1 					^= nBytes;
 
     // fmix(h1);
     h1 ^= h1 >>> 16;
