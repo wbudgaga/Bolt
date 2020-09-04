@@ -102,8 +102,7 @@ public final class MurmurHash3 {
     h1 					*= 0x85ebca6b;
     h1 					^= h1 >>> 13;
     h1 					*= 0xc2b2ae35;
-    h1 ^= h1 >>> 16;
-
+    h1 					^= h1 >>> 16;
     return h1;
   }
 
@@ -116,7 +115,7 @@ public final class MurmurHash3 {
     final int c1 			= 0xcc9e2d51;
     final int c2 			= 0x1b873593;
     int h1 				= seed;
-    int pos = offset;
+    int pos 				= offset;
     int end = offset + len;
     int k1 = 0;
     int k2 = 0;
