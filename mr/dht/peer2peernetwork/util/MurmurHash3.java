@@ -73,21 +73,19 @@ public final class MurmurHash3 {
       k1 				*= c1;
       k1 				= (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
       k1 				*= c2;
-
-      h1 ^= k1;
-      h1 = (h1 << 13) | (h1 >>> 19);  // ROTL32(h1,13);
-      h1 = h1*5+0xe6546b64;
+      h1 				^= k1;
+      h1 				= (h1 << 13) | (h1 >>> 19);  // ROTL32(h1,13);
+      h1 				= h1*5+0xe6546b64;
     }
 
     // tail
-    int k1 = 0;
-
+    int k1 				= 0;
     switch(len & 0x03) {
       case 3:
-        k1 = (data[roundedEnd + 2] & 0xff) << 16;
+        k1 				= (data[roundedEnd + 2] & 0xff) << 16;
         // fallthrough
       case 2:
-        k1 |= (data[roundedEnd + 1] & 0xff) << 8;
+        k1 				|= (data[roundedEnd + 1] & 0xff) << 8;
         // fallthrough
       case 1:
         k1 |= (data[roundedEnd] & 0xff);
