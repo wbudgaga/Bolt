@@ -113,12 +113,9 @@ public final class MurmurHash3 {
    * of String.getBytes().
    */
   public static int murmurhash3_x86_32(CharSequence data, int offset, int len, int seed) {
-
-    final int c1 = 0xcc9e2d51;
-    final int c2 = 0x1b873593;
-
-    int h1 = seed;
-
+    final int c1 			= 0xcc9e2d51;
+    final int c2 			= 0x1b873593;
+    int h1 				= seed;
     int pos = offset;
     int end = offset + len;
     int k1 = 0;
