@@ -152,9 +152,8 @@ public final class MurmurHash3 {
 
       }
       else if (code < 0x800) {
-        k2 = (0xC0 | (code >> 6))
-                | ((0x80 | (code & 0x3F)) << 8);
-        bits = 16;
+        k2 				= (0xC0 | (code >> 6))  | ((0x80 | (code & 0x3F)) << 8);
+        bits 				= 16;
       }
       else if (code < 0xD800 || code > 0xDFFF || pos>=end) {
         // we check for pos>=end to encode an unpaired surrogate as 3 bytes.
