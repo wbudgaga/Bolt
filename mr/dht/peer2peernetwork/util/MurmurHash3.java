@@ -177,13 +177,13 @@ public final class MurmurHash3 {
       if (shift >= 32) {
         // mix after we have a complete word
 
-        k1 *= c1;
-        k1 = (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
-        k1 *= c2;
+        k1 				*= c1;
+        k1 				= (k1 << 15) | (k1 >>> 17);  // ROTL32(k1,15);
+        k1 				*= c2;
 
-        h1 ^= k1;
-        h1 = (h1 << 13) | (h1 >>> 19);  // ROTL32(h1,13);
-        h1 = h1*5+0xe6546b64;
+        h1 				^= k1;
+        h1 				= (h1 << 13) | (h1 >>> 19);  // ROTL32(h1,13);
+        h1 				= h1*5+0xe6546b64;
 
         shift -= 32;
         // unfortunately, java won't let you shift 32 bits off, so we need to check for 0
