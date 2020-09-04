@@ -123,7 +123,6 @@ public final class MurmurHash3 {
     int bits 				= 0;
     int nBytes 				= 0;   // length in UTF8 bytes
 
-
     while (pos < end) {
       int code 				= data.charAt(pos++);
       if (code < 0x80) {
@@ -185,14 +184,14 @@ public final class MurmurHash3 {
         h1 				= (h1 << 13) | (h1 >>> 19);  // ROTL32(h1,13);
         h1 				= h1*5+0xe6546b64;
 
-        shift -= 32;
+        shift 				-= 32;
         // unfortunately, java won't let you shift 32 bits off, so we need to check for 0
         if (shift != 0) {
-          k1 = k2 >>> (bits-shift);   // bits used == bits - newshift
+          k1 				= k2 >>> (bits-shift);   // bits used == bits - newshift
         } else {
-          k1 = 0;
+          k1 				= 0;
         }
-        nBytes += 4;
+        nBytes 				+= 4;
       }
 
     } // inner
