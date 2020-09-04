@@ -120,15 +120,15 @@ public final class MurmurHash3 {
     int k1 				= 0;
     int k2 				= 0;
     int shift 				= 0;
-    int bits = 0;
-    int nBytes = 0;   // length in UTF8 bytes
+    int bits 				= 0;
+    int nBytes 				= 0;   // length in UTF8 bytes
 
 
     while (pos < end) {
-      int code = data.charAt(pos++);
+      int code 				= data.charAt(pos++);
       if (code < 0x80) {
-        k2 = code;
-        bits = 8;
+        k2 				= code;
+        bits 				= 8;
 
         /***
         // optimized ascii implementation (currently slower!!! code size?)
