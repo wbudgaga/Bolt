@@ -41,9 +41,9 @@ public final class MurmurHash3 {
   public static final long fmix64(long k) {
     k 					^= k >>> 33;
     k 					*= 0xff51afd7ed558ccdL;
-    k ^= k >>> 33;
-    k *= 0xc4ceb9fe1a85ec53L;
-    k ^= k >>> 33;
+    k 					^= k >>> 33;
+    k 					*= 0xc4ceb9fe1a85ec53L;
+    k 					^= k >>> 33;
     return k;
   }
 
