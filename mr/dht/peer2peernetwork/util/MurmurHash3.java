@@ -118,8 +118,8 @@ public final class MurmurHash3 {
     int pos 				= offset;
     int end 				= offset + len;
     int k1 				= 0;
-    int k2 = 0;
-    int shift = 0;
+    int k2 				= 0;
+    int shift 				= 0;
     int bits = 0;
     int nBytes = 0;   // length in UTF8 bytes
 
