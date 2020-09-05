@@ -96,7 +96,6 @@ public final class MurmurHashing {
 						+(((long)data[i8+2]&0xff)<<16) +(((long)data[i8+3]&0xff)<<24)
 						+(((long)data[i8+4]&0xff)<<32) +(((long)data[i8+5]&0xff)<<40)
 						+(((long)data[i8+6]&0xff)<<48) +(((long)data[i8+7]&0xff)<<56);
-
 			k 			*= m;
 			k 			^= k >>> r;
 			k 			*= m;
@@ -115,10 +114,9 @@ public final class MurmurHashing {
 			h 			*= m;
 		};
 
-		h ^= h >>> r;
-		h *= m;
-		h ^= h >>> r;
-
+		h 				^= h >>> r;
+		h 				*= m;
+		h 				^= h >>> r;
 		return h;
 	}
 		
