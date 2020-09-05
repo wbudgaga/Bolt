@@ -30,19 +30,18 @@ public final class MurmurHashing {
 		}
 			
 		// Handle the last few bytes of the input array
-			switch (length%4) {
-			case 3: h ^= (data[(length&~3) +2]&0xff) << 16;
-			case 2: h ^= (data[(length&~3) +1]&0xff) << 8;
-			case 1: h ^= (data[length&~3]&0xff);
-					h *= m;
-			}
-
-			h ^= h >>> 13;
-			h *= m;
-			h ^= h >>> 15;
-
-			return h;
+		switch (length%4) {
+			case 3: h 		^= (data[(length&~3) +2]&0xff) << 16;
+			case 2: h 		^= (data[(length&~3) +1]&0xff) << 8;
+			case 1: h 		^= (data[length&~3]&0xff);
+			h 			*= m;
 		}
+
+		h 				^= h >>> 13;
+		h 				*= m;
+		h 				^= h >>> 15;
+		return h;
+	}
 		
 
 		/** Generates 32 bit hash from byte array with default seed value.
