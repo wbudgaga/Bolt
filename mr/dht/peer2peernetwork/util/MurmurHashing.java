@@ -3,16 +3,15 @@ package mr.dht.peer2peernetwork.util;
 import java.io.IOException;
 
 public final class MurmurHashing {
-
-		/** Generates 32 bit hash from byte array of the given length and
-		 * seed.
-		 * 
-		 * @param data byte array to hash
-		 * @param length length of the array to hash
-		 * @param seed initial seed value
-		 * @return 32 bit hash of the given array
-		 */
-		public static int hash32( final byte[] data, int length, int seed) {
+	/** Generates 32 bit hash from byte array of the given length and
+	* seed.
+	* 
+	* @param data byte array to hash
+	* @param length length of the array to hash
+	* @param seed initial seed value
+	* @return 32 bit hash of the given array
+	*/
+	public static int hash32( final byte[] data, int length, int seed) {
 			// 'm' and 'r' are mixing constants generated offline.
 			// They're not really 'magic', they just happen to work well.
 			final int m = 0x5bd1e995;
