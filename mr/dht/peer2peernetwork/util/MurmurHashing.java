@@ -64,7 +64,6 @@ public final class MurmurHashing {
 		return hash32 (bytes, bytes.length);
 	}
 
-
 	/** Generates 32 bit hash from a substring.
 	 * 
 	 * @param text string to hash
@@ -75,7 +74,6 @@ public final class MurmurHashing {
 	public static int hash32( final String text, int from, int length) {
 		return hash32( text.substring( from, from+length));
 	}
-		
 
 	/** Generates 64 bit hash from byte array of the given length and seed.
 	 * 
@@ -101,8 +99,7 @@ public final class MurmurHashing {
 			k 			*= m;
 			h 			^= k;
 			h 			*= m; 
-		}
-			
+		}			
 		switch (length%8) {
 			case 7: h 		^= (long)(data[(length&~7)+6]&0xff) << 48;
 			case 6: h 		^= (long)(data[(length&~7)+5]&0xff) << 40;
@@ -120,31 +117,30 @@ public final class MurmurHashing {
 		return h;
 	}
 		
+	/** Generates 64 bit hash from byte array with default seed value.
+	 * 
+	 * @param data byte array to hash
+	 * @param length length of the array to hash
+	 * @return 64 bit hash of the given string
+	 */
+	public static long hash64( final byte[] data, int length) {
+		return hash64( data, length, 0xe17a1465);
+	}
 
-		/** Generates 64 bit hash from byte array with default seed value.
-		 * 
-		 * @param data byte array to hash
-		 * @param length length of the array to hash
-		 * @return 64 bit hash of the given string
-		 */
-		public static long hash64( final byte[] data, int length) {
-			return hash64( data, length, 0xe17a1465);
-		}
+	public static long hash64(final long data) {
+		byte[] bytes 			= ByteStream.longToByteArray(data);
+		return hash64 (bytes, bytes.length, 0xe17a1465);
+	}
 
-		public static long hash64(final long data) {
-			byte[] bytes = ByteStream.longToByteArray(data);
-			return hash64( bytes, bytes.length, 0xe17a1465);
-		}
-
-		/** Generates 64 bit hash from a string.
-		 * 
-		 * @param text string to hash
-		 * @return 64 bit hash of the given string
-		 */
-		public static long hash64( final String text) {
-			final byte[] bytes = text.getBytes(); 
-			return hash64( bytes, bytes.length);
-		}
+	/** Generates 64 bit hash from a string.
+	 * 
+	 * @param text string to hash
+	 * @return 64 bit hash of the given string
+	 */
+	public static long hash64( final String text) {
+		final byte[] bytes 		= text.getBytes(); 
+		return hash64 (bytes, bytes.length);
+	}
 
 
 		/** Generates 64 bit hash from a substring.
