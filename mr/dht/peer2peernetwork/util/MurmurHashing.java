@@ -44,15 +44,15 @@ public final class MurmurHashing {
 	}
 		
 
-		/** Generates 32 bit hash from byte array with default seed value.
-		 * 
-		 * @param data byte array to hash
-		 * @param length length of the array to hash
-		 * @return 32 bit hash of the given array
-		 */
-		public static int hash32( final byte[] data, int length) {
-			return hash32( data, length, 0x9747b28c); 
-		}
+	/** Generates 32 bit hash from byte array with default seed value.
+	* 
+	* @param data byte array to hash
+	* @param length length of the array to hash
+	* @return 32 bit hash of the given array
+	*/
+	public static int hash32( final byte[] data, int length) {
+		return hash32( data, length, 0x9747b28c); 
+	}
 
 
 		/** Generates 32 bit hash from a string.
@@ -61,8 +61,8 @@ public final class MurmurHashing {
 		 * @return 32 bit hash of the given string
 		 */
 		public static int hash32( final String text) {
-			final byte[] bytes = text.getBytes(); 
-			return hash32( bytes, bytes.length);
+			final byte[] bytes 	= text.getBytes(); 
+			return hash32 (bytes, bytes.length);
 		}
 
 
