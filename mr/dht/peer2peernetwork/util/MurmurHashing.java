@@ -142,32 +142,31 @@ public final class MurmurHashing {
 		return hash64 (bytes, bytes.length);
 	}
 
-
-		/** Generates 64 bit hash from a substring.
-		 * 
-		 * @param text string to hash
-		 * @param from starting index
-		 * @param length length of the substring to hash
-		 * @return 64 bit hash of the given array
-		 */
-		public static long hash64( final String text, int from, int length) {
-			return hash64( text.substring( from, from+length));
-		}
-		public static void main(String args[]) throws IOException {
-			long s =0;
+	/** Generates 64 bit hash from a substring.
+	 * 
+	 * @param text string to hash
+	 * @param from starting index
+	 * @param length length of the substring to hash
+	 * @return 64 bit hash of the given array
+	 */
+	public static long hash64( final String text, int from, int length) {
+		return hash64 (text.substring( from, from+length));
+	}
+	
+	public static void main(String args[]) throws IOException {
+		long s 				= 0;
 /*			long t1,t2;
-			for( int i=0; i<1000; ++i){
-				byte[] bytes = ByteStream.intToByteArray(UtilClass.getRandomNumber(0,(int)Math.pow(2, 32)));
-				t1 = System.nanoTime();
-				
-				//hash64(bytes,bytes.length);
-				t2 = System.nanoTime();
-				s+=(t2-t1);
-			}
-			System.out.println("Avg: "+(s/1000.0));
-*/		
-			byte[] bytes = ByteStream.intToByteArray(23);
-			System.out.println(hash32(bytes,bytes.length));	
-		}
+		for( int i=0; i<1000; ++i){
+			byte[] bytes = ByteStream.intToByteArray(UtilClass.getRandomNumber(0,(int)Math.pow(2, 32)));
+			t1 = System.nanoTime();
 
+			//hash64(bytes,bytes.length);
+			t2 = System.nanoTime();
+			s+=(t2-t1);
+		}
+		System.out.println("Avg: "+(s/1000.0));
+*/		
+		byte[] bytes 			= ByteStream.intToByteArray(23);
+		System.out.println(hash32(bytes,bytes.length));	
+	}
 }
