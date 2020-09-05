@@ -54,28 +54,27 @@ public final class MurmurHashing {
 		return hash32( data, length, 0x9747b28c); 
 	}
 
+	/** Generates 32 bit hash from a string.
+	* 
+	* @param text string to hash
+	* @return 32 bit hash of the given string
+	 */
+	public static int hash32( final String text) {
+		final byte[] bytes 		= text.getBytes(); 
+		return hash32 (bytes, bytes.length);
+	}
 
-		/** Generates 32 bit hash from a string.
-		 * 
-		 * @param text string to hash
-		 * @return 32 bit hash of the given string
-		 */
-		public static int hash32( final String text) {
-			final byte[] bytes 	= text.getBytes(); 
-			return hash32 (bytes, bytes.length);
-		}
 
-
-		/** Generates 32 bit hash from a substring.
-		 * 
-		 * @param text string to hash
-		 * @param from starting index
-		 * @param length length of the substring to hash
-		 * @return 32 bit hash of the given string
-		 */
-		public static int hash32( final String text, int from, int length) {
-			return hash32( text.substring( from, from+length));
-		}
+	/** Generates 32 bit hash from a substring.
+	 * 
+	 * @param text string to hash
+	 * @param from starting index
+	 * @param length length of the substring to hash
+	 * @return 32 bit hash of the given string
+	 */
+	public static int hash32( final String text, int from, int length) {
+		return hash32( text.substring( from, from+length));
+	}
 		
 
 		/** Generates 64 bit hash from byte array of the given length and seed.
