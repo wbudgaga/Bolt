@@ -140,8 +140,8 @@ public class UtilClass {
 	}
 
 	public  static long getRandomNumber(long min, long max){
-		long r = (long) Math.round(randomGenerater.nextFloat() * (max-min));
-		return r+ min;
+		long r 					= (long) Math.round(randomGenerater.nextFloat() * (max-min));
+		return r + min;
 	}
 
 	public  static int getRandomNumber(int min, int max){
