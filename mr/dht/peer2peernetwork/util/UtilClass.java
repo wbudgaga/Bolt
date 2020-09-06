@@ -118,9 +118,9 @@ public class UtilClass {
 
 	 public static PrintStream fileAsOutputDst(String filename){
 		try {
-			File file = new File(filename);  
-			FileOutputStream fis = new FileOutputStream(file);
-			PrintStream out = new PrintStream(fis);  
+			File file 			= new File(filename);  
+			FileOutputStream fis 		= new FileOutputStream(file);
+			PrintStream out 		= new PrintStream(fis);  
 			System.setOut(out);
 			return out;
 		} catch (FileNotFoundException e) {
