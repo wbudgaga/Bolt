@@ -148,7 +148,6 @@ public class UtilClass {
 		int r 					= (int) Math.round(randomGenerater.nextFloat() * (max-min));
 		return r+ min;
 	}
-
 	
 	public static Map<String, Float> sortByValue(Map<String, Float> map) {
         	List<Map.Entry<String, Float>> list 	= new LinkedList<Map.Entry<String, Float>>(map.entrySet());
@@ -168,6 +167,7 @@ public class UtilClass {
 	public static void printRowSeparator(){
 		System.out.println("======================================================");
 	}
+	
 	public static void printHeader(){
 		printRowSeparator();
 		System.out.println(String.format(" %-10s  %-20s  ",		"File Name",	"ID(int)"));
@@ -194,23 +194,23 @@ public class UtilClass {
 */	
 	// reads all files names existing in dataFolder and having the extension ext
 	public static ArrayList<String> readFilesFromDir(String dataFolder){
-		ArrayList<String> dirFiles 	= new ArrayList<String> ();
-		File dir 					= new File(dataFolder);
+		ArrayList<String> dirFiles 		= new ArrayList<String> ();
+		File dir 				= new File(dataFolder);
 		for (File f : dir.listFiles()) {
-	        dirFiles.add(f.getAbsolutePath());
-	    }
+	        	dirFiles.add(f.getAbsolutePath());
+	    	}
 		return dirFiles;
 	}
 
 	// reads all files names existing in dataFolder and having the extension ext
 	public static ArrayList<String> readFilesFromDir(String dataFolder, String ext){
-		ArrayList<String> dirFiles 	= new ArrayList<String> ();
-		File dir 					= new File(dataFolder);
+		ArrayList<String> dirFiles 		= new ArrayList<String> ();
+		File dir 				= new File(dataFolder);
 		for (File f : dir.listFiles()) {
-	        String fileName = f.getName();
-	        if (fileName.endsWith(ext)) {
-	        	dirFiles.add(f.getAbsolutePath());
-	        }
+			String fileName 		= f.getName();
+			if (fileName.endsWith(ext)) {
+				dirFiles.add(f.getAbsolutePath());
+			}
 		}
 		return dirFiles;
 	}
