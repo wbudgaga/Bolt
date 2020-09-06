@@ -107,8 +107,8 @@ public class UtilClass {
 	
 	public static String getStopList() throws IOException{
 		String stopList="";
-		File file = new File(Setting.STOP_LIST); 
-		BufferedReader input =  new BufferedReader(new FileReader(file));
+		File file 				= new File(Setting.STOP_LIST); 
+		BufferedReader input 			=  new BufferedReader(new FileReader(file));
 		String line = null; 
 		while (( line = input.readLine()) != null)
 			stopList += "\\b" + line + "\\b" + "|";
