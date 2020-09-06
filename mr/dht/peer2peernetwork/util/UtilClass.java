@@ -216,7 +216,7 @@ public class UtilClass {
 	}
 
 	public static boolean createPath(String dir){
-		File theDir = new File(dir);
+		File theDir 				= new File(dir);
 		if (theDir.exists())
 			return true;
 		return theDir.mkdirs();
@@ -224,16 +224,15 @@ public class UtilClass {
 
 	public static void removeDir(String rootDir){
 		try{
-			File dir = new File(rootDir);
+			File dir 			= new File(rootDir);
 			for(File file : dir.listFiles()){
 				file.delete();
 			}	
 		}catch(NullPointerException e){}
 	}
+	
 	public static void main(String args[]) throws IOException {
-		
-			String datasetName ="file99";
-			
+			String datasetName 		= "file99";
 			System.out.println(UtilClass.hashMKey(datasetName)+ "  "+Integer.MAX_VALUE+"   "+String.format(Setting.REDUCER_BASENAME, "outputName",3));
 /*			String cn =  datasetName+"_%s.%04d" ;
 			System.out.println(cn);
@@ -259,8 +258,8 @@ public class UtilClass {
 	}
 
 	public static String getCurrDateTimeAsString(String format){
-		SimpleDateFormat sdf = new SimpleDateFormat(format);    
-		Date resultdate = new Date(System.currentTimeMillis());
+		SimpleDateFormat sdf 			= new SimpleDateFormat(format);    
+		Date resultdate 			= new Date(System.currentTimeMillis());
 		return sdf.format(resultdate);
 	}
 }
