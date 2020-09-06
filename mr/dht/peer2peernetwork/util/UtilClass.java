@@ -145,27 +145,25 @@ public class UtilClass {
 	}
 
 	public  static int getRandomNumber(int min, int max){
-		int r = (int) Math.round(randomGenerater.nextFloat() * (max-min));
+		int r 					= (int) Math.round(randomGenerater.nextFloat() * (max-min));
 		return r+ min;
 	}
 
 	
 	public static Map<String, Float> sortByValue(Map<String, Float> map) {
-        List<Map.Entry<String, Float>> list = new LinkedList<Map.Entry<String, Float>>(map.entrySet());
+        	List<Map.Entry<String, Float>> list 	= new LinkedList<Map.Entry<String, Float>>(map.entrySet());
+        	Collections.sort(list, new Comparator<Map.Entry<String, Float>>() {
+		    public int compare(Map.Entry<String, Float> m1, Map.Entry<String, Float> m2) {
+			return (m2.getValue()).compareTo(m1.getValue());
+		    }
+        	});
 
-        Collections.sort(list, new Comparator<Map.Entry<String, Float>>() {
-
-            public int compare(Map.Entry<String, Float> m1, Map.Entry<String, Float> m2) {
-                return (m2.getValue()).compareTo(m1.getValue());
-            }
-        });
-
-        Map<String, Float> result = new LinkedHashMap<String, Float>();
-        for (Map.Entry<String, Float> entry : list) {
-            result.put(entry.getKey(), entry.getValue());
-        }
-        return result;
-    }
+		Map<String, Float> result 		= new LinkedHashMap<String, Float>();
+		for (Map.Entry<String, Float> entry : list) {
+		    result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+    	}
 
 	public static void printRowSeparator(){
 		System.out.println("======================================================");
