@@ -60,6 +60,7 @@ public class UtilClass {
 	public static long hashAKey1(long key){
 		return (hFunction.hash(key)) % Setting.RING_KEYSPACE;
 	}
+	
 	public static long hashAKey1(String key){
 		return (hFunction.hash(key)) % Setting.RING_KEYSPACE;
 	}
@@ -77,10 +78,11 @@ public class UtilClass {
 		outputChannel.write(ByteBuffer.wrap(msg.packMessage()));
 		outputChannel.close();
 	}
+	
 	public static void loadData(Message msg, String fileName) throws IOException{
 		//System.out.println("loading setting data from "+fileName);
 		FileChannel inputChannel 		= new FileInputStream(fileName).getChannel();
-		ByteBuffer buff = ByteBuffer.allocateDirect((int) inputChannel.size());
+		ByteBuffer buff 			= ByteBuffer.allocateDirect((int) inputChannel.size());
 		inputChannel.read(buff);
 		byte[] bytes    = new byte[(int) inputChannel.size()];
 		buff.flip();
