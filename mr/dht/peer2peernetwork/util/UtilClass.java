@@ -130,12 +130,12 @@ public class UtilClass {
 	}
 	
 	 public static void storeData(String d){
-			PrintStream out = UtilClass.fileAsOutputDst(d);
+			PrintStream out 		= UtilClass.fileAsOutputDst(d);
 			System.out.println("test");
 			out.close();
 	 }
 	public static void createFile(File dir, String fileName, String ext, String text){
-		File file = new File(dir,fileName+ext);
+		File file 				= new File(dir,fileName+ext);
 		storeFile(file,text);
 	}
 
