@@ -52,6 +52,7 @@ public class UtilClass {
 		return Math.abs(MurmurHash3.hash32(key));// & Long.MAX_VALUE) ;//% Setting.RING_KEYSPACE;
 //		return (MurmurHash3.hash128Low(key) & Long.MAX_VALUE) % Setting.RING_KEYSPACE;
 	}
+	
 	public static long hashMKey(String key){
 		return Math.abs(MurmurHash3.hash32(key)) ;/*& Long.MAX_VALUE)*/ 
 		//return (MurmurHash3.hash128Low(key) & Long.MAX_VALUE) % Setting.RING_KEYSPACE;
