@@ -84,7 +84,7 @@ public class UtilClass {
 		FileChannel inputChannel 		= new FileInputStream(fileName).getChannel();
 		ByteBuffer buff 			= ByteBuffer.allocateDirect((int) inputChannel.size());
 		inputChannel.read(buff);
-		byte[] bytes    = new byte[(int) inputChannel.size()];
+		byte[] bytes    			= new byte[(int) inputChannel.size()];
 		buff.flip();
 		buff.get(bytes);
 		msg.initiate(bytes);
