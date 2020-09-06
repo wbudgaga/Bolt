@@ -34,8 +34,8 @@ import mr.dht.peer2peernetwork.wireformates.Message;
 
 
 public class UtilClass {
-	private static Random randomGenerater = new Random();
-	private static long	  keyspaceQuarter = Setting.RING_KEYSPACE / 4;
+	private static Random randomGenerater 		= new Random();
+	private static long	  keyspaceQuarter 	= Setting.RING_KEYSPACE / 4;
 	private static HashFunction hFunction;
 	static{
 		try {
