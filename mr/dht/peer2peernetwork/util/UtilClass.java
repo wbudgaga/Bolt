@@ -94,7 +94,7 @@ public class UtilClass {
 
 	public static void storeFile(File file, String text){
 		try {
-			BufferedWriter out = new BufferedWriter(new FileWriter(file));
+			BufferedWriter out 		= new BufferedWriter(new FileWriter(file));
 			out.write(text);
 			out.flush();
 			out.close();	
