@@ -32,18 +32,18 @@ import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.dht.peer2peernetwork.util.MurmurHash3.LongPair;
 import mr.dht.peer2peernetwork.wireformates.Message;
 
-
 public class UtilClass {
 	private static Random randomGenerater 		= new Random();
 	private static long	  keyspaceQuarter 	= Setting.RING_KEYSPACE / 4;
 	private static HashFunction hFunction;
 	static{
 		try {
-			hFunction = new HashFunction();
+			hFunction 			= new HashFunction();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
 	}
+	
 	public static long getPeerID(long randomNum, int peerIDX){
 		return (hFunction.hash(randomNum) + (peerIDX * keyspaceQuarter)) % Setting.RING_KEYSPACE;
 	}
