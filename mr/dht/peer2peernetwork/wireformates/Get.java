@@ -22,6 +22,7 @@ public class Get extends PeerInfo{
 		super.initiate(byteStream);
 		setHashedKey(unpackLongField( byteStream ));
 	}
+	
 	@Override
 	protected byte[] packMessageBody() {
 		return ByteStream.join(super.packMessageBody(), ByteStream.longToByteArray(getHashedKey()));
