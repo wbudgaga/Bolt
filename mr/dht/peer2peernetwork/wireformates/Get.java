@@ -8,7 +8,7 @@ import mr.dht.peer2peernetwork.util.ByteStream;
 //this class represents a RegisterRequest message. It is used to pack and unpack the RegisterRequest message by using the methods in superclass
 //the method handle() calls the method handle() in receiver to handle the message
 public class Get extends PeerInfo{
-	private long hashedKey = -1; //-1 means all
+	private long hashedKey 			= -1; //-1 means all
 	
 	public Get() {
 		super(GET, GET);
