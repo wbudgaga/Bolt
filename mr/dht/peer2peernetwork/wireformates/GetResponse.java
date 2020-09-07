@@ -16,34 +16,35 @@ public class GetResponse extends Message{
 	private int 	status;
 	private byte[]  fileBytes;
 	
-	
 	public GetResponse() {
 		super(GET_RESPONSE, GET_RESPONSE);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
-		setFileName		( unpackStringField( byteStream ) );
-		setStatus	( unpackIntField( byteStream ) );
-		fileBytes = readObjectBytes(byteStream);
+		setFileName(unpackStringField( byteStream ));
+		setStatus (unpackIntField( byteStream ));
+		fileBytes 				= readObjectBytes(byteStream);
 	}
 	
 	private File createFile(File tmpFile){		
-		File localDir =	new File(Setting.LOCAL_DIR);
+		File localDir 				= new File(Setting.LOCAL_DIR);
 		if (!localDir.exists())
 			localDir.mkdir();
-    	if(tmpFile.exists()){
-    		new MergeTask(tmpFile,ByteStream.byteArrayToString(getFileBytes()));
-    		return null;
-    	}
+		
+		if(tmpFile.exists()){
+			new MergeTask(tmpFile,ByteStream.byteArrayToString(getFileBytes()));
+			return null;
+		}
 		try {
 			tmpFile.createNewFile();
 			return tmpFile;
 		} catch (IOException e) {System.out.println("File ("+fileName+") could not be created!");}
-    	return null;	
+    		return null;	
 	}
 
 	private void handleFile(){
-		File dstDir		=createFile( new File(Setting.LOCAL_DIR,fileName));
+		File dstDir				= createFile( new File(Setting.LOCAL_DIR,fileName));
 		if(dstDir == null){
 			return;
 		}
@@ -62,7 +63,7 @@ public class GetResponse extends Message{
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] buffer = ByteStream.join(ByteStream.packString(getFileName()), ByteStream.intToByteArray(getStatus()));
+		byte[] buffer 				= ByteStream.join(ByteStream.packString(getFileName()), ByteStream.intToByteArray(getStatus()));
 		return  ByteStream.join(buffer,ByteStream.addPacketHeader(fileBytes));
 	}
 
