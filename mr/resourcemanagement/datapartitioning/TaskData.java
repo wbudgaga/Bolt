@@ -22,7 +22,7 @@ public class TaskData <K,V>{
 	}
 
 	public void setData(V data) {
-		this.data = data;
+		this.data 		= data;
 	}
 	
 }
