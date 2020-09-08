@@ -4,8 +4,6 @@ import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
 
 public class ModPartitioner<K extends Long, V> extends Partitioner<Long, V> {	
-	
-
 	public ModPartitioner() throws NoSuchAlgorithmException {
 		super();
 	}
@@ -16,12 +14,7 @@ public class ModPartitioner<K extends Long, V> extends Partitioner<Long, V> {
 	}
 	
 	public static void main(String[]s) throws NoSuchAlgorithmException{
-		ModPartitioner<Long,String> t= new ModPartitioner<Long, String>();
+		ModPartitioner<Long,String> t		= new ModPartitioner<Long, String>();
 		System.out.println(t.getReducerID(5l,"anyString",3));
 	}
-
-
 }
-
-
-	
