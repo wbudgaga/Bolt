@@ -18,7 +18,7 @@ public class TaskData <K,V>{
 	}
 
 	public void setDataID(K dataID) {
-		this.dataID = dataID;
+		this.dataID 		= dataID;
 	}
 
 	public void setData(V data) {
