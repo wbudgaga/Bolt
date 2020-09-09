@@ -34,7 +34,7 @@ public abstract class Message implements MessageTypes{
 	}
 
 	public void setHandlerID(int handlerID) {
-		this.handlerID = handlerID;
+		this.handlerID 			= handlerID;
 	}
 
 	protected byte[] readNextBytes(byte[] byteStream,int length){
