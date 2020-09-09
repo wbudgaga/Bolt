@@ -44,12 +44,12 @@ public abstract class Message implements MessageTypes{
 	}
 
 	protected String unpackStringField(byte[] byteStream){
-		byte[] stringBytes = readObjectBytes(byteStream);
+		byte[] stringBytes 		= readObjectBytes(byteStream);
 		return ByteStream.byteArrayToString(stringBytes);
 	}
 
 	protected Long[] unpackLongArrayField(byte[] byteStream){
-		int size = unpackIntField(byteStream);
+		int size 			= unpackIntField(byteStream);
 		Long[] longArray = new Long[size];
 		for (int i=0; i< size;++i){
 			longArray[i] = unpackLongField(byteStream);
