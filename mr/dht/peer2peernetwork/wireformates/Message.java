@@ -50,7 +50,7 @@ public abstract class Message implements MessageTypes{
 
 	protected Long[] unpackLongArrayField(byte[] byteStream){
 		int size 			= unpackIntField(byteStream);
-		Long[] longArray = new Long[size];
+		Long[] longArray 		= new Long[size];
 		for (int i=0; i< size;++i){
 			longArray[i] 		= unpackLongField(byteStream);
 		}
@@ -58,7 +58,7 @@ public abstract class Message implements MessageTypes{
 	}
 
 	protected ArrayList<Long> unpackLongArrayListField(byte[] byteStream){
-		int size = unpackIntField(byteStream);	
+		int size 			= unpackIntField(byteStream);	
 		ArrayList<Long> longArray = new ArrayList<Long>();
 		for (int i=0; i< size;++i){
 			longArray.add(unpackLongField(byteStream));
