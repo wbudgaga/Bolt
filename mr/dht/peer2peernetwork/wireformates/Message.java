@@ -30,7 +30,7 @@ public abstract class Message implements MessageTypes{
 		return msgUUID;
 	}
 	public void setMsgUUID(long msgID) {
-		this.msgUUID = msgID;
+		this.msgUUID 			= msgID;
 	}
 
 	public void setHandlerID(int handlerID) {
