@@ -127,8 +127,8 @@ public abstract class Message implements MessageTypes{
 	}
 	
 	public void create(byte[]  byteStream){
-		msgUUID = unpackMessageUUID(byteStream);
-		currentIndex 	= 16; //Beginning of msg info. 8 bytes = msgID:int(4 bytes) + handlerID:int(4 bytes)
+		msgUUID 			= unpackMessageUUID(byteStream);
+		currentIndex 			= 16; //Beginning of msg info. 8 bytes = msgID:int(4 bytes) + handlerID:int(4 bytes)
 		initiate(byteStream);
 	}
 	
