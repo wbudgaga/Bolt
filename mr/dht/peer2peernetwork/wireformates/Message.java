@@ -52,7 +52,7 @@ public abstract class Message implements MessageTypes{
 		int size 			= unpackIntField(byteStream);
 		Long[] longArray = new Long[size];
 		for (int i=0; i< size;++i){
-			longArray[i] = unpackLongField(byteStream);
+			longArray[i] 		= unpackLongField(byteStream);
 		}
 		return longArray;
 	}
