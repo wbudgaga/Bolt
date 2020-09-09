@@ -38,8 +38,8 @@ public abstract class Message implements MessageTypes{
 	}
 
 	protected byte[] readNextBytes(byte[] byteStream,int length){
-		byte [] bytes = ByteStream.getBytes(byteStream,currentIndex,length);
-		currentIndex +=length;
+		byte [] bytes 			= ByteStream.getBytes(byteStream,currentIndex,length);
+		currentIndex 			+= length;
 		return bytes;
 	}
 
