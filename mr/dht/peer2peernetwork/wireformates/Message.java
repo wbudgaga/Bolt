@@ -1,6 +1,5 @@
 package mr.dht.peer2peernetwork.wireformates;
 
-
 import java.net.Socket;
 import java.util.ArrayList;
 
@@ -17,9 +16,9 @@ public abstract class Message implements MessageTypes{
 	private int 	currentIndex=16;
 	
 	public  Message(int msgID, int handlerID){
-		this.msgID 		= msgID;
-		this.handlerID 	= handlerID;
-		msgUUID = UtilClass.getUUID();
+		this.msgID 			= msgID;
+		this.handlerID 			= handlerID;
+		msgUUID 			= UtilClass.getUUID();
 	}
 	
 	public int getMessageID() {
