@@ -12,8 +12,7 @@ public abstract class Message implements MessageTypes{
 	private int msgID;
 	private int handlerID;
 	private long msgUUID;
-	
-	private int 	currentIndex=16;
+	private int 	currentIndex		= 16;
 	
 	public  Message(int msgID, int handlerID){
 		this.msgID 			= msgID;
