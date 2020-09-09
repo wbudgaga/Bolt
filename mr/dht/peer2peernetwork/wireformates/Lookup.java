@@ -22,8 +22,8 @@ public class Lookup extends Message{
 	}
 	
 	private void unpackSourcePeer(byte[] byteStream){
-		sourcePeer = new PeerInfo();
-		byte [] routerInfoObjectBytes = readObjectBytes(byteStream);
+		sourcePeer 			= new PeerInfo();
+		byte [] routerInfoObjectBytes 	= readObjectBytes(byteStream);
 		sourcePeer.initiate(routerInfoObjectBytes);	
 	}
 	
@@ -50,7 +50,6 @@ public class Lookup extends Message{
 		return ByteStream.addPacketHeader(routerBytes);
 	}
 	
-	
 	private byte[] packSrcPeerHandlerID(){
 		return ByteStream.intToByteArray(getSrcPeerHandlerID());
 	}	
@@ -72,7 +71,7 @@ public class Lookup extends Message{
 	}
 
 	public void setSourcePeer(PeerInfo sourcePeer) {
-		this.sourcePeer = sourcePeer;
+		this.sourcePeer 		= sourcePeer;
 	}
 
 	public long getQueryKey() {
@@ -80,7 +79,7 @@ public class Lookup extends Message{
 	}
 
 	public void setQueryKey(long queryKey) {
-		this.queryKey = queryKey;
+		this.queryKey 			= queryKey;
 	}
 
 	public int getHops() {
@@ -88,7 +87,7 @@ public class Lookup extends Message{
 	}
 
 	public void setHops(int hops) {
-		this.hops = hops;
+		this.hops 			= hops;
 	}
 
 	public int getSrcPeerHandlerID() {
@@ -96,7 +95,6 @@ public class Lookup extends Message{
 	}
 
 	public void setSrcPeerHandlerID(int srcPeerHandlerID) {
-		this.srcPeerHandlerID = srcPeerHandlerID;
+		this.srcPeerHandlerID 	= srcPeerHandlerID;
 	}
-
 }
