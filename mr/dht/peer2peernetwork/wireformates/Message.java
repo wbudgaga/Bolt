@@ -116,7 +116,7 @@ public abstract class Message implements MessageTypes{
 
 	protected byte[] readObjectBytes(byte[] byteStream){
 		byte[] objectLengthInBytes 	= readNextBytes(byteStream,4);
-		int objectLength 			= ByteStream.byteArrayToInt(objectLengthInBytes);
+		int objectLength 		= ByteStream.byteArrayToInt(objectLengthInBytes);
 		return readNextBytes(byteStream,objectLength);
 	}
 
