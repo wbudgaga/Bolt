@@ -121,8 +121,8 @@ public abstract class Message implements MessageTypes{
 	}
 
 	public  byte[] packMessage(){
-		byte[] msgHead = ByteStream.join(packMessageID(), packHandlerID());
-		msgHead = ByteStream.join(msgHead, packMessageUUID());
+		byte[] msgHead 			= ByteStream.join(packMessageID(), packHandlerID());
+		msgHead 			= ByteStream.join(msgHead, packMessageUUID());
 		return ByteStream.join(msgHead, packMessageBody());
 	}
 	
