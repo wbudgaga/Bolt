@@ -68,7 +68,7 @@ public abstract class Message implements MessageTypes{
 
 	protected ArrayList<String> unpackStringArrayListField(byte[] byteStream){
 		int size 			= unpackIntField(byteStream);	
-		ArrayList<String> stringArray = new ArrayList<String>();
+		ArrayList<String> stringArray 	= new ArrayList<String>();
 		for (int i=0; i< size;++i){
 			stringArray.add(unpackStringField(byteStream));
 		}
@@ -100,7 +100,7 @@ public abstract class Message implements MessageTypes{
 	}
 
 	public static final int unpackMessageID(byte[]  byteStream){
-		byte[] messageIdBytes = ByteStream.getBytes(byteStream,0,4);
+		byte[] messageIdBytes 		= ByteStream.getBytes(byteStream,0,4);
 		return ByteStream.byteArrayToInt(messageIdBytes);
 	}
 
