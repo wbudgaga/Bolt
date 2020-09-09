@@ -105,12 +105,12 @@ public abstract class Message implements MessageTypes{
 	}
 
 	public static final int unpackHandlerID(byte[]  byteStream){
-		byte[] messageIdBytes = ByteStream.getBytes(byteStream,4,4);
+		byte[] messageIdBytes 		= ByteStream.getBytes(byteStream,4,4);
 		return ByteStream.byteArrayToInt(messageIdBytes);
 	}
 
 	public static final long unpackMessageUUID(byte[]  byteStream){
-		byte[] messageIdBytes = ByteStream.getBytes(byteStream,8,8);
+		byte[] messageIdBytes 		= ByteStream.getBytes(byteStream,8,8);
 		return ByteStream.byteArrayToLong(messageIdBytes);
 	}
 
