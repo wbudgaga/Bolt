@@ -5,8 +5,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ReducerBuffer<K,V>{
 	private int reducerIDX; 
-	private volatile int 				tmpCounter=0;//////////////////////////tmep
-	protected HashMap<K, ArrayList<V>> 	outputBuf	= new HashMap<K, ArrayList<V>>();
+	private volatile int tmpCounter 		= 0;//////////////////////////tmep
+	protected HashMap<K, ArrayList<V>> outputBuf	= new HashMap<K, ArrayList<V>>();
 	
 	public ReducerBuffer(int reducerID){
 		try {
