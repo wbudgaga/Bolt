@@ -38,7 +38,7 @@ public class ReducerBuffer<K,V>{
 	}
 
 	public void resetCounter(){
-		tmpCounter=0;
+		tmpCounter				= 0;
 	}
 
 	public int getCounter(){
