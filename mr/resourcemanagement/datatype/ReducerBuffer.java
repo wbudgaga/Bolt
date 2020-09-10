@@ -15,12 +15,14 @@ public class ReducerBuffer<K,V>{
 			e.printStackTrace();
 		}
 	}
+	
 	public int size(){
 		return outputBuf.size();
 	}
+	
 	//also combines result (string,long)
 	public synchronized int add(K key, V data) throws InterruptedException{
-		Long v = (long)data;
+		Long v 					= (long)data;
 		ArrayList<V> valuesList;
 		if (outputBuf.containsKey(key)){
 			valuesList = outputBuf.get(key);
