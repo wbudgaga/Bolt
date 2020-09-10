@@ -30,7 +30,7 @@ public class ReducerBuffer<K,V>{
 		}else{  //  new key
 			tmpCounter 			+= 8;
 			tmpCounter 			+= (((String)key).length()*2);
-			valuesList = new ArrayList<V>();
+			valuesList 			= new ArrayList<V>();
 			outputBuf.put(key, valuesList );
 		}
 		valuesList.add((V)v);
