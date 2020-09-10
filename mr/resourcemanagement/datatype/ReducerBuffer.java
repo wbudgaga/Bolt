@@ -25,8 +25,8 @@ public class ReducerBuffer<K,V>{
 		Long v 					= (long)data;
 		ArrayList<V> valuesList;
 		if (outputBuf.containsKey(key)){
-			valuesList = outputBuf.get(key);
-		    v += ((long)valuesList.remove(0));
+			valuesList		 	= outputBuf.get(key);
+		    	v 				+= ((long)valuesList.remove(0));
 		}else{  //  new key
 			tmpCounter += 8;
 			tmpCounter += (((String)key).length()*2);
