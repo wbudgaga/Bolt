@@ -124,9 +124,9 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	public Integer getNumOfReceivedBuffers(Long srcID) {
 		Integer numOfRcdBuffers 				= 0;
 		synchronized(numOfReceivedBuffers){
-			numOfRcdBuffers =  numOfReceivedBuffers.get(srcID);
+			numOfRcdBuffers 				=  numOfReceivedBuffers.get(srcID);
 		}
-		if (numOfRcdBuffers==null)
+		if (numOfRcdBuffers == null)
 			return 0;		
 		return numOfRcdBuffers;
 	}
@@ -136,6 +136,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 			numOfReceivedBuffers.put(srcID, getNumOfReceivedBuffers(srcID) + 1);
 		}
 	}
+	
 	public void stopRunning(Long srcID, int numOfExpectedBuffers) throws InterruptedException{
 		setNumOfExpectedBuffers(srcID, numOfExpectedBuffers);
 		stopRunning();
