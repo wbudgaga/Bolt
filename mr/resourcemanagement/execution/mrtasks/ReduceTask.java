@@ -31,7 +31,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
     
 	public void offer(K2 key, V2 valueList){
 		synchronized(LOCK){
-			V2 vList =  dataBuffer.get(key);
+			V2 vList 						=  dataBuffer.get(key);
 			if (vList==null){
 				dataBuffer.put(key, valueList);
 				pendingQueue1.offer(key);
