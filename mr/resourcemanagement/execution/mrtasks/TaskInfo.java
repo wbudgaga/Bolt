@@ -41,6 +41,7 @@ public abstract class TaskInfo<K1,V1,K2,V2> {
 	public void setTaskID(long taskID) {
 		this.taskID 					= taskID;
 	}
+	
 	public MRTask<K1,V1,K2,V2> createTask(String taskClassName) throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		Class<MRTask<K1,V1,K2,V2>> taskClass 		=  ClassLoader.loadTask(taskClassName,Setting.TASK_PACKAGE + taskClassName);
 		mrTask 						= (MRTask<K1,V1,K2,V2>) taskClass.newInstance();
@@ -48,6 +49,6 @@ public abstract class TaskInfo<K1,V1,K2,V2> {
 		return mrTask;
 	}
 
-	public abstract DataSource<K1,V1> 	getDataReader(ThreadPoolManager ioThreadPool) throws FileNotFoundException, InterruptedException;
-	public abstract String 				getTaskTypeAsString();
+	public abstract DataSource<K1,V1> getDataReader(ThreadPoolManager ioThreadPool) throws FileNotFoundException, InterruptedException;
+	public abstract String 	getTaskTypeAsString();
 }
