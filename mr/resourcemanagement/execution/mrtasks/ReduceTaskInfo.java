@@ -9,7 +9,6 @@ import mr.resourcemanagement.io.DataSource;
 import mr.resourcemanagement.io.DataWriter;
 import mr.resourcemanagement.io.TextFileWriter;
 
-
 public class ReduceTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
 	private int numOfMaps;
 	private String outputFullName;
@@ -30,7 +29,7 @@ public class ReduceTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
 
 	public void setTaskID(long taskID) {
 		super.setTaskID(taskID);
-		this.outputFullName = Setting.DATA_DIR+"/d0/"+taskID;
+		this.outputFullName 		= Setting.DATA_DIR+"/d0/"+taskID;
 	}
 
 /*	@Override
@@ -43,7 +42,7 @@ public class ReduceTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
 	}
 
 	public void setNumOfMaps(int numOfMaps) {
-		this.numOfMaps = numOfMaps;
+		this.numOfMaps 			= numOfMaps;
 	}
 
 	public String getOutputFullName() {
