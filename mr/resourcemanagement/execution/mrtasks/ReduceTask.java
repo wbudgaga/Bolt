@@ -114,7 +114,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	}
 	public boolean finish() throws Exception {
 		System.out.println("################## flushing reducer data into "+reduceTaskInfo.getOutputFullName());
-		DataWriter dataWriter = reduceTaskInfo.getDataWriter(reduceTaskInfo.getOutputFullName());
+		DataWriter dataWriter 					= reduceTaskInfo.getDataWriter(reduceTaskInfo.getOutputFullName());
 		dataWriter.write(OutputDataBuffer);
 		dataWriter.close();
 		jobTasksManager.finishedReduceTask(reduceTaskInfo.getTaskID());
@@ -122,7 +122,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	}
 
 	public Integer getNumOfReceivedBuffers(Long srcID) {
-		Integer numOfRcdBuffers = 0;
+		Integer numOfRcdBuffers 				= 0;
 		synchronized(numOfReceivedBuffers){
 			numOfRcdBuffers =  numOfReceivedBuffers.get(srcID);
 		}
