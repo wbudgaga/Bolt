@@ -23,9 +23,9 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	private 	Object 		LOCK 					= new Object();
     	public 		final Long 	POISON 					= new Long(-1);
 
-	protected BlockingQueue<K2> 				pendingQueue1			= new LinkedBlockingQueue<K2>();
-	protected ConcurrentHashMap<K2,V2> 			dataBuffer 				= new ConcurrentHashMap<K2,V2> ();
-	protected HashMap<K3,V3> 					OutputDataBuffer 		= new HashMap<K3,V3> ();
+	protected BlockingQueue<K2> pendingQueue1			= new LinkedBlockingQueue<K2>();
+	protected ConcurrentHashMap<K2,V2> dataBuffer 				= new ConcurrentHashMap<K2,V2> ();
+	protected HashMap<K3,V3> OutputDataBuffer 		= new HashMap<K3,V3> ();
 	
 	
 	private ReduceTaskOutputHandler<K2,V2,K3,V3>reducerTaskOutputHandler;
