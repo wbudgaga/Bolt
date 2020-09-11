@@ -42,8 +42,8 @@ public abstract class TaskInfo<K1,V1,K2,V2> {
 		this.taskID 					= taskID;
 	}
 	public MRTask<K1,V1,K2,V2> createTask(String taskClassName) throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
-		Class<MRTask<K1,V1,K2,V2>> taskClass =  ClassLoader.loadTask(taskClassName,Setting.TASK_PACKAGE + taskClassName);
-		mrTask = (MRTask<K1,V1,K2,V2>) taskClass.newInstance();
+		Class<MRTask<K1,V1,K2,V2>> taskClass 		=  ClassLoader.loadTask(taskClassName,Setting.TASK_PACKAGE + taskClassName);
+		mrTask 						= (MRTask<K1,V1,K2,V2>) taskClass.newInstance();
 		mrTask.setTaskInfo(this);
 		return mrTask;
 	}
