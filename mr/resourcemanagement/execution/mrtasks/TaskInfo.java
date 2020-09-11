@@ -9,20 +9,20 @@ import mr.dht.util.ClassLoader;
 import mr.resourcemanagement.io.DataSource;
 
 public abstract class TaskInfo<K1,V1,K2,V2> {
-	public final static int  	MAP				= 1;
+	public final static int  	MAP			= 1;
 	public final static int  	REDUCE			= 0;
 	public final static int 	STRING_TYPE		= 0;
 	public final static int 	LONG_TYPE		= 1;
 	public final static int 	DOUBLE_TYPE		= 2;
 	
-	private int 				taskType;
-	private long 				jobID;
-	private long 				taskID;
+	private int 	taskType;
+	private long 	jobID;
+	private long 	taskID;
 	
 	protected MRTask<K1,V1,K2,V2>	mrTask;
 		
 	public TaskInfo(int taskType){
-		this.taskType = taskType;
+		this.taskType 					= taskType;
 	}
 		
 	public int getTaskType() {
