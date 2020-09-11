@@ -52,7 +52,7 @@ public class ReduceTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
 	@Override
 	public DataSource<K1, V1> getDataReader(ThreadPoolManager ioThreadPool)
 			throws FileNotFoundException, InterruptedException {
-		// TODO Auto-generated method stub
-		return null;
+				// TODO Auto-generated method stub
+				return null;
 	}
 }
