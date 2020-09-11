@@ -17,11 +17,11 @@ import mr.resourcemanagement.io.DataSource;
 import mr.resourcemanagement.io.DataWriter;
 
 public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
-	protected 	ReduceTaskInfo<K2,V2,K3,V3>	  	reduceTaskInfo;
+	protected 	ReduceTaskInfo<K2,V2,K3,V3>	 reduceTaskInfo;
 	private   	ConcurrentHashMap<Long,Integer> numOfReceivedBuffers 	= new ConcurrentHashMap<Long,Integer>();//<sourceID,numOfBuffers>
 	private   	ConcurrentHashMap<Long,Integer> numOfExpectedBuffers 	= new ConcurrentHashMap<Long,Integer>();//<sourceID,numOfBuffers>
-	private 	Object 							LOCK 					= new Object();
-    public 		final Long 						POISON 					= new Long(-1);
+	private 	Object 		LOCK 					= new Object();
+    	public 		final Long 	POISON 					= new Long(-1);
 
 	protected BlockingQueue<K2> 				pendingQueue1			= new LinkedBlockingQueue<K2>();
 	protected ConcurrentHashMap<K2,V2> 			dataBuffer 				= new ConcurrentHashMap<K2,V2> ();
