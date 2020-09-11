@@ -146,7 +146,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	public Integer getNumOfExpectedBuffers(Long srcID) {
 		Integer numOfEBuffers = 0;
 		synchronized(numOfExpectedBuffers){
-			numOfEBuffers =  numOfExpectedBuffers.get(srcID);
+			numOfEBuffers 					=  numOfExpectedBuffers.get(srcID);
 		}
 		if (numOfEBuffers==null)
 			return 0;		
@@ -172,17 +172,16 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	public TaskInfo<K2, V2, K3, V3> getTaskInfo() {
 		return reduceTaskInfo;
 	}
-
 	
 //	==================================================================	
 	public boolean preReduce() {
 		return true;
 	}
+	
 	public abstract boolean reduce(K2 key, V2 value);
 	
 	public boolean postReduce(){
 		return true;
 	}
 //==================================================================
-
 }
