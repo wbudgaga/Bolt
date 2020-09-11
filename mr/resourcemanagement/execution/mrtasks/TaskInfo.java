@@ -33,13 +33,13 @@ public abstract class TaskInfo<K1,V1,K2,V2> {
 		return jobID;
 	}
 	public void setJobID(long jobID) {
-		this.jobID = jobID;
+		this.jobID 					= jobID;
 	}
 	public long getTaskID() {
 		return taskID;
 	}
 	public void setTaskID(long taskID) {
-		this.taskID = taskID;
+		this.taskID 					= taskID;
 	}
 	public MRTask<K1,V1,K2,V2> createTask(String taskClassName) throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
 		Class<MRTask<K1,V1,K2,V2>> taskClass =  ClassLoader.loadTask(taskClassName,Setting.TASK_PACKAGE + taskClassName);
