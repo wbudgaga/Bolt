@@ -32,7 +32,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	public void offer(K2 key, V2 valueList){
 		synchronized(LOCK){
 			V2 vList 						=  dataBuffer.get(key);
-			if (vList==null){
+			if (vList == null){
 				dataBuffer.put(key, valueList);
 				pendingQueue1.offer(key);
 				return;
@@ -54,11 +54,12 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	//called by reduce()  function implemented by the user
 	public void output(K3 key, V3 data) throws InterruptedException{
 		OutputDataBuffer.put(key, data);
-		int c = OutputDataBuffer.size();
+		int c 							= OutputDataBuffer.size();
 /*		if (c%1000000==0)
 			System.out.println(Setting.LOCAL_DIR+"###########"+c);
 */		//reducerTaskOutputHandler.output(key, data);
 	}
+	
 	public V3 getOutputValue(K3 key) throws InterruptedException{
 		return OutputDataBuffer.get(key);
 	}
@@ -66,7 +67,7 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	
 	@Override
 	public void setTaskInfo(TaskInfo<K2,V2,K3,V3> taskInfo) {
-		this.reduceTaskInfo =  (ReduceTaskInfo<K2, V2, K3, V3>) taskInfo;
+		this.reduceTaskInfo 					=  (ReduceTaskInfo<K2, V2, K3, V3>) taskInfo;
 	}
 
 	@Override
