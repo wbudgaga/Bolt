@@ -89,8 +89,8 @@ public abstract class ReduceTask<K2,V2,K3,V3> extends MRTask<K2,V2,K3,V3>{
 	public boolean runTask() {
 		while (true){
 			try {
-				K2 key = pendingQueue1.take();
-				if (key==POISON)
+				K2 key 					= pendingQueue1.take();
+				if (key == POISON)
 					break;
 				synchronized(LOCK){
 					reduce(key, dataBuffer.remove(key));
