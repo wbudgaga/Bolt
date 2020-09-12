@@ -37,7 +37,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 	public boolean runPreTask(){	
 		try {
 			mapTaskDataProvider 			= createDataProvider();
-			if (mapTaskDataProvider!=null)
+			if (mapTaskDataProvider != null)
 				return preMap();
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
@@ -57,7 +57,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 					break;
 
 				dataID 				= dataObj.getDataID();
-				data   = dataObj.getData();
+				data   				= dataObj.getData();
 				mapTaskDataProvider.returnTaskDataObject(dataObj);
 				map(dataID, data);
 			} catch (InterruptedException e) {
