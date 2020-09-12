@@ -52,11 +52,11 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 		V1 data;
 		while (isStillRunning()){
 			try {
-				dataObj = pendingQueue.take();
-				if (dataObj==DataSource.POISON)
+				dataObj 			= pendingQueue.take();
+				if (dataObj == DataSource.POISON)
 					break;
 
-				dataID = dataObj.getDataID();
+				dataID 				= dataObj.getDataID();
 				data   = dataObj.getData();
 				mapTaskDataProvider.returnTaskDataObject(dataObj);
 				map(dataID, data);
