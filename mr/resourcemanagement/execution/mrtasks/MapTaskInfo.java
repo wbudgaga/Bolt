@@ -10,8 +10,8 @@ import mr.resourcemanagement.io.DataSource;
 import mr.resourcemanagement.io.TextFileReader;
 
 public class MapTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
-	private String				partitionerClassName;
-	private String 				chunkName;
+	private String	partitionerClassName;
+	private String 	chunkName;
 	
 	public MapTaskInfo(){
 		super(MAP);
