@@ -19,7 +19,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 	
 	@Override
 	public void setTaskInfo(TaskInfo<K1,V1,K2,V2> taskInfo) {
-		this.mapTaskInfo 		= (MapTaskInfo<K1, V1, K2, V2>) taskInfo;
+		this.mapTaskInfo 				= (MapTaskInfo<K1, V1, K2, V2>) taskInfo;
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 		return mapTaskInfo;
 	}
 	public MapTaskDataProvider createDataProvider() throws FileNotFoundException, InterruptedException{
-		MapTaskDataProvider mapTaskDataProvider = new MapTaskDataProvider();
+		MapTaskDataProvider mapTaskDataProvider 	= new MapTaskDataProvider();
 		mapTaskDataProvider.setDataSource(mapTaskInfo.getDataReader(jobTasksManager.getIOThreadPool()));
 		jobTasksManager.addToControlThreadPool(mapTaskDataProvider);
 		return mapTaskDataProvider;
@@ -36,7 +36,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 	@Override
 	public boolean runPreTask(){	
 		try {
-			mapTaskDataProvider = createDataProvider();
+			mapTaskDataProvider 			= createDataProvider();
 			if (mapTaskDataProvider!=null)
 				return preMap();
 		} catch (IOException | InterruptedException e) {
