@@ -81,8 +81,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 		jobTasksManager.finishedMapTask(mapTaskInfo.getTaskID());
 		return true;
 	}
-	
-//	==================================================================	
+		
 	public boolean preMap() throws FileNotFoundException{
 		return true;
 	}
@@ -91,6 +90,4 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 	
 	public boolean postMap(){
 		return true;
-	}
-//==================================================================
 }
