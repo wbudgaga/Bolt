@@ -10,7 +10,7 @@ import mr.resourcemanagement.execution.mrtasks.management.MapTaskDataProvider;
 import mr.resourcemanagement.io.DataSource;
 
 public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
-	protected MapTaskInfo<K1,V1,K2,V2>			mapTaskInfo;
+	protected MapTaskInfo<K1,V1,K2,V2> mapTaskInfo;
 	
 	//called by map()  function implemented by the user
 	public void output(K2 key, V2 data) throws InterruptedException{
@@ -19,7 +19,7 @@ public abstract class MapTask<K1,V1,K2,V2> extends MRTask<K1,V1,K2,V2>{
 	
 	@Override
 	public void setTaskInfo(TaskInfo<K1,V1,K2,V2> taskInfo) {
-		this.mapTaskInfo = (MapTaskInfo<K1, V1, K2, V2>) taskInfo;
+		this.mapTaskInfo 		= (MapTaskInfo<K1, V1, K2, V2>) taskInfo;
 	}
 	
 	@Override
