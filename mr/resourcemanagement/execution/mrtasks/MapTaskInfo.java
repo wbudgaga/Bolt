@@ -38,10 +38,10 @@ public class MapTaskInfo<K1,V1,K2,V2> extends TaskInfo<K1,V1,K2,V2>{
 	}
 
 	public void setPartitionerClassName(String partitionerClassName) {
-		this.partitionerClassName = partitionerClassName;
+		this.partitionerClassName 			= partitionerClassName;
 	}
 
 	public void setInputPath(String chunkFullName) {
-		chunkName = chunkFullName;
+		chunkName 					= chunkFullName;
 	}
 }
