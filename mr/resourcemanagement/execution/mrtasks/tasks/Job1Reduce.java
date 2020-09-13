@@ -13,7 +13,7 @@ public class Job1Reduce extends ReduceTask<String,Iterable<Long>, String, Long>{
 		}
 		try {
 			Long curSum = getOutputValue(key);
-			if (curSum==null)
+			if (curSum == null)
 				curSum = 0l;
 			output(key,curSum + sum);
 		} catch (InterruptedException e) {
