@@ -9,11 +9,11 @@ import mr.resourcemanagement.io.DataSource;
 
 
 public class JobInfo<K1,V1,K2,V2> {
-	public final static int  	MAP			= 1;
-	public final static int  	REDUCE			= 2;
-	public final static int 	STRING_TYPE		= 0;
-	public final static int 	LONG_TYPE		= 1;
-	public final static int 	DOUBLE_TYPE		= 2;
+	public final static int MAP			= 1;
+	public final static int REDUCE			= 2;
+	public final static int STRING_TYPE		= 0;
+	public final static int LONG_TYPE		= 1;
+	public final static int DOUBLE_TYPE		= 2;
 	
 	private long 	jobID;
 	private String 	mTaskClassName;
@@ -22,7 +22,7 @@ public class JobInfo<K1,V1,K2,V2> {
 	private int 	numOfReducer;	
 		
 	public JobInfo(long jobID){
-		this.jobID = jobID;
+		this.jobID 				= jobID;
 	}
 			
 	public long getJobID() {
