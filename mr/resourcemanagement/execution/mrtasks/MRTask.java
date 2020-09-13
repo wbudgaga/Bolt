@@ -23,7 +23,7 @@ public abstract class MRTask<K1,V1,K2,V2> extends Task{
 	}
 
 	public void setTasksManager(JobTasksManager jobTasksManager){
-		this.jobTasksManager = jobTasksManager;
+		this.jobTasksManager 				= jobTasksManager;
 	}
 	
 	public boolean isStillRunning() {
@@ -31,7 +31,7 @@ public abstract class MRTask<K1,V1,K2,V2> extends Task{
 	}
 
 	public void stopRunning() {
-		this.stillRunning = false;
+		this.stillRunning 				= false;
 	}
 	
 	// Abstract methods
@@ -41,5 +41,4 @@ public abstract class MRTask<K1,V1,K2,V2> extends Task{
 
 	public abstract TaskInfo<K1,V1,K2,V2> getTaskInfo();
 	public abstract void setTaskInfo(TaskInfo<K1,V1,K2,V2> taskInfo);
-
 }
