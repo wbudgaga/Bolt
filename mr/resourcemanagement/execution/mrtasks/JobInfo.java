@@ -54,7 +54,6 @@ public class JobInfo<K1,V1,K2,V2> {
 	}
 
 	public void setNumOfReducer(int numOfReducer) {
-		this.numOfReducer = numOfReducer;
+		this.numOfReducer 			= numOfReducer;
 	}
-
 }
