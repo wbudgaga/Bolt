@@ -37,7 +37,7 @@ public class JobInfo<K1,V1,K2,V2> {
 	}
 	
 	public void setRTaskClassName(String taskClassPath) {
-		this.rTaskClassName = taskClassPath;
+		this.rTaskClassName 			= taskClassPath;
 	}
 	public String getRTaskClassName() {
 		return rTaskClassName;
@@ -47,7 +47,7 @@ public class JobInfo<K1,V1,K2,V2> {
 		return outputName;
 	}
 	public void setOutputName(String dataName) {
-		this.outputName = dataName;
+		this.outputName 			= dataName;
 	}
 	public int getNumOfReducer() {
 		return numOfReducer;
