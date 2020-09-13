@@ -10,10 +10,10 @@ import mr.resourcemanagement.execution.mrtasks.management.JobTasksManager;
 import mr.resourcemanagement.execution.mrtasks.management.MapTaskDataProvider;
 
 public abstract class MRTask<K1,V1,K2,V2> extends Task{
-	protected JobTasksManager 			jobTasksManager;
-	protected MapTaskDataProvider 		mapTaskDataProvider;
-	protected BlockingQueue<TaskData<K1, V1>> pendingQueue= new LinkedBlockingQueue<TaskData<K1, V1>>();
-	protected boolean 					stillRunning = true;
+	protected JobTasksManager 	jobTasksManager;
+	protected MapTaskDataProvider 	mapTaskDataProvider;
+	protected BlockingQueue<TaskData<K1, V1>> pendingQueue	= new LinkedBlockingQueue<TaskData<K1, V1>>();
+	protected boolean stillRunning 				= true;
 		
 	@Override
 	public void execute() throws IOException, InterruptedException {
