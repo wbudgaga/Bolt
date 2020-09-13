@@ -12,7 +12,7 @@ public class Job1Reduce extends ReduceTask<String,Iterable<Long>, String, Long>{
 			sum 			= sum + count;
 		}
 		try {
-			Long curSum = getOutputValue(key);
+			Long curSum 		= getOutputValue(key);
 			if (curSum == null)
 				curSum = 0l;
 			output(key,curSum + sum);
