@@ -30,7 +30,7 @@ public class JobInfo<K1,V1,K2,V2> {
 	}
 	
 	public void setMTaskClassName(String taskClassPath) {
-		this.mTaskClassName = taskClassPath;
+		this.mTaskClassName 			= taskClassPath;
 	}
 	public String getMTaskClassName() {
 		return mTaskClassName;
