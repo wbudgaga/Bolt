@@ -7,9 +7,9 @@ import mr.resourcemanagement.execution.mrtasks.TaskInfo;
 public class Job1Reduce extends ReduceTask<String,Iterable<Long>, String, Long>{
 	@Override
 	public boolean reduce(String key,Iterable<Long> data) {
-		Long sum = 0l;
+		Long sum 			= 0l;
 		for (Long  count:data){
-			sum = sum + count;
+			sum 			= sum + count;
 		}
 		try {
 			Long curSum = getOutputValue(key);
