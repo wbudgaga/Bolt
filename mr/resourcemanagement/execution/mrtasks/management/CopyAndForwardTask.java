@@ -22,9 +22,9 @@ public class CopyAndForwardTask extends Task{
 	}
 	 
 	private void storeFile(int rp) throws IOException{
-		int 	dirNr 		=  rp - 1;
-		String 	outputName 	= Setting.DATA_DIR+"/d"+dirNr+"/"+fileMSG.getFileName();
-		outputChannel 		= new FileOutputStream(outputName, true).getChannel();
+		int 	dirNr 			=  rp - 1;
+		String 	outputName 		= Setting.DATA_DIR+"/d"+dirNr+"/"+fileMSG.getFileName();
+		outputChannel 			= new FileOutputStream(outputName, true).getChannel();
 		outputChannel.write(ByteBuffer.wrap(fileMSG.getFileBytes(), 0, fileMSG.getBufferSize()));
 		outputChannel.close();
 	}
