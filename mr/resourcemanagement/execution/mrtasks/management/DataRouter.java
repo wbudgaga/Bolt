@@ -82,9 +82,11 @@ public class DataRouter{
 	public boolean isReady(){//OK
 		return ready;
 	}
+	
 	public Long getRoutingKey(int reducerID){//OK
 		return routingsKey[reducerID];
 	}
+	
 	public void stopAfterFinish(){//OK
 		try {
 			jobManger.publishFinishedMap();
@@ -92,14 +94,15 @@ public class DataRouter{
 			e.printStackTrace();
 		}
 	}
+	
 	private void pushMessage(long rKey, Message msg) throws IOException{
-		RemotePeer rp = getRoutingPeer(rKey);
-		
+		RemotePeer rp 					= getRoutingPeer(rKey);
 		if (rp == null)
 			throw new IOException(">>>There is not any responsible peer for the routing key: "+routingsKey);
 	
 		rp.sendMessage(msg);
 	}
+	
 	//Thread safe: mapTaskOutputHandler.mainloop->this.pushBuffer
 	public void  pushBuffer(int reducerID, ReducerBuffer rBuffer) throws IOException, InterruptedException{//OK
 		Long routingsKey = getRoutingKey(reducerID);
