@@ -44,10 +44,10 @@ public class DataRouter{
 	private 	final 	Object 	LOCK 			= new Object();
 	/////////////////////////////////////
 	public DataRouter(Partitioner partitioner,int numOfReducer, long jobID, JobTasksManager jobManger) throws NoSuchAlgorithmException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {//OK
-		this.partitioner	= partitioner;
-		this.numOfReducer 	= numOfReducer;
-		routingsKey 		= new Long[numOfReducer];
-		this.jobManger		= jobManger;
+		this.partitioner				= partitioner;
+		this.numOfReducer 				= numOfReducer;
+		routingsKey 					= new Long[numOfReducer];
+		this.jobManger					= jobManger;
 		createDataMSG();
 		//log("Data router to the reducers is created! ");
 	}
