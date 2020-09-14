@@ -33,7 +33,7 @@ public class DataRouter{
 	private 	Long jobOffset;
 */	private 	int numOfReducer;
 	private 	JobTasksManager jobManger;
-	public final int numOfReducerMSGs  = 0;
+	public final int numOfReducerMSGs  			= 0;
 	public TextNumTaskData dataMSG;
 	//public 	ConcurrentHashMap<Long,  BlockingQueue<TextNumTaskData>>	reducerQMSGs= new ConcurrentHashMap<Long, BlockingQueue<TextNumTaskData>>	();
 	//private final BlockingQueue<TaskData<Long, String>> internalDataQueue = new ArrayBlockingQueue<TaskData<Long,String>>(QueueSize);
