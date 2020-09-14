@@ -136,8 +136,8 @@ public class DataRouter{
 	public BlockingQueue<TextNumTaskData> createTaskDataMSG(int reducerID){
 		 BlockingQueue<TextNumTaskData> messagesQueue = new ArrayBlockingQueue<TextNumTaskData>(numOfReducerMSGs);
 		 for (int i=0; i<numOfReducerMSGs; ++i){
-			TextNumTaskData msg = new TextNumTaskData();
-			PeerInfo taskOwner 	= jobManger.getLocalPeerInfo();
+			TextNumTaskData msg 			= new TextNumTaskData();
+			PeerInfo taskOwner 			= jobManger.getLocalPeerInfo();
 			msg.setTaskOwner(taskOwner);
 			msg.setJobID(jobManger.getJobInfo().getJobID());
 			msg.setTaskID(reducerID);
@@ -161,7 +161,7 @@ public class DataRouter{
 	//-------------------------------------------------------------------------------------------------------------
 	//find the reducer index for the result k, v. used by the map to forward the results to the appropriate reducers
 	public <K, V> int  getReducerID(K key, V value){
-		Long hashedKey = UtilClass.hashMKey((String)key);
+		Long hashedKey 					= UtilClass.hashMKey((String)key);
 		return partitioner.getReducerID(hashedKey, (Long) value, numOfReducer);
 	}
 
