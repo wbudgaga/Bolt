@@ -25,14 +25,14 @@ import mr.resourcemanagement.execution.mrtasks.TaskInfo;
 
 public class DataRouter{
 	private 	Partitioner<Long, Long>	partitioner;
-//	protected 	HashFunction			hashFunction;
-	private 	volatile   	boolean  	ready		= false;
-	protected 	Long[] 					routingsKey;
+//	protected 	HashFunction hashFunction;
+	private 	volatile   boolean  	ready		= false;
+	protected 	Long[] 	routingsKey;
 	protected 	HashMap<Long,RemotePeer>ThePeers 	= new HashMap<Long,RemotePeer>(); 
-/*	private 	Long 					sigmentSize;
-	private 	Long 					jobOffset;
-*/	private 	int 					numOfReducer;
-	private 	JobTasksManager 		jobManger;
+/*	private 	Long sigmentSize;
+	private 	Long jobOffset;
+*/	private 	int numOfReducer;
+	private 	JobTasksManager jobManger;
 	public final int numOfReducerMSGs  = 0;
 	public TextNumTaskData dataMSG;
 	//public 	ConcurrentHashMap<Long,  BlockingQueue<TextNumTaskData>>	reducerQMSGs= new ConcurrentHashMap<Long, BlockingQueue<TextNumTaskData>>	();
