@@ -119,7 +119,7 @@ public class DataRouter{
 		msg.setNumOfFinishedMaps(numOfFinishedMaps);
 		int i						= 0;
 		for (; i<getNumOfReducer(); ++i){
-			long routingsKey 	= getRoutingKey(i);
+			long routingsKey 			= getRoutingKey(i);
 			msg.setNumOfSentBuffers(getNumOfSentBuffers(routingsKey));
 			pushMessage(routingsKey, msg);
 		}
