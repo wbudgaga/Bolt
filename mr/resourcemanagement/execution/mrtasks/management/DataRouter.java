@@ -38,10 +38,10 @@ public class DataRouter{
 	//public 	ConcurrentHashMap<Long,  BlockingQueue<TextNumTaskData>>	reducerQMSGs= new ConcurrentHashMap<Long, BlockingQueue<TextNumTaskData>>	();
 	//private final BlockingQueue<TaskData<Long, String>> internalDataQueue = new ArrayBlockingQueue<TaskData<Long,String>>(QueueSize);
 	private 	HashMap<Long, Integer>	numOfSentBuffers= new HashMap<Long, Integer>();
-	public volatile long tmp=0;
+	public volatile long tmp				= 0;
 	/////////////////////////////////////
-	private 	final 		Object 		PEERS_LOCK= new Object();
-	private 	final 		Object 		LOCK 		= new Object();
+	private 	final 	Object 	PEERS_LOCK		= new Object();
+	private 	final 	Object 	LOCK 			= new Object();
 	/////////////////////////////////////
 	public DataRouter(Partitioner partitioner,int numOfReducer, long jobID, JobTasksManager jobManger) throws NoSuchAlgorithmException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {//OK
 		this.partitioner	= partitioner;
