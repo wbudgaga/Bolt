@@ -113,11 +113,11 @@ public class DataRouter{
 	}
 	
 	public int publishFinishedMap(PeerInfo taskOwner, int numOfFinishedMaps) throws IOException{//OK
-		FinishedMapTaskNotify msg 	= new FinishedMapTaskNotify();
+		FinishedMapTaskNotify msg 			= new FinishedMapTaskNotify();
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(jobManger.getJobInfo().getJobID());
 		msg.setNumOfFinishedMaps(numOfFinishedMaps);
-		int i=0;
+		int i						= 0;
 		for (; i<getNumOfReducer(); ++i){
 			long routingsKey 	= getRoutingKey(i);
 			msg.setNumOfSentBuffers(getNumOfSentBuffers(routingsKey));
