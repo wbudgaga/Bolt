@@ -30,7 +30,7 @@ public class CopyAndForwardTask extends Task{
 	}
 	
 	private void forwardFile(int newRF) throws IOException{
-		RemotePeer successor = localPeer.getSuccessor();
+		RemotePeer successor 		= localPeer.getSuccessor();
 		fileMSG.setReplicarionFactore(newRF);
 		successor.sendMessage(fileMSG);
 	}
