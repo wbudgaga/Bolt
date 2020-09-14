@@ -13,9 +13,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 public class CopyAndForwardTask extends Task{
-	private StoreFileRequest 	fileMSG;
-	private FileChannel 		outputChannel  = null;
-	private Peer				localPeer;
+	private StoreFileRequest fileMSG;
+	private FileChannel outputChannel  = null;
+	private Peer localPeer;
 	public CopyAndForwardTask(StoreFileRequest fileMSG, Peer lPeer){
 		this.fileMSG 	= fileMSG;
 		this.localPeer	= lPeer;
