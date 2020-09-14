@@ -54,20 +54,20 @@ public class DataRouter{
 	
 	public void computeRountingKeys() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException{//OK
 		for(int i=0; i<numOfReducer; ++i){
-			routingsKey[i] = UtilClass.GetReduceKey(jobManger.getJobInfo().getOutputName(), (i+1));
+			routingsKey[i] 				= UtilClass.GetReduceKey(jobManger.getJobInfo().getOutputName(), (i+1));
 			numOfSentBuffers.put(routingsKey[i], 0);
 			jobManger.findReducerPeer(routingsKey[i], i);
 		}
 	}
+	
 	public void  setRoutingPeer(Long routingsKey, RemotePeer rPeer){//OK
 		synchronized(PEERS_LOCK){
 			ThePeers.put(routingsKey, rPeer);
-			//System.out.println("########### reducer Peer received routingsKey:"+routingsKey+  "    rPeerID:"+rPeer.getID());
-		//####	if (ThePeers.size()==numOfReducer)
-				becomeReady();
+			becomeReady();
 			//log("A reducer peer (ID:"+rPeer.getID()+ ") has been found for the rounting key "+ routingsKey +" ("+ThePeers.size()+" of "+numOfReducer+") routerStatus: "+isReady());
 		}
 	}
+	
 	public RemotePeer  getRoutingPeer(Long routingKey){//OK
 		synchronized(PEERS_LOCK){
 			return ThePeers.get(routingKey);
