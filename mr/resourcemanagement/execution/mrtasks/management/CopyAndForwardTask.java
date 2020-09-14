@@ -37,7 +37,7 @@ public class CopyAndForwardTask extends Task{
 
 	@Override
 	public void execute() throws IOException, InterruptedException {
-		int rp = fileMSG.getReplicarionFactore();
+		int rp 				= fileMSG.getReplicarionFactore();
 		if (rp > 1)
 			forwardFile(rp - 1);
 		storeFile(rp);
