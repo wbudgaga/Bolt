@@ -176,19 +176,21 @@ public class DataRouter{
 		}
 		return -1;
 	}
+	
 	//////////////////////////////static//////////////PLEASE CHECK
 	public static long getRountingKey(Partitioner partitioner,int numOfReducers, long jobID, int idx){
-		Long sigmentSize	= Setting.RING_KEYSPACE / numOfReducers;
-		Long jobOffset 		= jobID % sigmentSize;
+		Long sigmentSize				= Setting.RING_KEYSPACE / numOfReducers;
+		Long jobOffset 					= jobID % sigmentSize;
 		return jobOffset + idx * sigmentSize;
 	}
+	
 	public static long[] getRountingKeys(Partitioner partitioner,int numOfReducers, long jobID){
-		Long sigmentSize= Long.valueOf(Setting.RING_KEYSPACE / numOfReducers);
-		Long jobOffset 	= jobID % sigmentSize;
+		Long sigmentSize				= Long.valueOf(Setting.RING_KEYSPACE / numOfReducers);
+		Long jobOffset 					= jobID % sigmentSize;
 		
-		long[] RoutingKeys = new long[numOfReducers];
+		long[] RoutingKeys 				= new long[numOfReducers];
 		for(int i=0; i<numOfReducers; ++i){
-			RoutingKeys[i] = jobOffset + i * sigmentSize;
+			RoutingKeys[i] 				= jobOffset + i * sigmentSize;
 		}
 		return RoutingKeys;
 	}
