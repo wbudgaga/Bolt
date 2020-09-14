@@ -127,8 +127,8 @@ public class DataRouter{
 	}
 
 	public void createDataMSG(){
-		dataMSG = new TextNumTaskData();
-		PeerInfo taskOwner 	= jobManger.getLocalPeerInfo();
+		dataMSG 					= new TextNumTaskData();
+		PeerInfo taskOwner 				= jobManger.getLocalPeerInfo();
 		dataMSG.setTaskOwner(taskOwner);
 		dataMSG.setJobID(jobManger.getJobInfo().getJobID());
 	}
