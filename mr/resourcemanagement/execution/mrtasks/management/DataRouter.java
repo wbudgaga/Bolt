@@ -73,10 +73,12 @@ public class DataRouter{
 			return ThePeers.get(routingKey);
 		}
 	}
+	
 	private void becomeReady(){//OK
 		jobManger.runPendingMapTasks();
-		ready = true;
+		ready 						= true;
 	}
+	
 	public boolean isReady(){//OK
 		return ready;
 	}
