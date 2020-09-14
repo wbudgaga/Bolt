@@ -105,12 +105,13 @@ public class DataRouter{
 	
 	//Thread safe: mapTaskOutputHandler.mainloop->this.pushBuffer
 	public void  pushBuffer(int reducerID, ReducerBuffer rBuffer) throws IOException, InterruptedException{//OK
-		Long routingsKey = getRoutingKey(reducerID);
+		Long routingsKey 				= getRoutingKey(reducerID);
 		dataMSG.setTaskID(routingsKey);
 		dataMSG.setDataBuf(rBuffer.getOutputBuf());
 		pushMessage(routingsKey, dataMSG);		
 	//	returnRBufferMSG(routingsKey, msg);
 	}
+	
 	public int publishFinishedMap(PeerInfo taskOwner, int numOfFinishedMaps) throws IOException{//OK
 		FinishedMapTaskNotify msg 	= new FinishedMapTaskNotify();
 		msg.setTaskOwner(taskOwner);
