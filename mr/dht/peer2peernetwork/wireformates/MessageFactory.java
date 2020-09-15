@@ -31,7 +31,7 @@ public class MessageFactory {
 	
 	public  static  MessageFactory getInstance() throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		if (instance == null)
-			instance = new MessageFactory();
+			instance 			= new MessageFactory();
 	    return instance;
 	}
 	public Message getMessageInstance(int messageID){
