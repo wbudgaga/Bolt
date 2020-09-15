@@ -42,7 +42,7 @@ public interface MessageTypes {
 	public static final int SUBMITDATA_QResult		 	= 104;
 	public static final int FINISHEDMAPTASK_NOTIFYQRESULT		= 105;
 	public static final int FINISHEDMAPTASKNOTIFY 			= 106;
-	public static final int REDUCERPEER				 		= 107;
+	public static final int REDUCERPEER				= 107;
 	public static final int START_JOB_BATCH				 	= 108;
 	public static final int FIND_RUNNING_REDUCER		 	= 109;
 	
