@@ -19,8 +19,8 @@ public interface MessageTypes {
 	public static final int RANDOM_PEER	 			= 9;
 	public static final int STORE_FILE_REQUEST	 		= 10;
 	public static final int GET					= 11;
-	public static final int GET_RESPONSE		 			= 12;
-	public static final int GET_SUCCESSOR		 			= 13;
+	public static final int GET_RESPONSE		 		= 12;
+	public static final int GET_SUCCESSOR		 		= 13;
 	public static final int GET_PREDECESSOR_RESPONSE	 	= 14;
 	public static final int GET_SUCCESSOR_RESPONSE		 	= 15;
 	public static final int New_PEER					 	= 16;
