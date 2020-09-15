@@ -15,8 +15,8 @@ public interface MessageTypes {
 	public static final int LOOKUP					= 5;
 	public static final int FORWARD					= 6;
 	public static final int QUERY_RESULT				= 7;
-	public static final int GET_PREDECESSOR		 			= 8;
-	public static final int RANDOM_PEER	 					= 9;
+	public static final int GET_PREDECESSOR		 		= 8;
+	public static final int RANDOM_PEER	 			= 9;
 	public static final int STORE_FILE_REQUEST	 			= 10;
 	public static final int GET					 			= 11;
 	public static final int GET_RESPONSE		 			= 12;
