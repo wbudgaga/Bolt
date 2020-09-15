@@ -11,8 +11,8 @@ public interface MessageTypes {
 	public static final int REGISTER_RESPONSE 			= 1;
 	public static final int PEER_INFO		 		= 2;
 	public static final int PREDECESSOR		 		= 3;
-	public static final int SUCCESSOR						= 4;
-	public static final int LOOKUP							= 5;
+	public static final int SUCCESSOR				= 4;
+	public static final int LOOKUP					= 5;
 	public static final int FORWARD							= 6;
 	public static final int QUERY_RESULT					= 7;
 	public static final int GET_PREDECESSOR		 			= 8;
