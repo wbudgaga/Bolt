@@ -15,13 +15,13 @@ public class MessageFactory {
 		MessageTypes.ClassName[] classIDs 	= MessageTypes.ClassName.values();
 		for (int i = 0; i < classIDs.length; ++i){
 			@SuppressWarnings("unchecked")
-			Class<Message> messageClass = (Class<Message>) Class.forName(Setting.MESSSAGE_PACKAGE + classIDs[i].toString());
+			Class<Message> messageClass 	= (Class<Message>) Class.forName(Setting.MESSSAGE_PACKAGE + classIDs[i].toString());
 			createMessageObject(messageClass);
 		}
 	}
 	
 	protected void createMessageObject(Class<Message> messageClass) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		Message msg = (Message) messageClass.newInstance();
+		Message msg 				= (Message) messageClass.newInstance();
 		messageList.put(msg.getMessageID(), msg);
 	}
 	
