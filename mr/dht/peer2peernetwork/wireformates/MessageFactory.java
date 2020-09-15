@@ -34,14 +34,15 @@ public class MessageFactory {
 			instance 			= new MessageFactory();
 	    return instance;
 	}
+	
 	public Message getMessageInstance(int messageID){
 		return messageList.get(messageID);
 	}
 	
 	public Message createMessage(byte[]  byteStream) throws InstantiationException, IllegalAccessException{
-		int messageID 			= Message.unpackMessageID(byteStream);
-		int messageHandlerID 	= Message.unpackHandlerID(byteStream);
-		Message msg 			= getMessageInstance(messageID);
+		int messageID 				= Message.unpackMessageID(byteStream);
+		int messageHandlerID 			= Message.unpackHandlerID(byteStream);
+		Message msg 				= getMessageInstance(messageID);
 /*		msg.create(byteStream);
 		return msg;
 */	//the commenented part is more efficent but causes race condition since the same object can be used by different parts at the same time ###<<==###
