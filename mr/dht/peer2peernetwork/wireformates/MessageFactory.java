@@ -6,15 +6,14 @@ import java.util.Map;
 import mr.dht.peer2peernetwork.nodes.Setting;
 import mr.dht.peer2peernetwork.util.UtilClass;
 
-// this classes uses reflection to load  particular class to create the required instance
+// this class uses reflection to load  particular class to create the required instance
 public class MessageFactory {
 	private static MessageFactory instance;	
-	private Map<Integer,Message> messageList = new HashMap<Integer,Message>();
+	private Map<Integer,Message> messageList 	= new HashMap<Integer,Message>();
 	
 	private void loadMessages() throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		MessageTypes.ClassName[] classIDs = MessageTypes.ClassName.values();
-		for (int i=0;i<classIDs.length;++i){
-			
+		MessageTypes.ClassName[] classIDs 	= MessageTypes.ClassName.values();
+		for (int i = 0; i < classIDs.length; ++i){
 			@SuppressWarnings("unchecked")
 			Class<Message> messageClass = (Class<Message>) Class.forName(Setting.MESSSAGE_PACKAGE + classIDs[i].toString());
 			createMessageObject(messageClass);
