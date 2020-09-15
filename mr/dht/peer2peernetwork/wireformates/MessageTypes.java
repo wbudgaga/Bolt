@@ -27,7 +27,7 @@ public interface MessageTypes {
 	public static final int FINGER_TABLE_REQUEST 		 	= 17;
 	public static final int FINGER_TABLE_RESPONSE 		 	= 18;
 	public static final int RANDOM_PEER_REQUEST 		 	= 19;
-	public static final int PEERS_LIST			 		 	= 20;
+	public static final int PEERS_LIST			 	= 20;
 	public static final int DATASET_META		 		 	= 21;
 	public static final int FILE_META			 		 	= 22;
 	public static final int GET_ALLPEERS		 		 	= 23;
