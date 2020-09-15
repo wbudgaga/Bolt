@@ -23,7 +23,7 @@ public interface MessageTypes {
 	public static final int GET_SUCCESSOR		 		= 13;
 	public static final int GET_PREDECESSOR_RESPONSE	 	= 14;
 	public static final int GET_SUCCESSOR_RESPONSE		 	= 15;
-	public static final int New_PEER					 	= 16;
+	public static final int New_PEER				= 16;
 	public static final int FINGER_TABLE_REQUEST 		 	= 17;
 	public static final int FINGER_TABLE_RESPONSE 		 	= 18;
 	public static final int RANDOM_PEER_REQUEST 		 	= 19;
