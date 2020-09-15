@@ -45,10 +45,11 @@ public class MessageFactory {
 		Message msg 				= getMessageInstance(messageID);
 /*		msg.create(byteStream);
 		return msg;
-*/	//the commenented part is more efficent but causes race condition since the same object can be used by different parts at the same time ###<<==###
+*/	
+		//the  above commenented part is more efficent but causes race condition since the same object can be used by different parts at the same time ###<<==###
 		//maybe I have to think to add locker in the msg that will be released after sending
 		
-		Message newMsg = msg.getClass().newInstance();
+		Message newMsg 				= msg.getClass().newInstance();
 		newMsg.create(byteStream);
 		newMsg.setHandlerID(messageHandlerID);
 		return newMsg;
