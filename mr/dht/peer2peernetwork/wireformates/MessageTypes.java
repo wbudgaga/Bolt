@@ -39,8 +39,8 @@ public interface MessageTypes {
 	public static final int START_REDUCETask		 	= 101;
 	public static final int TASKDATA		 		= 102;
 	public static final int TEXTNUM_TASKDATA		 	= 103;
-	public static final int SUBMITDATA_QResult		 		= 104;
-	public static final int FINISHEDMAPTASK_NOTIFYQRESULT	= 105;
+	public static final int SUBMITDATA_QResult		 	= 104;
+	public static final int FINISHEDMAPTASK_NOTIFYQRESULT		= 105;
 	public static final int FINISHEDMAPTASKNOTIFY 			= 106;
 	public static final int REDUCERPEER				 		= 107;
 	public static final int START_JOB_BATCH				 	= 108;
