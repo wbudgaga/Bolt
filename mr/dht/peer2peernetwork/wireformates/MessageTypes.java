@@ -30,9 +30,9 @@ public interface MessageTypes {
 	public static final int PEERS_LIST			 	= 20;
 	public static final int DATASET_META		 		= 21;
 	public static final int FILE_META			 	= 22;
-	public static final int GET_ALLPEERS		 		 	= 23;
+	public static final int GET_ALLPEERS		 		= 23;
 	public static final int GET_DATASET_METADATA 		 	= 24;
-	public static final int GET_FILE_METADATA 		 		= 25;
+	public static final int GET_FILE_METADATA 		 	= 25;
 	
 	//mapReduce messages IDs
 	public static final int START_MAPTASK		 		 	= 100;
