@@ -28,8 +28,8 @@ public interface MessageTypes {
 	public static final int FINGER_TABLE_RESPONSE 		 	= 18;
 	public static final int RANDOM_PEER_REQUEST 		 	= 19;
 	public static final int PEERS_LIST			 	= 20;
-	public static final int DATASET_META		 		 	= 21;
-	public static final int FILE_META			 		 	= 22;
+	public static final int DATASET_META		 		= 21;
+	public static final int FILE_META			 	= 22;
 	public static final int GET_ALLPEERS		 		 	= 23;
 	public static final int GET_DATASET_METADATA 		 	= 24;
 	public static final int GET_FILE_METADATA 		 		= 25;
