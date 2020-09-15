@@ -7,8 +7,8 @@ public interface MessageTypes {
 	public static final byte SUCCEESS 				= 1;
 	public static final byte FAILURE 				= 2;
 	
-	public static final int REGISTER_REQUEST 				= 0;
-	public static final int REGISTER_RESPONSE 				= 1;
+	public static final int REGISTER_REQUEST 			= 0;
+	public static final int REGISTER_RESPONSE 			= 1;
 	public static final int PEER_INFO		 				= 2;
 	public static final int PREDECESSOR		 				= 3;
 	public static final int SUCCESSOR						= 4;
