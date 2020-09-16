@@ -114,7 +114,7 @@ public class JobTasksManager{
 	public void createOutputHandler(MapTaskInfo mapTaskInfo) throws NoSuchAlgorithmException, InstantiationException, IllegalAccessException, ClassNotFoundException, IOException, InterruptedException{//OK
 		dataRouter 	   					= new DataRouter(mapTaskInfo.getPartitioner(), jobInfo.getNumOfReducer(), jobID, this);
 		dataRouter.computeRountingKeys();
-		mapTaskOutputHandler= new MapTaskOutputHandler(dataRouter);
+		mapTaskOutputHandler					= new MapTaskOutputHandler(dataRouter);
 		addToControlThreadPool(mapTaskOutputHandler);
 	}
 	
@@ -151,8 +151,8 @@ public class JobTasksManager{
 	 * At the time this method is called  there aren't any running maps  
 	 */
 	public void publishFinishedMap() throws Exception{//OK
-		PeerInfo taskOwner 						= RemotePeer.getPeerInfo(resManager.getLocalPeer().getNodeData());
-		numOFNotifiedReducers 						= dataRouter.publishFinishedMap(taskOwner, numFinishedMaps);
+		PeerInfo taskOwner 					= RemotePeer.getPeerInfo(resManager.getLocalPeer().getNodeData());
+		numOFNotifiedReducers 					= dataRouter.publishFinishedMap(taskOwner, numFinishedMaps);
 		if (numFinishedReducers == numLocReducers)
 			cleanUp();
 	}
