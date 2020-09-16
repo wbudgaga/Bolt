@@ -39,12 +39,12 @@ public class JobTasksManager{
 	private long jobID;
 	private JobInfo jobInfo;
 	private ResourceManager resManager;			
-	public volatile int numOFAllMaps		= -1;
-	public int numLocMaps				= 0;
-	public int numFinishedMaps			= 0;
-	public int numLocReducers 			= 0;
-	public int numFinishedReducers			= 0;
-	private volatile  Integer numOFNotifiedReducers = 0;
+	public volatile int numOFAllMaps				= -1;
+	public int numLocMaps						= 0;
+	public int numFinishedMaps					= 0;
+	public int numLocReducers 					= 0;
+	public int numFinishedReducers					= 0;
+	private volatile  Integer numOFNotifiedReducers 		= 0;
 	public  final 	RemotePeer LOCAL_PEER;
 	////////////////////////////////////////
 	private final Object LOCK 	 		= new Object();
