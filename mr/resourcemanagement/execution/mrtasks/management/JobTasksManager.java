@@ -83,7 +83,7 @@ public class JobTasksManager{
 	/////////////////======================MR-tasks and their control tasks=========================/////////////////
 	//======================================= create MR-tasks =======================================
 	public <K1,V1,K2,V2>  void processMapTask(MapTaskInfo<K1,V1,K2,V2> mapTaskInfo) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchAlgorithmException, IOException, InterruptedException{//OK
-		MapTask<K1,V1,K2,V2> mrTask = (MapTask<K1, V1, K2, V2>) mapTaskInfo.createTask(jobInfo.getMTaskClassName());
+		MapTask<K1,V1,K2,V2> mrTask 				= (MapTask<K1, V1, K2, V2>) mapTaskInfo.createTask(jobInfo.getMTaskClassName());
 		mrTask.setTasksManager(this);	
 		synchronized (MAP_LOCK){
 			if (mapTaskOutputHandler == null)
@@ -98,10 +98,10 @@ public class JobTasksManager{
 	}
 	
 	public <K1,V1,K2,V2>  void processReduceTask(ReduceTaskInfo<K1,V1,K2,V2> reduceTaskInfo) throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException{//OK
-		ReduceTask<K1,V1,K2,V2> mrTask = (ReduceTask<K1, V1, K2, V2>) reduceTaskInfo.createTask(jobInfo.getRTaskClassName());
+		ReduceTask<K1,V1,K2,V2> mrTask 				= (ReduceTask<K1, V1, K2, V2>) reduceTaskInfo.createTask(jobInfo.getRTaskClassName());
 		synchronized(LOCK){
 			if (numOFAllMaps == -1){
-				numOFAllMaps = reduceTaskInfo.getNumOfMaps();
+				numOFAllMaps 				= reduceTaskInfo.getNumOfMaps();
 				//UtilClass.createPath(jobInfo.getOutputName());
 			}
 		}
