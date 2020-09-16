@@ -159,7 +159,7 @@ public class JobTasksManager{
 
 	public int decreaseMapRef(int numOfEndedMaps) throws Exception{//OK
 		synchronized(LOCK){
-			numOFAllMaps -= numOfEndedMaps;
+			numOFAllMaps 					-= numOfEndedMaps;
 			return numOFAllMaps;
 		}
 	}	
@@ -197,10 +197,11 @@ public class JobTasksManager{
 		System.out.println(Setting.LOCAL_DIR+"########## map finshed "+mapIDX+"   #"+ numFinishedMaps+ " of "+numLocMaps);
 		resManager.exeTask();
 	}	
+	
 	public void cleanUp() throws Exception{
-		taskMSGs 	= null;
-		runningMaps	= null;
-		runningReducers = null;
+		taskMSGs 						= null;
+		runningMaps						= null;
+		runningReducers 					= null;
 		resManager.removeJobManager(jobID);
 	}
 	//running tasks
