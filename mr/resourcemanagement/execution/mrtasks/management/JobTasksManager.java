@@ -312,7 +312,7 @@ public class JobTasksManager{
 
 	public JobInfo getJobInfo() {
 		synchronized (JOB_LOCK){
-			if (jobInfo==null)
+			if (jobInfo == null)
 				jobInfo 				= new JobInfo(jobID);
 			return jobInfo;
 		}
