@@ -51,8 +51,8 @@ public class JobTasksManager{
 	private final Object REDUCE_LOCK 		= new Object();
 	private final Object REDUCE_LOCK1 		= new Object();
 	private final Object MAP_LOCK 			= new Object();
-	private final Object MAP_LOCK1 	= new Object();
-	private final Object JOB_LOCK 	= new Object();
+	private final Object MAP_LOCK1 			= new Object();
+	private final Object JOB_LOCK 			= new Object();
 	///////////////////////////////////////
 	private long start;
 	
