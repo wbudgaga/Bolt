@@ -59,24 +59,23 @@ public class JobTasksManager{
 	//include maps that are not ready to execute because of datarouter
 	private ConcurrentHashMap <Long,MapTask> penndingMaps		= new ConcurrentHashMap<Long,MapTask>();
 	//running tasks
-	private ConcurrentHashMap <Long,MapTask>    runningMaps 		= new ConcurrentHashMap<Long,MapTask>();
+	private ConcurrentHashMap <Long,MapTask>    runningMaps 	= new ConcurrentHashMap<Long,MapTask>();
 	private ConcurrentHashMap <Long,ReduceTask> runningReducers 	= new ConcurrentHashMap<Long,ReduceTask>();
 	 
-    private ThreadPoolManager controlThreadPool; //used for parallel executions of control tasks to provide data to tasks and and handle tasks outputs
+    	private ThreadPoolManager controlThreadPool; //used for parallel executions of control tasks to provide data to tasks and and handle tasks outputs
     
-    // These are used by all mappers belonging to the same job to rout their outputs to the reducers
-    private MapTaskOutputHandler	mapTaskOutputHandler;
-	private DataRouter				dataRouter=null;    
+    	// These are used by all mappers belonging to the same job to rout their outputs to the reducers
+	private MapTaskOutputHandler	mapTaskOutputHandler;
+	private DataRouter	dataRouter				= null;    
 	//These are needed to track the messages for the taskes 
 	private ConcurrentHashMap <Long,Long> 	taskMSGs 		= new ConcurrentHashMap<Long,Long>();//<msgID, routingsKey(reducerID)>
 	
-	
-	public JobTasksManager(long jobID, ResourceManager 	resManager) throws Exception{//OK
-		LOCAL_PEER 				= new RemotePeerLocal(-1, "local", "local", -1, resManager.getLocalPeer().getMessageHandler());
-		this.jobID  			= jobID;
-		this.controlThreadPool 	= resManager.getControlThreadPool();
-		this.resManager  		= resManager;
-		start 					= System.currentTimeMillis();
+	public JobTasksManager(long jobID, ResourceManager resManager) throws Exception{
+		LOCAL_PEER 						= new RemotePeerLocal(-1, "local", "local", -1, resManager.getLocalPeer().getMessageHandler());
+		this.jobID  						= jobID;
+		this.controlThreadPool 					= resManager.getControlThreadPool();
+		this.resManager  					= resManager;
+		start 							= System.currentTimeMillis();
 		//FWLogger.getInstance().createLogger(jobID, Setting.LOG_DIR, Setting.HOSTNAME+"_"+jobID);
 		//FWLogger.getInstance().log(jobID, "Log (PeerID: "+resManager.getLocalPeer().getID()+", jobID: "+jobID+", workDir: "+Setting.LOCAL_DIR+", creation Time: "+UtilClass.getCurrDateTimeAsString("yyyy-MM-dd HH:mm:ss") );
 	}
