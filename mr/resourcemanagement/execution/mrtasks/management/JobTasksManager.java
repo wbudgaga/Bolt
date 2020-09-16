@@ -234,7 +234,7 @@ public class JobTasksManager{
 	public <K1,V1,K2,V2> void runPendingMapTasks(){//OK
 		synchronized (MAP_LOCK) {
 			for (Map.Entry<Long, MapTask> pendingMap:penndingMaps.entrySet()){
-				MapTask tmp = pendingMap.getValue();
+				MapTask tmp 				= pendingMap.getValue();
 				runMapTask(pendingMap.getValue());
 			}
 			penndingMaps.clear();
@@ -313,14 +313,14 @@ public class JobTasksManager{
 	public JobInfo getJobInfo() {
 		synchronized (JOB_LOCK){
 			if (jobInfo==null)
-				jobInfo = new JobInfo(jobID);
+				jobInfo 				= new JobInfo(jobID);
 			return jobInfo;
 		}
 	}
 
 	public void setJobInfo(JobInfo jobInfo) {
 		synchronized (JOB_LOCK){
-			this.jobInfo = jobInfo;
+			this.jobInfo 					= jobInfo;
 		}
 	}
 }
