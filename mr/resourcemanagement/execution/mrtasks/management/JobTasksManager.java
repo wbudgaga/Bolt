@@ -224,8 +224,8 @@ public class JobTasksManager{
 			dataRouter.setRoutingPeer(routingsKey, LOCAL_PEER);
 			return;
 		}
-		Peer localPeer = resManager.getLocalPeer();
-		FindRunningReducer lookupMSG = RemotePeer.getFindRunningReducerMSG(routingsKey, jobID, reducerID, localPeer.getNodeData());
+		Peer localPeer 						= resManager.getLocalPeer();
+		FindRunningReducer lookupMSG 				= RemotePeer.getFindRunningReducerMSG(routingsKey, jobID, reducerID, localPeer.getNodeData());
 		resManager.addJobMSG(lookupMSG.getMsgUUID(), jobID);
 		localPeer.lookup(lookupMSG);
 	}	
