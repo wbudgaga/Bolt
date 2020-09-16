@@ -108,19 +108,22 @@ public class JobTasksManager{
 		mrTask.setTasksManager(this);
 		runReduceTask(mrTask);
 	}
+	
 	//======================================= create Output handlers =======================================
 	//Thread safe: because it is called only when mapTaskOutputHandler = null (first map task leads to this)
 	public void createOutputHandler(MapTaskInfo mapTaskInfo) throws NoSuchAlgorithmException, InstantiationException, IllegalAccessException, ClassNotFoundException, IOException, InterruptedException{//OK
-		dataRouter 	   		= new DataRouter(mapTaskInfo.getPartitioner(), jobInfo.getNumOfReducer(), jobID, this);
+		dataRouter 	   					= new DataRouter(mapTaskInfo.getPartitioner(), jobInfo.getNumOfReducer(), jobID, this);
 		dataRouter.computeRountingKeys();
 		mapTaskOutputHandler= new MapTaskOutputHandler(dataRouter);
 		addToControlThreadPool(mapTaskOutputHandler);
 	}
+	
 	public <K1,V1,K2,V2> ReduceTaskOutputHandler<K1, V1, K2, V2> createOutputHandler(ReduceTaskInfo<K1,V1,K2,V2> reduceTaskInfo) throws InstantiationException, IllegalAccessException, ClassNotFoundException, IOException{//OK
 		ReduceTaskOutputHandler<K1, V1, K2, V2> reduceTaskOutputHandler = new ReduceTaskOutputHandler<K1, V1, K2, V2>(reduceTaskInfo.getDataWriter(jobInfo.getOutputName()));
 		addToControlThreadPool(reduceTaskOutputHandler);
 		return reduceTaskOutputHandler;
 	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//called by map()  function implemented by the user
 	public <K2,V2> void output(K2 key, V2 data) throws InterruptedException{//OK
@@ -141,15 +144,16 @@ public class JobTasksManager{
 	public PeerInfo getLocalPeerInfo(){
 		return RemotePeer.getPeerInfo(resManager.getLocalPeer().getNodeData());
 	}
+	
 	//======================================= finishing MR-tasks =================================================================//
 	/*
 	 * called by only one thread by datarouter that is required by mapOutputHandler after exiting the main loop
 	 * At the time this method is called  there aren't any running maps  
 	 */
 	public void publishFinishedMap() throws Exception{//OK
-		PeerInfo taskOwner 			= RemotePeer.getPeerInfo(resManager.getLocalPeer().getNodeData());
-		numOFNotifiedReducers = dataRouter.publishFinishedMap(taskOwner, numFinishedMaps);
-		if (numFinishedReducers==numLocReducers)
+		PeerInfo taskOwner 						= RemotePeer.getPeerInfo(resManager.getLocalPeer().getNodeData());
+		numOFNotifiedReducers 						= dataRouter.publishFinishedMap(taskOwner, numFinishedMaps);
+		if (numFinishedReducers == numLocReducers)
 			cleanUp();
 	}
 
