@@ -57,7 +57,7 @@ public class JobTasksManager{
 	private long start;
 	
 	//include maps that are not ready to execute because of datarouter
-	private ConcurrentHashMap <Long,MapTask>    penndingMaps 		= new ConcurrentHashMap<Long,MapTask>();
+	private ConcurrentHashMap <Long,MapTask> penndingMaps		= new ConcurrentHashMap<Long,MapTask>();
 	//running tasks
 	private ConcurrentHashMap <Long,MapTask>    runningMaps 		= new ConcurrentHashMap<Long,MapTask>();
 	private ConcurrentHashMap <Long,ReduceTask> runningReducers 	= new ConcurrentHashMap<Long,ReduceTask>();
