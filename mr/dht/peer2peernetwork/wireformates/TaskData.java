@@ -40,7 +40,6 @@ public class TaskData extends StartMapTask{
 		pi.setPeer(pd1);
 		return pi;
 	}
-
 	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		TaskData msg 			= new TaskData();
@@ -50,13 +49,11 @@ public class TaskData extends StartMapTask{
 		msg.setTaskID(13);
 /*		msg.setDataInputPath("/s/chopin/b/grad/budgaga/workspaceALL/workDIr/bin");
 		msg.setTaskClassName("job1Map");
-*/		byte [] bt = msg.packMessage();
+*/		byte [] bt 			= msg.packMessage();
 		
-		MessageFactory f = MessageFactory.getInstance();
+		MessageFactory f 		= MessageFactory.getInstance();
 		
-		TaskData ftr = (TaskData) f.createMessage(bt);
-		System.out.println(ftr.getJobID()+"   "+ftr.getTaskID()+"==="+ftr.getOutputName()+"===");
-		
+		TaskData ftr 			= (TaskData) f.createMessage(bt);
+		System.out.println(ftr.getJobID() + "   " + ftr.getTaskID() + "===" + ftr.getOutputName() + "===");	
 	}
-
 }
