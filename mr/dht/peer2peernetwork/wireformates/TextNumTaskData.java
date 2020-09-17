@@ -61,9 +61,9 @@ public class TextNumTaskData extends TaskData{
 	
 	protected byte[] packDataBuffer() {
 		int size 					= outputBuf.size();
-		byte[] bufferBytes = ByteStream.intToByteArray(size);
+		byte[] bufferBytes 				= ByteStream.intToByteArray(size);
 		for (Map.Entry<String,ArrayList<Long>> pairs: outputBuf.entrySet()){
-			bufferBytes= ByteStream.join(bufferBytes, packKVHashmap(pairs.getKey(), pairs.getValue()));
+			bufferBytes				= ByteStream.join(bufferBytes, packKVHashmap(pairs.getKey(), pairs.getValue()));
 		}
 		return bufferBytes;
 	}
@@ -72,13 +72,12 @@ public class TextNumTaskData extends TaskData{
 	protected byte[] packMessageBody() {
 		setOutputName("");
 		setTaskClassName("");
-		byte[] bytes = ByteStream.join(super.packMessageBody(), packDataBuffer());
+		byte[] bytes 					= ByteStream.join(super.packMessageBody(), packDataBuffer());
 		return bytes;
 	}
 	
 	@Override
 	public String getMessageType() {
 		return "TextNumTaskData";
-	}
-	
+	}	
 }
