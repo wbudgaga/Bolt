@@ -13,7 +13,7 @@ import mr.dht.peer2peernetwork.util.ByteStream;
 
 
 public class TextNumTaskData extends TaskData{
-	protected HashMap<String, ArrayList<Long>> 	outputBuf = new HashMap<String, ArrayList<Long>>();
+	protected HashMap<String, ArrayList<Long>> outputBuf 	= new HashMap<String, ArrayList<Long>>();
 	
 	protected TextNumTaskData(int msgID, int handlerID) {
 		super(msgID, handlerID);
@@ -28,7 +28,7 @@ public class TextNumTaskData extends TaskData{
 	}
 */
 	public void setDataBuf(HashMap hashMap){
-		this.outputBuf = hashMap;
+		this.outputBuf 					= hashMap;
 	}
 	
 	public HashMap getDataBuf(){
@@ -36,8 +36,8 @@ public class TextNumTaskData extends TaskData{
 	}
 
 	private void unpackKVHashmap(byte[] byteStream) throws InterruptedException{
-		String  dataKey = unpackStringField(byteStream);
-		ArrayList<Long> dataValue = unpackLongArrayListField(byteStream);
+		String  dataKey 				= unpackStringField(byteStream);
+		ArrayList<Long> dataValue 			= unpackLongArrayListField(byteStream);
 		outputBuf.put(dataKey, dataValue);
 	}
 	@Override
