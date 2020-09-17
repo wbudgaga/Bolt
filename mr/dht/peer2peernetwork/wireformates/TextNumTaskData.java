@@ -40,12 +40,13 @@ public class TextNumTaskData extends TaskData{
 		ArrayList<Long> dataValue 			= unpackLongArrayListField(byteStream);
 		outputBuf.put(dataKey, dataValue);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
 		super.initiate(byteStream);
-		int size = unpackIntField(byteStream);
+		int size 					= unpackIntField(byteStream);
 		outputBuf.clear();
-		for (int i=0; i<size;++i){
+		for (int i = 0; i < size; ++i){
 			try {
 				unpackKVHashmap(byteStream);
 			} catch (InterruptedException e) {
@@ -53,12 +54,13 @@ public class TextNumTaskData extends TaskData{
 			}
 		}
 	}
+	
 	private byte[] packKVHashmap(String k, ArrayList<Long> v){
 		return ByteStream.join(ByteStream.packString(k), ByteStream.packLongArrayList(v));
 	}
 	
 	protected byte[] packDataBuffer() {
-		int size = outputBuf.size();
+		int size 					= outputBuf.size();
 		byte[] bufferBytes = ByteStream.intToByteArray(size);
 		for (Map.Entry<String,ArrayList<Long>> pairs: outputBuf.entrySet()){
 			bufferBytes= ByteStream.join(bufferBytes, packKVHashmap(pairs.getKey(), pairs.getValue()));
