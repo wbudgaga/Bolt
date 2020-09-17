@@ -3,8 +3,8 @@ package mr.dht.peer2peernetwork.wireformates;
 import mr.dht.peer2peernetwork.handlers.HandlerTypes;
 import mr.dht.peer2peernetwork.nodes.PeerData;
 import mr.dht.peer2peernetwork.util.ByteStream;
-public class TaskData extends StartMapTask{
 
+public class TaskData extends StartMapTask{
 	protected TaskData(int msgID, int handlerID) {
 		super(msgID, handlerID);
 	}
@@ -17,6 +17,7 @@ public class TaskData extends StartMapTask{
 	public void initiate(byte[] byteStream) {
 		super.initiate(byteStream);
 	}
+	
 	@Override
 	protected byte[] packMessageBody() {
 		setOutputName("");
@@ -29,22 +30,21 @@ public class TaskData extends StartMapTask{
 		return "KeyValueTaskData";
 	}
 	
-	
 	public static PeerInfo getPD(long id, String n, String h, int port){
-		PeerData 	pd1 = new  PeerData();
+		PeerData pd1 			= new  PeerData();
 		pd1.setNickName(n);
 		pd1.setHost(h);
 		pd1.setPeerID(id);
 		pd1.setPortNum(port);
-		PeerInfo pi = new PeerInfo();
+		PeerInfo pi 			= new PeerInfo();
 		pi.setPeer(pd1);
 		return pi;
 	}
 
 	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		TaskData msg = new TaskData();
-		PeerInfo taskOwner = getPD(1000, "peer", "peerHost", 5000);
+		TaskData msg 			= new TaskData();
+		PeerInfo taskOwner 		= getPD(1000, "peer", "peerHost", 5000);
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(32119041972l);
 		msg.setTaskID(13);
