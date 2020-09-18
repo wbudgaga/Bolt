@@ -13,17 +13,17 @@ import mr.dht.peer2peernetwork.threadpool.Task;
 import mr.resourcemanagement.datatype.ReducerBuffer;
 
 public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
-	private final int		 		BUFFER_SIZE			= Setting.SENDBUFF_SIZE ;	
-	private ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>>	currBuffers= new ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>>();
-	public 	ConcurrentHashMap<Integer, BlockingQueue<ReducerBuffer<K2,V2>>>	extraBuffers= new ConcurrentHashMap<Integer, BlockingQueue<ReducerBuffer<K2,V2>>>();
+	private final int BUFFER_SIZE								= Setting.SENDBUFF_SIZE ;	
+	private ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>> currBuffers			= new ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>>();
+	public 	ConcurrentHashMap<Integer, BlockingQueue<ReducerBuffer<K2,V2>>>	extraBuffers	= new ConcurrentHashMap<Integer, BlockingQueue<ReducerBuffer<K2,V2>>>();
 	
 	//private ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>>	reducerBuffersExtra= new ConcurrentHashMap<Integer, ReducerBuffer<K2,V2>>();
-	private volatile boolean		stillRunning	= true;
-	private DataRouter				dataRouter		= null;
+	private volatile boolean stillRunning							= true;
+	private DataRouter	dataRouter							= null;
 	private BlockingQueue<ReducerBuffer<K2,V2>>  readyBuffers= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_MAPBUFFERS);
-	public static final ReducerBuffer POISON = new ReducerBuffer(-1);
+	public static final ReducerBuffer POISON 						= new ReducerBuffer(-1);
 	
-	private final Object REDUCE_LOCK		= new Object(); 			
+	private final Object REDUCE_LOCK							= new Object(); 			
 	private volatile int idx = 0;
 	
 	public MapTaskOutputHandler(DataRouter dataRouter) throws NoSuchAlgorithmException, FileNotFoundException, InstantiationException, IllegalAccessException, MalformedURLException, ClassNotFoundException, InterruptedException{
