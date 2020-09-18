@@ -43,7 +43,7 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	}
 	
 	private ReducerBuffer<K2,V2> nextBuffer(int reducerID) throws InterruptedException{
-		BlockingQueue<ReducerBuffer<K2,V2>> buffersQ = extraBuffers.get(reducerID);
+		BlockingQueue<ReducerBuffer<K2,V2>> buffersQ 					= extraBuffers.get(reducerID);
 		return buffersQ.take();
 	}
 		
