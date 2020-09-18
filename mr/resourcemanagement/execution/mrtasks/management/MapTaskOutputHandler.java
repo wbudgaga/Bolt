@@ -90,12 +90,13 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	//thread safe because called by only mainloop
 	private void flush(){//OK
 		for(int i=0;i<dataRouter.getNumOfReducer();++i){//OK
-			ReducerBuffer<K2, V2> rBuffer = currBuffers.get(i);
-			if (rBuffer.size()>0)
+			ReducerBuffer<K2, V2> rBuffer 						= currBuffers.get(i);
+			if (rBuffer.size() > 0)
 				pushBuffer(rBuffer);
 		}
 		dataRouter.stopAfterFinish();
 	}
+	
 	//thread safe because called by only mainloop
 	public boolean pushBuffer(ReducerBuffer<K2,V2> reducerBuffer){//OK
 		int reducerID = reducerBuffer.getReducerIDX();
