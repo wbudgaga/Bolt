@@ -72,8 +72,8 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	public void execute() throws IOException {//OK
 		while(true){
 			try {
-				ReducerBuffer reducerBuffer = readyBuffers.take();
-				if (reducerBuffer==POISON)
+				ReducerBuffer reducerBuffer 					= readyBuffers.take();
+				if (reducerBuffer == POISON)
 					break;
 				pushBuffer(reducerBuffer);
 				reducerBuffer.clear();
@@ -84,7 +84,7 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 		}
 		dataRouter.stopAfterFinish(); // just for test
 		//########flush();
-		stillRunning = false;
+		stillRunning 									= false;
 	}
 	
 	//thread safe because called by only mainloop
