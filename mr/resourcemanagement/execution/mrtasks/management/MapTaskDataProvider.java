@@ -16,17 +16,21 @@ public class MapTaskDataProvider extends Task{
 	public void setDataSource(DataSource fileReader){
 		this.fileReader 			= fileReader;
 	}
+	
 	@Override
 	public void execute() throws IOException, InterruptedException {
 		fileReader.passNextDataList();
 		stopRunning();
 	}
+	
 	public void returnTaskDataObject(TaskData td) {
 		fileReader.returnTaskDataObject(td);
 	}
+	
 	public boolean isStillRunning() {
 		return stillRunning;
 	}
+	
 	public void stopRunning() {
 		this.stillRunning = false;
 	}
