@@ -10,11 +10,11 @@ import mr.resourcemanagement.datatype.TaskData;
 import mr.resourcemanagement.io.DataSource;
 
 public class MapTaskDataProvider extends Task{
-	private boolean 	stillRunning = true;
+	private boolean 	stillRunning 		= true;
 	private DataSource	fileReader;
 	
 	public void setDataSource(DataSource fileReader){
-		this.fileReader = fileReader;
+		this.fileReader 			= fileReader;
 	}
 	@Override
 	public void execute() throws IOException, InterruptedException {
