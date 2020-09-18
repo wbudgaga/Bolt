@@ -32,15 +32,16 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	}
 	
 	private void createReducersBuffers(int numOfReducers) throws InterruptedException{//OK
-		for(int i=0;i < numOfReducers;++i){
-			 BlockingQueue<ReducerBuffer<K2,V2>> reducerQueue = new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_MAPBUFFERS);	 
-			 for (int j=0; j<Setting.NUM_MAPBUFFERS; ++j){
+		for(int i = 0; i < numOfReducers; ++i){
+			 BlockingQueue<ReducerBuffer<K2,V2>> reducerQueue 			= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_MAPBUFFERS);	 
+			 for (int j = 0; j < Setting.NUM_MAPBUFFERS; ++j){
 				 reducerQueue.offer(new ReducerBuffer<K2, V2>(i));
 			 }
 			extraBuffers.put(i, reducerQueue);
 			currBuffers.put(i, reducerQueue.take());
 		}	
 	}
+	
 	private ReducerBuffer<K2,V2> nextBuffer(int reducerID) throws InterruptedException{
 		BlockingQueue<ReducerBuffer<K2,V2>> buffersQ = extraBuffers.get(reducerID);
 		return buffersQ.take();
