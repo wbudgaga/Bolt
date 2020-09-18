@@ -24,10 +24,10 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	public static final ReducerBuffer POISON 						= new ReducerBuffer(-1);
 	
 	private final Object REDUCE_LOCK							= new Object(); 			
-	private volatile int idx = 0;
+	private volatile int idx 								= 0;
 	
 	public MapTaskOutputHandler(DataRouter dataRouter) throws NoSuchAlgorithmException, FileNotFoundException, InstantiationException, IllegalAccessException, MalformedURLException, ClassNotFoundException, InterruptedException{
-		this.dataRouter = dataRouter;
+		this.dataRouter 								= dataRouter;
 		createReducersBuffers(dataRouter.getNumOfReducer());
 	}
 	
