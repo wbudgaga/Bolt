@@ -48,13 +48,13 @@ public class MapTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	}
 		
 	public void returnBuffer(int reducerID, ReducerBuffer<K2,V2> rBuffer) throws InterruptedException{
-		BlockingQueue<ReducerBuffer<K2,V2>> buffersQ = extraBuffers.get(reducerID);
+		BlockingQueue<ReducerBuffer<K2,V2>> buffersQ 					= extraBuffers.get(reducerID);
 		buffersQ.offer(rBuffer);
 	}
 
 	public boolean output(K2 key, V2 value) throws InterruptedException{//OK
 		synchronized (REDUCE_LOCK){
-			int reducerID 					= dataRouter.getReducerID(key, value);
+			int reducerID 								= dataRouter.getReducerID(key, value);
 			ReducerBuffer<K2, V2> curReducerBuf= currBuffers.get(reducerID);
 //			int oldSize = curReducerBuf.getCounter();
 			int addedBytes = 1;//curReducerBuf.add(key, value);
