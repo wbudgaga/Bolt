@@ -19,7 +19,7 @@ public class MetaDataManager extends Task{
 	public final String META_BASENAME 				= Setting.DATA_DIR+"%s%d/%s";
 	
 	public MetaDataManager(Peer lPeer) throws IOException{
-		this.localPeer	= lPeer;
+		this.localPeer						= lPeer;
 		if (Setting.LOAD_METADATA){
 			loadDatasetsMetaData(0);
 			loadFilesMetaData(0);
