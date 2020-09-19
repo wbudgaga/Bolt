@@ -31,7 +31,7 @@ public class MetaDataManager extends Task{
 		ArrayList<String> datasetsNames 			= UtilClass.readFilesFromDir(String.format(META_BASENAME,"datasetsMeta" ,replicaNr, ""));
 		
 		for(String dataset:datasetsNames){
-			DatasetMetaData dmMSG = new DatasetMetaData();
+			DatasetMetaData dmMSG 				= new DatasetMetaData();
 			UtilClass.loadData(dmMSG, dataset);
 			datasets.put(dmMSG.getDataSetHashKey(), dmMSG);
 		}
