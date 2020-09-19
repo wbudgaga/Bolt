@@ -83,18 +83,17 @@ public class MetaDataManager extends Task{
 	}
 	public void flushFiles() throws IOException{
 		for (Map.Entry<Long, FileMetaData> file: files.entrySet()){
-			FileMetaData fmMSG = file.getValue();
-			String outoutName = String.format(META_BASENAME,"filesMeta" ,fmMSG.getReplicateNr()-1,file.getKey());
+			FileMetaData fmMSG 					= file.getValue();
+			String outoutName 					= String.format(META_BASENAME,"filesMeta" ,fmMSG.getReplicateNr()-1,file.getKey());
 			System.out.println(Setting.HOSTNAME+"#######################Flushing file "+outoutName);
 			UtilClass.flushData(file.getValue(), outoutName);
 		}
 	}
 	public static void main(String[] a){
-		String 		META_BASENAME = Setting.DATA_DIR+"%s%d/%s";
+		String 		META_BASENAME 					= Setting.DATA_DIR+"%s%d/%s";
 		System.out.println(String.format(META_BASENAME,"datasetsMeta" ,0,""));
 	}
 	@Override
 	public void execute() throws IOException, InterruptedException {		
 	}
-	
 }
