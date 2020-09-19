@@ -28,7 +28,7 @@ public class MetaDataManager extends Task{
 	
 	public void loadDatasetsMetaData(int replicaNr) throws IOException{
 		System.out.println(this.localPeer.getNodeData().getNickName()+"============: "+String.format(META_BASENAME,"datasetsMeta" ,replicaNr, ""));
-		ArrayList<String> datasetsNames = UtilClass.readFilesFromDir(String.format(META_BASENAME,"datasetsMeta" ,replicaNr, ""));
+		ArrayList<String> datasetsNames 			= UtilClass.readFilesFromDir(String.format(META_BASENAME,"datasetsMeta" ,replicaNr, ""));
 		
 		for(String dataset:datasetsNames){
 			DatasetMetaData dmMSG = new DatasetMetaData();
