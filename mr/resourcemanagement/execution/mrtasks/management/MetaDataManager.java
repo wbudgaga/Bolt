@@ -38,9 +38,9 @@ public class MetaDataManager extends Task{
 	}
 
 	public void loadFilesMetaData(int replicaNr) throws IOException{
-		ArrayList<String> metaNames = UtilClass.readFilesFromDir(String.format(META_BASENAME,"filesMeta" ,replicaNr,""));
+		ArrayList<String> metaNames 				= UtilClass.readFilesFromDir(String.format(META_BASENAME,"filesMeta" ,replicaNr,""));
 		for(String metaName:metaNames){
-			FileMetaData dmMSG = new FileMetaData();
+			FileMetaData dmMSG 				= new FileMetaData();
 			UtilClass.loadData(dmMSG, metaName);
 			files.put(dmMSG.getFileHashedKey(), dmMSG);
 		}
