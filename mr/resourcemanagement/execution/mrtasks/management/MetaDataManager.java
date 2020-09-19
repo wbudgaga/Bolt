@@ -13,8 +13,8 @@ import mr.dht.peer2peernetwork.wireformates.DatasetMetaData;
 import mr.dht.peer2peernetwork.wireformates.FileMetaData;
 
 public class MetaDataManager extends Task{
-	private ConcurrentHashMap<Long, DatasetMetaData> 	datasets = new ConcurrentHashMap<Long, DatasetMetaData>();//<hash(datsetName),DMD_MSG>
-	private ConcurrentHashMap<Long, FileMetaData> 	files = new ConcurrentHashMap<Long, FileMetaData>();//<hash(FileMetaData),fileMetaMSG>
+	private ConcurrentHashMap<Long, DatasetMetaData> datasets 	= new ConcurrentHashMap<Long, DatasetMetaData>();//<hash(datsetName),DMD_MSG>
+	private ConcurrentHashMap<Long, FileMetaData> 	files 		= new ConcurrentHashMap<Long, FileMetaData>();//<hash(FileMetaData),fileMetaMSG>
 	private Peer				localPeer;
 	public final String 		META_BASENAME = Setting.DATA_DIR+"%s%d/%s";
 	
