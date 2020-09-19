@@ -55,7 +55,7 @@ public class MetaDataManager extends Task{
 	}
 
 	public ArrayList<DatasetMetaData> getAllDatasets(){
-		if (datasets.size()>0)
+		if (datasets.size() > 0)
 			return new ArrayList<DatasetMetaData>(datasets.values());
 		return null;
 	}
@@ -68,7 +68,7 @@ public class MetaDataManager extends Task{
 	}
 
 	public ArrayList<FileMetaData> getAllFiles(){
-		if (files.size()>0)
+		if (files.size() > 0)
 			return new ArrayList<FileMetaData>(files.values());
 		return null;
 	}
