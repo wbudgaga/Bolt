@@ -63,6 +63,7 @@ public class MetaDataManager extends Task{
 	public void addFile(Long hashedKey, FileMetaData fileData){
 		files.put(hashedKey, fileData);
 	}
+	
 	public FileMetaData getFile(long hk){
 		return files.get(hk);
 	}
@@ -75,8 +76,8 @@ public class MetaDataManager extends Task{
 
 	public void flushDatasets() throws IOException{
 		for (Map.Entry<Long, DatasetMetaData> dataset: datasets.entrySet()){
-			DatasetMetaData dmMSG = dataset.getValue();
-			String outoutName = String.format(META_BASENAME,"datasetsMeta" ,dmMSG.getReplicateNr()-1,dataset.getKey());
+			DatasetMetaData dmMSG     				= dataset.getValue();
+			String outoutName 					= String.format(META_BASENAME,"datasetsMeta" ,dmMSG.getReplicateNr()-1,dataset.getKey());
 			UtilClass.flushData(dataset.getValue(), outoutName);
 		}
 	}
