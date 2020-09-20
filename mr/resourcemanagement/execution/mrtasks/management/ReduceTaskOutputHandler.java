@@ -83,6 +83,7 @@ public class ReduceTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	public boolean isStillRunning() {
 		return stillRunning;
 	}
+	
 	//called by JobTaskManager
 	public void stopRunning() {//OK
 		try {
