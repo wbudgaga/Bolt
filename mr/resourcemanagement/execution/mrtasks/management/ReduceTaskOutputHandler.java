@@ -30,7 +30,7 @@ public class ReduceTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	//private BlockingQueue<ReducerBuffer<K2,V2>>  readyBuffers= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
 	private BlockingQueue<HashMap<K2,V2>>  readyBuffers		= new ArrayBlockingQueue<HashMap<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
 	//private	BlockingQueue<ReducerBuffer<K2,V2>>	extraBuffers= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
-	public static final HashMap POISON = new HashMap();
+	public static final HashMap POISON 				= new HashMap();
 	
 	public ReduceTaskOutputHandler(DataWriter dw) throws  InstantiationException, IllegalAccessException, ClassNotFoundException, IOException{
 		setDataSource(dw);
@@ -45,7 +45,7 @@ public class ReduceTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	}
 */
 	public void setDataSource(DataWriter<K2,V2> fileWriter){
-		this.fileWriter = fileWriter;
+		this.fileWriter 					= fileWriter;
 	}
 
 	public void output(HashMap<K2,V2> data) throws InterruptedException{
