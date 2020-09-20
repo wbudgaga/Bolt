@@ -35,12 +35,13 @@ public class ReduceTaskDataProvider extends Task{
 	@Override
 	public void execute() throws IOException, InterruptedException {
 		while (true){
-			ConcurrentHashMap<String, ArrayList<Long>> dataBuf = dataBufQueue.take();
-			if (dataBuf==POISON)
+			ConcurrentHashMap<String, ArrayList<Long>> dataBuf 			= dataBufQueue.take();
+			if (dataBuf == POISON)
 				break;
 			feedReducer(dataBuf);
 		}
 	}
+	
 	public void equeueBuffer(long srcPeerID, ConcurrentHashMap buf) throws InterruptedException {
 		rTask.incNumOfReceivedBuffers(srcPeerID);
 		dataBufQueue.put(buf);
