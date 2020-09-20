@@ -10,11 +10,11 @@ public class Reporter{
 	}
 	
 	public void incProcessed(){
-		numOfProcessedObs = numOfProcessedObs + 1;
+		numOfProcessedObs 		= numOfProcessedObs + 1;
 	}
 	
 	public  void incFailed(){
-		numOfFailingObs = numOfFailingObs + 1;
+		numOfFailingObs 		= numOfFailingObs + 1;
 	}
 
 	public  float progress(){
