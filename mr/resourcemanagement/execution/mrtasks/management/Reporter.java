@@ -20,5 +20,4 @@ public class Reporter{
 	public  float progress(){
 		return  (numOfFailingObs + numOfProcessedObs)/totalNumOfObs;
 	}
-
 }
