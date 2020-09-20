@@ -46,6 +46,7 @@ public class ReduceTaskDataProvider extends Task{
 		rTask.incNumOfReceivedBuffers(srcPeerID);
 		dataBufQueue.put(buf);
 	}
+	
 	public void stop() throws InterruptedException{
 		dataBufQueue.put(POISON);
 	}
