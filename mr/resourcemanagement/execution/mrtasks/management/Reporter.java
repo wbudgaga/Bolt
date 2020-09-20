@@ -2,7 +2,7 @@ package mr.resourcemanagement.execution.mrtasks.management;
 
 public class Reporter{
 	private long numOfProcessedObs		= 0;
-	private long numOfFailingObs=0;
+	private long numOfFailingObs		= 0;
 	private long totalNumOfObs=-1;
 	
 	public Reporter(long totalNumOfObs){
