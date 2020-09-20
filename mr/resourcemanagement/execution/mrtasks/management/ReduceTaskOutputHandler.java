@@ -24,11 +24,11 @@ import mr.resourcemanagement.io.DataSource;
 import mr.resourcemanagement.io.DataWriter;
 
 public class ReduceTaskOutputHandler<K1,V1,K2,V2> extends Task{
-	private boolean stillRunning= true;
+	private boolean stillRunning					= true;
 	private DataWriter<K2,V2> fileWriter;
 	private ReducerBuffer<K2, V2>   outputBuffer;
 	//private BlockingQueue<ReducerBuffer<K2,V2>>  readyBuffers= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
-	private BlockingQueue<HashMap<K2,V2>>  readyBuffers= new ArrayBlockingQueue<HashMap<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
+	private BlockingQueue<HashMap<K2,V2>>  readyBuffers		= new ArrayBlockingQueue<HashMap<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
 	//private	BlockingQueue<ReducerBuffer<K2,V2>>	extraBuffers= new ArrayBlockingQueue<ReducerBuffer<K2,V2>>(Setting.NUM_REDUCEBUFFERS);
 	public static final HashMap POISON = new HashMap();
 	
