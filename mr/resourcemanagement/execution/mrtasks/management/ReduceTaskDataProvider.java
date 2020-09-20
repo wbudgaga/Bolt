@@ -18,12 +18,12 @@ import mr.resourcemanagement.io.DataSource;
 
 public class ReduceTaskDataProvider extends Task{
 	
-	protected BlockingQueue<ConcurrentHashMap<String, ArrayList<Long>>> dataBufQueue= new ArrayBlockingQueue<ConcurrentHashMap<String, ArrayList<Long>>>(5000);
+	protected BlockingQueue<ConcurrentHashMap<String, ArrayList<Long>>> dataBufQueue	= new ArrayBlockingQueue<ConcurrentHashMap<String, ArrayList<Long>>>(5000);
 	private ReduceTask  rTask;
-	public final ConcurrentHashMap<String, ArrayList<Long>> POISON = new ConcurrentHashMap<String, ArrayList<Long>>();
+	public final ConcurrentHashMap<String, ArrayList<Long>> POISON 				= new ConcurrentHashMap<String, ArrayList<Long>>();
 	
 	public ReduceTaskDataProvider(ReduceTask ownerReducer){
-		this.rTask = ownerReducer;
+		this.rTask 									= ownerReducer;
 	}
 	
 	private void  feedReducer(ConcurrentHashMap<String, ArrayList<Long>> buf ) {
