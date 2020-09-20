@@ -64,8 +64,8 @@ public class ReduceTaskOutputHandler<K1,V1,K2,V2> extends Task{
 	public void execute() throws IOException {
 		while(true){
 			try {
-				HashMap<K2,V2> reducerBuffer = readyBuffers.take();
-				if (reducerBuffer==POISON)
+				HashMap<K2,V2> reducerBuffer 		= readyBuffers.take();
+				if (reducerBuffer == POISON)
 					break;
 				/*Steps should done (sorting the buffer, load storded data, merge & store both
 				 * But for know we just add new buffer to reduce file
