@@ -27,9 +27,9 @@ public class ResourceManager {
     	private ThreadPoolManager 									ioThreadPool;
     	private Peer 												localPeer;
     
-    private final  Scheduler									scheduler = new Scheduler();
-    private final int 											MAX_TASKS = 40;// Runtime.getRuntime().availableProcessors() ;
-    private volatile boolean 									batchStarted =false;
+    	private final  Scheduler									scheduler = new Scheduler();
+    	private final int 											MAX_TASKS = 40;// Runtime.getRuntime().availableProcessors() ;
+    	private volatile boolean 									batchStarted =false;
     private int 												numOfBatchJobs=0;
     private MetaDataManager 									metadataManager;
     
