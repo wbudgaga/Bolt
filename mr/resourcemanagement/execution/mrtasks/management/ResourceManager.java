@@ -36,9 +36,9 @@ public class ResourceManager {
     	public final Object LOCK = new Object();
     	public final Object MSG_LOCK = new Object();
     
-    //========================== benchmark variables ========================
-    private long	startTime=-1;
-    //=======================================================================
+    	//========================== benchmark variables ========================
+    	private long	startTime=-1;
+    	//=======================================================================
 	public ResourceManager(Peer peer) throws Exception{	
 		taskThreadPool 		= new ThreadPoolManager(MAX_TASKS);
 		//controlThreadPool 	= new ThreadPoolManager(2*(MAX_TASKS));
