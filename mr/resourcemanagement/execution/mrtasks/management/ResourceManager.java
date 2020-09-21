@@ -22,9 +22,10 @@ public class ResourceManager {
 	private ConcurrentHashMap <Long,Long> 						jobMSGs = new ConcurrentHashMap<Long,Long>();//<msgID, jobID>
 	private HashMap <String, HashMap<Long, FindRunningReducer>> waitingMaps = new HashMap<String,HashMap<Long, FindRunningReducer>>();//<job_reducerID, <remotePeerID, FindRunningReducer>>
 	private ThreadPoolManager 									taskThreadPool; 
-   // private ThreadPoolManager 									controlThreadPool;
-    private ThreadPoolManager 									ioThreadPool;
-    private Peer 												localPeer;
+   
+	// private ThreadPoolManager 									controlThreadPool;
+    	private ThreadPoolManager 									ioThreadPool;
+    	private Peer 												localPeer;
     
     private final  Scheduler									scheduler = new Scheduler();
     private final int 											MAX_TASKS = 40;// Runtime.getRuntime().availableProcessors() ;
