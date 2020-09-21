@@ -33,11 +33,11 @@ public class ResourceManager {
     	private int numOfBatchJobs						= 0;
     	private MetaDataManager metadataManager;
     
-    	public final Object LOCK = new Object();
-    	public final Object MSG_LOCK = new Object();
+    	public final Object LOCK 						= new Object();
+    	public final Object MSG_LOCK 						= new Object();
     
     	//========================== benchmark variables ========================
-    	private long	startTime=-1;
+    	private long	startTime						= -1;
     	//=======================================================================
 	public ResourceManager(Peer peer) throws Exception{	
 		taskThreadPool 		= new ThreadPoolManager(MAX_TASKS);
