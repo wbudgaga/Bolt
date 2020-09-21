@@ -40,11 +40,11 @@ public class ResourceManager {
     	private long	startTime						= -1;
     	//=======================================================================
 	public ResourceManager(Peer peer) throws Exception{	
-		taskThreadPool 		= new ThreadPoolManager(MAX_TASKS);
-		//controlThreadPool 	= new ThreadPoolManager(2*(MAX_TASKS));
-		ioThreadPool 		= new ThreadPoolManager(32);
+		taskThreadPool 							= new ThreadPoolManager(MAX_TASKS);
+		//controlThreadPool 						= new ThreadPoolManager(2*(MAX_TASKS));
+		ioThreadPool 							= new ThreadPoolManager(32);
 		setLocalPeer(peer);
-		metadataManager=  new MetaDataManager(peer);
+		metadataManager							=  new MetaDataManager(peer);
 	}
 	
 	public void start() throws Exception{
