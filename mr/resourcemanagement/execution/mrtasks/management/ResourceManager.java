@@ -52,9 +52,11 @@ public class ResourceManager {
 		//controlThreadPool.start();
 		ioThreadPool.start();
 	}	
+	
 	public ThreadPoolManager getIOThreadPool(){
 		return ioThreadPool;
 	}
+	
 	public void stop() throws Exception{
 		while (!taskThreadPool.isIdle())
 			Thread.sleep(10);
@@ -69,7 +71,7 @@ public class ResourceManager {
 	public void execute() throws Exception{
 		if (batchStarted)
 			return;
-		batchStarted = true;
+		batchStarted 							= true;
 		numOfBatchJobs = jobTasksManagers.size();
 		int i=0;
 		startTime = System.currentTimeMillis();
