@@ -89,15 +89,15 @@ public class ResourceManager {
 		}
 		
 		JobTasksManager jTaskManager 					= jobTasksManagers.get(t.getJobID());
-		if (t.getTaskType()==TaskInfo.MAP){
+		if (t.getTaskType() == TaskInfo.MAP){
 			jTaskManager.processMapTask((MapTaskInfo) t);
 		}
 		else{
 			jTaskManager.processReduceTask((ReduceTaskInfo)t);
 			synchronized (LOCK){
-				if (waitingMaps.containsKey(t.getJobID()+"_"+t.getTaskID())){
+				if (waitingMaps.containsKey(t.getJobID() + "_" + t.getTaskID())){
 					//System.out.println(Setting.HOSTNAME+"#####  Pool reducer (jobiD:"+t.getJobID()+"_"+t.getTaskID()+"), from Q and notify wainting maps==> ");
-					notifyMaps(waitingMaps.remove(t.getJobID()+"_"+t.getTaskID()));
+					notifyMaps(waitingMaps.remove(t.getJobID() + "_" + t.getTaskID()));
 					
 				}
 			}
@@ -106,12 +106,13 @@ public class ResourceManager {
 	
 	private void notifyMaps(HashMap<Long, FindRunningReducer> mapsList) throws IOException{
 		for (Map.Entry<Long, FindRunningReducer> mapEntry: mapsList.entrySet()){
-			FindRunningReducer frr = mapEntry.getValue();
-			RemotePeer mapPeer = localPeer.getQueryPeer(frr);
+			FindRunningReducer frr 					= mapEntry.getValue();
+			RemotePeer mapPeer 					= localPeer.getQueryPeer(frr);
 			mapPeer.queryResult(frr.getQueryKey(), frr.getMsgUUID(), frr.getSrcPeerHandlerID(), localPeer.getNodeData());
 		}
 		
 	}
+	
 	public JobTasksManager getJobTaskManager(long jobID){
 		return jobTasksManagers.get(jobID);
 	}
