@@ -156,7 +156,7 @@ public class ResourceManager {
 			startTime						= -1;
 			UtilClass.createPath(Setting.LOG_DIR);
 			FWLogger.getInstance().createLogger(1, Setting.LOG_DIR, Setting.HOSTNAME + "_J" + numOfBatchJobs + "_R" + jtm.getJobInfo().getNumOfReducer()+"_T"+spentTime);
-			FWLogger.getInstance().log(1, "ResourceManager: Host"+Setting.HOSTNAME+", job " +jobID+" has been completeted in "+spentTime +" msec" );
+			FWLogger.getInstance().log(1, "ResourceManager: Host" + Setting.HOSTNAME + ", job " + jobID + " has been completeted in " + spentTime + " msec" );
 		}
 	}
 	
@@ -188,10 +188,7 @@ public class ResourceManager {
 	public void executeTask(Task task){
 		taskThreadPool.addTask(task);
 	}
- /*   public ThreadPoolManager getTaskThreadPool() {
-		return taskThreadPool;
-	}
-*/
+
 	public ThreadPoolManager getControlThreadPool() {
 		return taskThreadPool;
 	}
