@@ -118,8 +118,8 @@ public class ResourceManager {
 	}
 	
 	public boolean findRunningReducer(RemotePeer mapPeer, FindRunningReducer frr){
-		JobTasksManager jTaskManager = jobTasksManagers.get(frr.getJobID());
-		if (jTaskManager==null){
+		JobTasksManager jTaskManager 					= jobTasksManagers.get(frr.getJobID());
+		if (jTaskManager == null){
 			System.out.println(" For looked reducer (jobiD:"+frr.getJobID()+","+frr.getReduceID()+"),  there is not any job");
 			return false;
 		}
@@ -128,10 +128,10 @@ public class ResourceManager {
 		}
 		synchronized (LOCK){
 			localPeer.cachePeer(mapPeer);
-			String reducerKey = frr.getJobID()+"_"+frr.getReduceID();
-			HashMap<Long, FindRunningReducer> mapsList = waitingMaps.get(reducerKey);
-			if (mapsList==null){
-				mapsList = new HashMap<Long, FindRunningReducer>();
+			String reducerKey 					= frr.getJobID() + "_" + frr.getReduceID();
+			HashMap<Long, FindRunningReducer> mapsList 		= waitingMaps.get(reducerKey);
+			if (mapsList == null){
+				mapsList 					= new HashMap<Long, FindRunningReducer>();
 				waitingMaps.put(reducerKey, mapsList);
 			}
 			//System.out.println(" Request from " + mapPeer.getNodeData().getHost()+ " for non running reducer (jobiD:"+reducerKey+" ,   is cached on "+Setting.HOSTNAME);
@@ -139,6 +139,7 @@ public class ResourceManager {
 		}
 		return false;
 	}
+	
 	public synchronized <K,V> JobTasksManager getOrCreateJobTaskManager(long jobID) throws Exception{
 		JobTasksManager jTaskManager = jobTasksManagers.get(jobID);
 		if (jTaskManager == null){
