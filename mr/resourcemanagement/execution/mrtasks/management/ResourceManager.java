@@ -141,9 +141,9 @@ public class ResourceManager {
 	}
 	
 	public synchronized <K,V> JobTasksManager getOrCreateJobTaskManager(long jobID) throws Exception{
-		JobTasksManager jTaskManager = jobTasksManagers.get(jobID);
+		JobTasksManager jTaskManager 					= jobTasksManagers.get(jobID);
 		if (jTaskManager == null){
-			jTaskManager = new<K,V> JobTasksManager(jobID, this);
+			jTaskManager 						= new<K,V> JobTasksManager(jobID, this);
 			jobTasksManagers.put(jobID, jTaskManager);
 		}
 		return jTaskManager;
