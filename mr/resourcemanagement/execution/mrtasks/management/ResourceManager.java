@@ -72,14 +72,15 @@ public class ResourceManager {
 		if (batchStarted)
 			return;
 		batchStarted 							= true;
-		numOfBatchJobs = jobTasksManagers.size();
-		int i=0;
-		startTime = System.currentTimeMillis();
-		while(i<MAX_TASKS){
+		numOfBatchJobs 							= jobTasksManagers.size();
+		int i								= 0;
+		startTime 							= System.currentTimeMillis();
+		while(i < MAX_TASKS){
 			exeTask();
 			++i;
 		}
 	}
+	
 	protected void exeTask() throws Exception{
 		TaskInfo t = scheduler.poolTask();
 		if (t==null){
