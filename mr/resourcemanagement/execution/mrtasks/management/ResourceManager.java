@@ -82,12 +82,13 @@ public class ResourceManager {
 	}
 	
 	protected void exeTask() throws Exception{
-		TaskInfo t = scheduler.poolTask();
-		if (t==null){
+		TaskInfo t 							= scheduler.poolTask();
+		if (t == null){
 			//System.out.println(" There is not any pending tasks on "+Setting.HOSTNAME);
 			return;
 		}
-		JobTasksManager jTaskManager = jobTasksManagers.get(t.getJobID());
+		
+		JobTasksManager jTaskManager 					= jobTasksManagers.get(t.getJobID());
 		if (t.getTaskType()==TaskInfo.MAP){
 			jTaskManager.processMapTask((MapTaskInfo) t);
 		}
