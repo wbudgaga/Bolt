@@ -18,10 +18,10 @@ import mr.resourcemanagement.execution.mrtasks.ReduceTaskInfo;
 import mr.resourcemanagement.execution.mrtasks.TaskInfo;
 
 public class ResourceManager {
-	private ConcurrentHashMap <Long,JobTasksManager> 			jobTasksManagers = new ConcurrentHashMap<Long,JobTasksManager>();
-	private ConcurrentHashMap <Long,Long> 						jobMSGs = new ConcurrentHashMap<Long,Long>();//<msgID, jobID>
+	private ConcurrentHashMap <Long,JobTasksManager> jobTasksManagers = new ConcurrentHashMap<Long,JobTasksManager>();
+	private ConcurrentHashMap <Long,Long> jobMSGs = new ConcurrentHashMap<Long,Long>();//<msgID, jobID>
 	private HashMap <String, HashMap<Long, FindRunningReducer>> waitingMaps = new HashMap<String,HashMap<Long, FindRunningReducer>>();//<job_reducerID, <remotePeerID, FindRunningReducer>>
-	private ThreadPoolManager 									taskThreadPool; 
+	private ThreadPoolManager taskThreadPool; 
    
 	// private ThreadPoolManager 									controlThreadPool;
     	private ThreadPoolManager 									ioThreadPool;
