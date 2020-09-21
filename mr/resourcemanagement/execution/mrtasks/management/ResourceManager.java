@@ -120,7 +120,7 @@ public class ResourceManager {
 	public boolean findRunningReducer(RemotePeer mapPeer, FindRunningReducer frr){
 		JobTasksManager jTaskManager 					= jobTasksManagers.get(frr.getJobID());
 		if (jTaskManager == null){
-			System.out.println(" For looked reducer (jobiD:"+frr.getJobID()+","+frr.getReduceID()+"),  there is not any job");
+			System.out.println(" For looked reducer (jobiD:" + frr.getJobID() + "," + frr.getReduceID() + "),  there is not any job");
 			return false;
 		}
 		if (jTaskManager.hasAlreadyRTask(frr.getQueryKey())){
@@ -150,12 +150,12 @@ public class ResourceManager {
 	}
 
 	public synchronized void removeJobManager(long jobID) throws Exception{
-		JobTasksManager jtm =jobTasksManagers.remove(jobID);
-		if (jobTasksManagers.size()==0){
-			long spentTime 	= (System.currentTimeMillis() - startTime);
-			startTime		= -1;
+		JobTasksManager jtm 						= jobTasksManagers.remove(jobID);
+		if (jobTasksManagers.size() == 0){
+			long spentTime 						= (System.currentTimeMillis() - startTime);
+			startTime						= -1;
 			UtilClass.createPath(Setting.LOG_DIR);
-			FWLogger.getInstance().createLogger(1, Setting.LOG_DIR, Setting.HOSTNAME+"_J"+numOfBatchJobs+"_R"+jtm.getJobInfo().getNumOfReducer()+"_T"+spentTime);
+			FWLogger.getInstance().createLogger(1, Setting.LOG_DIR, Setting.HOSTNAME + "_J" + numOfBatchJobs + "_R" + jtm.getJobInfo().getNumOfReducer()+"_T"+spentTime);
 			FWLogger.getInstance().log(1, "ResourceManager: Host"+Setting.HOSTNAME+", job " +jobID+" has been completeted in "+spentTime +" msec" );
 		}
 	}
