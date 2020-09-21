@@ -165,10 +165,11 @@ public class ResourceManager {
 	}
 
 	public void setLocalPeer(Peer localPeer) {
-		this.localPeer = localPeer;
+		this.localPeer 							= localPeer;
 	}
+	
 	public JobTasksManager pollMSGJob(long msgID){
-		long jobID = removeJobMSG(msgID);
+		long jobID 							= removeJobMSG(msgID);
 		return jobTasksManagers.get(jobID);
 	}
 
