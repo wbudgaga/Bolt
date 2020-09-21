@@ -30,8 +30,8 @@ public class ResourceManager {
     	private final  Scheduler scheduler 					= new Scheduler();
     	private final int MAX_TASKS 						= 40;// Runtime.getRuntime().availableProcessors() ;
     	private volatile boolean batchStarted 					= false;
-    	private int 												numOfBatchJobs=0;
-    	private MetaDataManager 									metadataManager;
+    	private int numOfBatchJobs						= 0;
+    	private MetaDataManager metadataManager;
     
     	public final Object LOCK = new Object();
     	public final Object MSG_LOCK = new Object();
