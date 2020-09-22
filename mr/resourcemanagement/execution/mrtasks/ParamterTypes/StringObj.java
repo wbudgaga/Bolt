@@ -17,11 +17,11 @@ public abstract class StringObj {
 		
 		//1st exp with casting
 		long l 				= System.currentTimeMillis();
-		for (int i=0;i<100000000; ++i)
+		for (int i = 0; i < 100000000; ++i)
 			compute(l2);
 		System.out.println(" with casting:  "+(System.currentTimeMillis()- l));
 		
-		l = System.currentTimeMillis();
+		l 				= System.currentTimeMillis();
 		for (int i=0;i<100000000; ++i)
 			compute(l1);
 		System.out.println(" without casting:  "+(System.currentTimeMillis()- l));
