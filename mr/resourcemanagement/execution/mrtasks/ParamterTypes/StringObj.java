@@ -4,11 +4,11 @@ public abstract class StringObj {
 	public abstract boolean map(long id, String in);
 	
 	public static void compute(Object l){
-		Long l1 = (Long) l;
+		Long l1 			= (Long) l;
 	}
 	
 	public static void compute(Long l){
-		Long l1 =  l;
+		Long l1 			=  l;
 	}
 
 	public static void main(String s[]){
