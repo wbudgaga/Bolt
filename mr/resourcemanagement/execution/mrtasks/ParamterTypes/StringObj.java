@@ -19,12 +19,11 @@ public abstract class StringObj {
 		long l 				= System.currentTimeMillis();
 		for (int i = 0; i < 100000000; ++i)
 			compute(l2);
-		System.out.println(" with casting:  "+(System.currentTimeMillis()- l));
+		System.out.println(" with casting:  " + (System.currentTimeMillis() - l));
 		
 		l 				= System.currentTimeMillis();
 		for (int i=0;i<100000000; ++i)
 			compute(l1);
-		System.out.println(" without casting:  "+(System.currentTimeMillis()- l));
-
+		System.out.println(" without casting:  " + (System.currentTimeMillis() - l));
 	}
 }
