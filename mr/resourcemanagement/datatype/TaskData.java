@@ -5,8 +5,8 @@ public class TaskData <K,V>{
 	private V data;
 	
 	public TaskData(K dataID, V data){
-		this.dataID = dataID;
-		this.data   = data;
+		this.dataID 		= dataID;
+		this.data   		= data;
 	}
 
 	public K getDataID() {
