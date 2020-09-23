@@ -55,8 +55,8 @@ public class Scheduler {
 	}
 	
 	public static void main(String[] arg){
-		TaskInfo m1 = new MapTaskInfo<Integer, Integer, Integer, Integer>();
-		TaskInfo r1 = new ReduceTaskInfo<Integer, Integer, Integer, Integer>(1);
+		TaskInfo m1 						= new MapTaskInfo<Integer, Integer, Integer, Integer>();
+		TaskInfo r1 						= new ReduceTaskInfo<Integer, Integer, Integer, Integer>(1);
 		TaskInfo m2 = new MapTaskInfo<Integer, Integer, Integer, Integer>();
 		TaskInfo r2 = new ReduceTaskInfo<Integer, Integer, Integer, Integer>(2);
 
