@@ -46,9 +46,9 @@ public class Scheduler {
 	}
 	
 	public synchronized TaskInfo poolTask(){
-		TaskInfo taskInfo = nextTask();
+		TaskInfo taskInfo 					= nextTask();
 		while (taskInfo == null && !jobs.isEmpty()){//in case the tasks are completed for a given job
-			curJobID = jobs.poll();
+			curJobID 					= jobs.poll();
 			taskInfo = nextTask();
 		} 
 		return taskInfo;
