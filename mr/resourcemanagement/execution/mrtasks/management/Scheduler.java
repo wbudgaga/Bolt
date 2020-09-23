@@ -49,7 +49,7 @@ public class Scheduler {
 		TaskInfo taskInfo 					= nextTask();
 		while (taskInfo == null && !jobs.isEmpty()){//in case the tasks are completed for a given job
 			curJobID 					= jobs.poll();
-			taskInfo = nextTask();
+			taskInfo 					= nextTask();
 		} 
 		return taskInfo;
 	}
