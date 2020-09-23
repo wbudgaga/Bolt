@@ -67,8 +67,8 @@ public class Scheduler {
 		r2.setJobID(1);
 		r2.setTaskID(13);
 
-		Scheduler s = new Scheduler();
-		TaskInfo m3 = new MapTaskInfo<Integer, Integer, Integer, Integer>();
+		Scheduler s 						= new Scheduler();
+		TaskInfo m3 						= new MapTaskInfo<Integer, Integer, Integer, Integer>();
 		m3.setJobID(11);
 		m3.setTaskID(4);
 		s.offerTask(m3);
@@ -78,7 +78,7 @@ public class Scheduler {
 		TaskInfo t;
 		while (true){
 			 t = s.poolTask();
-			 if (t==null)
+			 if (t == null)
 				 break;
 			System.out.println(t.getJobID()+"=="+t.getTaskID());
 		}
