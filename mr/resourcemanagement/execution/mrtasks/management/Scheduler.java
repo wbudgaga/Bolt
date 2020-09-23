@@ -14,7 +14,7 @@ public class Scheduler {
 	private ConcurrentHashMap<String,TaskInfo> tasks 		= new ConcurrentHashMap<String,TaskInfo>();
 	private ConcurrentHashMap<Long,PriorityQueue<String>> jobTasks	= new ConcurrentHashMap<Long,PriorityQueue<String>>();//<jobID,<jobTaskIDs>>
 	
-	private Long curJobID = null;
+	private Long curJobID 						= null;
 		
 	public String getUTaskID(TaskInfo taskInfo){
 		return taskInfo.getJobID()+"_"+taskInfo.getTaskType()+"_"+taskInfo.getTaskID();
