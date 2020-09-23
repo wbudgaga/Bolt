@@ -10,9 +10,9 @@ import mr.resourcemanagement.execution.mrtasks.ReduceTaskInfo;
 import mr.resourcemanagement.execution.mrtasks.TaskInfo;
 
 public class Scheduler {
-	private BlockingQueue<Long>  							jobs	= new ArrayBlockingQueue<Long>(1000);
-	private ConcurrentHashMap<String,TaskInfo> 				tasks 	= new ConcurrentHashMap<String,TaskInfo>();
-	private ConcurrentHashMap<Long,PriorityQueue<String>> 	jobTasks= new ConcurrentHashMap<Long,PriorityQueue<String>>();//<jobID,<jobTaskIDs>>
+	private BlockingQueue<Long>  jobs				= new ArrayBlockingQueue<Long>(1000);
+	private ConcurrentHashMap<String,TaskInfo> tasks 		= new ConcurrentHashMap<String,TaskInfo>();
+	private ConcurrentHashMap<Long,PriorityQueue<String>> jobTasks	= new ConcurrentHashMap<Long,PriorityQueue<String>>();//<jobID,<jobTaskIDs>>
 	
 	private Long curJobID = null;
 		
