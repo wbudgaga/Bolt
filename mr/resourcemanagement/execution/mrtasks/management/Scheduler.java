@@ -37,9 +37,9 @@ public class Scheduler {
 		if (curJobID == null)
 			return null;
 		PriorityQueue<String> jTasks 				= jobTasks.get(curJobID);
-		if (jTasks!=null){
-			String uTaskID = jTasks.poll();
-			if (uTaskID!=null)
+		if (jTasks != null){
+			String uTaskID 					= jTasks.poll();
+			if (uTaskID != null)
 				return tasks.get(uTaskID);
 		}
 		return null;
