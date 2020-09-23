@@ -3,7 +3,6 @@ package mr.resourcemanagement.datatype;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 public class TaskDataQueue<K,V> {
 	protected Queue<TaskData<K,V>> 	pendingData 	= new LinkedList<TaskData<K,V>>();
 	
