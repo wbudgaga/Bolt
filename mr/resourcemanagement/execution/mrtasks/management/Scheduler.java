@@ -77,7 +77,7 @@ public class Scheduler {
 		s.offerTask(r2);
 		TaskInfo t;
 		while (true){
-			 t = s.poolTask();
+			 t 						= s.poolTask();
 			 if (t == null)
 				 break;
 			System.out.println(t.getJobID()+"=="+t.getTaskID());
