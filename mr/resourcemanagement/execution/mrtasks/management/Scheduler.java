@@ -23,12 +23,12 @@ public class Scheduler {
 	public synchronized void offerTask(TaskInfo taskInfo){
 		long jobID 						= taskInfo.getJobID();
 		PriorityQueue<String> jTasks 				= jobTasks.get(jobID);
-		if (jTasks==null){
-			jTasks = new PriorityQueue<String>();
+		if (jTasks == null){
+			jTasks 						= new PriorityQueue<String>();
 			jobTasks.put(jobID, jTasks);
 			jobs.offer(jobID);
 		}
-		String jobTaskID = getUTaskID(taskInfo);
+		String jobTaskID 					= getUTaskID(taskInfo);
 		jTasks.offer(jobTaskID);
 		tasks.put(jobTaskID, taskInfo);	
 	}
