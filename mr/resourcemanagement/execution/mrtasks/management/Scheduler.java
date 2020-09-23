@@ -17,7 +17,7 @@ public class Scheduler {
 	private Long curJobID 						= null;
 		
 	public String getUTaskID(TaskInfo taskInfo){
-		return taskInfo.getJobID()+"_"+taskInfo.getTaskType()+"_"+taskInfo.getTaskID();
+		return taskInfo.getJobID() + "_" + taskInfo.getTaskType() + "_" + taskInfo.getTaskID();
 	}
 
 	public synchronized void offerTask(TaskInfo taskInfo){
