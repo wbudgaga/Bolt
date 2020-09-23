@@ -34,9 +34,9 @@ public class Scheduler {
 	}
 	
 	private TaskInfo nextTask(){
-		if (curJobID==null)
+		if (curJobID == null)
 			return null;
-		PriorityQueue<String> jTasks = jobTasks.get(curJobID);
+		PriorityQueue<String> jTasks 				= jobTasks.get(curJobID);
 		if (jTasks!=null){
 			String uTaskID = jTasks.poll();
 			if (uTaskID!=null)
