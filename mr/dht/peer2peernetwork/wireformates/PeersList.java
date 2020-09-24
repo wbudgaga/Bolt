@@ -20,10 +20,10 @@ public class PeersList extends Message{
 	
 	@Override
 	public void initiate(byte[] byteStream) {
-		int size = unpackIntField(byteStream);
-		peersData = new PeerInfo[size];
-		for (int i=0; i<size;++i){
-			peersData[i]= unpackPeerInfo(byteStream);
+		int size 			= unpackIntField(byteStream);
+		peersData 			= new PeerInfo[size];
+		for (int i = 0; i < size; ++i){
+			peersData[i]		= unpackPeerInfo(byteStream);
 		}
 	}
 
