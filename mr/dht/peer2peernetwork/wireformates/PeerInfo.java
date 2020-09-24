@@ -4,7 +4,7 @@ import mr.dht.peer2peernetwork.nodes.PeerData;
 import mr.dht.peer2peernetwork.util.ByteStream;
 
 public class PeerInfo extends Message{
-	private PeerData 	peer;
+	private PeerData peer;
 	
 	public PeerInfo(int messageID, int handlerID) {
 		super(messageID, handlerID);
@@ -14,7 +14,7 @@ public class PeerInfo extends Message{
 	}
 	
 	private void unpackMessage(byte[] byteStream){
-		peer = new PeerData();
+		peer 			= new PeerData();
 		peer.setPeerID(unpackLongField(byteStream));
 		peer.setNickName(unpackStringField(byteStream));
 		peer.setHost(unpackStringField(byteStream));
@@ -48,7 +48,7 @@ public class PeerInfo extends Message{
 		if (peer == null)
 			return null;
 		byte[] bytes= ByteStream.join ( packPeerID(),packNickName());
-		bytes		= ByteStream.join (bytes,packHost());
+		bytes			= ByteStream.join (bytes,packHost());
 		return ByteStream.join(bytes, packPortNumber());
 	}
 
