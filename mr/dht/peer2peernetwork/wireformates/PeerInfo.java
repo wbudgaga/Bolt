@@ -63,7 +63,7 @@ public class PeerInfo extends Message{
 
 	public void setPeer(PeerData peer) {
 		if (peer == null){
-			this.peer = new PeerData();
+			this.peer 	= new PeerData();
 			this.peer.setPeerID(-1);
 			this.peer.setHost("");
 			this.peer.setNickName("");
