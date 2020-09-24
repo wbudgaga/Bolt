@@ -45,7 +45,7 @@ public class PeersList extends Message{
 	}
 	
 	public void setPeerList(PeerInfo[] peers){
-		peersData = peers; 
+		peersData 			= peers; 
 	}
 	
 	public PeerInfo[] getPeerList(){
