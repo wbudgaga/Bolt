@@ -53,12 +53,12 @@ public class PeersList extends Message{
 	}	
 
 	public static PeerInfo getPD(long id, String n, String h, int port){
-		PeerData 	pd1 = new  PeerData();
+		PeerData 	pd1 		= new  PeerData();
 		pd1.setNickName(n);
 		pd1.setHost(h);
 		pd1.setPeerID(id);
 		pd1.setPortNum(port);
-		PeerInfo pi = new PeerInfo();
+		PeerInfo pi 			= new PeerInfo();
 		pi.setPeer(pd1);
 		return pi;
 	}
