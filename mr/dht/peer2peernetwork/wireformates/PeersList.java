@@ -30,11 +30,11 @@ public class PeersList extends Message{
 	@Override
 	protected byte[] packMessageBody() {
 		byte[] objectBytes;
-		byte[] bytes= ByteStream.intToByteArray(peersData.length);
-		for (int i=0; i<peersData.length;++i){
-			objectBytes = peersData[i].packMessage();
-			bytes		= ByteStream.join (bytes ,ByteStream.intToByteArray(objectBytes.length));
-			bytes		= ByteStream.join (bytes,peersData[i].packMessage());
+		byte[] bytes			= ByteStream.intToByteArray(peersData.length);
+		for (int i = 0; i < peersData.length; ++i){
+			objectBytes    		= peersData[i].packMessage();
+			bytes			= ByteStream.join (bytes ,ByteStream.intToByteArray(objectBytes.length));
+			bytes			= ByteStream.join (bytes,peersData[i].packMessage());
 		}
 		return bytes;
 	}
