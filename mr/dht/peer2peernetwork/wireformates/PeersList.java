@@ -64,8 +64,8 @@ public class PeersList extends Message{
 	}
 		
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		PeersList AllPeers = new PeersList();
-		PeerInfo[] pList = new PeerInfo[5];
+		PeersList AllPeers 		= new PeersList();
+		PeerInfo[] pList 		= new PeerInfo[5];
 		for (int i=0;i<5;++i){
 			pList[i] = getPD(1000+i, "peer"+i, "peerHost"+i, 5000+i);
 		}
