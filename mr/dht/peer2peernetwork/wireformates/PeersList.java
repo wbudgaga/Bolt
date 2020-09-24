@@ -77,9 +77,8 @@ public class PeersList extends Message{
 		byte [] bt 			= AllPeers.packMessage();
 		
 		
-		PeersList ftr = (PeersList) f.createMessage(bt);
+		PeersList ftr 			= (PeersList) f.createMessage(bt);
 		for (PeerInfo pi:ftr.getPeerList())
 			System.out.println(pi.getPeer().getHost());
 	}
-
 }
