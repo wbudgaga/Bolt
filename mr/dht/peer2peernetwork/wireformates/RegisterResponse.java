@@ -1,6 +1,5 @@
 package mr.dht.peer2peernetwork.wireformates;
 
-
 public class RegisterResponse 	extends Response{
 	
 	public RegisterResponse() {
