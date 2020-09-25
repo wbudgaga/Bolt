@@ -30,7 +30,7 @@ public class Response extends Message{
 
 	@Override
 	public byte[] packMessageBody(){
-		byte[] StatusCodeBytes = {getStatusCode()};
+		byte[] StatusCodeBytes 		= {getStatusCode()};
 		return ByteStream.join (StatusCodeBytes, packAdditionalInfo());
 	}
 
@@ -39,7 +39,7 @@ public class Response extends Message{
 	}
 
 	public void setStatusCode(byte statusCode) {
-		this.statusCode = statusCode;
+		this.statusCode 		= statusCode;
 	}
 
 	public String getAdditionalInfo() {
@@ -47,12 +47,11 @@ public class Response extends Message{
 	}
 
 	public void setAdditionalInfo(String additionalInfo) {
-		this.additionalInfo = additionalInfo;
+		this.additionalInfo 		= additionalInfo;
 	}
 
 	@Override
 	public String getMessageType() {
 		return null;
 	}
-
 }
