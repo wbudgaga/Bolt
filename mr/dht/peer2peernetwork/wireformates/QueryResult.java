@@ -14,8 +14,8 @@ public class QueryResult extends Message{
 	}
 	
 	private void unpackPeer(byte[] byteStream){
-		peer = new PeerInfo();
-		byte [] routerInfoObjectBytes = readObjectBytes(byteStream);
+		peer 				= new PeerInfo();
+		byte [] routerInfoObjectBytes 	= readObjectBytes(byteStream);
 		peer.initiate(routerInfoObjectBytes);	
 	}
 	
@@ -54,7 +54,7 @@ public class QueryResult extends Message{
 	}
 
 	public void setPeer(PeerInfo peer) {
-		this.peer = peer;
+		this.peer 			= peer;
 	}
 
 	public long getQueryKey() {
@@ -62,6 +62,6 @@ public class QueryResult extends Message{
 	}
 
 	public void setQueryKey(long queryKey) {
-		this.queryKey = queryKey;
+		this.queryKey 			= queryKey;
 	}
 }
