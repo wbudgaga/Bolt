@@ -6,7 +6,6 @@ public class RandomPeerRequest extends PeerInfo{
 	public RandomPeerRequest() {
 		super(RANDOM_PEER_REQUEST, RANDOM_PEER_REQUEST);
 	}
-
 	public String getMessageType() {
 		return "RANDOM_PEER_REQUEST";
 	}
