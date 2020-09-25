@@ -13,7 +13,7 @@ public class Request extends Message{
 	}
 			
 	private void unpackMessage(byte[] byteStream){
-		peer = new PeerInfo();
+		peer 			= new PeerInfo();
 		peer.initiate(byteStream);
 		
 	}
@@ -37,11 +37,11 @@ public class Request extends Message{
 	}
 
 	public void setPeer(PeerInfo peer) {
-		this.peer = peer;
+		this.peer 		= peer;
 	}
 	
 	public void setPeer(PeerData peer) {
-		PeerInfo peerInfo = new PeerInfo();
+		PeerInfo peerInfo 	= new PeerInfo();
 		peerInfo.setPeer(peer);
 		setPeer(peerInfo);
 	}
