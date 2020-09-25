@@ -7,9 +7,11 @@ public class RegisterRequest extends Request{
 	public RegisterRequest() {
 		super(REGISTER_REQUEST, REGISTER_REQUEST);
 	}
+	
 	public RegisterRequest(int msgID, int handlerID) {
 		super(msgID, handlerID);
 	}
+	
 	public String getMessageType() {
 		return "REGISTER_REQUEST";
 	}
