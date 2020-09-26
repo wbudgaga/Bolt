@@ -38,13 +38,13 @@ public class StartMapTask extends Message{
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] objectBytes = taskOwner.packMessage();
-		byte[] bytes= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);
+		byte[] objectBytes 	= taskOwner.packMessage();
+		byte[] bytes		= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);
 		
-		bytes= ByteStream.join (bytes, ByteStream.longToByteArray(jobID));
-		bytes= ByteStream.join (bytes, ByteStream.longToByteArray(taskID));
-		bytes= ByteStream.join (bytes, ByteStream.intToByteArray(numOfReducers));
-		bytes= ByteStream.join (bytes, ByteStream.packString(taskClassName));
+		bytes			= ByteStream.join (bytes, ByteStream.longToByteArray(jobID));
+		bytes			= ByteStream.join (bytes, ByteStream.longToByteArray(taskID));
+		bytes			= ByteStream.join (bytes, ByteStream.intToByteArray(numOfReducers));
+		bytes			= ByteStream.join (bytes, ByteStream.packString(taskClassName));
 		return ByteStream.join (bytes, ByteStream.packString(outputName));
 	}
 
