@@ -76,19 +76,19 @@ public class StartMapTask extends Message{
 		return numOfReducers;
 	}
 	public void setNumOfReducers(int numOfReducers) {
-		this.numOfReducers = numOfReducers;
+		this.numOfReducers 	= numOfReducers;
 	}
 	
 	public String getTaskClassName() {
 		return taskClassName;
 	}
 	public void setTaskClassName(String taskClassPath) {
-		this.taskClassName = taskClassPath;
+		this.taskClassName 	= taskClassPath;
 	}
 
 	
 	public static PeerInfo getPD(long id, String n, String h, int port){
-		PeerData 	pd1 = new  PeerData();
+		PeerData 	pd1 	= new  PeerData();
 		pd1.setNickName(n);
 		pd1.setHost(h);
 		pd1.setPeerID(id);
