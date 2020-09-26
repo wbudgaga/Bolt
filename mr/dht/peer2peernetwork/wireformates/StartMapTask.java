@@ -88,25 +88,25 @@ public class StartMapTask extends Message{
 
 	
 	public static PeerInfo getPD(long id, String n, String h, int port){
-		PeerData 	pd1 	= new  PeerData();
+		PeerData pd1 		= new  PeerData();
 		pd1.setNickName(n);
 		pd1.setHost(h);
 		pd1.setPeerID(id);
 		pd1.setPortNum(port);
-		PeerInfo pi = new PeerInfo();
+		PeerInfo pi 		= new PeerInfo();
 		pi.setPeer(pd1);
 		return pi;
 	}
 
 	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
-		StartMapTask msg = new StartMapTask();
-		PeerInfo taskOwner = getPD(1000, "peer", "peerHost", 5000);
+		StartMapTask msg 	= new StartMapTask();
+		PeerInfo taskOwner 	= getPD(1000, "peer", "peerHost", 5000);
 		msg.setTaskOwner(taskOwner);
 		msg.setJobID(32119041972l);
 		msg.setTaskID(13);
 		msg.setTaskClassName("job1Map");
-		byte [] bt = msg.packMessage();
+		byte [] bt 		= msg.packMessage();
 		
 		MessageFactory f = MessageFactory.getInstance();
 		
