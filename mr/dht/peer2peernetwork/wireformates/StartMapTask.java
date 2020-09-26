@@ -118,6 +118,6 @@ public class StartMapTask extends Message{
 	}
 	
 	public void setOutputName(String outputName) {
-		this.outputName = outputName;
+		this.outputName 	= outputName;
 	}
 }
