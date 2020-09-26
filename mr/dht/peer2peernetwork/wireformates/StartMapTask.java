@@ -64,13 +64,13 @@ public class StartMapTask extends Message{
 		return jobID;
 	}
 	public void setJobID(long jobID) {
-		this.jobID = jobID;
+		this.jobID 		= jobID;
 	}
 	public long getTaskID() {
 		return taskID;
 	}
 	public void setTaskID(long taskID) {
-		this.taskID = taskID;
+		this.taskID 		= taskID;
 	}
 	public int getNumOfReducers() {
 		return numOfReducers;
