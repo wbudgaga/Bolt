@@ -31,8 +31,8 @@ public class StartMapTask extends Message{
 		taskOwner 		= unpackPeerInfo(byteStream);
 		jobID			= unpackLongField(byteStream);
 		taskID			= unpackLongField(byteStream);
-		numOfReducers	= unpackIntField(byteStream);
-		taskClassName	= unpackStringField(byteStream);
+		numOfReducers		= unpackIntField(byteStream);
+		taskClassName		= unpackStringField(byteStream);
 		outputName		= unpackStringField(byteStream);
 	}
 
