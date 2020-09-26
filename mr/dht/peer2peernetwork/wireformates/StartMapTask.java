@@ -98,7 +98,6 @@ public class StartMapTask extends Message{
 		return pi;
 	}
 
-	
 	public static void main(String args[]) throws ClassNotFoundException, InstantiationException, IllegalAccessException{
 		StartMapTask msg 	= new StartMapTask();
 		PeerInfo taskOwner 	= getPD(1000, "peer", "peerHost", 5000);
@@ -108,15 +107,16 @@ public class StartMapTask extends Message{
 		msg.setTaskClassName("job1Map");
 		byte [] bt 		= msg.packMessage();
 		
-		MessageFactory f = MessageFactory.getInstance();
+		MessageFactory f 	= MessageFactory.getInstance();
 		
-		StartMapTask ftr = (StartMapTask) f.createMessage(bt);
-		System.out.println(ftr.getTaskID()+ "  "+ftr.getJobID());
-		
+		StartMapTask ftr 	= (StartMapTask) f.createMessage(bt);
+		System.out.println(ftr.getTaskID() + "  " + ftr.getJobID());
 	}
+	
 	public String getOutputName() {
 		return outputName;
 	}
+	
 	public void setOutputName(String outputName) {
 		this.outputName = outputName;
 	}
