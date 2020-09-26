@@ -14,12 +14,14 @@ public class StartMapTask extends Message{
 	public StartMapTask(int messageID, int handlerID) {
 		super(messageID,handlerID);
 	}
+	
 	public StartMapTask() {
 		super(START_MAPTASK, START_MAPTASK);
 	}
+	
 	private PeerInfo unpackPeerInfo(byte[] byteStream){
-		byte[] bytes = readObjectBytes(byteStream);
-		PeerInfo peer = new PeerInfo();
+		byte[] bytes 		= readObjectBytes(byteStream);
+		PeerInfo peer 		= new PeerInfo();
 		peer.initiate(bytes);
 		return peer;
 	}
