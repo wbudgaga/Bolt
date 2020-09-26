@@ -40,7 +40,6 @@ public class StartMapTask extends Message{
 	protected byte[] packMessageBody() {
 		byte[] objectBytes 	= taskOwner.packMessage();
 		byte[] bytes		= ByteStream.join (ByteStream.intToByteArray(objectBytes.length),objectBytes);
-		
 		bytes			= ByteStream.join (bytes, ByteStream.longToByteArray(jobID));
 		bytes			= ByteStream.join (bytes, ByteStream.longToByteArray(taskID));
 		bytes			= ByteStream.join (bytes, ByteStream.intToByteArray(numOfReducers));
@@ -54,7 +53,7 @@ public class StartMapTask extends Message{
 	}
 	
 	public void setTaskOwner(PeerInfo taskOwner) {
-		this.taskOwner = taskOwner;
+		this.taskOwner 		= taskOwner;
 	}
 
 	public PeerInfo getPeer() {
