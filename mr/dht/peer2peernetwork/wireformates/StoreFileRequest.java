@@ -39,22 +39,27 @@ public class StoreFileRequest extends Message{
 	public String getMessageType() {
 		return null;
 	}
+	
 	public int getReplicarionFactore() {
 		return replicarionFactore;
 	}
+	
 	public void setReplicarionFactore(int rf) {
 		this.replicarionFactore = rf;
 	}
+	
 	public void setFileBytes(byte[] bytes){
-		fileBytes = bytes;
+		fileBytes 		= bytes;
 	}
 
 	public byte[] getFileBytes() {
 		return fileBytes;
 	}
+	
 	public int getBufferSize() {
 		return bufferSize;
 	}
+	
 	public void setBufferSize(int bufferSize) {
 		this.bufferSize = bufferSize;
 	}
