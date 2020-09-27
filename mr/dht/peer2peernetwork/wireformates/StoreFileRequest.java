@@ -6,12 +6,12 @@ public class StoreFileRequest extends Message{
 	private String 	fileName;
 	private int 	replicarionFactore;
 	private int 	bufferSize;
-	private byte[]  fileBytes;
-	
+	private byte[]  fileBytes;	
 	
 	public StoreFileRequest() {
 		super(STORE_FILE_REQUEST, STORE_FILE_REQUEST);
 	}
+	
 	@Override
 	public void initiate(byte[] byteStream) {
 		setFileName		( unpackStringField( byteStream ) );
