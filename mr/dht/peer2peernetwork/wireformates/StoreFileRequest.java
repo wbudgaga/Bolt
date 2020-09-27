@@ -17,13 +17,13 @@ public class StoreFileRequest extends Message{
 		setFileName		( unpackStringField( byteStream ) );
 		setReplicarionFactore	( unpackIntField( byteStream ) );
 		setBufferSize( unpackIntField( byteStream ) );
-		fileBytes = readObjectBytes(byteStream);
+		fileBytes 		= readObjectBytes(byteStream);
 	}
 
 	@Override
 	protected byte[] packMessageBody() {
-		byte[] buffer = ByteStream.join(ByteStream.packString(getFileName()), ByteStream.intToByteArray(getReplicarionFactore()));
-		buffer = ByteStream.join(buffer, ByteStream.intToByteArray(getBufferSize()));
+		byte[] buffer 		= ByteStream.join(ByteStream.packString(getFileName()), ByteStream.intToByteArray(getReplicarionFactore()));
+		buffer 			= ByteStream.join(buffer, ByteStream.intToByteArray(getBufferSize()));
 		return  ByteStream.join(buffer,ByteStream.addPacketHeader(fileBytes));
 	}
 
