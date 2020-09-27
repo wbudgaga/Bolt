@@ -32,7 +32,7 @@ public class StoreFileRequest extends Message{
 	}
 
 	public void setFileName(String fileName) {
-		this.fileName = fileName;
+		this.fileName 		= fileName;
 	}
 
 	@Override
