@@ -101,7 +101,7 @@ The distribution of 192 reducers of 16 jobs does not cause hot spots. The first 
 ### K-Means Clustering
 Hadoop and Bolt were used to execute K-Means clustering algorithm 100 iterations. For this benchmark we have used movie ratings dataset that includes movies data and users ratings for each movie. The K-Means algorithm aims to cluster simimlar movies based on the users rantings.
 
-As we can see in following figure, with less overhead Bolt executed the 100 iterations 5.06X faster than Hadoop. Hadoop executed all iterations in 39.02 hours with total overhead of 8.48 minutes, while Bolt spent only 7.72 hours including 1.14 minutes overhead for executing them. The overhead is the total time spent for cleanup and job setup. In average, the overhead of each iteration was 5 and 0.6 seconds in Hadoop and Bolt, respectively.
+As we can see in following figure, with less overhead Bolt executed the 100 iterations 5.06x faster than Hadoop. Hadoop executed all iterations in 39.02 hours with total overhead of 8.48 minutes, while Bolt spent only 7.72 hours including 1.14 minutes overhead for executing them. The overhead is the total time spent for cleanup and job setup. In average, the overhead of each iteration was 5 and 0.6 seconds in Hadoop and Bolt, respectively.
 <p align="center">
 <img width="500" alt="Reduce Tasks Balancing" src="https://user-images.githubusercontent.com/40745827/87208667-95c42c80-c2cc-11ea-940c-f578591548f4.png">
 </p>
